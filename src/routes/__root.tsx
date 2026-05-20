@@ -10,6 +10,37 @@ import {
 
 import appCss from "../styles.css?url";
 
+const SITE_NAME = "Bara Baja Las";
+const SITE_DESC =
+  "Jasa las profesional Karawang melayani pagar, kanopi, railing, tralis, balkon, pintu besi, konstruksi baja, dan welding custom. Hasil rapi, kuat, dan terpercaya.";
+const LOCAL_BUSINESS_JSONLD = JSON.stringify({
+  "@context": "https://schema.org",
+  "@type": "LocalBusiness",
+  "@id": "#bara-baja-las",
+  name: "Bara Baja Las",
+  image: "",
+  description: SITE_DESC,
+  telephone: "+6282125171716",
+  address: {
+    "@type": "PostalAddress",
+    streetAddress: "Kp. Kadongdong, Desa Bengle",
+    addressLocality: "Karawang",
+    addressRegion: "Jawa Barat",
+    addressCountry: "ID",
+  },
+  areaServed: ["Karawang", "Cikampek", "Purwakarta", "Bekasi", "Subang"],
+  openingHoursSpecification: [
+    {
+      "@type": "OpeningHoursSpecification",
+      dayOfWeek: ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"],
+      opens: "08:00",
+      closes: "17:00",
+    },
+  ],
+  sameAs: ["https://wa.me/6282125171716"],
+  priceRange: "$$",
+});
+
 function NotFoundComponent() {
   return (
     <div className="flex min-h-screen items-center justify-center bg-background px-4">
@@ -72,20 +103,30 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
     meta: [
       { charSet: "utf-8" },
       { name: "viewport", content: "width=device-width, initial-scale=1" },
-      { title: "Lovable App" },
-      { name: "description", content: "Lovable Generated Project" },
-      { name: "author", content: "Lovable" },
-      { property: "og:title", content: "Lovable App" },
-      { property: "og:description", content: "Lovable Generated Project" },
+      { title: `${SITE_NAME} — Jasa Las & Konstruksi Karawang` },
+      { name: "description", content: SITE_DESC },
+      { name: "theme-color", content: "#0F172A" },
+      { property: "og:site_name", content: SITE_NAME },
       { property: "og:type", content: "website" },
-      { name: "twitter:card", content: "summary" },
-      { name: "twitter:site", content: "@Lovable" },
+      { property: "og:title", content: `${SITE_NAME} — Jasa Las & Konstruksi Karawang` },
+      { property: "og:description", content: SITE_DESC },
+      { property: "og:locale", content: "id_ID" },
+      { name: "twitter:card", content: "summary_large_image" },
     ],
     links: [
       {
         rel: "stylesheet",
         href: appCss,
       },
+      { rel: "preconnect", href: "https://fonts.googleapis.com" },
+      { rel: "preconnect", href: "https://fonts.gstatic.com", crossOrigin: "anonymous" },
+      {
+        rel: "stylesheet",
+        href: "https://fonts.googleapis.com/css2?family=Poppins:wght@500;600;700;800&family=Inter:wght@400;500;600&family=Montserrat:wght@600;700&display=swap",
+      },
+    ],
+    scripts: [
+      { type: "application/ld+json", children: LOCAL_BUSINESS_JSONLD },
     ],
   }),
   shellComponent: RootShell,
