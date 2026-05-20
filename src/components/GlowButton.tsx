@@ -1,5 +1,5 @@
 import { cn } from "@/lib/utils";
-import { forwardRef, type ButtonHTMLAttributes, type ReactNode } from "https://esm.sh/react@19";
+import { forwardRef, type ButtonHTMLAttributes, type ReactNode } from "react";
 
 type Variant = "primary" | "outline" | "ghost";
 type Size = "sm" | "md" | "lg";
