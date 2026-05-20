@@ -11,6 +11,7 @@
 import { Route as rootRouteImport } from './routes/__root'
 import { Route as TestimoniRouteImport } from './routes/testimoni'
 import { Route as TentangRouteImport } from './routes/tentang'
+import { Route as SitemapDotxmlRouteImport } from './routes/sitemap[.]xml'
 import { Route as PortfolioRouteImport } from './routes/portfolio'
 import { Route as LayananRouteImport } from './routes/layanan'
 import { Route as KontakRouteImport } from './routes/kontak'
@@ -29,6 +30,11 @@ const TestimoniRoute = TestimoniRouteImport.update({
 const TentangRoute = TentangRouteImport.update({
   id: '/tentang',
   path: '/tentang',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const SitemapDotxmlRoute = SitemapDotxmlRouteImport.update({
+  id: '/sitemap.xml',
+  path: '/sitemap.xml',
   getParentRoute: () => rootRouteImport,
 } as any)
 const PortfolioRoute = PortfolioRouteImport.update({
@@ -85,6 +91,7 @@ export interface FileRoutesByFullPath {
   '/kontak': typeof KontakRoute
   '/layanan': typeof LayananRouteWithChildren
   '/portfolio': typeof PortfolioRoute
+  '/sitemap.xml': typeof SitemapDotxmlRoute
   '/tentang': typeof TentangRoute
   '/testimoni': typeof TestimoniRoute
   '/blog/$slug': typeof BlogSlugRoute
@@ -98,6 +105,7 @@ export interface FileRoutesByTo {
   '/kontak': typeof KontakRoute
   '/layanan': typeof LayananRouteWithChildren
   '/portfolio': typeof PortfolioRoute
+  '/sitemap.xml': typeof SitemapDotxmlRoute
   '/tentang': typeof TentangRoute
   '/testimoni': typeof TestimoniRoute
   '/blog/$slug': typeof BlogSlugRoute
@@ -112,6 +120,7 @@ export interface FileRoutesById {
   '/kontak': typeof KontakRoute
   '/layanan': typeof LayananRouteWithChildren
   '/portfolio': typeof PortfolioRoute
+  '/sitemap.xml': typeof SitemapDotxmlRoute
   '/tentang': typeof TentangRoute
   '/testimoni': typeof TestimoniRoute
   '/blog/$slug': typeof BlogSlugRoute
@@ -127,6 +136,7 @@ export interface FileRouteTypes {
     | '/kontak'
     | '/layanan'
     | '/portfolio'
+    | '/sitemap.xml'
     | '/tentang'
     | '/testimoni'
     | '/blog/$slug'
@@ -140,6 +150,7 @@ export interface FileRouteTypes {
     | '/kontak'
     | '/layanan'
     | '/portfolio'
+    | '/sitemap.xml'
     | '/tentang'
     | '/testimoni'
     | '/blog/$slug'
@@ -153,6 +164,7 @@ export interface FileRouteTypes {
     | '/kontak'
     | '/layanan'
     | '/portfolio'
+    | '/sitemap.xml'
     | '/tentang'
     | '/testimoni'
     | '/blog/$slug'
@@ -167,6 +179,7 @@ export interface RootRouteChildren {
   KontakRoute: typeof KontakRoute
   LayananRoute: typeof LayananRouteWithChildren
   PortfolioRoute: typeof PortfolioRoute
+  SitemapDotxmlRoute: typeof SitemapDotxmlRoute
   TentangRoute: typeof TentangRoute
   TestimoniRoute: typeof TestimoniRoute
 }
@@ -185,6 +198,13 @@ declare module '@tanstack/react-router' {
       path: '/tentang'
       fullPath: '/tentang'
       preLoaderRoute: typeof TentangRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/sitemap.xml': {
+      id: '/sitemap.xml'
+      path: '/sitemap.xml'
+      fullPath: '/sitemap.xml'
+      preLoaderRoute: typeof SitemapDotxmlRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/portfolio': {
@@ -282,6 +302,7 @@ const rootRouteChildren: RootRouteChildren = {
   KontakRoute: KontakRoute,
   LayananRoute: LayananRouteWithChildren,
   PortfolioRoute: PortfolioRoute,
+  SitemapDotxmlRoute: SitemapDotxmlRoute,
   TentangRoute: TentangRoute,
   TestimoniRoute: TestimoniRoute,
 }
