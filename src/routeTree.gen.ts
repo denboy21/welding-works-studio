@@ -9,38 +9,246 @@
 // Additionally, you should also exclude this file from your linter and/or formatter to prevent it from being checked or modified.
 
 import { Route as rootRouteImport } from './routes/__root'
+import { Route as TestimoniRouteImport } from './routes/testimoni'
+import { Route as TentangRouteImport } from './routes/tentang'
+import { Route as SitemapDotxmlRouteImport } from './routes/sitemap[.]xml'
+import { Route as PortfolioRouteImport } from './routes/portfolio'
+import { Route as LayananRouteImport } from './routes/layanan'
+import { Route as KontakRouteImport } from './routes/kontak'
+import { Route as FaqRouteImport } from './routes/faq'
+import { Route as BlogRouteImport } from './routes/blog'
+import { Route as AreaLayananRouteImport } from './routes/area-layanan'
 import { Route as IndexRouteImport } from './routes/index'
+import { Route as LayananSlugRouteImport } from './routes/layanan.$slug'
+import { Route as BlogSlugRouteImport } from './routes/blog.$slug'
 
+const TestimoniRoute = TestimoniRouteImport.update({
+  id: '/testimoni',
+  path: '/testimoni',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const TentangRoute = TentangRouteImport.update({
+  id: '/tentang',
+  path: '/tentang',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const SitemapDotxmlRoute = SitemapDotxmlRouteImport.update({
+  id: '/sitemap.xml',
+  path: '/sitemap.xml',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const PortfolioRoute = PortfolioRouteImport.update({
+  id: '/portfolio',
+  path: '/portfolio',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const LayananRoute = LayananRouteImport.update({
+  id: '/layanan',
+  path: '/layanan',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const KontakRoute = KontakRouteImport.update({
+  id: '/kontak',
+  path: '/kontak',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const FaqRoute = FaqRouteImport.update({
+  id: '/faq',
+  path: '/faq',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const BlogRoute = BlogRouteImport.update({
+  id: '/blog',
+  path: '/blog',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const AreaLayananRoute = AreaLayananRouteImport.update({
+  id: '/area-layanan',
+  path: '/area-layanan',
+  getParentRoute: () => rootRouteImport,
+} as any)
 const IndexRoute = IndexRouteImport.update({
   id: '/',
   path: '/',
   getParentRoute: () => rootRouteImport,
 } as any)
+const LayananSlugRoute = LayananSlugRouteImport.update({
+  id: '/$slug',
+  path: '/$slug',
+  getParentRoute: () => LayananRoute,
+} as any)
+const BlogSlugRoute = BlogSlugRouteImport.update({
+  id: '/$slug',
+  path: '/$slug',
+  getParentRoute: () => BlogRoute,
+} as any)
 
 export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
+  '/area-layanan': typeof AreaLayananRoute
+  '/blog': typeof BlogRouteWithChildren
+  '/faq': typeof FaqRoute
+  '/kontak': typeof KontakRoute
+  '/layanan': typeof LayananRouteWithChildren
+  '/portfolio': typeof PortfolioRoute
+  '/sitemap.xml': typeof SitemapDotxmlRoute
+  '/tentang': typeof TentangRoute
+  '/testimoni': typeof TestimoniRoute
+  '/blog/$slug': typeof BlogSlugRoute
+  '/layanan/$slug': typeof LayananSlugRoute
 }
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
+  '/area-layanan': typeof AreaLayananRoute
+  '/blog': typeof BlogRouteWithChildren
+  '/faq': typeof FaqRoute
+  '/kontak': typeof KontakRoute
+  '/layanan': typeof LayananRouteWithChildren
+  '/portfolio': typeof PortfolioRoute
+  '/sitemap.xml': typeof SitemapDotxmlRoute
+  '/tentang': typeof TentangRoute
+  '/testimoni': typeof TestimoniRoute
+  '/blog/$slug': typeof BlogSlugRoute
+  '/layanan/$slug': typeof LayananSlugRoute
 }
 export interface FileRoutesById {
   __root__: typeof rootRouteImport
   '/': typeof IndexRoute
+  '/area-layanan': typeof AreaLayananRoute
+  '/blog': typeof BlogRouteWithChildren
+  '/faq': typeof FaqRoute
+  '/kontak': typeof KontakRoute
+  '/layanan': typeof LayananRouteWithChildren
+  '/portfolio': typeof PortfolioRoute
+  '/sitemap.xml': typeof SitemapDotxmlRoute
+  '/tentang': typeof TentangRoute
+  '/testimoni': typeof TestimoniRoute
+  '/blog/$slug': typeof BlogSlugRoute
+  '/layanan/$slug': typeof LayananSlugRoute
 }
 export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
-  fullPaths: '/'
+  fullPaths:
+    | '/'
+    | '/area-layanan'
+    | '/blog'
+    | '/faq'
+    | '/kontak'
+    | '/layanan'
+    | '/portfolio'
+    | '/sitemap.xml'
+    | '/tentang'
+    | '/testimoni'
+    | '/blog/$slug'
+    | '/layanan/$slug'
   fileRoutesByTo: FileRoutesByTo
-  to: '/'
-  id: '__root__' | '/'
+  to:
+    | '/'
+    | '/area-layanan'
+    | '/blog'
+    | '/faq'
+    | '/kontak'
+    | '/layanan'
+    | '/portfolio'
+    | '/sitemap.xml'
+    | '/tentang'
+    | '/testimoni'
+    | '/blog/$slug'
+    | '/layanan/$slug'
+  id:
+    | '__root__'
+    | '/'
+    | '/area-layanan'
+    | '/blog'
+    | '/faq'
+    | '/kontak'
+    | '/layanan'
+    | '/portfolio'
+    | '/sitemap.xml'
+    | '/tentang'
+    | '/testimoni'
+    | '/blog/$slug'
+    | '/layanan/$slug'
   fileRoutesById: FileRoutesById
 }
 export interface RootRouteChildren {
   IndexRoute: typeof IndexRoute
+  AreaLayananRoute: typeof AreaLayananRoute
+  BlogRoute: typeof BlogRouteWithChildren
+  FaqRoute: typeof FaqRoute
+  KontakRoute: typeof KontakRoute
+  LayananRoute: typeof LayananRouteWithChildren
+  PortfolioRoute: typeof PortfolioRoute
+  SitemapDotxmlRoute: typeof SitemapDotxmlRoute
+  TentangRoute: typeof TentangRoute
+  TestimoniRoute: typeof TestimoniRoute
 }
 
 declare module '@tanstack/react-router' {
   interface FileRoutesByPath {
+    '/testimoni': {
+      id: '/testimoni'
+      path: '/testimoni'
+      fullPath: '/testimoni'
+      preLoaderRoute: typeof TestimoniRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/tentang': {
+      id: '/tentang'
+      path: '/tentang'
+      fullPath: '/tentang'
+      preLoaderRoute: typeof TentangRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/sitemap.xml': {
+      id: '/sitemap.xml'
+      path: '/sitemap.xml'
+      fullPath: '/sitemap.xml'
+      preLoaderRoute: typeof SitemapDotxmlRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/portfolio': {
+      id: '/portfolio'
+      path: '/portfolio'
+      fullPath: '/portfolio'
+      preLoaderRoute: typeof PortfolioRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/layanan': {
+      id: '/layanan'
+      path: '/layanan'
+      fullPath: '/layanan'
+      preLoaderRoute: typeof LayananRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/kontak': {
+      id: '/kontak'
+      path: '/kontak'
+      fullPath: '/kontak'
+      preLoaderRoute: typeof KontakRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/faq': {
+      id: '/faq'
+      path: '/faq'
+      fullPath: '/faq'
+      preLoaderRoute: typeof FaqRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/blog': {
+      id: '/blog'
+      path: '/blog'
+      fullPath: '/blog'
+      preLoaderRoute: typeof BlogRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/area-layanan': {
+      id: '/area-layanan'
+      path: '/area-layanan'
+      fullPath: '/area-layanan'
+      preLoaderRoute: typeof AreaLayananRouteImport
+      parentRoute: typeof rootRouteImport
+    }
     '/': {
       id: '/'
       path: '/'
@@ -48,22 +256,56 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof IndexRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/layanan/$slug': {
+      id: '/layanan/$slug'
+      path: '/$slug'
+      fullPath: '/layanan/$slug'
+      preLoaderRoute: typeof LayananSlugRouteImport
+      parentRoute: typeof LayananRoute
+    }
+    '/blog/$slug': {
+      id: '/blog/$slug'
+      path: '/$slug'
+      fullPath: '/blog/$slug'
+      preLoaderRoute: typeof BlogSlugRouteImport
+      parentRoute: typeof BlogRoute
+    }
   }
 }
 
+interface BlogRouteChildren {
+  BlogSlugRoute: typeof BlogSlugRoute
+}
+
+const BlogRouteChildren: BlogRouteChildren = {
+  BlogSlugRoute: BlogSlugRoute,
+}
+
+const BlogRouteWithChildren = BlogRoute._addFileChildren(BlogRouteChildren)
+
+interface LayananRouteChildren {
+  LayananSlugRoute: typeof LayananSlugRoute
+}
+
+const LayananRouteChildren: LayananRouteChildren = {
+  LayananSlugRoute: LayananSlugRoute,
+}
+
+const LayananRouteWithChildren =
+  LayananRoute._addFileChildren(LayananRouteChildren)
+
 const rootRouteChildren: RootRouteChildren = {
   IndexRoute: IndexRoute,
+  AreaLayananRoute: AreaLayananRoute,
+  BlogRoute: BlogRouteWithChildren,
+  FaqRoute: FaqRoute,
+  KontakRoute: KontakRoute,
+  LayananRoute: LayananRouteWithChildren,
+  PortfolioRoute: PortfolioRoute,
+  SitemapDotxmlRoute: SitemapDotxmlRoute,
+  TentangRoute: TentangRoute,
+  TestimoniRoute: TestimoniRoute,
 }
 export const routeTree = rootRouteImport
   ._addFileChildren(rootRouteChildren)
   ._addFileTypes<FileRouteTypes>()
-
-import type { getRouter } from './router.tsx'
-import type { startInstance } from './start.ts'
-declare module '@tanstack/react-start' {
-  interface Register {
-    ssr: true
-    router: Awaited<ReturnType<typeof getRouter>>
-    config: Awaited<ReturnType<typeof startInstance.getOptions>>
-  }
-}
