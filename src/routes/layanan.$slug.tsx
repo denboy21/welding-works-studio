@@ -75,7 +75,7 @@ function Page() {
             </h1>
             <p className="mt-5 text-base leading-relaxed text-muted-foreground">{service.description}</p>
             <ul className="mt-6 space-y-2.5">
-              {service.features.map((f) => (
+              {service.features.map((f: string) => (
                 <li key={f} className="flex items-start gap-2.5 text-sm">
                   <span className="mt-0.5 flex h-5 w-5 items-center justify-center rounded-full bg-primary/15 text-primary">
                     <Check className="h-3.5 w-3.5" />
