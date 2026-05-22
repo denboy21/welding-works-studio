@@ -1,0 +1,648 @@
+import { createHotContext as __vite__createHotContext } from "/@vite/client";import.meta.hot = __vite__createHotContext("/src/routes/index.tsx?tsr-split=component");import __vite__cjsImport0_react_jsxDevRuntime from "/node_modules/.vite/deps/react_jsx-dev-runtime.js?v=5c32e97a"; const jsxDEV = __vite__cjsImport0_react_jsxDevRuntime["jsxDEV"];
+import { Link } from "/node_modules/@tanstack/react-router/dist/esm/index.dev.js?v=f47e3f35";
+import { motion } from "/node_modules/.vite/deps/framer-motion.js?v=12acf6e0";
+import { MessageCircle, Phone, ArrowRight, Sparkles, ShieldCheck, MapPin, ReceiptText, HardHat, MessageCircle as MC2, Hammer, Users, CalendarCheck, MapPinned } from "/node_modules/.vite/deps/lucide-react.js?v=34faba7c";
+import heroImg from "/src/assets/hero-welder.jpg?import";
+import { SiteLayout } from "/src/components/SiteLayout.tsx";
+import { GlowButton } from "/src/components/GlowButton.tsx";
+import { SparkParticles } from "/src/components/SparkParticles.tsx";
+import { SectionEyebrow } from "/src/components/SectionEyebrow.tsx";
+import { Reveal } from "/src/components/Reveal.tsx";
+import { ServiceCard } from "/src/components/ServiceCard.tsx";
+import { PortfolioGallery } from "/src/components/PortfolioGallery.tsx";
+import { AnimatedCounter } from "/src/components/AnimatedCounter.tsx";
+import { TestimonialSlider } from "/src/components/TestimonialSlider.tsx";
+import { FAQAccordion } from "/src/components/FAQAccordion.tsx";
+import { AreaCoverageSection } from "/src/components/AreaCoverageSection.tsx";
+import { CTASection } from "/src/components/CTASection.tsx";
+import { SERVICES, ADVANTAGES } from "/src/lib/data.ts";
+import { SITE, waLink } from "/src/lib/site.ts";
+const ADV_ICONS = {
+  Sparkles,
+  ShieldCheck,
+  MapPin,
+  ReceiptText,
+  HardHat,
+  MessageCircle: MC2
+};
+function HomePage() {
+  return /* @__PURE__ */ jsxDEV(SiteLayout, { children: [
+    /* @__PURE__ */ jsxDEV(Hero, {}, void 0, false, {
+      fileName: "C:/project3.1/welding/welding-works-studio-main/src/routes/index.tsx?tsr-split=component",
+      lineNumber: 29,
+      columnNumber: 7
+    }, this),
+    /* @__PURE__ */ jsxDEV(TrustStrip, {}, void 0, false, {
+      fileName: "C:/project3.1/welding/welding-works-studio-main/src/routes/index.tsx?tsr-split=component",
+      lineNumber: 30,
+      columnNumber: 7
+    }, this),
+    /* @__PURE__ */ jsxDEV(ServicesSection, {}, void 0, false, {
+      fileName: "C:/project3.1/welding/welding-works-studio-main/src/routes/index.tsx?tsr-split=component",
+      lineNumber: 31,
+      columnNumber: 7
+    }, this),
+    /* @__PURE__ */ jsxDEV(PortfolioPreview, {}, void 0, false, {
+      fileName: "C:/project3.1/welding/welding-works-studio-main/src/routes/index.tsx?tsr-split=component",
+      lineNumber: 32,
+      columnNumber: 7
+    }, this),
+    /* @__PURE__ */ jsxDEV(Advantages, {}, void 0, false, {
+      fileName: "C:/project3.1/welding/welding-works-studio-main/src/routes/index.tsx?tsr-split=component",
+      lineNumber: 33,
+      columnNumber: 7
+    }, this),
+    /* @__PURE__ */ jsxDEV(Area, {}, void 0, false, {
+      fileName: "C:/project3.1/welding/welding-works-studio-main/src/routes/index.tsx?tsr-split=component",
+      lineNumber: 34,
+      columnNumber: 7
+    }, this),
+    /* @__PURE__ */ jsxDEV(Testimoni, {}, void 0, false, {
+      fileName: "C:/project3.1/welding/welding-works-studio-main/src/routes/index.tsx?tsr-split=component",
+      lineNumber: 35,
+      columnNumber: 7
+    }, this),
+    /* @__PURE__ */ jsxDEV(Faq, {}, void 0, false, {
+      fileName: "C:/project3.1/welding/welding-works-studio-main/src/routes/index.tsx?tsr-split=component",
+      lineNumber: 36,
+      columnNumber: 7
+    }, this),
+    /* @__PURE__ */ jsxDEV(FinalCta, {}, void 0, false, {
+      fileName: "C:/project3.1/welding/welding-works-studio-main/src/routes/index.tsx?tsr-split=component",
+      lineNumber: 37,
+      columnNumber: 7
+    }, this)
+  ] }, void 0, true, {
+    fileName: "C:/project3.1/welding/welding-works-studio-main/src/routes/index.tsx?tsr-split=component",
+    lineNumber: 28,
+    columnNumber: 10
+  }, this);
+}
+_c = HomePage;
+function Hero() {
+  const words = "Jasa Las Profesional Karawang & Sekitarnya".split(" ");
+  return /* @__PURE__ */ jsxDEV("section", { className: "relative -mt-16 flex min-h-[100svh] items-center overflow-hidden bg-gradient-hero pt-24", children: [
+    /* @__PURE__ */ jsxDEV("img", { src: heroImg, alt: "Tukang las profesional Bara Baja Las sedang mengelas besi di workshop Karawang", width: 1920, height: 1080, fetchPriority: "high", className: "absolute inset-0 h-full w-full object-cover opacity-40" }, void 0, false, {
+      fileName: "C:/project3.1/welding/welding-works-studio-main/src/routes/index.tsx?tsr-split=component",
+      lineNumber: 43,
+      columnNumber: 7
+    }, this),
+    /* @__PURE__ */ jsxDEV("div", { className: "absolute inset-0 bg-gradient-to-t from-background via-background/70 to-background/40" }, void 0, false, {
+      fileName: "C:/project3.1/welding/welding-works-studio-main/src/routes/index.tsx?tsr-split=component",
+      lineNumber: 44,
+      columnNumber: 7
+    }, this),
+    /* @__PURE__ */ jsxDEV("div", { className: "absolute inset-0", children: /* @__PURE__ */ jsxDEV(SparkParticles, {}, void 0, false, {
+      fileName: "C:/project3.1/welding/welding-works-studio-main/src/routes/index.tsx?tsr-split=component",
+      lineNumber: 46,
+      columnNumber: 9
+    }, this) }, void 0, false, {
+      fileName: "C:/project3.1/welding/welding-works-studio-main/src/routes/index.tsx?tsr-split=component",
+      lineNumber: 45,
+      columnNumber: 7
+    }, this),
+    /* @__PURE__ */ jsxDEV("div", { className: "absolute -left-32 top-1/3 h-80 w-80 rounded-full bg-primary/40 blur-3xl" }, void 0, false, {
+      fileName: "C:/project3.1/welding/welding-works-studio-main/src/routes/index.tsx?tsr-split=component",
+      lineNumber: 48,
+      columnNumber: 7
+    }, this),
+    /* @__PURE__ */ jsxDEV("div", { className: "relative mx-auto w-full max-w-7xl px-4 py-16 sm:px-6 lg:px-8", children: [
+      /* @__PURE__ */ jsxDEV(Reveal, { children: /* @__PURE__ */ jsxDEV(SectionEyebrow, { children: "Workshop Karawang · Sejak 2019" }, void 0, false, {
+        fileName: "C:/project3.1/welding/welding-works-studio-main/src/routes/index.tsx?tsr-split=component",
+        lineNumber: 52,
+        columnNumber: 11
+      }, this) }, void 0, false, {
+        fileName: "C:/project3.1/welding/welding-works-studio-main/src/routes/index.tsx?tsr-split=component",
+        lineNumber: 51,
+        columnNumber: 9
+      }, this),
+      /* @__PURE__ */ jsxDEV("h1", { className: "font-display text-4xl font-extrabold leading-[1.05] sm:text-5xl md:text-6xl lg:text-7xl", children: words.map((w, i) => /* @__PURE__ */ jsxDEV(motion.span, { className: "mr-3 inline-block", initial: {
+        opacity: 0,
+        y: 24
+      }, animate: {
+        opacity: 1,
+        y: 0
+      }, transition: {
+        delay: 0.1 + i * 0.07,
+        duration: 0.6,
+        ease: "easeOut"
+      }, children: w === "Karawang" || w === "Profesional" ? /* @__PURE__ */ jsxDEV("span", { className: "text-gradient-industrial", children: w }, void 0, false, {
+        fileName: "C:/project3.1/welding/welding-works-studio-main/src/routes/index.tsx?tsr-split=component",
+        lineNumber: 67,
+        columnNumber: 58
+      }, this) : w }, i, false, {
+        fileName: "C:/project3.1/welding/welding-works-studio-main/src/routes/index.tsx?tsr-split=component",
+        lineNumber: 56,
+        columnNumber: 32
+      }, this)) }, void 0, false, {
+        fileName: "C:/project3.1/welding/welding-works-studio-main/src/routes/index.tsx?tsr-split=component",
+        lineNumber: 55,
+        columnNumber: 9
+      }, this),
+      /* @__PURE__ */ jsxDEV(motion.p, { className: "mt-6 max-w-2xl text-base leading-relaxed text-muted-foreground sm:text-lg", initial: {
+        opacity: 0,
+        y: 16
+      }, animate: {
+        opacity: 1,
+        y: 0
+      }, transition: {
+        delay: 0.6,
+        duration: 0.6
+      }, children: "Melayani pembuatan pagar, kanopi, railing, konstruksi besi, dan berbagai kebutuhan las dengan hasil rapi, kuat, dan terpercaya." }, void 0, false, {
+        fileName: "C:/project3.1/welding/welding-works-studio-main/src/routes/index.tsx?tsr-split=component",
+        lineNumber: 71,
+        columnNumber: 9
+      }, this),
+      /* @__PURE__ */ jsxDEV(motion.div, { className: "mt-9 flex flex-col gap-3 sm:flex-row sm:flex-wrap", initial: {
+        opacity: 0,
+        y: 16
+      }, animate: {
+        opacity: 1,
+        y: 0
+      }, transition: {
+        delay: 0.8,
+        duration: 0.6
+      }, children: [
+        /* @__PURE__ */ jsxDEV(GlowButton, { as: "a", href: waLink(`Halo ${SITE.name}, saya ingin konsultasi gratis.`), target: "_blank", rel: "noopener noreferrer", size: "lg", children: [
+          /* @__PURE__ */ jsxDEV(MessageCircle, { className: "h-5 w-5" }, void 0, false, {
+            fileName: "C:/project3.1/welding/welding-works-studio-main/src/routes/index.tsx?tsr-split=component",
+            lineNumber: 96,
+            columnNumber: 13
+          }, this),
+          " Chat WhatsApp"
+        ] }, void 0, true, {
+          fileName: "C:/project3.1/welding/welding-works-studio-main/src/routes/index.tsx?tsr-split=component",
+          lineNumber: 95,
+          columnNumber: 11
+        }, this),
+        /* @__PURE__ */ jsxDEV(GlowButton, { as: "a", href: `tel:${SITE.whatsappRaw}`, variant: "outline", size: "lg", children: [
+          /* @__PURE__ */ jsxDEV(Phone, { className: "h-5 w-5" }, void 0, false, {
+            fileName: "C:/project3.1/welding/welding-works-studio-main/src/routes/index.tsx?tsr-split=component",
+            lineNumber: 99,
+            columnNumber: 13
+          }, this),
+          " Konsultasi Gratis"
+        ] }, void 0, true, {
+          fileName: "C:/project3.1/welding/welding-works-studio-main/src/routes/index.tsx?tsr-split=component",
+          lineNumber: 98,
+          columnNumber: 11
+        }, this),
+        /* @__PURE__ */ jsxDEV(Link, { to: "/portfolio", className: "inline-flex h-14 items-center justify-center gap-1.5 px-2 text-sm font-semibold text-foreground/80 hover:text-primary", children: [
+          "Lihat Portfolio ",
+          /* @__PURE__ */ jsxDEV(ArrowRight, { className: "h-4 w-4" }, void 0, false, {
+            fileName: "C:/project3.1/welding/welding-works-studio-main/src/routes/index.tsx?tsr-split=component",
+            lineNumber: 102,
+            columnNumber: 29
+          }, this)
+        ] }, void 0, true, {
+          fileName: "C:/project3.1/welding/welding-works-studio-main/src/routes/index.tsx?tsr-split=component",
+          lineNumber: 101,
+          columnNumber: 11
+        }, this)
+      ] }, void 0, true, {
+        fileName: "C:/project3.1/welding/welding-works-studio-main/src/routes/index.tsx?tsr-split=component",
+        lineNumber: 85,
+        columnNumber: 9
+      }, this)
+    ] }, void 0, true, {
+      fileName: "C:/project3.1/welding/welding-works-studio-main/src/routes/index.tsx?tsr-split=component",
+      lineNumber: 50,
+      columnNumber: 7
+    }, this)
+  ] }, void 0, true, {
+    fileName: "C:/project3.1/welding/welding-works-studio-main/src/routes/index.tsx?tsr-split=component",
+    lineNumber: 42,
+    columnNumber: 10
+  }, this);
+}
+_c2 = Hero;
+function TrustStrip() {
+  const items = [{
+    icon: Hammer,
+    value: 500,
+    suffix: "+",
+    label: "Proyek Selesai"
+  }, {
+    icon: CalendarCheck,
+    value: 6,
+    suffix: "+",
+    label: "Tahun Pengalaman"
+  }, {
+    icon: MapPinned,
+    value: 5,
+    suffix: "",
+    label: "Kota Layanan"
+  }, {
+    icon: Users,
+    value: 100,
+    suffix: "%",
+    label: "Pelanggan Puas"
+  }];
+  return /* @__PURE__ */ jsxDEV("section", { className: "border-y border-white/10 bg-[color:var(--surface)]/50", children: /* @__PURE__ */ jsxDEV("div", { className: "mx-auto grid max-w-7xl grid-cols-2 gap-6 px-4 py-12 sm:px-6 lg:grid-cols-4 lg:px-8", children: items.map((it, i) => /* @__PURE__ */ jsxDEV(Reveal, { delay: i * 0.05, children: /* @__PURE__ */ jsxDEV("div", { className: "flex flex-col items-center text-center sm:flex-row sm:items-center sm:gap-4 sm:text-left", children: [
+    /* @__PURE__ */ jsxDEV("span", { className: "mb-2 flex h-12 w-12 items-center justify-center rounded-xl border border-primary/30 bg-primary/10 text-primary sm:mb-0", children: /* @__PURE__ */ jsxDEV(it.icon, { className: "h-6 w-6" }, void 0, false, {
+      fileName: "C:/project3.1/welding/welding-works-studio-main/src/routes/index.tsx?tsr-split=component",
+      lineNumber: 135,
+      columnNumber: 17
+    }, this) }, void 0, false, {
+      fileName: "C:/project3.1/welding/welding-works-studio-main/src/routes/index.tsx?tsr-split=component",
+      lineNumber: 134,
+      columnNumber: 15
+    }, this),
+    /* @__PURE__ */ jsxDEV("div", { children: [
+      /* @__PURE__ */ jsxDEV(AnimatedCounter, { to: it.value, suffix: it.suffix }, void 0, false, {
+        fileName: "C:/project3.1/welding/welding-works-studio-main/src/routes/index.tsx?tsr-split=component",
+        lineNumber: 138,
+        columnNumber: 17
+      }, this),
+      /* @__PURE__ */ jsxDEV("p", { className: "mt-1 text-xs uppercase tracking-wider text-muted-foreground sm:text-sm", children: it.label }, void 0, false, {
+        fileName: "C:/project3.1/welding/welding-works-studio-main/src/routes/index.tsx?tsr-split=component",
+        lineNumber: 139,
+        columnNumber: 17
+      }, this)
+    ] }, void 0, true, {
+      fileName: "C:/project3.1/welding/welding-works-studio-main/src/routes/index.tsx?tsr-split=component",
+      lineNumber: 137,
+      columnNumber: 15
+    }, this)
+  ] }, void 0, true, {
+    fileName: "C:/project3.1/welding/welding-works-studio-main/src/routes/index.tsx?tsr-split=component",
+    lineNumber: 133,
+    columnNumber: 13
+  }, this) }, i, false, {
+    fileName: "C:/project3.1/welding/welding-works-studio-main/src/routes/index.tsx?tsr-split=component",
+    lineNumber: 132,
+    columnNumber: 31
+  }, this)) }, void 0, false, {
+    fileName: "C:/project3.1/welding/welding-works-studio-main/src/routes/index.tsx?tsr-split=component",
+    lineNumber: 131,
+    columnNumber: 7
+  }, this) }, void 0, false, {
+    fileName: "C:/project3.1/welding/welding-works-studio-main/src/routes/index.tsx?tsr-split=component",
+    lineNumber: 130,
+    columnNumber: 10
+  }, this);
+}
+_c3 = TrustStrip;
+function ServicesSection() {
+  return /* @__PURE__ */ jsxDEV("section", { className: "mx-auto max-w-7xl px-4 py-20 sm:px-6 lg:px-8", children: [
+    /* @__PURE__ */ jsxDEV(Reveal, { children: [
+      /* @__PURE__ */ jsxDEV(SectionEyebrow, { children: "Layanan Kami" }, void 0, false, {
+        fileName: "C:/project3.1/welding/welding-works-studio-main/src/routes/index.tsx?tsr-split=component",
+        lineNumber: 151,
+        columnNumber: 9
+      }, this),
+      /* @__PURE__ */ jsxDEV("h2", { className: "max-w-3xl font-display text-3xl font-extrabold leading-tight sm:text-4xl md:text-5xl", children: [
+        "Solusi ",
+        /* @__PURE__ */ jsxDEV("span", { className: "text-gradient-industrial", children: "las & konstruksi besi" }, void 0, false, {
+          fileName: "C:/project3.1/welding/welding-works-studio-main/src/routes/index.tsx?tsr-split=component",
+          lineNumber: 153,
+          columnNumber: 18
+        }, this),
+        " untuk rumah hingga proyek"
+      ] }, void 0, true, {
+        fileName: "C:/project3.1/welding/welding-works-studio-main/src/routes/index.tsx?tsr-split=component",
+        lineNumber: 152,
+        columnNumber: 9
+      }, this),
+      /* @__PURE__ */ jsxDEV("p", { className: "mt-4 max-w-2xl text-base text-muted-foreground", children: "Dari pagar minimalis sampai konstruksi gudang — semua dikerjakan tim welder berpengalaman dengan material berkualitas." }, void 0, false, {
+        fileName: "C:/project3.1/welding/welding-works-studio-main/src/routes/index.tsx?tsr-split=component",
+        lineNumber: 156,
+        columnNumber: 9
+      }, this)
+    ] }, void 0, true, {
+      fileName: "C:/project3.1/welding/welding-works-studio-main/src/routes/index.tsx?tsr-split=component",
+      lineNumber: 150,
+      columnNumber: 7
+    }, this),
+    /* @__PURE__ */ jsxDEV("div", { className: "mt-12 grid gap-5 sm:grid-cols-2 lg:grid-cols-3", children: SERVICES.map((s, i) => /* @__PURE__ */ jsxDEV(Reveal, { delay: i * 0.04, children: /* @__PURE__ */ jsxDEV(ServiceCard, { service: s }, void 0, false, {
+      fileName: "C:/project3.1/welding/welding-works-studio-main/src/routes/index.tsx?tsr-split=component",
+      lineNumber: 163,
+      columnNumber: 13
+    }, this) }, s.slug, false, {
+      fileName: "C:/project3.1/welding/welding-works-studio-main/src/routes/index.tsx?tsr-split=component",
+      lineNumber: 162,
+      columnNumber: 33
+    }, this)) }, void 0, false, {
+      fileName: "C:/project3.1/welding/welding-works-studio-main/src/routes/index.tsx?tsr-split=component",
+      lineNumber: 161,
+      columnNumber: 7
+    }, this)
+  ] }, void 0, true, {
+    fileName: "C:/project3.1/welding/welding-works-studio-main/src/routes/index.tsx?tsr-split=component",
+    lineNumber: 149,
+    columnNumber: 10
+  }, this);
+}
+_c4 = ServicesSection;
+function PortfolioPreview() {
+  return /* @__PURE__ */ jsxDEV("section", { className: "bg-[color:var(--surface)]/40 py-20", children: /* @__PURE__ */ jsxDEV("div", { className: "mx-auto max-w-7xl px-4 sm:px-6 lg:px-8", children: [
+    /* @__PURE__ */ jsxDEV(Reveal, { children: /* @__PURE__ */ jsxDEV("div", { className: "flex flex-wrap items-end justify-between gap-4", children: [
+      /* @__PURE__ */ jsxDEV("div", { children: [
+        /* @__PURE__ */ jsxDEV(SectionEyebrow, { children: "Portfolio Proyek" }, void 0, false, {
+          fileName: "C:/project3.1/welding/welding-works-studio-main/src/routes/index.tsx?tsr-split=component",
+          lineNumber: 174,
+          columnNumber: 15
+        }, this),
+        /* @__PURE__ */ jsxDEV("h2", { className: "font-display text-3xl font-extrabold sm:text-4xl md:text-5xl", children: [
+          "Hasil pengerjaan ",
+          /* @__PURE__ */ jsxDEV("span", { className: "text-gradient-industrial", children: "nyata" }, void 0, false, {
+            fileName: "C:/project3.1/welding/welding-works-studio-main/src/routes/index.tsx?tsr-split=component",
+            lineNumber: 176,
+            columnNumber: 34
+          }, this)
+        ] }, void 0, true, {
+          fileName: "C:/project3.1/welding/welding-works-studio-main/src/routes/index.tsx?tsr-split=component",
+          lineNumber: 175,
+          columnNumber: 15
+        }, this)
+      ] }, void 0, true, {
+        fileName: "C:/project3.1/welding/welding-works-studio-main/src/routes/index.tsx?tsr-split=component",
+        lineNumber: 173,
+        columnNumber: 13
+      }, this),
+      /* @__PURE__ */ jsxDEV(Link, { to: "/portfolio", className: "inline-flex items-center gap-1.5 rounded-md border border-white/15 bg-white/5 px-4 py-2 text-sm font-semibold hover:border-primary/50", children: [
+        "Lihat semua ",
+        /* @__PURE__ */ jsxDEV(ArrowRight, { className: "h-4 w-4" }, void 0, false, {
+          fileName: "C:/project3.1/welding/welding-works-studio-main/src/routes/index.tsx?tsr-split=component",
+          lineNumber: 180,
+          columnNumber: 27
+        }, this)
+      ] }, void 0, true, {
+        fileName: "C:/project3.1/welding/welding-works-studio-main/src/routes/index.tsx?tsr-split=component",
+        lineNumber: 179,
+        columnNumber: 13
+      }, this)
+    ] }, void 0, true, {
+      fileName: "C:/project3.1/welding/welding-works-studio-main/src/routes/index.tsx?tsr-split=component",
+      lineNumber: 172,
+      columnNumber: 11
+    }, this) }, void 0, false, {
+      fileName: "C:/project3.1/welding/welding-works-studio-main/src/routes/index.tsx?tsr-split=component",
+      lineNumber: 171,
+      columnNumber: 9
+    }, this),
+    /* @__PURE__ */ jsxDEV("div", { className: "mt-10", children: /* @__PURE__ */ jsxDEV(PortfolioGallery, { limit: 6 }, void 0, false, {
+      fileName: "C:/project3.1/welding/welding-works-studio-main/src/routes/index.tsx?tsr-split=component",
+      lineNumber: 185,
+      columnNumber: 11
+    }, this) }, void 0, false, {
+      fileName: "C:/project3.1/welding/welding-works-studio-main/src/routes/index.tsx?tsr-split=component",
+      lineNumber: 184,
+      columnNumber: 9
+    }, this)
+  ] }, void 0, true, {
+    fileName: "C:/project3.1/welding/welding-works-studio-main/src/routes/index.tsx?tsr-split=component",
+    lineNumber: 170,
+    columnNumber: 7
+  }, this) }, void 0, false, {
+    fileName: "C:/project3.1/welding/welding-works-studio-main/src/routes/index.tsx?tsr-split=component",
+    lineNumber: 169,
+    columnNumber: 10
+  }, this);
+}
+_c5 = PortfolioPreview;
+function Advantages() {
+  return /* @__PURE__ */ jsxDEV("section", { className: "mx-auto max-w-7xl px-4 py-20 sm:px-6 lg:px-8", children: [
+    /* @__PURE__ */ jsxDEV(Reveal, { children: [
+      /* @__PURE__ */ jsxDEV(SectionEyebrow, { children: "Kenapa Pilih Kami" }, void 0, false, {
+        fileName: "C:/project3.1/welding/welding-works-studio-main/src/routes/index.tsx?tsr-split=component",
+        lineNumber: 193,
+        columnNumber: 9
+      }, this),
+      /* @__PURE__ */ jsxDEV("h2", { className: "font-display text-3xl font-extrabold sm:text-4xl md:text-5xl", children: [
+        "Profesionalisme yang ",
+        /* @__PURE__ */ jsxDEV("span", { className: "text-gradient-industrial", children: "terbukti" }, void 0, false, {
+          fileName: "C:/project3.1/welding/welding-works-studio-main/src/routes/index.tsx?tsr-split=component",
+          lineNumber: 195,
+          columnNumber: 32
+        }, this)
+      ] }, void 0, true, {
+        fileName: "C:/project3.1/welding/welding-works-studio-main/src/routes/index.tsx?tsr-split=component",
+        lineNumber: 194,
+        columnNumber: 9
+      }, this)
+    ] }, void 0, true, {
+      fileName: "C:/project3.1/welding/welding-works-studio-main/src/routes/index.tsx?tsr-split=component",
+      lineNumber: 192,
+      columnNumber: 7
+    }, this),
+    /* @__PURE__ */ jsxDEV("div", { className: "mt-12 grid gap-5 sm:grid-cols-2 lg:grid-cols-3", children: ADVANTAGES.map((a, i) => {
+      const Icon = ADV_ICONS[a.icon] ?? Sparkles;
+      return /* @__PURE__ */ jsxDEV(Reveal, { delay: i * 0.05, children: /* @__PURE__ */ jsxDEV("div", { className: "metallic-sheen group h-full rounded-2xl border border-white/10 bg-[color:var(--surface)] p-6 transition-colors hover:border-primary/40", children: [
+        /* @__PURE__ */ jsxDEV("div", { className: "mb-4 flex h-12 w-12 items-center justify-center rounded-xl bg-gradient-industrial text-primary-foreground shadow-glow", children: /* @__PURE__ */ jsxDEV(Icon, { className: "h-6 w-6", strokeWidth: 2.2 }, void 0, false, {
+          fileName: "C:/project3.1/welding/welding-works-studio-main/src/routes/index.tsx?tsr-split=component",
+          lineNumber: 204,
+          columnNumber: 19
+        }, this) }, void 0, false, {
+          fileName: "C:/project3.1/welding/welding-works-studio-main/src/routes/index.tsx?tsr-split=component",
+          lineNumber: 203,
+          columnNumber: 17
+        }, this),
+        /* @__PURE__ */ jsxDEV("h3", { className: "font-display text-lg font-bold", children: a.title }, void 0, false, {
+          fileName: "C:/project3.1/welding/welding-works-studio-main/src/routes/index.tsx?tsr-split=component",
+          lineNumber: 206,
+          columnNumber: 17
+        }, this),
+        /* @__PURE__ */ jsxDEV("p", { className: "mt-1.5 text-sm text-muted-foreground", children: a.desc }, void 0, false, {
+          fileName: "C:/project3.1/welding/welding-works-studio-main/src/routes/index.tsx?tsr-split=component",
+          lineNumber: 207,
+          columnNumber: 17
+        }, this)
+      ] }, void 0, true, {
+        fileName: "C:/project3.1/welding/welding-works-studio-main/src/routes/index.tsx?tsr-split=component",
+        lineNumber: 202,
+        columnNumber: 15
+      }, this) }, a.title, false, {
+        fileName: "C:/project3.1/welding/welding-works-studio-main/src/routes/index.tsx?tsr-split=component",
+        lineNumber: 201,
+        columnNumber: 16
+      }, this);
+    }) }, void 0, false, {
+      fileName: "C:/project3.1/welding/welding-works-studio-main/src/routes/index.tsx?tsr-split=component",
+      lineNumber: 198,
+      columnNumber: 7
+    }, this)
+  ] }, void 0, true, {
+    fileName: "C:/project3.1/welding/welding-works-studio-main/src/routes/index.tsx?tsr-split=component",
+    lineNumber: 191,
+    columnNumber: 10
+  }, this);
+}
+_c6 = Advantages;
+function Area() {
+  return /* @__PURE__ */ jsxDEV("section", { className: "mx-auto max-w-7xl px-4 py-20 sm:px-6 lg:px-8", children: [
+    /* @__PURE__ */ jsxDEV(Reveal, { children: [
+      /* @__PURE__ */ jsxDEV(SectionEyebrow, { children: "Area Layanan" }, void 0, false, {
+        fileName: "C:/project3.1/welding/welding-works-studio-main/src/routes/index.tsx?tsr-split=component",
+        lineNumber: 217,
+        columnNumber: 9
+      }, this),
+      /* @__PURE__ */ jsxDEV("h2", { className: "max-w-3xl font-display text-3xl font-extrabold sm:text-4xl md:text-5xl", children: [
+        "Melayani ",
+        /* @__PURE__ */ jsxDEV("span", { className: "text-gradient-industrial", children: "Karawang & sekitarnya" }, void 0, false, {
+          fileName: "C:/project3.1/welding/welding-works-studio-main/src/routes/index.tsx?tsr-split=component",
+          lineNumber: 219,
+          columnNumber: 20
+        }, this)
+      ] }, void 0, true, {
+        fileName: "C:/project3.1/welding/welding-works-studio-main/src/routes/index.tsx?tsr-split=component",
+        lineNumber: 218,
+        columnNumber: 9
+      }, this)
+    ] }, void 0, true, {
+      fileName: "C:/project3.1/welding/welding-works-studio-main/src/routes/index.tsx?tsr-split=component",
+      lineNumber: 216,
+      columnNumber: 7
+    }, this),
+    /* @__PURE__ */ jsxDEV("div", { className: "mt-10", children: /* @__PURE__ */ jsxDEV(AreaCoverageSection, {}, void 0, false, {
+      fileName: "C:/project3.1/welding/welding-works-studio-main/src/routes/index.tsx?tsr-split=component",
+      lineNumber: 223,
+      columnNumber: 9
+    }, this) }, void 0, false, {
+      fileName: "C:/project3.1/welding/welding-works-studio-main/src/routes/index.tsx?tsr-split=component",
+      lineNumber: 222,
+      columnNumber: 7
+    }, this)
+  ] }, void 0, true, {
+    fileName: "C:/project3.1/welding/welding-works-studio-main/src/routes/index.tsx?tsr-split=component",
+    lineNumber: 215,
+    columnNumber: 10
+  }, this);
+}
+_c7 = Area;
+function Testimoni() {
+  return /* @__PURE__ */ jsxDEV("section", { className: "bg-[color:var(--surface)]/40 py-20", children: /* @__PURE__ */ jsxDEV("div", { className: "mx-auto max-w-7xl px-4 sm:px-6 lg:px-8", children: [
+    /* @__PURE__ */ jsxDEV(Reveal, { children: [
+      /* @__PURE__ */ jsxDEV(SectionEyebrow, { children: "Testimoni Pelanggan" }, void 0, false, {
+        fileName: "C:/project3.1/welding/welding-works-studio-main/src/routes/index.tsx?tsr-split=component",
+        lineNumber: 231,
+        columnNumber: 11
+      }, this),
+      /* @__PURE__ */ jsxDEV("h2", { className: "font-display text-3xl font-extrabold sm:text-4xl md:text-5xl", children: [
+        "Suara ",
+        /* @__PURE__ */ jsxDEV("span", { className: "text-gradient-industrial", children: "pelanggan" }, void 0, false, {
+          fileName: "C:/project3.1/welding/welding-works-studio-main/src/routes/index.tsx?tsr-split=component",
+          lineNumber: 233,
+          columnNumber: 19
+        }, this),
+        " kami"
+      ] }, void 0, true, {
+        fileName: "C:/project3.1/welding/welding-works-studio-main/src/routes/index.tsx?tsr-split=component",
+        lineNumber: 232,
+        columnNumber: 11
+      }, this)
+    ] }, void 0, true, {
+      fileName: "C:/project3.1/welding/welding-works-studio-main/src/routes/index.tsx?tsr-split=component",
+      lineNumber: 230,
+      columnNumber: 9
+    }, this),
+    /* @__PURE__ */ jsxDEV("div", { className: "mt-10", children: /* @__PURE__ */ jsxDEV(TestimonialSlider, {}, void 0, false, {
+      fileName: "C:/project3.1/welding/welding-works-studio-main/src/routes/index.tsx?tsr-split=component",
+      lineNumber: 237,
+      columnNumber: 11
+    }, this) }, void 0, false, {
+      fileName: "C:/project3.1/welding/welding-works-studio-main/src/routes/index.tsx?tsr-split=component",
+      lineNumber: 236,
+      columnNumber: 9
+    }, this)
+  ] }, void 0, true, {
+    fileName: "C:/project3.1/welding/welding-works-studio-main/src/routes/index.tsx?tsr-split=component",
+    lineNumber: 229,
+    columnNumber: 7
+  }, this) }, void 0, false, {
+    fileName: "C:/project3.1/welding/welding-works-studio-main/src/routes/index.tsx?tsr-split=component",
+    lineNumber: 228,
+    columnNumber: 10
+  }, this);
+}
+_c8 = Testimoni;
+function Faq() {
+  return /* @__PURE__ */ jsxDEV("section", { className: "mx-auto max-w-3xl px-4 py-20 sm:px-6 lg:px-8", children: [
+    /* @__PURE__ */ jsxDEV(Reveal, { children: [
+      /* @__PURE__ */ jsxDEV(SectionEyebrow, { children: "Pertanyaan Umum" }, void 0, false, {
+        fileName: "C:/project3.1/welding/welding-works-studio-main/src/routes/index.tsx?tsr-split=component",
+        lineNumber: 245,
+        columnNumber: 9
+      }, this),
+      /* @__PURE__ */ jsxDEV("h2", { className: "font-display text-3xl font-extrabold sm:text-4xl md:text-5xl", children: [
+        "Yang sering ",
+        /* @__PURE__ */ jsxDEV("span", { className: "text-gradient-industrial", children: "ditanyakan" }, void 0, false, {
+          fileName: "C:/project3.1/welding/welding-works-studio-main/src/routes/index.tsx?tsr-split=component",
+          lineNumber: 247,
+          columnNumber: 23
+        }, this)
+      ] }, void 0, true, {
+        fileName: "C:/project3.1/welding/welding-works-studio-main/src/routes/index.tsx?tsr-split=component",
+        lineNumber: 246,
+        columnNumber: 9
+      }, this)
+    ] }, void 0, true, {
+      fileName: "C:/project3.1/welding/welding-works-studio-main/src/routes/index.tsx?tsr-split=component",
+      lineNumber: 244,
+      columnNumber: 7
+    }, this),
+    /* @__PURE__ */ jsxDEV("div", { className: "mt-10", children: /* @__PURE__ */ jsxDEV(FAQAccordion, {}, void 0, false, {
+      fileName: "C:/project3.1/welding/welding-works-studio-main/src/routes/index.tsx?tsr-split=component",
+      lineNumber: 251,
+      columnNumber: 9
+    }, this) }, void 0, false, {
+      fileName: "C:/project3.1/welding/welding-works-studio-main/src/routes/index.tsx?tsr-split=component",
+      lineNumber: 250,
+      columnNumber: 7
+    }, this)
+  ] }, void 0, true, {
+    fileName: "C:/project3.1/welding/welding-works-studio-main/src/routes/index.tsx?tsr-split=component",
+    lineNumber: 243,
+    columnNumber: 10
+  }, this);
+}
+_c9 = Faq;
+function FinalCta() {
+  return /* @__PURE__ */ jsxDEV("section", { className: "mx-auto max-w-7xl px-4 pb-20 sm:px-6 lg:px-8", children: /* @__PURE__ */ jsxDEV(CTASection, {}, void 0, false, {
+    fileName: "C:/project3.1/welding/welding-works-studio-main/src/routes/index.tsx?tsr-split=component",
+    lineNumber: 257,
+    columnNumber: 7
+  }, this) }, void 0, false, {
+    fileName: "C:/project3.1/welding/welding-works-studio-main/src/routes/index.tsx?tsr-split=component",
+    lineNumber: 256,
+    columnNumber: 10
+  }, this);
+}
+_c0 = FinalCta;
+export { HomePage as component };
+var _c, _c2, _c3, _c4, _c5, _c6, _c7, _c8, _c9, _c0;
+$RefreshReg$(_c, "HomePage");
+$RefreshReg$(_c2, "Hero");
+$RefreshReg$(_c3, "TrustStrip");
+$RefreshReg$(_c4, "ServicesSection");
+$RefreshReg$(_c5, "PortfolioPreview");
+$RefreshReg$(_c6, "Advantages");
+$RefreshReg$(_c7, "Area");
+$RefreshReg$(_c8, "Testimoni");
+$RefreshReg$(_c9, "Faq");
+$RefreshReg$(_c0, "FinalCta");
+import * as RefreshRuntime from "/@react-refresh";
+const inWebWorker = typeof WorkerGlobalScope !== "undefined" && self instanceof WorkerGlobalScope;
+if (import.meta.hot && !inWebWorker) {
+  if (!window.$RefreshReg$) {
+    throw new Error(
+      "@vitejs/plugin-react can't detect preamble. Something is wrong."
+    );
+  }
+  RefreshRuntime.__hmr_import(import.meta.url).then((currentExports) => {
+    RefreshRuntime.registerExportsForReactRefresh("C:/project3.1/welding/welding-works-studio-main/src/routes/index.tsx?tsr-split=component", currentExports);
+    import.meta.hot.accept((nextExports) => {
+      if (!nextExports) return;
+      const invalidateMessage = RefreshRuntime.validateRefreshBoundaryAndEnqueueUpdate("C:/project3.1/welding/welding-works-studio-main/src/routes/index.tsx?tsr-split=component", currentExports, nextExports);
+      if (invalidateMessage) import.meta.hot.invalidate(invalidateMessage);
+    });
+  });
+}
+function $RefreshReg$(type, id) {
+  return RefreshRuntime.register(type, "C:/project3.1/welding/welding-works-studio-main/src/routes/index.tsx?tsr-split=component " + id);
+}
+function $RefreshSig$() {
+  return RefreshRuntime.createSignatureFunctionForTransform();
+}
+
+//# sourceMappingURL=data:application/json;base64,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USxLQUFBO0FBQUEsYUFBQUksS0FBQTtBQUFBLGFBQUFFLEtBQUE7QUFBQSxhQUFBTSxLQUFBO0FBQUEsYUFBQUUsS0FBQTtBQUFBLGFBQUFFLEtBQUE7QUFBQSxhQUFBRSxLQUFBO0FBQUEsYUFBQUUsS0FBQSIsIm5hbWVzIjpbIkxpbmsiLCJtb3Rpb24iLCJNZXNzYWdlQ2lyY2xlIiwiUGhvbmUiLCJBcnJvd1JpZ2h0IiwiU3BhcmtsZXMiLCJTaGllbGRDaGVjayIsIk1hcFBpbiIsIlJlY2VpcHRUZXh0IiwiSGFyZEhhdCIsIk1DMiIsIkhhbW1lciIsIlVzZXJzIiwiQ2FsZW5kYXJDaGVjayIsIk1hcFBpbm5lZCIsImhlcm9JbWciLCJTaXRlTGF5b3V0IiwiR2xvd0J1dHRvbiIsIlNwYXJrUGFydGljbGVzIiwiU2VjdGlvbkV5ZWJyb3ciLCJSZXZlYWwiLCJTZXJ2aWNlQ2FyZCIsIlBvcnRmb2xpb0dhbGxlcnkiLCJBbmltYXRlZENvdW50ZXIiLCJUZXN0aW1vbmlhbFNsaWRlciIsIkZBUUFjY29yZGlvbiIsIkFyZWFDb3ZlcmFnZVNlY3Rpb24iLCJDVEFTZWN0aW9uIiwiU0VSVklDRVMiLCJBRFZBTlRBR0VTIiwiU0lURSIsIndhTGluayIsIkFEVl9JQ09OUyIsIkhvbWVQYWdlIiwiX2MiLCJIZXJvIiwid29yZHMiLCJzcGxpdCIsIm1hcCIsInciLCJpIiwib3BhY2l0eSIsInkiLCJkZWxheSIsImR1cmF0aW9uIiwiZWFzZSIsIm5hbWUiLCJ3aGF0c2FwcFJhdyIsIl9jMiIsIlRydXN0U3RyaXAiLCJpdGVtcyIsImljb24iLCJ2YWx1ZSIsInN1ZmZpeCIsImxhYmVsIiwiaXQiLCJfYzMiLCJTZXJ2aWNlc1NlY3Rpb24iLCJzIiwic2x1ZyIsIl9jNCIsIlBvcnRmb2xpb1ByZXZpZXciLCJfYzUiLCJBZHZhbnRhZ2VzIiwiYSIsIkljb24iLCJ0aXRsZSIsImRlc2MiLCJfYzYiLCJBcmVhIiwiX2M3IiwiVGVzdGltb25pIiwiX2M4IiwiRmFxIiwiX2M5IiwiRmluYWxDdGEiLCJfYzAiLCJjb21wb25lbnQiXSwiaWdub3JlTGlzdCI6W10sInNvdXJjZXMiOlsiaW5kZXgudHN4P3Rzci1zcGxpdD1jb21wb25lbnQiXSwic291cmNlc0NvbnRlbnQiOlsiaW1wb3J0IHsgY3JlYXRlRmlsZVJvdXRlLCBMaW5rIH0gZnJvbSBcIkB0YW5zdGFjay9yZWFjdC1yb3V0ZXJcIjtcbmltcG9ydCB7IG1vdGlvbiB9IGZyb20gXCJmcmFtZXItbW90aW9uXCI7XG5pbXBvcnQge1xuICBNZXNzYWdlQ2lyY2xlLFxuICBQaG9uZSxcbiAgQXJyb3dSaWdodCxcbiAgU3BhcmtsZXMsXG4gIFNoaWVsZENoZWNrLFxuICBNYXBQaW4sXG4gIFJlY2VpcHRUZXh0LFxuICBIYXJkSGF0LFxuICBNZXNzYWdlQ2lyY2xlIGFzIE1DMixcbiAgSGFtbWVyLFxuICBVc2VycyxcbiAgQ2FsZW5kYXJDaGVjayxcbiAgTWFwUGlubmVkLFxufSBmcm9tIFwibHVjaWRlLXJlYWN0XCI7XG5pbXBvcnQgaGVyb0ltZyBmcm9tIFwiQC9hc3NldHMvaGVyby13ZWxkZXIuanBnXCI7XG5pbXBvcnQgeyBTaXRlTGF5b3V0IH0gZnJvbSBcIkAvY29tcG9uZW50cy9TaXRlTGF5b3V0XCI7XG5pbXBvcnQgeyBHbG93QnV0dG9uIH0gZnJvbSBcIkAvY29tcG9uZW50cy9HbG93QnV0dG9uXCI7XG5pbXBvcnQgeyBTcGFya1BhcnRpY2xlcyB9IGZyb20gXCJAL2NvbXBvbmVudHMvU3BhcmtQYXJ0aWNsZXNcIjtcbmltcG9ydCB7IFNlY3Rpb25FeWVicm93IH0gZnJvbSBcIkAvY29tcG9uZW50cy9TZWN0aW9uRXllYnJvd1wiO1xuaW1wb3J0IHsgUmV2ZWFsIH0gZnJvbSBcIkAvY29tcG9uZW50cy9SZXZlYWxcIjtcbmltcG9ydCB7IFNlcnZpY2VDYXJkIH0gZnJvbSBcIkAvY29tcG9uZW50cy9TZXJ2aWNlQ2FyZFwiO1xuaW1wb3J0IHsgUG9ydGZvbGlvR2FsbGVyeSB9IGZyb20gXCJAL2NvbXBvbmVudHMvUG9ydGZvbGlvR2FsbGVyeVwiO1xuaW1wb3J0IHsgQW5pbWF0ZWRDb3VudGVyIH0gZnJvbSBcIkAvY29tcG9uZW50cy9BbmltYXRlZENvdW50ZXJcIjtcbmltcG9ydCB7IFRlc3RpbW9uaWFsU2xpZGVyIH0gZnJvbSBcIkAvY29tcG9uZW50cy9UZXN0aW1vbmlhbFNsaWRlclwiO1xuaW1wb3J0IHsgRkFRQWNjb3JkaW9uIH0gZnJvbSBcIkAvY29tcG9uZW50cy9GQVFBY2NvcmRpb25cIjtcbmltcG9ydCB7IEFyZWFDb3ZlcmFnZVNlY3Rpb24gfSBmcm9tIFwiQC9jb21wb25lbnRzL0FyZWFDb3ZlcmFnZVNlY3Rpb25cIjtcbmltcG9ydCB7IENUQVNlY3Rpb24gfSBmcm9tIFwiQC9jb21wb25lbnRzL0NUQVNlY3Rpb25cIjtcbmltcG9ydCB7IFNFUlZJQ0VTLCBBRFZBTlRBR0VTIH0gZnJvbSBcIkAvbGliL2RhdGFcIjtcbmltcG9ydCB7IFNJVEUsIHdhTGluayB9IGZyb20gXCJAL2xpYi9zaXRlXCI7XG5cbmNvbnN0IFRJVExFID0gXCJKYXNhIExhcyBLYXJhd2FuZyBQcm9mZXNpb25hbCDigJQgQmFyYSBCYWphIExhc1wiO1xuY29uc3QgREVTQyA9XG4gIFwiQmFyYSBCYWphIExhczogamFzYSBsYXMgcGFuZ2dpbGFuICYga29uc3RydWtzaSBiZXNpIEthcmF3YW5nLiBQYWdhciwga2Fub3BpLCByYWlsaW5nLCB0cmFsaXMsIGJhbGtvbiwgYmFqYSByaW5nYW4sIHBpbnR1IGJlc2kuIFN1cnZleSBncmF0aXMsIGhhc2lsIHJhcGkgJiBnYXJhbnNpLlwiO1xuXG5leHBvcnQgY29uc3QgUm91dGUgPSBjcmVhdGVGaWxlUm91dGUoXCIvXCIpKHtcbiAgaGVhZDogKCkgPT4gKHtcbiAgICBtZXRhOiBbXG4gICAgICB7IHRpdGxlOiBUSVRMRSB9LFxuICAgICAgeyBuYW1lOiBcImRlc2NyaXB0aW9uXCIsIGNvbnRlbnQ6IERFU0MgfSxcbiAgICAgIHsgcHJvcGVydHk6IFwib2c6dGl0bGVcIiwgY29udGVudDogVElUTEUgfSxcbiAgICAgIHsgcHJvcGVydHk6IFwib2c6ZGVzY3JpcHRpb25cIiwgY29udGVudDogREVTQyB9LFxuICAgICAgeyBwcm9wZXJ0eTogXCJvZzp1cmxcIiwgY29udGVudDogXCIvXCIgfSxcbiAgICBdLFxuICAgIGxpbmtzOiBbeyByZWw6IFwiY2Fub25pY2FsXCIsIGhyZWY6IFwiL1wiIH1dLFxuICB9KSxcbiAgY29tcG9uZW50OiBIb21lUGFnZSxcbn0pO1xuXG5jb25zdCBBRFZfSUNPTlMgPSB7XG4gIFNwYXJrbGVzLFxuICBTaGllbGRDaGVjayxcbiAgTWFwUGluLFxuICBSZWNlaXB0VGV4dCxcbiAgSGFyZEhhdCxcbiAgTWVzc2FnZUNpcmNsZTogTUMyLFxufSBhcyBjb25zdDtcblxuZnVuY3Rpb24gSG9tZVBhZ2UoKSB7XG4gIHJldHVybiAoXG4gICAgPFNpdGVMYXlvdXQ+XG4gICAgICA8SGVybyAvPlxuICAgICAgPFRydXN0U3RyaXAgLz5cbiAgICAgIDxTZXJ2aWNlc1NlY3Rpb24gLz5cbiAgICAgIDxQb3J0Zm9saW9QcmV2aWV3IC8+XG4gICAgICA8QWR2YW50YWdlcyAvPlxuICAgICAgPEFyZWEgLz5cbiAgICAgIDxUZXN0aW1vbmkgLz5cbiAgICAgIDxGYXEgLz5cbiAgICAgIDxGaW5hbEN0YSAvPlxuICAgIDwvU2l0ZUxheW91dD5cbiAgKTtcbn1cblxuZnVuY3Rpb24gSGVybygpIHtcbiAgY29uc3Qgd29yZHMgPSBcIkphc2EgTGFzIFByb2Zlc2lvbmFsIEthcmF3YW5nICYgU2VraXRhcm55YVwiLnNwbGl0KFwiIFwiKTtcbiAgcmV0dXJuIChcbiAgICA8c2VjdGlvbiBjbGFzc05hbWU9XCJyZWxhdGl2ZSAtbXQtMTYgZmxleCBtaW4taC1bMTAwc3ZoXSBpdGVtcy1jZW50ZXIgb3ZlcmZsb3ctaGlkZGVuIGJnLWdyYWRpZW50LWhlcm8gcHQtMjRcIj5cbiAgICAgIDxpbWdcbiAgICAgICAgc3JjPXtoZXJvSW1nfVxuICAgICAgICBhbHQ9XCJUdWthbmcgbGFzIHByb2Zlc2lvbmFsIEJhcmEgQmFqYSBMYXMgc2VkYW5nIG1lbmdlbGFzIGJlc2kgZGkgd29ya3Nob3AgS2FyYXdhbmdcIlxuICAgICAgICB3aWR0aD17MTkyMH1cbiAgICAgICAgaGVpZ2h0PXsxMDgwfVxuICAgICAgICBmZXRjaFByaW9yaXR5PVwiaGlnaFwiXG4gICAgICAgIGNsYXNzTmFtZT1cImFic29sdXRlIGluc2V0LTAgaC1mdWxsIHctZnVsbCBvYmplY3QtY292ZXIgb3BhY2l0eS00MFwiXG4gICAgICAvPlxuICAgICAgPGRpdiBjbGFzc05hbWU9XCJhYnNvbHV0ZSBpbnNldC0wIGJnLWdyYWRpZW50LXRvLXQgZnJvbS1iYWNrZ3JvdW5kIHZpYS1iYWNrZ3JvdW5kLzcwIHRvLWJhY2tncm91bmQvNDBcIiAvPlxuICAgICAgPGRpdiBjbGFzc05hbWU9XCJhYnNvbHV0ZSBpbnNldC0wXCI+XG4gICAgICAgIDxTcGFya1BhcnRpY2xlcyAvPlxuICAgICAgPC9kaXY+XG4gICAgICA8ZGl2IGNsYXNzTmFtZT1cImFic29sdXRlIC1sZWZ0LTMyIHRvcC0xLzMgaC04MCB3LTgwIHJvdW5kZWQtZnVsbCBiZy1wcmltYXJ5LzQwIGJsdXItM3hsXCIgLz5cblxuICAgICAgPGRpdiBjbGFzc05hbWU9XCJyZWxhdGl2ZSBteC1hdXRvIHctZnVsbCBtYXgtdy03eGwgcHgtNCBweS0xNiBzbTpweC02IGxnOnB4LThcIj5cbiAgICAgICAgPFJldmVhbD5cbiAgICAgICAgICA8U2VjdGlvbkV5ZWJyb3c+V29ya3Nob3AgS2FyYXdhbmcgwrcgU2VqYWsgMjAxOTwvU2VjdGlvbkV5ZWJyb3c+XG4gICAgICAgIDwvUmV2ZWFsPlxuXG4gICAgICAgIDxoMSBjbGFzc05hbWU9XCJmb250LWRpc3BsYXkgdGV4dC00eGwgZm9udC1leHRyYWJvbGQgbGVhZGluZy1bMS4wNV0gc206dGV4dC01eGwgbWQ6dGV4dC02eGwgbGc6dGV4dC03eGxcIj5cbiAgICAgICAgICB7d29yZHMubWFwKCh3LCBpKSA9PiAoXG4gICAgICAgICAgICA8bW90aW9uLnNwYW5cbiAgICAgICAgICAgICAga2V5PXtpfVxuICAgICAgICAgICAgICBjbGFzc05hbWU9XCJtci0zIGlubGluZS1ibG9ja1wiXG4gICAgICAgICAgICAgIGluaXRpYWw9e3sgb3BhY2l0eTogMCwgeTogMjQgfX1cbiAgICAgICAgICAgICAgYW5pbWF0ZT17eyBvcGFjaXR5OiAxLCB5OiAwIH19XG4gICAgICAgICAgICAgIHRyYW5zaXRpb249e3sgZGVsYXk6IDAuMSArIGkgKiAwLjA3LCBkdXJhdGlvbjogMC42LCBlYXNlOiBcImVhc2VPdXRcIiB9fVxuICAgICAgICAgICAgPlxuICAgICAgICAgICAgICB7dyA9PT0gXCJLYXJhd2FuZ1wiIHx8IHcgPT09IFwiUHJvZmVzaW9uYWxcIiA/IChcbiAgICAgICAgICAgICAgICA8c3BhbiBjbGFzc05hbWU9XCJ0ZXh0LWdyYWRpZW50LWluZHVzdHJpYWxcIj57d308L3NwYW4+XG4gICAgICAgICAgICAgICkgOiAoXG4gICAgICAgICAgICAgICAgd1xuICAgICAgICAgICAgICApfVxuICAgICAgICAgICAgPC9tb3Rpb24uc3Bhbj5cbiAgICAgICAgICApKX1cbiAgICAgICAgPC9oMT5cblxuICAgICAgICA8bW90aW9uLnBcbiAgICAgICAgICBjbGFzc05hbWU9XCJtdC02IG1heC13LTJ4bCB0ZXh0LWJhc2UgbGVhZGluZy1yZWxheGVkIHRleHQtbXV0ZWQtZm9yZWdyb3VuZCBzbTp0ZXh0LWxnXCJcbiAgICAgICAgICBpbml0aWFsPXt7IG9wYWNpdHk6IDAsIHk6IDE2IH19XG4gICAgICAgICAgYW5pbWF0ZT17eyBvcGFjaXR5OiAxLCB5OiAwIH19XG4gICAgICAgICAgdHJhbnNpdGlvbj17eyBkZWxheTogMC42LCBkdXJhdGlvbjogMC42IH19XG4gICAgICAgID5cbiAgICAgICAgICBNZWxheWFuaSBwZW1idWF0YW4gcGFnYXIsIGthbm9waSwgcmFpbGluZywga29uc3RydWtzaSBiZXNpLCBkYW4gYmVyYmFnYWkga2VidXR1aGFuIGxhc1xuICAgICAgICAgIGRlbmdhbiBoYXNpbCByYXBpLCBrdWF0LCBkYW4gdGVycGVyY2F5YS5cbiAgICAgICAgPC9tb3Rpb24ucD5cblxuICAgICAgICA8bW90aW9uLmRpdlxuICAgICAgICAgIGNsYXNzTmFtZT1cIm10LTkgZmxleCBmbGV4LWNvbCBnYXAtMyBzbTpmbGV4LXJvdyBzbTpmbGV4LXdyYXBcIlxuICAgICAgICAgIGluaXRpYWw9e3sgb3BhY2l0eTogMCwgeTogMTYgfX1cbiAgICAgICAgICBhbmltYXRlPXt7IG9wYWNpdHk6IDEsIHk6IDAgfX1cbiAgICAgICAgICB0cmFuc2l0aW9uPXt7IGRlbGF5OiAwLjgsIGR1cmF0aW9uOiAwLjYgfX1cbiAgICAgICAgPlxuICAgICAgICAgIDxHbG93QnV0dG9uXG4gICAgICAgICAgICBhcz1cImFcIlxuICAgICAgICAgICAgaHJlZj17d2FMaW5rKGBIYWxvICR7U0lURS5uYW1lfSwgc2F5YSBpbmdpbiBrb25zdWx0YXNpIGdyYXRpcy5gKX1cbiAgICAgICAgICAgIHRhcmdldD1cIl9ibGFua1wiXG4gICAgICAgICAgICByZWw9XCJub29wZW5lciBub3JlZmVycmVyXCJcbiAgICAgICAgICAgIHNpemU9XCJsZ1wiXG4gICAgICAgICAgPlxuICAgICAgICAgICAgPE1lc3NhZ2VDaXJjbGUgY2xhc3NOYW1lPVwiaC01IHctNVwiIC8+IENoYXQgV2hhdHNBcHBcbiAgICAgICAgICA8L0dsb3dCdXR0b24+XG4gICAgICAgICAgPEdsb3dCdXR0b24gYXM9XCJhXCIgaHJlZj17YHRlbDoke1NJVEUud2hhdHNhcHBSYXd9YH0gdmFyaWFudD1cIm91dGxpbmVcIiBzaXplPVwibGdcIj5cbiAgICAgICAgICAgIDxQaG9uZSBjbGFzc05hbWU9XCJoLTUgdy01XCIgLz4gS29uc3VsdGFzaSBHcmF0aXNcbiAgICAgICAgICA8L0dsb3dCdXR0b24+XG4gICAgICAgICAgPExpbmtcbiAgICAgICAgICAgIHRvPVwiL3BvcnRmb2xpb1wiXG4gICAgICAgICAgICBjbGFzc05hbWU9XCJpbmxpbmUtZmxleCBoLTE0IGl0ZW1zLWNlbnRlciBqdXN0aWZ5LWNlbnRlciBnYXAtMS41IHB4LTIgdGV4dC1zbSBmb250LXNlbWlib2xkIHRleHQtZm9yZWdyb3VuZC84MCBob3Zlcjp0ZXh0LXByaW1hcnlcIlxuICAgICAgICAgID5cbiAgICAgICAgICAgIExpaGF0IFBvcnRmb2xpbyA8QXJyb3dSaWdodCBjbGFzc05hbWU9XCJoLTQgdy00XCIgLz5cbiAgICAgICAgICA8L0xpbms+XG4gICAgICAgIDwvbW90aW9uLmRpdj5cbiAgICAgIDwvZGl2PlxuICAgIDwvc2VjdGlvbj5cbiAgKTtcbn1cblxuZnVuY3Rpb24gVHJ1c3RTdHJpcCgpIHtcbiAgY29uc3QgaXRlbXMgPSBbXG4gICAgeyBpY29uOiBIYW1tZXIsIHZhbHVlOiA1MDAsIHN1ZmZpeDogXCIrXCIsIGxhYmVsOiBcIlByb3llayBTZWxlc2FpXCIgfSxcbiAgICB7IGljb246IENhbGVuZGFyQ2hlY2ssIHZhbHVlOiA2LCBzdWZmaXg6IFwiK1wiLCBsYWJlbDogXCJUYWh1biBQZW5nYWxhbWFuXCIgfSxcbiAgICB7IGljb246IE1hcFBpbm5lZCwgdmFsdWU6IDUsIHN1ZmZpeDogXCJcIiwgbGFiZWw6IFwiS290YSBMYXlhbmFuXCIgfSxcbiAgICB7IGljb246IFVzZXJzLCB2YWx1ZTogMTAwLCBzdWZmaXg6IFwiJVwiLCBsYWJlbDogXCJQZWxhbmdnYW4gUHVhc1wiIH0sXG4gIF07XG4gIHJldHVybiAoXG4gICAgPHNlY3Rpb24gY2xhc3NOYW1lPVwiYm9yZGVyLXkgYm9yZGVyLXdoaXRlLzEwIGJnLVtjb2xvcjp2YXIoLS1zdXJmYWNlKV0vNTBcIj5cbiAgICAgIDxkaXYgY2xhc3NOYW1lPVwibXgtYXV0byBncmlkIG1heC13LTd4bCBncmlkLWNvbHMtMiBnYXAtNiBweC00IHB5LTEyIHNtOnB4LTYgbGc6Z3JpZC1jb2xzLTQgbGc6cHgtOFwiPlxuICAgICAgICB7aXRlbXMubWFwKChpdCwgaSkgPT4gKFxuICAgICAgICAgIDxSZXZlYWwga2V5PXtpfSBkZWxheT17aSAqIDAuMDV9PlxuICAgICAgICAgICAgPGRpdiBjbGFzc05hbWU9XCJmbGV4IGZsZXgtY29sIGl0ZW1zLWNlbnRlciB0ZXh0LWNlbnRlciBzbTpmbGV4LXJvdyBzbTppdGVtcy1jZW50ZXIgc206Z2FwLTQgc206dGV4dC1sZWZ0XCI+XG4gICAgICAgICAgICAgIDxzcGFuIGNsYXNzTmFtZT1cIm1iLTIgZmxleCBoLTEyIHctMTIgaXRlbXMtY2VudGVyIGp1c3RpZnktY2VudGVyIHJvdW5kZWQteGwgYm9yZGVyIGJvcmRlci1wcmltYXJ5LzMwIGJnLXByaW1hcnkvMTAgdGV4dC1wcmltYXJ5IHNtOm1iLTBcIj5cbiAgICAgICAgICAgICAgICA8aXQuaWNvbiBjbGFzc05hbWU9XCJoLTYgdy02XCIgLz5cbiAgICAgICAgICAgICAgPC9zcGFuPlxuICAgICAgICAgICAgICA8ZGl2PlxuICAgICAgICAgICAgICAgIDxBbmltYXRlZENvdW50ZXIgdG89e2l0LnZhbHVlfSBzdWZmaXg9e2l0LnN1ZmZpeH0gLz5cbiAgICAgICAgICAgICAgICA8cCBjbGFzc05hbWU9XCJtdC0xIHRleHQteHMgdXBwZXJjYXNlIHRyYWNraW5nLXdpZGVyIHRleHQtbXV0ZWQtZm9yZWdyb3VuZCBzbTp0ZXh0LXNtXCI+XG4gICAgICAgICAgICAgICAgICB7aXQubGFiZWx9XG4gICAgICAgICAgICAgICAgPC9wPlxuICAgICAgICAgICAgICA8L2Rpdj5cbiAgICAgICAgICAgIDwvZGl2PlxuICAgICAgICAgIDwvUmV2ZWFsPlxuICAgICAgICApKX1cbiAgICAgIDwvZGl2PlxuICAgIDwvc2VjdGlvbj5cbiAgKTtcbn1cblxuZnVuY3Rpb24gU2VydmljZXNTZWN0aW9uKCkge1xuICByZXR1cm4gKFxuICAgIDxzZWN0aW9uIGNsYXNzTmFtZT1cIm14LWF1dG8gbWF4LXctN3hsIHB4LTQgcHktMjAgc206cHgtNiBsZzpweC04XCI+XG4gICAgICA8UmV2ZWFsPlxuICAgICAgICA8U2VjdGlvbkV5ZWJyb3c+TGF5YW5hbiBLYW1pPC9TZWN0aW9uRXllYnJvdz5cbiAgICAgICAgPGgyIGNsYXNzTmFtZT1cIm1heC13LTN4bCBmb250LWRpc3BsYXkgdGV4dC0zeGwgZm9udC1leHRyYWJvbGQgbGVhZGluZy10aWdodCBzbTp0ZXh0LTR4bCBtZDp0ZXh0LTV4bFwiPlxuICAgICAgICAgIFNvbHVzaSA8c3BhbiBjbGFzc05hbWU9XCJ0ZXh0LWdyYWRpZW50LWluZHVzdHJpYWxcIj5sYXMgJiBrb25zdHJ1a3NpIGJlc2k8L3NwYW4+IHVudHVrIHJ1bWFoXG4gICAgICAgICAgaGluZ2dhIHByb3lla1xuICAgICAgICA8L2gyPlxuICAgICAgICA8cCBjbGFzc05hbWU9XCJtdC00IG1heC13LTJ4bCB0ZXh0LWJhc2UgdGV4dC1tdXRlZC1mb3JlZ3JvdW5kXCI+XG4gICAgICAgICAgRGFyaSBwYWdhciBtaW5pbWFsaXMgc2FtcGFpIGtvbnN0cnVrc2kgZ3VkYW5nIOKAlCBzZW11YSBkaWtlcmpha2FuIHRpbSB3ZWxkZXIgYmVycGVuZ2FsYW1hblxuICAgICAgICAgIGRlbmdhbiBtYXRlcmlhbCBiZXJrdWFsaXRhcy5cbiAgICAgICAgPC9wPlxuICAgICAgPC9SZXZlYWw+XG4gICAgICA8ZGl2IGNsYXNzTmFtZT1cIm10LTEyIGdyaWQgZ2FwLTUgc206Z3JpZC1jb2xzLTIgbGc6Z3JpZC1jb2xzLTNcIj5cbiAgICAgICAge1NFUlZJQ0VTLm1hcCgocywgaSkgPT4gKFxuICAgICAgICAgIDxSZXZlYWwga2V5PXtzLnNsdWd9IGRlbGF5PXtpICogMC4wNH0+XG4gICAgICAgICAgICA8U2VydmljZUNhcmQgc2VydmljZT17c30gLz5cbiAgICAgICAgICA8L1JldmVhbD5cbiAgICAgICAgKSl9XG4gICAgICA8L2Rpdj5cbiAgICA8L3NlY3Rpb24+XG4gICk7XG59XG5cbmZ1bmN0aW9uIFBvcnRmb2xpb1ByZXZpZXcoKSB7XG4gIHJldHVybiAoXG4gICAgPHNlY3Rpb24gY2xhc3NOYW1lPVwiYmctW2NvbG9yOnZhcigtLXN1cmZhY2UpXS80MCBweS0yMFwiPlxuICAgICAgPGRpdiBjbGFzc05hbWU9XCJteC1hdXRvIG1heC13LTd4bCBweC00IHNtOnB4LTYgbGc6cHgtOFwiPlxuICAgICAgICA8UmV2ZWFsPlxuICAgICAgICAgIDxkaXYgY2xhc3NOYW1lPVwiZmxleCBmbGV4LXdyYXAgaXRlbXMtZW5kIGp1c3RpZnktYmV0d2VlbiBnYXAtNFwiPlxuICAgICAgICAgICAgPGRpdj5cbiAgICAgICAgICAgICAgPFNlY3Rpb25FeWVicm93PlBvcnRmb2xpbyBQcm95ZWs8L1NlY3Rpb25FeWVicm93PlxuICAgICAgICAgICAgICA8aDIgY2xhc3NOYW1lPVwiZm9udC1kaXNwbGF5IHRleHQtM3hsIGZvbnQtZXh0cmFib2xkIHNtOnRleHQtNHhsIG1kOnRleHQtNXhsXCI+XG4gICAgICAgICAgICAgICAgSGFzaWwgcGVuZ2VyamFhbiA8c3BhbiBjbGFzc05hbWU9XCJ0ZXh0LWdyYWRpZW50LWluZHVzdHJpYWxcIj5ueWF0YTwvc3Bhbj5cbiAgICAgICAgICAgICAgPC9oMj5cbiAgICAgICAgICAgIDwvZGl2PlxuICAgICAgICAgICAgPExpbmtcbiAgICAgICAgICAgICAgdG89XCIvcG9ydGZvbGlvXCJcbiAgICAgICAgICAgICAgY2xhc3NOYW1lPVwiaW5saW5lLWZsZXggaXRlbXMtY2VudGVyIGdhcC0xLjUgcm91bmRlZC1tZCBib3JkZXIgYm9yZGVyLXdoaXRlLzE1IGJnLXdoaXRlLzUgcHgtNCBweS0yIHRleHQtc20gZm9udC1zZW1pYm9sZCBob3Zlcjpib3JkZXItcHJpbWFyeS81MFwiXG4gICAgICAgICAgICA+XG4gICAgICAgICAgICAgIExpaGF0IHNlbXVhIDxBcnJvd1JpZ2h0IGNsYXNzTmFtZT1cImgtNCB3LTRcIiAvPlxuICAgICAgICAgICAgPC9MaW5rPlxuICAgICAgICAgIDwvZGl2PlxuICAgICAgICA8L1JldmVhbD5cbiAgICAgICAgPGRpdiBjbGFzc05hbWU9XCJtdC0xMFwiPlxuICAgICAgICAgIDxQb3J0Zm9saW9HYWxsZXJ5IGxpbWl0PXs2fSAvPlxuICAgICAgICA8L2Rpdj5cbiAgICAgIDwvZGl2PlxuICAgIDwvc2VjdGlvbj5cbiAgKTtcbn1cblxuZnVuY3Rpb24gQWR2YW50YWdlcygpIHtcbiAgcmV0dXJuIChcbiAgICA8c2VjdGlvbiBjbGFzc05hbWU9XCJteC1hdXRvIG1heC13LTd4bCBweC00IHB5LTIwIHNtOnB4LTYgbGc6cHgtOFwiPlxuICAgICAgPFJldmVhbD5cbiAgICAgICAgPFNlY3Rpb25FeWVicm93PktlbmFwYSBQaWxpaCBLYW1pPC9TZWN0aW9uRXllYnJvdz5cbiAgICAgICAgPGgyIGNsYXNzTmFtZT1cImZvbnQtZGlzcGxheSB0ZXh0LTN4bCBmb250LWV4dHJhYm9sZCBzbTp0ZXh0LTR4bCBtZDp0ZXh0LTV4bFwiPlxuICAgICAgICAgIFByb2Zlc2lvbmFsaXNtZSB5YW5nIDxzcGFuIGNsYXNzTmFtZT1cInRleHQtZ3JhZGllbnQtaW5kdXN0cmlhbFwiPnRlcmJ1a3RpPC9zcGFuPlxuICAgICAgICA8L2gyPlxuICAgICAgPC9SZXZlYWw+XG4gICAgICA8ZGl2IGNsYXNzTmFtZT1cIm10LTEyIGdyaWQgZ2FwLTUgc206Z3JpZC1jb2xzLTIgbGc6Z3JpZC1jb2xzLTNcIj5cbiAgICAgICAge0FEVkFOVEFHRVMubWFwKChhLCBpKSA9PiB7XG4gICAgICAgICAgY29uc3QgSWNvbiA9IEFEVl9JQ09OU1thLmljb24gYXMga2V5b2YgdHlwZW9mIEFEVl9JQ09OU10gPz8gU3BhcmtsZXM7XG4gICAgICAgICAgcmV0dXJuIChcbiAgICAgICAgICAgIDxSZXZlYWwga2V5PXthLnRpdGxlfSBkZWxheT17aSAqIDAuMDV9PlxuICAgICAgICAgICAgICA8ZGl2IGNsYXNzTmFtZT1cIm1ldGFsbGljLXNoZWVuIGdyb3VwIGgtZnVsbCByb3VuZGVkLTJ4bCBib3JkZXIgYm9yZGVyLXdoaXRlLzEwIGJnLVtjb2xvcjp2YXIoLS1zdXJmYWNlKV0gcC02IHRyYW5zaXRpb24tY29sb3JzIGhvdmVyOmJvcmRlci1wcmltYXJ5LzQwXCI+XG4gICAgICAgICAgICAgICAgPGRpdiBjbGFzc05hbWU9XCJtYi00IGZsZXggaC0xMiB3LTEyIGl0ZW1zLWNlbnRlciBqdXN0aWZ5LWNlbnRlciByb3VuZGVkLXhsIGJnLWdyYWRpZW50LWluZHVzdHJpYWwgdGV4dC1wcmltYXJ5LWZvcmVncm91bmQgc2hhZG93LWdsb3dcIj5cbiAgICAgICAgICAgICAgICAgIDxJY29uIGNsYXNzTmFtZT1cImgtNiB3LTZcIiBzdHJva2VXaWR0aD17Mi4yfSAvPlxuICAgICAgICAgICAgICAgIDwvZGl2PlxuICAgICAgICAgICAgICAgIDxoMyBjbGFzc05hbWU9XCJmb250LWRpc3BsYXkgdGV4dC1sZyBmb250LWJvbGRcIj57YS50aXRsZX08L2gzPlxuICAgICAgICAgICAgICAgIDxwIGNsYXNzTmFtZT1cIm10LTEuNSB0ZXh0LXNtIHRleHQtbXV0ZWQtZm9yZWdyb3VuZFwiPnthLmRlc2N9PC9wPlxuICAgICAgICAgICAgICA8L2Rpdj5cbiAgICAgICAgICAgIDwvUmV2ZWFsPlxuICAgICAgICAgICk7XG4gICAgICAgIH0pfVxuICAgICAgPC9kaXY+XG4gICAgPC9zZWN0aW9uPlxuICApO1xufVxuXG5mdW5jdGlvbiBBcmVhKCkge1xuICByZXR1cm4gKFxuICAgIDxzZWN0aW9uIGNsYXNzTmFtZT1cIm14LWF1dG8gbWF4LXctN3hsIHB4LTQgcHktMjAgc206cHgtNiBsZzpweC04XCI+XG4gICAgICA8UmV2ZWFsPlxuICAgICAgICA8U2VjdGlvbkV5ZWJyb3c+QXJlYSBMYXlhbmFuPC9TZWN0aW9uRXllYnJvdz5cbiAgICAgICAgPGgyIGNsYXNzTmFtZT1cIm1heC13LTN4bCBmb250LWRpc3BsYXkgdGV4dC0zeGwgZm9udC1leHRyYWJvbGQgc206dGV4dC00eGwgbWQ6dGV4dC01eGxcIj5cbiAgICAgICAgICBNZWxheWFuaSA8c3BhbiBjbGFzc05hbWU9XCJ0ZXh0LWdyYWRpZW50LWluZHVzdHJpYWxcIj5LYXJhd2FuZyAmIHNla2l0YXJueWE8L3NwYW4+XG4gICAgICAgIDwvaDI+XG4gICAgICA8L1JldmVhbD5cbiAgICAgIDxkaXYgY2xhc3NOYW1lPVwibXQtMTBcIj5cbiAgICAgICAgPEFyZWFDb3ZlcmFnZVNlY3Rpb24gLz5cbiAgICAgIDwvZGl2PlxuICAgIDwvc2VjdGlvbj5cbiAgKTtcbn1cblxuZnVuY3Rpb24gVGVzdGltb25pKCkge1xuICByZXR1cm4gKFxuICAgIDxzZWN0aW9uIGNsYXNzTmFtZT1cImJnLVtjb2xvcjp2YXIoLS1zdXJmYWNlKV0vNDAgcHktMjBcIj5cbiAgICAgIDxkaXYgY2xhc3NOYW1lPVwibXgtYXV0byBtYXgtdy03eGwgcHgtNCBzbTpweC02IGxnOnB4LThcIj5cbiAgICAgICAgPFJldmVhbD5cbiAgICAgICAgICA8U2VjdGlvbkV5ZWJyb3c+VGVzdGltb25pIFBlbGFuZ2dhbjwvU2VjdGlvbkV5ZWJyb3c+XG4gICAgICAgICAgPGgyIGNsYXNzTmFtZT1cImZvbnQtZGlzcGxheSB0ZXh0LTN4bCBmb250LWV4dHJhYm9sZCBzbTp0ZXh0LTR4bCBtZDp0ZXh0LTV4bFwiPlxuICAgICAgICAgICAgU3VhcmEgPHNwYW4gY2xhc3NOYW1lPVwidGV4dC1ncmFkaWVudC1pbmR1c3RyaWFsXCI+cGVsYW5nZ2FuPC9zcGFuPiBrYW1pXG4gICAgICAgICAgPC9oMj5cbiAgICAgICAgPC9SZXZlYWw+XG4gICAgICAgIDxkaXYgY2xhc3NOYW1lPVwibXQtMTBcIj5cbiAgICAgICAgICA8VGVzdGltb25pYWxTbGlkZXIgLz5cbiAgICAgICAgPC9kaXY+XG4gICAgICA8L2Rpdj5cbiAgICA8L3NlY3Rpb24+XG4gICk7XG59XG5cbmZ1bmN0aW9uIEZhcSgpIHtcbiAgcmV0dXJuIChcbiAgICA8c2VjdGlvbiBjbGFzc05hbWU9XCJteC1hdXRvIG1heC13LTN4bCBweC00IHB5LTIwIHNtOnB4LTYgbGc6cHgtOFwiPlxuICAgICAgPFJldmVhbD5cbiAgICAgICAgPFNlY3Rpb25FeWVicm93PlBlcnRhbnlhYW4gVW11bTwvU2VjdGlvbkV5ZWJyb3c+XG4gICAgICAgIDxoMiBjbGFzc05hbWU9XCJmb250LWRpc3BsYXkgdGV4dC0zeGwgZm9udC1leHRyYWJvbGQgc206dGV4dC00eGwgbWQ6dGV4dC01eGxcIj5cbiAgICAgICAgICBZYW5nIHNlcmluZyA8c3BhbiBjbGFzc05hbWU9XCJ0ZXh0LWdyYWRpZW50LWluZHVzdHJpYWxcIj5kaXRhbnlha2FuPC9zcGFuPlxuICAgICAgICA8L2gyPlxuICAgICAgPC9SZXZlYWw+XG4gICAgICA8ZGl2IGNsYXNzTmFtZT1cIm10LTEwXCI+XG4gICAgICAgIDxGQVFBY2NvcmRpb24gLz5cbiAgICAgIDwvZGl2PlxuICAgIDwvc2VjdGlvbj5cbiAgKTtcbn1cblxuZnVuY3Rpb24gRmluYWxDdGEoKSB7XG4gIHJldHVybiAoXG4gICAgPHNlY3Rpb24gY2xhc3NOYW1lPVwibXgtYXV0byBtYXgtdy03eGwgcHgtNCBwYi0yMCBzbTpweC02IGxnOnB4LThcIj5cbiAgICAgIDxDVEFTZWN0aW9uIC8+XG4gICAgPC9zZWN0aW9uPlxuICApO1xufVxuIl0sImZpbGUiOiJDOi9wcm9qZWN0My4xL3dlbGRpbmcvd2VsZGluZy13b3Jrcy1zdHVkaW8tbWFpbi9zcmMvcm91dGVzL2luZGV4LnRzeCJ9

@@ -1,0 +1,257 @@
+import pagar from "/src/assets/service-pagar.jpg?import";
+import kanopi from "/src/assets/service-kanopi.jpg?import";
+import railing from "/src/assets/service-railing.jpg?import";
+import balkon from "/src/assets/service-balkon.jpg?import";
+import tralis from "/src/assets/service-tralis.jpg?import";
+import bajaRingan from "/src/assets/service-baja-ringan.jpg?import";
+import lasPanggilan from "/src/assets/service-las-panggilan.jpg?import";
+import konstruksi from "/src/assets/service-konstruksi.jpg?import";
+import pintu from "/src/assets/service-pintu.jpg?import";
+export const SERVICES = [
+  {
+    slug: "pagar-besi",
+    title: "Pagar Besi",
+    short: "Pagar minimalis, klasik, hingga custom desain.",
+    description: "Pembuatan pagar besi untuk rumah, ruko, gudang, dan kantor. Material besi hollow / besi tempa, finishing cat duco atau powder coating tahan karat.",
+    image: pagar,
+    features: ["Material anti karat", "Desain custom", "Survey gratis", "Garansi pengerjaan"]
+  },
+  {
+    slug: "kanopi",
+    title: "Kanopi",
+    short: "Kanopi minimalis carport, teras, dan area servis.",
+    description: "Kanopi rangka baja dengan atap polycarbonate, alderon, spandek, atau kaca. Konstruksi kuat anti goyang dan tahan cuaca Karawang.",
+    image: kanopi,
+    features: ["Atap polycarbonate / alderon", "Rangka kokoh", "Anti bocor", "Garansi konstruksi"]
+  },
+  {
+    slug: "railing-tangga",
+    title: "Railing Tangga",
+    short: "Railing besi tempa hingga stainless modern.",
+    description: "Railing tangga indoor & outdoor — besi tempa klasik, minimalis hollow, hingga stainless steel premium dengan finishing rapi.",
+    image: railing,
+    features: ["Besi / stainless", "Finishing halus", "Desain custom", "Pemasangan rapi"]
+  },
+  {
+    slug: "balkon",
+    title: "Balkon",
+    short: "Railing balkon kuat dan estetik.",
+    description: "Railing balkon lantai 2 dengan desain modern geometris, klasik, atau motif custom sesuai fasad rumah Anda.",
+    image: balkon,
+    features: ["Desain modern", "Konstruksi aman", "Anti karat", "Tinggi standar"]
+  },
+  {
+    slug: "tralis-jendela",
+    title: "Tralis Jendela",
+    short: "Pengaman jendela elegan tanpa kesan penjara.",
+    description: "Tralis jendela dan pintu dengan desain minimalis modern. Memberi rasa aman tanpa mengurangi estetika rumah Anda.",
+    image: tralis,
+    features: ["Minimalis modern", "Pengaman optimal", "Finishing rapi", "Custom ukuran"]
+  },
+  {
+    slug: "baja-ringan",
+    title: "Konstruksi Baja Ringan",
+    short: "Rangka atap & kanopi baja ringan.",
+    description: "Rangka atap baja ringan untuk rumah, ruko, gudang, dan workshop. SNI, anti rayap, anti karat, pengerjaan cepat.",
+    image: bajaRingan,
+    features: ["Material SNI", "Anti karat & rayap", "Hitungan presisi", "Garansi struktur"]
+  },
+  {
+    slug: "las-panggilan",
+    title: "Las Panggilan",
+    short: "Tukang las datang ke lokasi Anda.",
+    description: "Layanan las panggilan 24 jam area Karawang & sekitarnya. Perbaikan pagar, kanopi, kanopi bocor, las pipa, hingga proyek mendadak.",
+    image: lasPanggilan,
+    features: ["Datang ke lokasi", "Respon cepat", "Peralatan lengkap", "Harga transparan"]
+  },
+  {
+    slug: "konstruksi-baja",
+    title: "Konstruksi Baja",
+    short: "Konstruksi gudang, workshop, dan struktur besi.",
+    description: "Konstruksi baja WF, H-Beam, dan IWF untuk gudang, workshop, mezzanine, dan bangunan industri. Hitungan struktur oleh tim berpengalaman.",
+    image: konstruksi,
+    features: ["Struktur WF / H-Beam", "Hitungan teknis", "Welding sertifikasi", "Skala proyek"]
+  },
+  {
+    slug: "pintu-besi",
+    title: "Pintu Besi",
+    short: "Pintu pagar, pintu gudang, dan rolling door.",
+    description: "Pintu besi swing, sliding, hingga folding gate. Cocok untuk rumah, ruko, dan gudang dengan engsel berkualitas tahan beban berat.",
+    image: pintu,
+    features: [
+      "Swing / sliding / folding",
+      "Engsel heavy duty",
+      "Custom desain",
+      "Pengerjaan presisi"
+    ]
+  }
+];
+export const PORTFOLIO = [
+  {
+    id: 1,
+    image: pagar,
+    title: "Pagar Minimalis — Karawang Barat",
+    category: "Pagar",
+    span: "tall"
+  },
+  { id: 2, image: kanopi, title: "Kanopi Carport — Cikampek", category: "Kanopi", span: "wide" },
+  {
+    id: 3,
+    image: railing,
+    title: "Railing Tangga Stainless — Purwakarta",
+    category: "Railing",
+    span: ""
+  },
+  { id: 4, image: balkon, title: "Railing Balkon — Karawang Timur", category: "Balkon", span: "" },
+  {
+    id: 5,
+    image: tralis,
+    title: "Tralis Jendela Minimalis — Bekasi",
+    category: "Tralis",
+    span: "tall"
+  },
+  {
+    id: 6,
+    image: bajaRingan,
+    title: "Rangka Baja Ringan Workshop — Karawang",
+    category: "Baja Ringan",
+    span: "wide"
+  },
+  { id: 7, image: pintu, title: "Pintu Pagar Custom — Cikampek", category: "Pintu", span: "" },
+  {
+    id: 8,
+    image: konstruksi,
+    title: "Konstruksi Gudang — Karawang",
+    category: "Konstruksi",
+    span: ""
+  }
+];
+export const TESTIMONIALS = [
+  {
+    name: "Pak Ahmad",
+    location: "Karawang Barat",
+    rating: 5,
+    text: "Pengerjaan pagar rumah sangat rapi dan tepat waktu. Tim Bara Baja Las profesional, hasilnya melebihi ekspektasi."
+  },
+  {
+    name: "Bu Ratna",
+    location: "Cikampek",
+    rating: 5,
+    text: "Kanopi carport selesai 3 hari, kuat dan tidak bocor saat hujan deras. Recommended buat warga sekitar."
+  },
+  {
+    name: "Pak Joko",
+    location: "Purwakarta",
+    rating: 5,
+    text: "Survey lokasi gratis, harga transparan, kualitas las premium. Konstruksi gudang saya kokoh sekali."
+  },
+  {
+    name: "Bu Sinta",
+    location: "Karawang Timur",
+    rating: 5,
+    text: "Railing tangga stainless terlihat mewah. Pengerjaan halus, finishing sempurna. Terima kasih Bara Baja Las."
+  },
+  {
+    name: "Pak Dedi",
+    location: "Bekasi",
+    rating: 5,
+    text: "Las panggilan respon cepat, datang sore langsung dikerjakan. Harga sesuai kualitas, mantap!"
+  }
+];
+export const FAQS = [
+  {
+    q: "Apakah bisa survey lokasi gratis?",
+    a: "Bisa. Kami melayani survey lokasi gratis untuk area Karawang, Cikampek, Purwakarta, Bekasi, dan Subang. Cukup hubungi WhatsApp untuk jadwalkan kunjungan."
+  },
+  {
+    q: "Berapa lama pengerjaan proyek?",
+    a: "Tergantung jenis dan ukuran. Pagar rumah standar 3–7 hari, kanopi 2–5 hari, konstruksi gudang 2–4 minggu. Timeline pasti diberikan setelah survey."
+  },
+  {
+    q: "Apakah bisa custom desain?",
+    a: "Tentu. Kami menerima desain custom sesuai keinginan Anda — kirim referensi gambar, ukuran, atau konsultasikan langsung dengan tim desain kami."
+  },
+  {
+    q: "Apakah melayani luar kota Karawang?",
+    a: "Ya. Kami melayani area Karawang, Cikampek, Purwakarta, Bekasi, dan Subang. Untuk area di luar itu, silakan tanyakan via WhatsApp."
+  },
+  {
+    q: "Apakah konsultasi gratis?",
+    a: "Gratis. Konsultasi via WhatsApp atau survey lokasi tidak dikenakan biaya. Kami beri rekomendasi material dan harga transparan tanpa kewajiban order."
+  },
+  {
+    q: "Bagaimana sistem pembayaran?",
+    a: "DP 50% di awal setelah deal harga, pelunasan 50% saat pekerjaan selesai dan disetujui pelanggan. Pembayaran via transfer bank atau tunai."
+  }
+];
+export const ADVANTAGES = [
+  {
+    title: "Pengerjaan Rapi",
+    desc: "Finishing halus, las bersih, sambungan presisi.",
+    icon: "Sparkles"
+  },
+  {
+    title: "Material Berkualitas",
+    desc: "Besi SNI, anti karat, sesuai spesifikasi proyek.",
+    icon: "ShieldCheck"
+  },
+  {
+    title: "Survey Lokasi Gratis",
+    desc: "Tim datang langsung untuk ukur dan konsultasi.",
+    icon: "MapPin"
+  },
+  {
+    title: "Harga Transparan",
+    desc: "RAB jelas, tidak ada biaya tersembunyi.",
+    icon: "ReceiptText"
+  },
+  {
+    title: "Tukang Berpengalaman",
+    desc: "Tim welder bersertifikat dengan jam terbang tinggi.",
+    icon: "HardHat"
+  },
+  {
+    title: "Konsultasi Gratis",
+    desc: "Diskusi desain dan material tanpa biaya.",
+    icon: "MessageCircle"
+  }
+];
+export const BLOG_POSTS = [
+  {
+    slug: "tips-memilih-pagar-besi",
+    title: "Tips Memilih Pagar Besi untuk Rumah Modern",
+    excerpt: "Panduan lengkap memilih material, desain, dan finishing pagar besi yang awet untuk iklim Karawang.",
+    date: "2025-04-12",
+    readMin: 5
+  },
+  {
+    slug: "model-kanopi-modern-2025",
+    title: "10 Model Kanopi Modern 2025 yang Sedang Tren",
+    excerpt: "Inspirasi desain kanopi minimalis hingga industrial untuk rumah dan ruko di Karawang & sekitarnya.",
+    date: "2025-04-02",
+    readMin: 6
+  },
+  {
+    slug: "cara-merawat-railing-tangga",
+    title: "Cara Merawat Railing Tangga Besi & Stainless",
+    excerpt: "Tips perawatan rutin agar railing tetap mengkilap dan bebas karat selama bertahun-tahun.",
+    date: "2025-03-20",
+    readMin: 4
+  },
+  {
+    slug: "harga-jasa-las-karawang",
+    title: "Harga Jasa Las Karawang 2025: Rincian & Estimasi",
+    excerpt: "Rincian estimasi biaya jasa las pagar, kanopi, railing, dan konstruksi area Karawang.",
+    date: "2025-03-08",
+    readMin: 7
+  },
+  {
+    slug: "inspirasi-pagar-minimalis",
+    title: "Inspirasi Pagar Minimalis untuk Rumah Tropis",
+    excerpt: "Kumpulan desain pagar minimalis yang cocok dengan arsitektur tropis modern Indonesia.",
+    date: "2025-02-22",
+    readMin: 5
+  }
+];
+
+//# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbImRhdGEudHMiXSwic291cmNlc0NvbnRlbnQiOlsiaW1wb3J0IHBhZ2FyIGZyb20gXCJAL2Fzc2V0cy9zZXJ2aWNlLXBhZ2FyLmpwZ1wiO1xuaW1wb3J0IGthbm9waSBmcm9tIFwiQC9hc3NldHMvc2VydmljZS1rYW5vcGkuanBnXCI7XG5pbXBvcnQgcmFpbGluZyBmcm9tIFwiQC9hc3NldHMvc2VydmljZS1yYWlsaW5nLmpwZ1wiO1xuaW1wb3J0IGJhbGtvbiBmcm9tIFwiQC9hc3NldHMvc2VydmljZS1iYWxrb24uanBnXCI7XG5pbXBvcnQgdHJhbGlzIGZyb20gXCJAL2Fzc2V0cy9zZXJ2aWNlLXRyYWxpcy5qcGdcIjtcbmltcG9ydCBiYWphUmluZ2FuIGZyb20gXCJAL2Fzc2V0cy9zZXJ2aWNlLWJhamEtcmluZ2FuLmpwZ1wiO1xuaW1wb3J0IGxhc1BhbmdnaWxhbiBmcm9tIFwiQC9hc3NldHMvc2VydmljZS1sYXMtcGFuZ2dpbGFuLmpwZ1wiO1xuaW1wb3J0IGtvbnN0cnVrc2kgZnJvbSBcIkAvYXNzZXRzL3NlcnZpY2Uta29uc3RydWtzaS5qcGdcIjtcbmltcG9ydCBwaW50dSBmcm9tIFwiQC9hc3NldHMvc2VydmljZS1waW50dS5qcGdcIjtcblxuZXhwb3J0IHR5cGUgU2VydmljZSA9IHtcbiAgc2x1Zzogc3RyaW5nO1xuICB0aXRsZTogc3RyaW5nO1xuICBzaG9ydDogc3RyaW5nO1xuICBkZXNjcmlwdGlvbjogc3RyaW5nO1xuICBpbWFnZTogc3RyaW5nO1xuICBmZWF0dXJlczogc3RyaW5nW107XG59O1xuXG5leHBvcnQgY29uc3QgU0VSVklDRVM6IFNlcnZpY2VbXSA9IFtcbiAge1xuICAgIHNsdWc6IFwicGFnYXItYmVzaVwiLFxuICAgIHRpdGxlOiBcIlBhZ2FyIEJlc2lcIixcbiAgICBzaG9ydDogXCJQYWdhciBtaW5pbWFsaXMsIGtsYXNpaywgaGluZ2dhIGN1c3RvbSBkZXNhaW4uXCIsXG4gICAgZGVzY3JpcHRpb246XG4gICAgICBcIlBlbWJ1YXRhbiBwYWdhciBiZXNpIHVudHVrIHJ1bWFoLCBydWtvLCBndWRhbmcsIGRhbiBrYW50b3IuIE1hdGVyaWFsIGJlc2kgaG9sbG93IC8gYmVzaSB0ZW1wYSwgZmluaXNoaW5nIGNhdCBkdWNvIGF0YXUgcG93ZGVyIGNvYXRpbmcgdGFoYW4ga2FyYXQuXCIsXG4gICAgaW1hZ2U6IHBhZ2FyLFxuICAgIGZlYXR1cmVzOiBbXCJNYXRlcmlhbCBhbnRpIGthcmF0XCIsIFwiRGVzYWluIGN1c3RvbVwiLCBcIlN1cnZleSBncmF0aXNcIiwgXCJHYXJhbnNpIHBlbmdlcmphYW5cIl0sXG4gIH0sXG4gIHtcbiAgICBzbHVnOiBcImthbm9waVwiLFxuICAgIHRpdGxlOiBcIkthbm9waVwiLFxuICAgIHNob3J0OiBcIkthbm9waSBtaW5pbWFsaXMgY2FycG9ydCwgdGVyYXMsIGRhbiBhcmVhIHNlcnZpcy5cIixcbiAgICBkZXNjcmlwdGlvbjpcbiAgICAgIFwiS2Fub3BpIHJhbmdrYSBiYWphIGRlbmdhbiBhdGFwIHBvbHljYXJib25hdGUsIGFsZGVyb24sIHNwYW5kZWssIGF0YXUga2FjYS4gS29uc3RydWtzaSBrdWF0IGFudGkgZ295YW5nIGRhbiB0YWhhbiBjdWFjYSBLYXJhd2FuZy5cIixcbiAgICBpbWFnZToga2Fub3BpLFxuICAgIGZlYXR1cmVzOiBbXCJBdGFwIHBvbHljYXJib25hdGUgLyBhbGRlcm9uXCIsIFwiUmFuZ2thIGtva29oXCIsIFwiQW50aSBib2NvclwiLCBcIkdhcmFuc2kga29uc3RydWtzaVwiXSxcbiAgfSxcbiAge1xuICAgIHNsdWc6IFwicmFpbGluZy10YW5nZ2FcIixcbiAgICB0aXRsZTogXCJSYWlsaW5nIFRhbmdnYVwiLFxuICAgIHNob3J0OiBcIlJhaWxpbmcgYmVzaSB0ZW1wYSBoaW5nZ2Egc3RhaW5sZXNzIG1vZGVybi5cIixcbiAgICBkZXNjcmlwdGlvbjpcbiAgICAgIFwiUmFpbGluZyB0YW5nZ2EgaW5kb29yICYgb3V0ZG9vciDigJQgYmVzaSB0ZW1wYSBrbGFzaWssIG1pbmltYWxpcyBob2xsb3csIGhpbmdnYSBzdGFpbmxlc3Mgc3RlZWwgcHJlbWl1bSBkZW5nYW4gZmluaXNoaW5nIHJhcGkuXCIsXG4gICAgaW1hZ2U6IHJhaWxpbmcsXG4gICAgZmVhdHVyZXM6IFtcIkJlc2kgLyBzdGFpbmxlc3NcIiwgXCJGaW5pc2hpbmcgaGFsdXNcIiwgXCJEZXNhaW4gY3VzdG9tXCIsIFwiUGVtYXNhbmdhbiByYXBpXCJdLFxuICB9LFxuICB7XG4gICAgc2x1ZzogXCJiYWxrb25cIixcbiAgICB0aXRsZTogXCJCYWxrb25cIixcbiAgICBzaG9ydDogXCJSYWlsaW5nIGJhbGtvbiBrdWF0IGRhbiBlc3RldGlrLlwiLFxuICAgIGRlc2NyaXB0aW9uOlxuICAgICAgXCJSYWlsaW5nIGJhbGtvbiBsYW50YWkgMiBkZW5nYW4gZGVzYWluIG1vZGVybiBnZW9tZXRyaXMsIGtsYXNpaywgYXRhdSBtb3RpZiBjdXN0b20gc2VzdWFpIGZhc2FkIHJ1bWFoIEFuZGEuXCIsXG4gICAgaW1hZ2U6IGJhbGtvbixcbiAgICBmZWF0dXJlczogW1wiRGVzYWluIG1vZGVyblwiLCBcIktvbnN0cnVrc2kgYW1hblwiLCBcIkFudGkga2FyYXRcIiwgXCJUaW5nZ2kgc3RhbmRhclwiXSxcbiAgfSxcbiAge1xuICAgIHNsdWc6IFwidHJhbGlzLWplbmRlbGFcIixcbiAgICB0aXRsZTogXCJUcmFsaXMgSmVuZGVsYVwiLFxuICAgIHNob3J0OiBcIlBlbmdhbWFuIGplbmRlbGEgZWxlZ2FuIHRhbnBhIGtlc2FuIHBlbmphcmEuXCIsXG4gICAgZGVzY3JpcHRpb246XG4gICAgICBcIlRyYWxpcyBqZW5kZWxhIGRhbiBwaW50dSBkZW5nYW4gZGVzYWluIG1pbmltYWxpcyBtb2Rlcm4uIE1lbWJlcmkgcmFzYSBhbWFuIHRhbnBhIG1lbmd1cmFuZ2kgZXN0ZXRpa2EgcnVtYWggQW5kYS5cIixcbiAgICBpbWFnZTogdHJhbGlzLFxuICAgIGZlYXR1cmVzOiBbXCJNaW5pbWFsaXMgbW9kZXJuXCIsIFwiUGVuZ2FtYW4gb3B0aW1hbFwiLCBcIkZpbmlzaGluZyByYXBpXCIsIFwiQ3VzdG9tIHVrdXJhblwiXSxcbiAgfSxcbiAge1xuICAgIHNsdWc6IFwiYmFqYS1yaW5nYW5cIixcbiAgICB0aXRsZTogXCJLb25zdHJ1a3NpIEJhamEgUmluZ2FuXCIsXG4gICAgc2hvcnQ6IFwiUmFuZ2thIGF0YXAgJiBrYW5vcGkgYmFqYSByaW5nYW4uXCIsXG4gICAgZGVzY3JpcHRpb246XG4gICAgICBcIlJhbmdrYSBhdGFwIGJhamEgcmluZ2FuIHVudHVrIHJ1bWFoLCBydWtvLCBndWRhbmcsIGRhbiB3b3Jrc2hvcC4gU05JLCBhbnRpIHJheWFwLCBhbnRpIGthcmF0LCBwZW5nZXJqYWFuIGNlcGF0LlwiLFxuICAgIGltYWdlOiBiYWphUmluZ2FuLFxuICAgIGZlYXR1cmVzOiBbXCJNYXRlcmlhbCBTTklcIiwgXCJBbnRpIGthcmF0ICYgcmF5YXBcIiwgXCJIaXR1bmdhbiBwcmVzaXNpXCIsIFwiR2FyYW5zaSBzdHJ1a3R1clwiXSxcbiAgfSxcbiAge1xuICAgIHNsdWc6IFwibGFzLXBhbmdnaWxhblwiLFxuICAgIHRpdGxlOiBcIkxhcyBQYW5nZ2lsYW5cIixcbiAgICBzaG9ydDogXCJUdWthbmcgbGFzIGRhdGFuZyBrZSBsb2thc2kgQW5kYS5cIixcbiAgICBkZXNjcmlwdGlvbjpcbiAgICAgIFwiTGF5YW5hbiBsYXMgcGFuZ2dpbGFuIDI0IGphbSBhcmVhIEthcmF3YW5nICYgc2VraXRhcm55YS4gUGVyYmFpa2FuIHBhZ2FyLCBrYW5vcGksIGthbm9waSBib2NvciwgbGFzIHBpcGEsIGhpbmdnYSBwcm95ZWsgbWVuZGFkYWsuXCIsXG4gICAgaW1hZ2U6IGxhc1BhbmdnaWxhbixcbiAgICBmZWF0dXJlczogW1wiRGF0YW5nIGtlIGxva2FzaVwiLCBcIlJlc3BvbiBjZXBhdFwiLCBcIlBlcmFsYXRhbiBsZW5na2FwXCIsIFwiSGFyZ2EgdHJhbnNwYXJhblwiXSxcbiAgfSxcbiAge1xuICAgIHNsdWc6IFwia29uc3RydWtzaS1iYWphXCIsXG4gICAgdGl0bGU6IFwiS29uc3RydWtzaSBCYWphXCIsXG4gICAgc2hvcnQ6IFwiS29uc3RydWtzaSBndWRhbmcsIHdvcmtzaG9wLCBkYW4gc3RydWt0dXIgYmVzaS5cIixcbiAgICBkZXNjcmlwdGlvbjpcbiAgICAgIFwiS29uc3RydWtzaSBiYWphIFdGLCBILUJlYW0sIGRhbiBJV0YgdW50dWsgZ3VkYW5nLCB3b3Jrc2hvcCwgbWV6emFuaW5lLCBkYW4gYmFuZ3VuYW4gaW5kdXN0cmkuIEhpdHVuZ2FuIHN0cnVrdHVyIG9sZWggdGltIGJlcnBlbmdhbGFtYW4uXCIsXG4gICAgaW1hZ2U6IGtvbnN0cnVrc2ksXG4gICAgZmVhdHVyZXM6IFtcIlN0cnVrdHVyIFdGIC8gSC1CZWFtXCIsIFwiSGl0dW5nYW4gdGVrbmlzXCIsIFwiV2VsZGluZyBzZXJ0aWZpa2FzaVwiLCBcIlNrYWxhIHByb3lla1wiXSxcbiAgfSxcbiAge1xuICAgIHNsdWc6IFwicGludHUtYmVzaVwiLFxuICAgIHRpdGxlOiBcIlBpbnR1IEJlc2lcIixcbiAgICBzaG9ydDogXCJQaW50dSBwYWdhciwgcGludHUgZ3VkYW5nLCBkYW4gcm9sbGluZyBkb29yLlwiLFxuICAgIGRlc2NyaXB0aW9uOlxuICAgICAgXCJQaW50dSBiZXNpIHN3aW5nLCBzbGlkaW5nLCBoaW5nZ2EgZm9sZGluZyBnYXRlLiBDb2NvayB1bnR1ayBydW1haCwgcnVrbywgZGFuIGd1ZGFuZyBkZW5nYW4gZW5nc2VsIGJlcmt1YWxpdGFzIHRhaGFuIGJlYmFuIGJlcmF0LlwiLFxuICAgIGltYWdlOiBwaW50dSxcbiAgICBmZWF0dXJlczogW1xuICAgICAgXCJTd2luZyAvIHNsaWRpbmcgLyBmb2xkaW5nXCIsXG4gICAgICBcIkVuZ3NlbCBoZWF2eSBkdXR5XCIsXG4gICAgICBcIkN1c3RvbSBkZXNhaW5cIixcbiAgICAgIFwiUGVuZ2VyamFhbiBwcmVzaXNpXCIsXG4gICAgXSxcbiAgfSxcbl07XG5cbmV4cG9ydCBjb25zdCBQT1JURk9MSU8gPSBbXG4gIHtcbiAgICBpZDogMSxcbiAgICBpbWFnZTogcGFnYXIsXG4gICAgdGl0bGU6IFwiUGFnYXIgTWluaW1hbGlzIOKAlCBLYXJhd2FuZyBCYXJhdFwiLFxuICAgIGNhdGVnb3J5OiBcIlBhZ2FyXCIsXG4gICAgc3BhbjogXCJ0YWxsXCIsXG4gIH0sXG4gIHsgaWQ6IDIsIGltYWdlOiBrYW5vcGksIHRpdGxlOiBcIkthbm9waSBDYXJwb3J0IOKAlCBDaWthbXBla1wiLCBjYXRlZ29yeTogXCJLYW5vcGlcIiwgc3BhbjogXCJ3aWRlXCIgfSxcbiAge1xuICAgIGlkOiAzLFxuICAgIGltYWdlOiByYWlsaW5nLFxuICAgIHRpdGxlOiBcIlJhaWxpbmcgVGFuZ2dhIFN0YWlubGVzcyDigJQgUHVyd2FrYXJ0YVwiLFxuICAgIGNhdGVnb3J5OiBcIlJhaWxpbmdcIixcbiAgICBzcGFuOiBcIlwiLFxuICB9LFxuICB7IGlkOiA0LCBpbWFnZTogYmFsa29uLCB0aXRsZTogXCJSYWlsaW5nIEJhbGtvbiDigJQgS2FyYXdhbmcgVGltdXJcIiwgY2F0ZWdvcnk6IFwiQmFsa29uXCIsIHNwYW46IFwiXCIgfSxcbiAge1xuICAgIGlkOiA1LFxuICAgIGltYWdlOiB0cmFsaXMsXG4gICAgdGl0bGU6IFwiVHJhbGlzIEplbmRlbGEgTWluaW1hbGlzIOKAlCBCZWthc2lcIixcbiAgICBjYXRlZ29yeTogXCJUcmFsaXNcIixcbiAgICBzcGFuOiBcInRhbGxcIixcbiAgfSxcbiAge1xuICAgIGlkOiA2LFxuICAgIGltYWdlOiBiYWphUmluZ2FuLFxuICAgIHRpdGxlOiBcIlJhbmdrYSBCYWphIFJpbmdhbiBXb3Jrc2hvcCDigJQgS2FyYXdhbmdcIixcbiAgICBjYXRlZ29yeTogXCJCYWphIFJpbmdhblwiLFxuICAgIHNwYW46IFwid2lkZVwiLFxuICB9LFxuICB7IGlkOiA3LCBpbWFnZTogcGludHUsIHRpdGxlOiBcIlBpbnR1IFBhZ2FyIEN1c3RvbSDigJQgQ2lrYW1wZWtcIiwgY2F0ZWdvcnk6IFwiUGludHVcIiwgc3BhbjogXCJcIiB9LFxuICB7XG4gICAgaWQ6IDgsXG4gICAgaW1hZ2U6IGtvbnN0cnVrc2ksXG4gICAgdGl0bGU6IFwiS29uc3RydWtzaSBHdWRhbmcg4oCUIEthcmF3YW5nXCIsXG4gICAgY2F0ZWdvcnk6IFwiS29uc3RydWtzaVwiLFxuICAgIHNwYW46IFwiXCIsXG4gIH0sXG5dIGFzIGNvbnN0O1xuXG5leHBvcnQgY29uc3QgVEVTVElNT05JQUxTID0gW1xuICB7XG4gICAgbmFtZTogXCJQYWsgQWhtYWRcIixcbiAgICBsb2NhdGlvbjogXCJLYXJhd2FuZyBCYXJhdFwiLFxuICAgIHJhdGluZzogNSxcbiAgICB0ZXh0OiBcIlBlbmdlcmphYW4gcGFnYXIgcnVtYWggc2FuZ2F0IHJhcGkgZGFuIHRlcGF0IHdha3R1LiBUaW0gQmFyYSBCYWphIExhcyBwcm9mZXNpb25hbCwgaGFzaWxueWEgbWVsZWJpaGkgZWtzcGVrdGFzaS5cIixcbiAgfSxcbiAge1xuICAgIG5hbWU6IFwiQnUgUmF0bmFcIixcbiAgICBsb2NhdGlvbjogXCJDaWthbXBla1wiLFxuICAgIHJhdGluZzogNSxcbiAgICB0ZXh0OiBcIkthbm9waSBjYXJwb3J0IHNlbGVzYWkgMyBoYXJpLCBrdWF0IGRhbiB0aWRhayBib2NvciBzYWF0IGh1amFuIGRlcmFzLiBSZWNvbW1lbmRlZCBidWF0IHdhcmdhIHNla2l0YXIuXCIsXG4gIH0sXG4gIHtcbiAgICBuYW1lOiBcIlBhayBKb2tvXCIsXG4gICAgbG9jYXRpb246IFwiUHVyd2FrYXJ0YVwiLFxuICAgIHJhdGluZzogNSxcbiAgICB0ZXh0OiBcIlN1cnZleSBsb2thc2kgZ3JhdGlzLCBoYXJnYSB0cmFuc3BhcmFuLCBrdWFsaXRhcyBsYXMgcHJlbWl1bS4gS29uc3RydWtzaSBndWRhbmcgc2F5YSBrb2tvaCBzZWthbGkuXCIsXG4gIH0sXG4gIHtcbiAgICBuYW1lOiBcIkJ1IFNpbnRhXCIsXG4gICAgbG9jYXRpb246IFwiS2FyYXdhbmcgVGltdXJcIixcbiAgICByYXRpbmc6IDUsXG4gICAgdGV4dDogXCJSYWlsaW5nIHRhbmdnYSBzdGFpbmxlc3MgdGVybGloYXQgbWV3YWguIFBlbmdlcmphYW4gaGFsdXMsIGZpbmlzaGluZyBzZW1wdXJuYS4gVGVyaW1hIGthc2loIEJhcmEgQmFqYSBMYXMuXCIsXG4gIH0sXG4gIHtcbiAgICBuYW1lOiBcIlBhayBEZWRpXCIsXG4gICAgbG9jYXRpb246IFwiQmVrYXNpXCIsXG4gICAgcmF0aW5nOiA1LFxuICAgIHRleHQ6IFwiTGFzIHBhbmdnaWxhbiByZXNwb24gY2VwYXQsIGRhdGFuZyBzb3JlIGxhbmdzdW5nIGRpa2VyamFrYW4uIEhhcmdhIHNlc3VhaSBrdWFsaXRhcywgbWFudGFwIVwiLFxuICB9LFxuXSBhcyBjb25zdDtcblxuZXhwb3J0IGNvbnN0IEZBUVMgPSBbXG4gIHtcbiAgICBxOiBcIkFwYWthaCBiaXNhIHN1cnZleSBsb2thc2kgZ3JhdGlzP1wiLFxuICAgIGE6IFwiQmlzYS4gS2FtaSBtZWxheWFuaSBzdXJ2ZXkgbG9rYXNpIGdyYXRpcyB1bnR1ayBhcmVhIEthcmF3YW5nLCBDaWthbXBlaywgUHVyd2FrYXJ0YSwgQmVrYXNpLCBkYW4gU3ViYW5nLiBDdWt1cCBodWJ1bmdpIFdoYXRzQXBwIHVudHVrIGphZHdhbGthbiBrdW5qdW5nYW4uXCIsXG4gIH0sXG4gIHtcbiAgICBxOiBcIkJlcmFwYSBsYW1hIHBlbmdlcmphYW4gcHJveWVrP1wiLFxuICAgIGE6IFwiVGVyZ2FudHVuZyBqZW5pcyBkYW4gdWt1cmFuLiBQYWdhciBydW1haCBzdGFuZGFyIDPigJM3IGhhcmksIGthbm9waSAy4oCTNSBoYXJpLCBrb25zdHJ1a3NpIGd1ZGFuZyAy4oCTNCBtaW5nZ3UuIFRpbWVsaW5lIHBhc3RpIGRpYmVyaWthbiBzZXRlbGFoIHN1cnZleS5cIixcbiAgfSxcbiAge1xuICAgIHE6IFwiQXBha2FoIGJpc2EgY3VzdG9tIGRlc2Fpbj9cIixcbiAgICBhOiBcIlRlbnR1LiBLYW1pIG1lbmVyaW1hIGRlc2FpbiBjdXN0b20gc2VzdWFpIGtlaW5naW5hbiBBbmRhIOKAlCBraXJpbSByZWZlcmVuc2kgZ2FtYmFyLCB1a3VyYW4sIGF0YXUga29uc3VsdGFzaWthbiBsYW5nc3VuZyBkZW5nYW4gdGltIGRlc2FpbiBrYW1pLlwiLFxuICB9LFxuICB7XG4gICAgcTogXCJBcGFrYWggbWVsYXlhbmkgbHVhciBrb3RhIEthcmF3YW5nP1wiLFxuICAgIGE6IFwiWWEuIEthbWkgbWVsYXlhbmkgYXJlYSBLYXJhd2FuZywgQ2lrYW1wZWssIFB1cndha2FydGEsIEJla2FzaSwgZGFuIFN1YmFuZy4gVW50dWsgYXJlYSBkaSBsdWFyIGl0dSwgc2lsYWthbiB0YW55YWthbiB2aWEgV2hhdHNBcHAuXCIsXG4gIH0sXG4gIHtcbiAgICBxOiBcIkFwYWthaCBrb25zdWx0YXNpIGdyYXRpcz9cIixcbiAgICBhOiBcIkdyYXRpcy4gS29uc3VsdGFzaSB2aWEgV2hhdHNBcHAgYXRhdSBzdXJ2ZXkgbG9rYXNpIHRpZGFrIGRpa2VuYWthbiBiaWF5YS4gS2FtaSBiZXJpIHJla29tZW5kYXNpIG1hdGVyaWFsIGRhbiBoYXJnYSB0cmFuc3BhcmFuIHRhbnBhIGtld2FqaWJhbiBvcmRlci5cIixcbiAgfSxcbiAge1xuICAgIHE6IFwiQmFnYWltYW5hIHNpc3RlbSBwZW1iYXlhcmFuP1wiLFxuICAgIGE6IFwiRFAgNTAlIGRpIGF3YWwgc2V0ZWxhaCBkZWFsIGhhcmdhLCBwZWx1bmFzYW4gNTAlIHNhYXQgcGVrZXJqYWFuIHNlbGVzYWkgZGFuIGRpc2V0dWp1aSBwZWxhbmdnYW4uIFBlbWJheWFyYW4gdmlhIHRyYW5zZmVyIGJhbmsgYXRhdSB0dW5haS5cIixcbiAgfSxcbl07XG5cbmV4cG9ydCBjb25zdCBBRFZBTlRBR0VTID0gW1xuICB7XG4gICAgdGl0bGU6IFwiUGVuZ2VyamFhbiBSYXBpXCIsXG4gICAgZGVzYzogXCJGaW5pc2hpbmcgaGFsdXMsIGxhcyBiZXJzaWgsIHNhbWJ1bmdhbiBwcmVzaXNpLlwiLFxuICAgIGljb246IFwiU3BhcmtsZXNcIixcbiAgfSxcbiAge1xuICAgIHRpdGxlOiBcIk1hdGVyaWFsIEJlcmt1YWxpdGFzXCIsXG4gICAgZGVzYzogXCJCZXNpIFNOSSwgYW50aSBrYXJhdCwgc2VzdWFpIHNwZXNpZmlrYXNpIHByb3llay5cIixcbiAgICBpY29uOiBcIlNoaWVsZENoZWNrXCIsXG4gIH0sXG4gIHtcbiAgICB0aXRsZTogXCJTdXJ2ZXkgTG9rYXNpIEdyYXRpc1wiLFxuICAgIGRlc2M6IFwiVGltIGRhdGFuZyBsYW5nc3VuZyB1bnR1ayB1a3VyIGRhbiBrb25zdWx0YXNpLlwiLFxuICAgIGljb246IFwiTWFwUGluXCIsXG4gIH0sXG4gIHtcbiAgICB0aXRsZTogXCJIYXJnYSBUcmFuc3BhcmFuXCIsXG4gICAgZGVzYzogXCJSQUIgamVsYXMsIHRpZGFrIGFkYSBiaWF5YSB0ZXJzZW1idW55aS5cIixcbiAgICBpY29uOiBcIlJlY2VpcHRUZXh0XCIsXG4gIH0sXG4gIHtcbiAgICB0aXRsZTogXCJUdWthbmcgQmVycGVuZ2FsYW1hblwiLFxuICAgIGRlc2M6IFwiVGltIHdlbGRlciBiZXJzZXJ0aWZpa2F0IGRlbmdhbiBqYW0gdGVyYmFuZyB0aW5nZ2kuXCIsXG4gICAgaWNvbjogXCJIYXJkSGF0XCIsXG4gIH0sXG4gIHtcbiAgICB0aXRsZTogXCJLb25zdWx0YXNpIEdyYXRpc1wiLFxuICAgIGRlc2M6IFwiRGlza3VzaSBkZXNhaW4gZGFuIG1hdGVyaWFsIHRhbnBhIGJpYXlhLlwiLFxuICAgIGljb246IFwiTWVzc2FnZUNpcmNsZVwiLFxuICB9LFxuXTtcblxuZXhwb3J0IGNvbnN0IEJMT0dfUE9TVFMgPSBbXG4gIHtcbiAgICBzbHVnOiBcInRpcHMtbWVtaWxpaC1wYWdhci1iZXNpXCIsXG4gICAgdGl0bGU6IFwiVGlwcyBNZW1pbGloIFBhZ2FyIEJlc2kgdW50dWsgUnVtYWggTW9kZXJuXCIsXG4gICAgZXhjZXJwdDpcbiAgICAgIFwiUGFuZHVhbiBsZW5na2FwIG1lbWlsaWggbWF0ZXJpYWwsIGRlc2FpbiwgZGFuIGZpbmlzaGluZyBwYWdhciBiZXNpIHlhbmcgYXdldCB1bnR1ayBpa2xpbSBLYXJhd2FuZy5cIixcbiAgICBkYXRlOiBcIjIwMjUtMDQtMTJcIixcbiAgICByZWFkTWluOiA1LFxuICB9LFxuICB7XG4gICAgc2x1ZzogXCJtb2RlbC1rYW5vcGktbW9kZXJuLTIwMjVcIixcbiAgICB0aXRsZTogXCIxMCBNb2RlbCBLYW5vcGkgTW9kZXJuIDIwMjUgeWFuZyBTZWRhbmcgVHJlblwiLFxuICAgIGV4Y2VycHQ6XG4gICAgICBcIkluc3BpcmFzaSBkZXNhaW4ga2Fub3BpIG1pbmltYWxpcyBoaW5nZ2EgaW5kdXN0cmlhbCB1bnR1ayBydW1haCBkYW4gcnVrbyBkaSBLYXJhd2FuZyAmIHNla2l0YXJueWEuXCIsXG4gICAgZGF0ZTogXCIyMDI1LTA0LTAyXCIsXG4gICAgcmVhZE1pbjogNixcbiAgfSxcbiAge1xuICAgIHNsdWc6IFwiY2FyYS1tZXJhd2F0LXJhaWxpbmctdGFuZ2dhXCIsXG4gICAgdGl0bGU6IFwiQ2FyYSBNZXJhd2F0IFJhaWxpbmcgVGFuZ2dhIEJlc2kgJiBTdGFpbmxlc3NcIixcbiAgICBleGNlcnB0OlxuICAgICAgXCJUaXBzIHBlcmF3YXRhbiBydXRpbiBhZ2FyIHJhaWxpbmcgdGV0YXAgbWVuZ2tpbGFwIGRhbiBiZWJhcyBrYXJhdCBzZWxhbWEgYmVydGFodW4tdGFodW4uXCIsXG4gICAgZGF0ZTogXCIyMDI1LTAzLTIwXCIsXG4gICAgcmVhZE1pbjogNCxcbiAgfSxcbiAge1xuICAgIHNsdWc6IFwiaGFyZ2EtamFzYS1sYXMta2FyYXdhbmdcIixcbiAgICB0aXRsZTogXCJIYXJnYSBKYXNhIExhcyBLYXJhd2FuZyAyMDI1OiBSaW5jaWFuICYgRXN0aW1hc2lcIixcbiAgICBleGNlcnB0OlxuICAgICAgXCJSaW5jaWFuIGVzdGltYXNpIGJpYXlhIGphc2EgbGFzIHBhZ2FyLCBrYW5vcGksIHJhaWxpbmcsIGRhbiBrb25zdHJ1a3NpIGFyZWEgS2FyYXdhbmcuXCIsXG4gICAgZGF0ZTogXCIyMDI1LTAzLTA4XCIsXG4gICAgcmVhZE1pbjogNyxcbiAgfSxcbiAge1xuICAgIHNsdWc6IFwiaW5zcGlyYXNpLXBhZ2FyLW1pbmltYWxpc1wiLFxuICAgIHRpdGxlOiBcIkluc3BpcmFzaSBQYWdhciBNaW5pbWFsaXMgdW50dWsgUnVtYWggVHJvcGlzXCIsXG4gICAgZXhjZXJwdDpcbiAgICAgIFwiS3VtcHVsYW4gZGVzYWluIHBhZ2FyIG1pbmltYWxpcyB5YW5nIGNvY29rIGRlbmdhbiBhcnNpdGVrdHVyIHRyb3BpcyBtb2Rlcm4gSW5kb25lc2lhLlwiLFxuICAgIGRhdGU6IFwiMjAyNS0wMi0yMlwiLFxuICAgIHJlYWRNaW46IDUsXG4gIH0sXG5dO1xuIl0sIm1hcHBpbmdzIjoiQUFBQSxPQUFPLFdBQVc7QUFDbEIsT0FBTyxZQUFZO0FBQ25CLE9BQU8sYUFBYTtBQUNwQixPQUFPLFlBQVk7QUFDbkIsT0FBTyxZQUFZO0FBQ25CLE9BQU8sZ0JBQWdCO0FBQ3ZCLE9BQU8sa0JBQWtCO0FBQ3pCLE9BQU8sZ0JBQWdCO0FBQ3ZCLE9BQU8sV0FBVztBQVdYLGFBQU0sV0FBc0I7QUFBQSxFQUNqQztBQUFBLElBQ0UsTUFBTTtBQUFBLElBQ04sT0FBTztBQUFBLElBQ1AsT0FBTztBQUFBLElBQ1AsYUFDRTtBQUFBLElBQ0YsT0FBTztBQUFBLElBQ1AsVUFBVSxDQUFDLHVCQUF1QixpQkFBaUIsaUJBQWlCLG9CQUFvQjtBQUFBLEVBQzFGO0FBQUEsRUFDQTtBQUFBLElBQ0UsTUFBTTtBQUFBLElBQ04sT0FBTztBQUFBLElBQ1AsT0FBTztBQUFBLElBQ1AsYUFDRTtBQUFBLElBQ0YsT0FBTztBQUFBLElBQ1AsVUFBVSxDQUFDLGdDQUFnQyxnQkFBZ0IsY0FBYyxvQkFBb0I7QUFBQSxFQUMvRjtBQUFBLEVBQ0E7QUFBQSxJQUNFLE1BQU07QUFBQSxJQUNOLE9BQU87QUFBQSxJQUNQLE9BQU87QUFBQSxJQUNQLGFBQ0U7QUFBQSxJQUNGLE9BQU87QUFBQSxJQUNQLFVBQVUsQ0FBQyxvQkFBb0IsbUJBQW1CLGlCQUFpQixpQkFBaUI7QUFBQSxFQUN0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

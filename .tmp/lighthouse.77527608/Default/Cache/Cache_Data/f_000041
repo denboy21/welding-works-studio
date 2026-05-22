@@ -1,0 +1,338 @@
+import { createHotContext as __vite__createHotContext } from "/@vite/client";import.meta.hot = __vite__createHotContext("/src/components/Footer.tsx");import __vite__cjsImport0_react_jsxDevRuntime from "/node_modules/.vite/deps/react_jsx-dev-runtime.js?v=5c32e97a"; const jsxDEV = __vite__cjsImport0_react_jsxDevRuntime["jsxDEV"];
+import { Link } from "/node_modules/@tanstack/react-router/dist/esm/index.dev.js?v=f47e3f35";
+import { Flame, MapPin, Phone, Clock, Instagram, Facebook } from "/node_modules/.vite/deps/lucide-react.js?v=34faba7c";
+import { SITE, waLink } from "/src/lib/site.ts";
+export function Footer() {
+  return /* @__PURE__ */ jsxDEV("footer", { className: "relative mt-24 border-t border-white/10 bg-[color:var(--surface)]", children: [
+    /* @__PURE__ */ jsxDEV("div", { className: "absolute inset-x-0 top-0 h-px bg-gradient-industrial opacity-60" }, void 0, false, {
+      fileName: "C:/project3.1/welding/welding-works-studio-main/src/components/Footer.tsx",
+      lineNumber: 8,
+      columnNumber: 7
+    }, this),
+    /* @__PURE__ */ jsxDEV("div", { className: "mx-auto grid max-w-7xl gap-10 px-4 py-14 sm:px-6 lg:grid-cols-4 lg:px-8", children: [
+      /* @__PURE__ */ jsxDEV("div", { className: "lg:col-span-2", children: [
+        /* @__PURE__ */ jsxDEV(Link, { to: "/", className: "flex items-center gap-2.5", children: [
+          /* @__PURE__ */ jsxDEV("span", { className: "flex h-10 w-10 items-center justify-center rounded-md bg-gradient-industrial", children: /* @__PURE__ */ jsxDEV(Flame, { className: "h-5 w-5 text-primary-foreground", strokeWidth: 2.4 }, void 0, false, {
+            fileName: "C:/project3.1/welding/welding-works-studio-main/src/components/Footer.tsx",
+            lineNumber: 13,
+            columnNumber: 15
+          }, this) }, void 0, false, {
+            fileName: "C:/project3.1/welding/welding-works-studio-main/src/components/Footer.tsx",
+            lineNumber: 12,
+            columnNumber: 13
+          }, this),
+          /* @__PURE__ */ jsxDEV("span", { className: "font-display text-xl font-extrabold", children: [
+            "Bara Baja ",
+            /* @__PURE__ */ jsxDEV("span", { className: "text-gradient-industrial", children: "Las" }, void 0, false, {
+              fileName: "C:/project3.1/welding/welding-works-studio-main/src/components/Footer.tsx",
+              lineNumber: 16,
+              columnNumber: 25
+            }, this)
+          ] }, void 0, true, {
+            fileName: "C:/project3.1/welding/welding-works-studio-main/src/components/Footer.tsx",
+            lineNumber: 15,
+            columnNumber: 13
+          }, this)
+        ] }, void 0, true, {
+          fileName: "C:/project3.1/welding/welding-works-studio-main/src/components/Footer.tsx",
+          lineNumber: 11,
+          columnNumber: 11
+        }, this),
+        /* @__PURE__ */ jsxDEV("p", { className: "mt-4 max-w-md text-sm leading-relaxed text-muted-foreground", children: "Jasa las profesional Karawang & sekitarnya. Pagar, kanopi, railing, tralis, konstruksi baja, hingga welding custom — hasil rapi, kuat, dan terpercaya." }, void 0, false, {
+          fileName: "C:/project3.1/welding/welding-works-studio-main/src/components/Footer.tsx",
+          lineNumber: 19,
+          columnNumber: 11
+        }, this),
+        /* @__PURE__ */ jsxDEV("div", { className: "mt-5 flex items-center gap-3", children: [
+          /* @__PURE__ */ jsxDEV(
+            "a",
+            {
+              href: SITE.social.instagram,
+              target: "_blank",
+              rel: "noopener noreferrer",
+              "aria-label": "Instagram",
+              className: "flex h-9 w-9 items-center justify-center rounded-md border border-white/10 bg-white/5 hover:bg-white/10 hover:text-primary",
+              children: /* @__PURE__ */ jsxDEV(Instagram, { className: "h-4 w-4" }, void 0, false, {
+                fileName: "C:/project3.1/welding/welding-works-studio-main/src/components/Footer.tsx",
+                lineNumber: 31,
+                columnNumber: 15
+              }, this)
+            },
+            void 0,
+            false,
+            {
+              fileName: "C:/project3.1/welding/welding-works-studio-main/src/components/Footer.tsx",
+              lineNumber: 24,
+              columnNumber: 13
+            },
+            this
+          ),
+          /* @__PURE__ */ jsxDEV(
+            "a",
+            {
+              href: SITE.social.facebook,
+              target: "_blank",
+              rel: "noopener noreferrer",
+              "aria-label": "Facebook",
+              className: "flex h-9 w-9 items-center justify-center rounded-md border border-white/10 bg-white/5 hover:bg-white/10 hover:text-primary",
+              children: /* @__PURE__ */ jsxDEV(Facebook, { className: "h-4 w-4" }, void 0, false, {
+                fileName: "C:/project3.1/welding/welding-works-studio-main/src/components/Footer.tsx",
+                lineNumber: 40,
+                columnNumber: 15
+              }, this)
+            },
+            void 0,
+            false,
+            {
+              fileName: "C:/project3.1/welding/welding-works-studio-main/src/components/Footer.tsx",
+              lineNumber: 33,
+              columnNumber: 13
+            },
+            this
+          )
+        ] }, void 0, true, {
+          fileName: "C:/project3.1/welding/welding-works-studio-main/src/components/Footer.tsx",
+          lineNumber: 23,
+          columnNumber: 11
+        }, this)
+      ] }, void 0, true, {
+        fileName: "C:/project3.1/welding/welding-works-studio-main/src/components/Footer.tsx",
+        lineNumber: 10,
+        columnNumber: 9
+      }, this),
+      /* @__PURE__ */ jsxDEV("div", { children: [
+        /* @__PURE__ */ jsxDEV("h3", { className: "font-display text-sm font-semibold uppercase tracking-wider text-foreground/90", children: "Halaman" }, void 0, false, {
+          fileName: "C:/project3.1/welding/welding-works-studio-main/src/components/Footer.tsx",
+          lineNumber: 46,
+          columnNumber: 11
+        }, this),
+        /* @__PURE__ */ jsxDEV("ul", { className: "mt-4 space-y-2 text-sm text-muted-foreground", children: [
+          /* @__PURE__ */ jsxDEV("li", { children: /* @__PURE__ */ jsxDEV(Link, { to: "/layanan", className: "hover:text-primary", children: "Layanan" }, void 0, false, {
+            fileName: "C:/project3.1/welding/welding-works-studio-main/src/components/Footer.tsx",
+            lineNumber: 51,
+            columnNumber: 15
+          }, this) }, void 0, false, {
+            fileName: "C:/project3.1/welding/welding-works-studio-main/src/components/Footer.tsx",
+            lineNumber: 50,
+            columnNumber: 13
+          }, this),
+          /* @__PURE__ */ jsxDEV("li", { children: /* @__PURE__ */ jsxDEV(Link, { to: "/portfolio", className: "hover:text-primary", children: "Portfolio" }, void 0, false, {
+            fileName: "C:/project3.1/welding/welding-works-studio-main/src/components/Footer.tsx",
+            lineNumber: 56,
+            columnNumber: 15
+          }, this) }, void 0, false, {
+            fileName: "C:/project3.1/welding/welding-works-studio-main/src/components/Footer.tsx",
+            lineNumber: 55,
+            columnNumber: 13
+          }, this),
+          /* @__PURE__ */ jsxDEV("li", { children: /* @__PURE__ */ jsxDEV(Link, { to: "/area-layanan", className: "hover:text-primary", children: "Area Layanan" }, void 0, false, {
+            fileName: "C:/project3.1/welding/welding-works-studio-main/src/components/Footer.tsx",
+            lineNumber: 61,
+            columnNumber: 15
+          }, this) }, void 0, false, {
+            fileName: "C:/project3.1/welding/welding-works-studio-main/src/components/Footer.tsx",
+            lineNumber: 60,
+            columnNumber: 13
+          }, this),
+          /* @__PURE__ */ jsxDEV("li", { children: /* @__PURE__ */ jsxDEV(Link, { to: "/testimoni", className: "hover:text-primary", children: "Testimoni" }, void 0, false, {
+            fileName: "C:/project3.1/welding/welding-works-studio-main/src/components/Footer.tsx",
+            lineNumber: 66,
+            columnNumber: 15
+          }, this) }, void 0, false, {
+            fileName: "C:/project3.1/welding/welding-works-studio-main/src/components/Footer.tsx",
+            lineNumber: 65,
+            columnNumber: 13
+          }, this),
+          /* @__PURE__ */ jsxDEV("li", { children: /* @__PURE__ */ jsxDEV(Link, { to: "/faq", className: "hover:text-primary", children: "FAQ" }, void 0, false, {
+            fileName: "C:/project3.1/welding/welding-works-studio-main/src/components/Footer.tsx",
+            lineNumber: 71,
+            columnNumber: 15
+          }, this) }, void 0, false, {
+            fileName: "C:/project3.1/welding/welding-works-studio-main/src/components/Footer.tsx",
+            lineNumber: 70,
+            columnNumber: 13
+          }, this),
+          /* @__PURE__ */ jsxDEV("li", { children: /* @__PURE__ */ jsxDEV(Link, { to: "/blog", className: "hover:text-primary", children: "Blog" }, void 0, false, {
+            fileName: "C:/project3.1/welding/welding-works-studio-main/src/components/Footer.tsx",
+            lineNumber: 76,
+            columnNumber: 15
+          }, this) }, void 0, false, {
+            fileName: "C:/project3.1/welding/welding-works-studio-main/src/components/Footer.tsx",
+            lineNumber: 75,
+            columnNumber: 13
+          }, this),
+          /* @__PURE__ */ jsxDEV("li", { children: /* @__PURE__ */ jsxDEV(Link, { to: "/kontak", className: "hover:text-primary", children: "Kontak" }, void 0, false, {
+            fileName: "C:/project3.1/welding/welding-works-studio-main/src/components/Footer.tsx",
+            lineNumber: 81,
+            columnNumber: 15
+          }, this) }, void 0, false, {
+            fileName: "C:/project3.1/welding/welding-works-studio-main/src/components/Footer.tsx",
+            lineNumber: 80,
+            columnNumber: 13
+          }, this)
+        ] }, void 0, true, {
+          fileName: "C:/project3.1/welding/welding-works-studio-main/src/components/Footer.tsx",
+          lineNumber: 49,
+          columnNumber: 11
+        }, this)
+      ] }, void 0, true, {
+        fileName: "C:/project3.1/welding/welding-works-studio-main/src/components/Footer.tsx",
+        lineNumber: 45,
+        columnNumber: 9
+      }, this),
+      /* @__PURE__ */ jsxDEV("div", { children: [
+        /* @__PURE__ */ jsxDEV("h3", { className: "font-display text-sm font-semibold uppercase tracking-wider text-foreground/90", children: "Hubungi" }, void 0, false, {
+          fileName: "C:/project3.1/welding/welding-works-studio-main/src/components/Footer.tsx",
+          lineNumber: 89,
+          columnNumber: 11
+        }, this),
+        /* @__PURE__ */ jsxDEV("ul", { className: "mt-4 space-y-3 text-sm text-muted-foreground", children: [
+          /* @__PURE__ */ jsxDEV("li", { className: "flex items-start gap-2.5", children: [
+            /* @__PURE__ */ jsxDEV(MapPin, { className: "mt-0.5 h-4 w-4 flex-shrink-0 text-primary" }, void 0, false, {
+              fileName: "C:/project3.1/welding/welding-works-studio-main/src/components/Footer.tsx",
+              lineNumber: 94,
+              columnNumber: 15
+            }, this),
+            /* @__PURE__ */ jsxDEV(
+              "a",
+              {
+                href: SITE.mapsUrl,
+                target: "_blank",
+                rel: "noopener noreferrer",
+                className: "hover:text-primary",
+                children: SITE.address
+              },
+              void 0,
+              false,
+              {
+                fileName: "C:/project3.1/welding/welding-works-studio-main/src/components/Footer.tsx",
+                lineNumber: 95,
+                columnNumber: 15
+              },
+              this
+            )
+          ] }, void 0, true, {
+            fileName: "C:/project3.1/welding/welding-works-studio-main/src/components/Footer.tsx",
+            lineNumber: 93,
+            columnNumber: 13
+          }, this),
+          /* @__PURE__ */ jsxDEV("li", { className: "flex items-start gap-2.5", children: [
+            /* @__PURE__ */ jsxDEV(Phone, { className: "mt-0.5 h-4 w-4 flex-shrink-0 text-primary" }, void 0, false, {
+              fileName: "C:/project3.1/welding/welding-works-studio-main/src/components/Footer.tsx",
+              lineNumber: 105,
+              columnNumber: 15
+            }, this),
+            /* @__PURE__ */ jsxDEV(
+              "a",
+              {
+                href: waLink("Halo, saya ingin konsultasi."),
+                target: "_blank",
+                rel: "noopener noreferrer",
+                className: "hover:text-primary",
+                children: SITE.phone
+              },
+              void 0,
+              false,
+              {
+                fileName: "C:/project3.1/welding/welding-works-studio-main/src/components/Footer.tsx",
+                lineNumber: 106,
+                columnNumber: 15
+              },
+              this
+            )
+          ] }, void 0, true, {
+            fileName: "C:/project3.1/welding/welding-works-studio-main/src/components/Footer.tsx",
+            lineNumber: 104,
+            columnNumber: 13
+          }, this),
+          /* @__PURE__ */ jsxDEV("li", { className: "flex items-start gap-2.5", children: [
+            /* @__PURE__ */ jsxDEV(Clock, { className: "mt-0.5 h-4 w-4 flex-shrink-0 text-primary" }, void 0, false, {
+              fileName: "C:/project3.1/welding/welding-works-studio-main/src/components/Footer.tsx",
+              lineNumber: 116,
+              columnNumber: 15
+            }, this),
+            /* @__PURE__ */ jsxDEV("span", { children: SITE.hours }, void 0, false, {
+              fileName: "C:/project3.1/welding/welding-works-studio-main/src/components/Footer.tsx",
+              lineNumber: 117,
+              columnNumber: 15
+            }, this)
+          ] }, void 0, true, {
+            fileName: "C:/project3.1/welding/welding-works-studio-main/src/components/Footer.tsx",
+            lineNumber: 115,
+            columnNumber: 13
+          }, this)
+        ] }, void 0, true, {
+          fileName: "C:/project3.1/welding/welding-works-studio-main/src/components/Footer.tsx",
+          lineNumber: 92,
+          columnNumber: 11
+        }, this)
+      ] }, void 0, true, {
+        fileName: "C:/project3.1/welding/welding-works-studio-main/src/components/Footer.tsx",
+        lineNumber: 88,
+        columnNumber: 9
+      }, this)
+    ] }, void 0, true, {
+      fileName: "C:/project3.1/welding/welding-works-studio-main/src/components/Footer.tsx",
+      lineNumber: 9,
+      columnNumber: 7
+    }, this),
+    /* @__PURE__ */ jsxDEV("div", { className: "border-t border-white/10", children: /* @__PURE__ */ jsxDEV("div", { className: "mx-auto flex max-w-7xl flex-col items-center justify-between gap-2 px-4 py-5 text-xs text-muted-foreground sm:flex-row sm:px-6 lg:px-8", children: [
+      /* @__PURE__ */ jsxDEV("p", { children: [
+        "© ",
+        (/* @__PURE__ */ new Date()).getFullYear(),
+        " ",
+        SITE.name,
+        ". Semua hak dilindungi."
+      ] }, void 0, true, {
+        fileName: "C:/project3.1/welding/welding-works-studio-main/src/components/Footer.tsx",
+        lineNumber: 124,
+        columnNumber: 11
+      }, this),
+      /* @__PURE__ */ jsxDEV("p", { children: "Workshop Karawang — Melayani Jawa Barat" }, void 0, false, {
+        fileName: "C:/project3.1/welding/welding-works-studio-main/src/components/Footer.tsx",
+        lineNumber: 127,
+        columnNumber: 11
+      }, this)
+    ] }, void 0, true, {
+      fileName: "C:/project3.1/welding/welding-works-studio-main/src/components/Footer.tsx",
+      lineNumber: 123,
+      columnNumber: 9
+    }, this) }, void 0, false, {
+      fileName: "C:/project3.1/welding/welding-works-studio-main/src/components/Footer.tsx",
+      lineNumber: 122,
+      columnNumber: 7
+    }, this)
+  ] }, void 0, true, {
+    fileName: "C:/project3.1/welding/welding-works-studio-main/src/components/Footer.tsx",
+    lineNumber: 7,
+    columnNumber: 5
+  }, this);
+}
+_c = Footer;
+var _c;
+$RefreshReg$(_c, "Footer");
+import * as RefreshRuntime from "/@react-refresh";
+const inWebWorker = typeof WorkerGlobalScope !== "undefined" && self instanceof WorkerGlobalScope;
+if (import.meta.hot && !inWebWorker) {
+  if (!window.$RefreshReg$) {
+    throw new Error(
+      "@vitejs/plugin-react can't detect preamble. Something is wrong."
+    );
+  }
+  RefreshRuntime.__hmr_import(import.meta.url).then((currentExports) => {
+    RefreshRuntime.registerExportsForReactRefresh("C:/project3.1/welding/welding-works-studio-main/src/components/Footer.tsx", currentExports);
+    import.meta.hot.accept((nextExports) => {
+      if (!nextExports) return;
+      const invalidateMessage = RefreshRuntime.validateRefreshBoundaryAndEnqueueUpdate("C:/project3.1/welding/welding-works-studio-main/src/components/Footer.tsx", currentExports, nextExports);
+      if (invalidateMessage) import.meta.hot.invalidate(invalidateMessage);
+    });
+  });
+}
+function $RefreshReg$(type, id) {
+  return RefreshRuntime.register(type, "C:/project3.1/welding/welding-works-studio-main/src/components/Footer.tsx " + id);
+}
+function $RefreshSig$() {
+  return RefreshRuntime.createSignatureFunctionForTransform();
+}
+
+//# sourceMappingURL=data:application/json;base64,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QUFBO0FBQUEsU0EySEE7QUFFSjtBQUFDQyxLQS9IZVg7QUFBTSxJQUFBVztBQUFBLGFBQUFBLElBQUEiLCJuYW1lcyI6WyJMaW5rIiwiRmxhbWUiLCJNYXBQaW4iLCJQaG9uZSIsIkNsb2NrIiwiSW5zdGFncmFtIiwiRmFjZWJvb2siLCJTSVRFIiwid2FMaW5rIiwiRm9vdGVyIiwic29jaWFsIiwiaW5zdGFncmFtIiwiZmFjZWJvb2siLCJtYXBzVXJsIiwiYWRkcmVzcyIsInBob25lIiwiaG91cnMiLCJEYXRlIiwiZ2V0RnVsbFllYXIiLCJuYW1lIiwiX2MiXSwiaWdub3JlTGlzdCI6W10sInNvdXJjZXMiOlsiRm9vdGVyLnRzeCJdLCJzb3VyY2VzQ29udGVudCI6WyJpbXBvcnQgeyBMaW5rIH0gZnJvbSBcIkB0YW5zdGFjay9yZWFjdC1yb3V0ZXJcIjtcbmltcG9ydCB7IEZsYW1lLCBNYXBQaW4sIFBob25lLCBDbG9jaywgSW5zdGFncmFtLCBGYWNlYm9vayB9IGZyb20gXCJsdWNpZGUtcmVhY3RcIjtcbmltcG9ydCB7IFNJVEUsIHdhTGluayB9IGZyb20gXCJAL2xpYi9zaXRlXCI7XG5cbmV4cG9ydCBmdW5jdGlvbiBGb290ZXIoKSB7XG4gIHJldHVybiAoXG4gICAgPGZvb3RlciBjbGFzc05hbWU9XCJyZWxhdGl2ZSBtdC0yNCBib3JkZXItdCBib3JkZXItd2hpdGUvMTAgYmctW2NvbG9yOnZhcigtLXN1cmZhY2UpXVwiPlxuICAgICAgPGRpdiBjbGFzc05hbWU9XCJhYnNvbHV0ZSBpbnNldC14LTAgdG9wLTAgaC1weCBiZy1ncmFkaWVudC1pbmR1c3RyaWFsIG9wYWNpdHktNjBcIiAvPlxuICAgICAgPGRpdiBjbGFzc05hbWU9XCJteC1hdXRvIGdyaWQgbWF4LXctN3hsIGdhcC0xMCBweC00IHB5LTE0IHNtOnB4LTYgbGc6Z3JpZC1jb2xzLTQgbGc6cHgtOFwiPlxuICAgICAgICA8ZGl2IGNsYXNzTmFtZT1cImxnOmNvbC1zcGFuLTJcIj5cbiAgICAgICAgICA8TGluayB0bz1cIi9cIiBjbGFzc05hbWU9XCJmbGV4IGl0ZW1zLWNlbnRlciBnYXAtMi41XCI+XG4gICAgICAgICAgICA8c3BhbiBjbGFzc05hbWU9XCJmbGV4IGgtMTAgdy0xMCBpdGVtcy1jZW50ZXIganVzdGlmeS1jZW50ZXIgcm91bmRlZC1tZCBiZy1ncmFkaWVudC1pbmR1c3RyaWFsXCI+XG4gICAgICAgICAgICAgIDxGbGFtZSBjbGFzc05hbWU9XCJoLTUgdy01IHRleHQtcHJpbWFyeS1mb3JlZ3JvdW5kXCIgc3Ryb2tlV2lkdGg9ezIuNH0gLz5cbiAgICAgICAgICAgIDwvc3Bhbj5cbiAgICAgICAgICAgIDxzcGFuIGNsYXNzTmFtZT1cImZvbnQtZGlzcGxheSB0ZXh0LXhsIGZvbnQtZXh0cmFib2xkXCI+XG4gICAgICAgICAgICAgIEJhcmEgQmFqYSA8c3BhbiBjbGFzc05hbWU9XCJ0ZXh0LWdyYWRpZW50LWluZHVzdHJpYWxcIj5MYXM8L3NwYW4+XG4gICAgICAgICAgICA8L3NwYW4+XG4gICAgICAgICAgPC9MaW5rPlxuICAgICAgICAgIDxwIGNsYXNzTmFtZT1cIm10LTQgbWF4LXctbWQgdGV4dC1zbSBsZWFkaW5nLXJlbGF4ZWQgdGV4dC1tdXRlZC1mb3JlZ3JvdW5kXCI+XG4gICAgICAgICAgICBKYXNhIGxhcyBwcm9mZXNpb25hbCBLYXJhd2FuZyAmIHNla2l0YXJueWEuIFBhZ2FyLCBrYW5vcGksIHJhaWxpbmcsIHRyYWxpcywga29uc3RydWtzaVxuICAgICAgICAgICAgYmFqYSwgaGluZ2dhIHdlbGRpbmcgY3VzdG9tIOKAlCBoYXNpbCByYXBpLCBrdWF0LCBkYW4gdGVycGVyY2F5YS5cbiAgICAgICAgICA8L3A+XG4gICAgICAgICAgPGRpdiBjbGFzc05hbWU9XCJtdC01IGZsZXggaXRlbXMtY2VudGVyIGdhcC0zXCI+XG4gICAgICAgICAgICA8YVxuICAgICAgICAgICAgICBocmVmPXtTSVRFLnNvY2lhbC5pbnN0YWdyYW19XG4gICAgICAgICAgICAgIHRhcmdldD1cIl9ibGFua1wiXG4gICAgICAgICAgICAgIHJlbD1cIm5vb3BlbmVyIG5vcmVmZXJyZXJcIlxuICAgICAgICAgICAgICBhcmlhLWxhYmVsPVwiSW5zdGFncmFtXCJcbiAgICAgICAgICAgICAgY2xhc3NOYW1lPVwiZmxleCBoLTkgdy05IGl0ZW1zLWNlbnRlciBqdXN0aWZ5LWNlbnRlciByb3VuZGVkLW1kIGJvcmRlciBib3JkZXItd2hpdGUvMTAgYmctd2hpdGUvNSBob3ZlcjpiZy13aGl0ZS8xMCBob3Zlcjp0ZXh0LXByaW1hcnlcIlxuICAgICAgICAgICAgPlxuICAgICAgICAgICAgICA8SW5zdGFncmFtIGNsYXNzTmFtZT1cImgtNCB3LTRcIiAvPlxuICAgICAgICAgICAgPC9hPlxuICAgICAgICAgICAgPGFcbiAgICAgICAgICAgICAgaHJlZj17U0lURS5zb2NpYWwuZmFjZWJvb2t9XG4gICAgICAgICAgICAgIHRhcmdldD1cIl9ibGFua1wiXG4gICAgICAgICAgICAgIHJlbD1cIm5vb3BlbmVyIG5vcmVmZXJyZXJcIlxuICAgICAgICAgICAgICBhcmlhLWxhYmVsPVwiRmFjZWJvb2tcIlxuICAgICAgICAgICAgICBjbGFzc05hbWU9XCJmbGV4IGgtOSB3LTkgaXRlbXMtY2VudGVyIGp1c3RpZnktY2VudGVyIHJvdW5kZWQtbWQgYm9yZGVyIGJvcmRlci13aGl0ZS8xMCBiZy13aGl0ZS81IGhvdmVyOmJnLXdoaXRlLzEwIGhvdmVyOnRleHQtcHJpbWFyeVwiXG4gICAgICAgICAgICA+XG4gICAgICAgICAgICAgIDxGYWNlYm9vayBjbGFzc05hbWU9XCJoLTQgdy00XCIgLz5cbiAgICAgICAgICAgIDwvYT5cbiAgICAgICAgICA8L2Rpdj5cbiAgICAgICAgPC9kaXY+XG5cbiAgICAgICAgPGRpdj5cbiAgICAgICAgICA8aDMgY2xhc3NOYW1lPVwiZm9udC1kaXNwbGF5IHRleHQtc20gZm9udC1zZW1pYm9sZCB1cHBlcmNhc2UgdHJhY2tpbmctd2lkZXIgdGV4dC1mb3JlZ3JvdW5kLzkwXCI+XG4gICAgICAgICAgICBIYWxhbWFuXG4gICAgICAgICAgPC9oMz5cbiAgICAgICAgICA8dWwgY2xhc3NOYW1lPVwibXQtNCBzcGFjZS15LTIgdGV4dC1zbSB0ZXh0LW11dGVkLWZvcmVncm91bmRcIj5cbiAgICAgICAgICAgIDxsaT5cbiAgICAgICAgICAgICAgPExpbmsgdG89XCIvbGF5YW5hblwiIGNsYXNzTmFtZT1cImhvdmVyOnRleHQtcHJpbWFyeVwiPlxuICAgICAgICAgICAgICAgIExheWFuYW5cbiAgICAgICAgICAgICAgPC9MaW5rPlxuICAgICAgICAgICAgPC9saT5cbiAgICAgICAgICAgIDxsaT5cbiAgICAgICAgICAgICAgPExpbmsgdG89XCIvcG9ydGZvbGlvXCIgY2xhc3NOYW1lPVwiaG92ZXI6dGV4dC1wcmltYXJ5XCI+XG4gICAgICAgICAgICAgICAgUG9ydGZvbGlvXG4gICAgICAgICAgICAgIDwvTGluaz5cbiAgICAgICAgICAgIDwvbGk+XG4gICAgICAgICAgICA8bGk+XG4gICAgICAgICAgICAgIDxMaW5rIHRvPVwiL2FyZWEtbGF5YW5hblwiIGNsYXNzTmFtZT1cImhvdmVyOnRleHQtcHJpbWFyeVwiPlxuICAgICAgICAgICAgICAgIEFyZWEgTGF5YW5hblxuICAgICAgICAgICAgICA8L0xpbms+XG4gICAgICAgICAgICA8L2xpPlxuICAgICAgICAgICAgPGxpPlxuICAgICAgICAgICAgICA8TGluayB0bz1cIi90ZXN0aW1vbmlcIiBjbGFzc05hbWU9XCJob3Zlcjp0ZXh0LXByaW1hcnlcIj5cbiAgICAgICAgICAgICAgICBUZXN0aW1vbmlcbiAgICAgICAgICAgICAgPC9MaW5rPlxuICAgICAgICAgICAgPC9saT5cbiAgICAgICAgICAgIDxsaT5cbiAgICAgICAgICAgICAgPExpbmsgdG89XCIvZmFxXCIgY2xhc3NOYW1lPVwiaG92ZXI6dGV4dC1wcmltYXJ5XCI+XG4gICAgICAgICAgICAgICAgRkFRXG4gICAgICAgICAgICAgIDwvTGluaz5cbiAgICAgICAgICAgIDwvbGk+XG4gICAgICAgICAgICA8bGk+XG4gICAgICAgICAgICAgIDxMaW5rIHRvPVwiL2Jsb2dcIiBjbGFzc05hbWU9XCJob3Zlcjp0ZXh0LXByaW1hcnlcIj5cbiAgICAgICAgICAgICAgICBCbG9nXG4gICAgICAgICAgICAgIDwvTGluaz5cbiAgICAgICAgICAgIDwvbGk+XG4gICAgICAgICAgICA8bGk+XG4gICAgICAgICAgICAgIDxMaW5rIHRvPVwiL2tvbnRha1wiIGNsYXNzTmFtZT1cImhvdmVyOnRleHQtcHJpbWFyeVwiPlxuICAgICAgICAgICAgICAgIEtvbnRha1xuICAgICAgICAgICAgICA8L0xpbms+XG4gICAgICAgICAgICA8L2xpPlxuICAgICAgICAgIDwvdWw+XG4gICAgICAgIDwvZGl2PlxuXG4gICAgICAgIDxkaXY+XG4gICAgICAgICAgPGgzIGNsYXNzTmFtZT1cImZvbnQtZGlzcGxheSB0ZXh0LXNtIGZvbnQtc2VtaWJvbGQgdXBwZXJjYXNlIHRyYWNraW5nLXdpZGVyIHRleHQtZm9yZWdyb3VuZC85MFwiPlxuICAgICAgICAgICAgSHVidW5naVxuICAgICAgICAgIDwvaDM+XG4gICAgICAgICAgPHVsIGNsYXNzTmFtZT1cIm10LTQgc3BhY2UteS0zIHRleHQtc20gdGV4dC1tdXRlZC1mb3JlZ3JvdW5kXCI+XG4gICAgICAgICAgICA8bGkgY2xhc3NOYW1lPVwiZmxleCBpdGVtcy1zdGFydCBnYXAtMi41XCI+XG4gICAgICAgICAgICAgIDxNYXBQaW4gY2xhc3NOYW1lPVwibXQtMC41IGgtNCB3LTQgZmxleC1zaHJpbmstMCB0ZXh0LXByaW1hcnlcIiAvPlxuICAgICAgICAgICAgICA8YVxuICAgICAgICAgICAgICAgIGhyZWY9e1NJVEUubWFwc1VybH1cbiAgICAgICAgICAgICAgICB0YXJnZXQ9XCJfYmxhbmtcIlxuICAgICAgICAgICAgICAgIHJlbD1cIm5vb3BlbmVyIG5vcmVmZXJyZXJcIlxuICAgICAgICAgICAgICAgIGNsYXNzTmFtZT1cImhvdmVyOnRleHQtcHJpbWFyeVwiXG4gICAgICAgICAgICAgID5cbiAgICAgICAgICAgICAgICB7U0lURS5hZGRyZXNzfVxuICAgICAgICAgICAgICA8L2E+XG4gICAgICAgICAgICA8L2xpPlxuICAgICAgICAgICAgPGxpIGNsYXNzTmFtZT1cImZsZXggaXRlbXMtc3RhcnQgZ2FwLTIuNVwiPlxuICAgICAgICAgICAgICA8UGhvbmUgY2xhc3NOYW1lPVwibXQtMC41IGgtNCB3LTQgZmxleC1zaHJpbmstMCB0ZXh0LXByaW1hcnlcIiAvPlxuICAgICAgICAgICAgICA8YVxuICAgICAgICAgICAgICAgIGhyZWY9e3dhTGluayhcIkhhbG8sIHNheWEgaW5naW4ga29uc3VsdGFzaS5cIil9XG4gICAgICAgICAgICAgICAgdGFyZ2V0PVwiX2JsYW5rXCJcbiAgICAgICAgICAgICAgICByZWw9XCJub29wZW5lciBub3JlZmVycmVyXCJcbiAgICAgICAgICAgICAgICBjbGFzc05hbWU9XCJob3Zlcjp0ZXh0LXByaW1hcnlcIlxuICAgICAgICAgICAgICA+XG4gICAgICAgICAgICAgICAge1NJVEUucGhvbmV9XG4gICAgICAgICAgICAgIDwvYT5cbiAgICAgICAgICAgIDwvbGk+XG4gICAgICAgICAgICA8bGkgY2xhc3NOYW1lPVwiZmxleCBpdGVtcy1zdGFydCBnYXAtMi41XCI+XG4gICAgICAgICAgICAgIDxDbG9jayBjbGFzc05hbWU9XCJtdC0wLjUgaC00IHctNCBmbGV4LXNocmluay0wIHRleHQtcHJpbWFyeVwiIC8+XG4gICAgICAgICAgICAgIDxzcGFuPntTSVRFLmhvdXJzfTwvc3Bhbj5cbiAgICAgICAgICAgIDwvbGk+XG4gICAgICAgICAgPC91bD5cbiAgICAgICAgPC9kaXY+XG4gICAgICA8L2Rpdj5cbiAgICAgIDxkaXYgY2xhc3NOYW1lPVwiYm9yZGVyLXQgYm9yZGVyLXdoaXRlLzEwXCI+XG4gICAgICAgIDxkaXYgY2xhc3NOYW1lPVwibXgtYXV0byBmbGV4IG1heC13LTd4bCBmbGV4LWNvbCBpdGVtcy1jZW50ZXIganVzdGlmeS1iZXR3ZWVuIGdhcC0yIHB4LTQgcHktNSB0ZXh0LXhzIHRleHQtbXV0ZWQtZm9yZWdyb3VuZCBzbTpmbGV4LXJvdyBzbTpweC02IGxnOnB4LThcIj5cbiAgICAgICAgICA8cD5cbiAgICAgICAgICAgIMKpIHtuZXcgRGF0ZSgpLmdldEZ1bGxZZWFyKCl9IHtTSVRFLm5hbWV9LiBTZW11YSBoYWsgZGlsaW5kdW5naS5cbiAgICAgICAgICA8L3A+XG4gICAgICAgICAgPHA+V29ya3Nob3AgS2FyYXdhbmcg4oCUIE1lbGF5YW5pIEphd2EgQmFyYXQ8L3A+XG4gICAgICAgIDwvZGl2PlxuICAgICAgPC9kaXY+XG4gICAgPC9mb290ZXI+XG4gICk7XG59XG4iXSwiZmlsZSI6IkM6L3Byb2plY3QzLjEvd2VsZGluZy93ZWxkaW5nLXdvcmtzLXN0dWRpby1tYWluL3NyYy9jb21wb25lbnRzL0Zvb3Rlci50c3gifQ==
