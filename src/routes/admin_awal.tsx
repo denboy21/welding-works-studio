@@ -2,31 +2,19 @@ import { createFileRoute } from "@tanstack/react-router";
 import { useQuery, useMutation, useQueryClient } from "@tanstack/react-query";
 import { useState } from "react";
 import {
-  getPortfolioItems,
-  createPortfolioItem,
-  updatePortfolioItem,
-  deletePortfolioItem,
-  type PortfolioItem,
-  type PortfolioCreateInput,
+  getPortfolioItems, createPortfolioItem, updatePortfolioItem, deletePortfolioItem,
+  type PortfolioItem, type PortfolioCreateInput,
 } from "@/lib/portfolio";
 import {
-  getTestimonials,
-  createTestimonial,
-  updateTestimonial,
-  deleteTestimonial,
-  type TestimonialItem,
-  type TestimonialCreateInput,
+  getTestimonials, createTestimonial, updateTestimonial, deleteTestimonial,
+  type TestimonialItem, type TestimonialCreateInput,
 } from "@/lib/testimonials";
 import {
-  getFaqs,
-  createFaq,
-  updateFaq,
-  deleteFaq,
-  type FaqItem,
-  type FaqCreateInput,
+  getFaqs, createFaq, updateFaq, deleteFaq,
+  type FaqItem, type FaqCreateInput,
 } from "@/lib/faqs";
 
-export const Route = createFileRoute("/admin")({
+export const Route = createFileRoute("/admin_awal")({
   component: AdminPage,
 });
 
@@ -50,22 +38,10 @@ const emptyFaq: FaqCreateInput = {
 };
 
 type Tab = "portfolio" | "testimoni" | "faq";
-
-// ─── Login Page ───────────────────────────────────────────────────────────────
-
 function AdminPage() {
   const [password, setPassword] = useState("");
   const [authed, setAuthed] = useState(false);
   const [authError, setAuthError] = useState("");
-
-  function handleLogin() {
-    if (password === "barabajalas2024") {
-      setAuthed(true);
-      setAuthError("");
-    } else {
-      setAuthError("Password salah");
-    }
-  }
 
   if (!authed) {
     return (
@@ -78,15 +54,20 @@ function AdminPage() {
             placeholder="Password admin"
             value={password}
             onChange={(e) => setPassword(e.target.value)}
-            onKeyDown={(e) => { if (e.key === "Enter") handleLogin(); }}
+            onKeyDown={(e) => {
+              if (e.key === "Enter") {
+                if (password === "barabajalas2024") setAuthed(true);
+                else setAuthError("Password salah");
+              }
+            }}
             className="w-full bg-slate-700 text-white px-4 py-2 rounded-lg mb-3 outline-none focus:ring-2 focus:ring-orange-500"
           />
-          {authError && (
-            <p className="text-red-400 text-sm mb-3">{authError}</p>
-          )}
+          {authError && <p className="text-red-400 text-sm mb-3">{authError}</p>}
           <button
-            type="button"
-            onClick={handleLogin}
+            onClick={() => {
+              if (password === "barabajalas2024") setAuthed(true);
+              else setAuthError("Password salah");
+            }}
             className="w-full bg-orange-500 hover:bg-orange-600 text-white font-semibold py-2 rounded-lg transition"
           >
             Masuk
@@ -96,57 +77,52 @@ function AdminPage() {
     );
   }
 
-  return <AdminDashboard onLogout={() => { setAuthed(false); setPassword(""); }} />;
+  return <AdminDashboard onLogout={() => setAuthed(false)} />;
 }
-
-// ─── Dashboard ────────────────────────────────────────────────────────────────
-
 function AdminDashboard({ onLogout }: { onLogout: () => void }) {
   const queryClient = useQueryClient();
   const [activeTab, setActiveTab] = useState<Tab>("portfolio");
 
-  // Portfolio state
+  // ── Portfolio state ───────────────────────────────
   const [showPortfolioForm, setShowPortfolioForm] = useState(false);
   const [editPortfolio, setEditPortfolio] = useState<PortfolioItem | null>(null);
   const [portfolioForm, setPortfolioForm] = useState<PortfolioCreateInput>(emptyPortfolio);
   const [deletePortfolioConfirm, setDeletePortfolioConfirm] = useState<number | null>(null);
 
-  // Testimoni state
+  // ── Testimoni state ───────────────────────────────
   const [showTestimonialForm, setShowTestimonialForm] = useState(false);
   const [editTestimonial, setEditTestimonial] = useState<TestimonialItem | null>(null);
   const [testimonialForm, setTestimonialForm] = useState<TestimonialCreateInput>(emptyTestimonial);
   const [deleteTestimonialConfirm, setDeleteTestimonialConfirm] = useState<number | null>(null);
 
-  // FAQ state
+  // ── FAQ state ─────────────────────────────────────
   const [showFaqForm, setShowFaqForm] = useState(false);
   const [editFaq, setEditFaq] = useState<FaqItem | null>(null);
   const [faqForm, setFaqForm] = useState<FaqCreateInput>(emptyFaq);
   const [deleteFaqConfirm, setDeleteFaqConfirm] = useState<number | null>(null);
 
-  // Queries
+  // ── Queries ───────────────────────────────────────
   const { data: portfolioItems = [], isLoading: loadingPortfolio } = useQuery({
     queryKey: ["admin-portfolio"],
     queryFn: () => getPortfolioItems(),
-    retry: false,
-    throwOnError: false,
+    retry: false, throwOnError: false,
   });
 
   const { data: testimonialItems = [], isLoading: loadingTestimonial } = useQuery({
     queryKey: ["admin-testimonials"],
     queryFn: () => getTestimonials(),
-    retry: false,
-    throwOnError: false,
+    retry: false, throwOnError: false,
   });
 
   const { data: faqItems = [], isLoading: loadingFaq } = useQuery({
     queryKey: ["admin-faqs"],
     queryFn: () => getFaqs(),
-    retry: false,
-    throwOnError: false,
+    retry: false, throwOnError: false,
   });
 
-  // Portfolio mutations
+  // ── Portfolio mutations ───────────────────────────
   const invalidatePortfolio = () => queryClient.invalidateQueries({ queryKey: ["admin-portfolio"] });
+
   const createPortfolioMutation = useMutation({
     mutationFn: (data: PortfolioCreateInput) => createPortfolioItem({ data }),
     onSuccess: () => { invalidatePortfolio(); resetPortfolioForm(); },
@@ -160,8 +136,9 @@ function AdminDashboard({ onLogout }: { onLogout: () => void }) {
     onSuccess: () => { invalidatePortfolio(); setDeletePortfolioConfirm(null); },
   });
 
-  // Testimoni mutations
+  // ── Testimoni mutations ───────────────────────────
   const invalidateTestimonial = () => queryClient.invalidateQueries({ queryKey: ["admin-testimonials"] });
+
   const createTestimonialMutation = useMutation({
     mutationFn: (data: TestimonialCreateInput) => createTestimonial({ data }),
     onSuccess: () => { invalidateTestimonial(); resetTestimonialForm(); },
@@ -175,8 +152,9 @@ function AdminDashboard({ onLogout }: { onLogout: () => void }) {
     onSuccess: () => { invalidateTestimonial(); setDeleteTestimonialConfirm(null); },
   });
 
-  // FAQ mutations
+  // ── FAQ mutations ─────────────────────────────────
   const invalidateFaq = () => queryClient.invalidateQueries({ queryKey: ["admin-faqs"] });
+
   const createFaqMutation = useMutation({
     mutationFn: (data: FaqCreateInput) => createFaq({ data }),
     onSuccess: () => { invalidateFaq(); resetFaqForm(); },
@@ -190,7 +168,7 @@ function AdminDashboard({ onLogout }: { onLogout: () => void }) {
     onSuccess: () => { invalidateFaq(); setDeleteFaqConfirm(null); },
   });
 
-  // Portfolio helpers
+  // ── Helpers portfolio ─────────────────────────────
   function resetPortfolioForm() {
     setPortfolioForm(emptyPortfolio);
     setEditPortfolio(null);
@@ -211,7 +189,7 @@ function AdminDashboard({ onLogout }: { onLogout: () => void }) {
     else createPortfolioMutation.mutate(portfolioForm);
   }
 
-  // Testimoni helpers
+  // ── Helpers testimoni ─────────────────────────────
   function resetTestimonialForm() {
     setTestimonialForm(emptyTestimonial);
     setEditTestimonial(null);
@@ -231,7 +209,7 @@ function AdminDashboard({ onLogout }: { onLogout: () => void }) {
     else createTestimonialMutation.mutate(testimonialForm);
   }
 
-  // FAQ helpers
+  // ── Helpers FAQ ───────────────────────────────────
   function resetFaqForm() {
     setFaqForm(emptyFaq);
     setEditFaq(null);
@@ -239,7 +217,9 @@ function AdminDashboard({ onLogout }: { onLogout: () => void }) {
   }
   function openEditFaq(item: FaqItem) {
     setEditFaq(item);
-    setFaqForm({ question: item.question, answer: item.answer, sort_order: item.sort_order });
+    setFaqForm({
+      question: item.question, answer: item.answer, sort_order: item.sort_order,
+    });
     setShowFaqForm(true);
   }
   function handleFaqSubmit(e: React.FormEvent) {
@@ -251,35 +231,38 @@ function AdminDashboard({ onLogout }: { onLogout: () => void }) {
   const isPortfolioPending = createPortfolioMutation.isPending || updatePortfolioMutation.isPending;
   const isTestimonialPending = createTestimonialMutation.isPending || updateTestimonialMutation.isPending;
   const isFaqPending = createFaqMutation.isPending || updateFaqMutation.isPending;
-
   return (
     <div className="min-h-screen bg-slate-900 text-white">
-
       {/* Header */}
       <div className="bg-slate-800 border-b border-slate-700 px-6 py-4 flex items-center justify-between">
         <div>
           <h1 className="text-lg font-bold text-white">Admin Panel</h1>
           <p className="text-slate-400 text-xs">Bara Baja Las CMS</p>
         </div>
-        <div className="flex gap-3 items-center">
-          <a href="/" target="_blank" rel="noopener noreferrer"
-            className="text-sm text-slate-400 hover:text-white transition">
+        <div className="flex gap-3">
+          
+            <a href="/"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="text-sm text-slate-400 hover:text-white transition"
+          >
             Lihat Website ↗
           </a>
-          <button type="button" onClick={onLogout}
-            className="text-sm text-slate-400 hover:text-red-400 transition">
+          <button
+            onClick={onLogout}
+            className="text-sm text-slate-400 hover:text-red-400 transition"
+          >
             Keluar
           </button>
         </div>
       </div>
 
-      {/* Tabs */}
+      {/* Tab navigation */}
       <div className="bg-slate-800 border-b border-slate-700 px-6">
         <div className="flex gap-1">
           {(["portfolio", "testimoni", "faq"] as Tab[]).map((tab) => (
             <button
               key={tab}
-              type="button"
               onClick={() => setActiveTab(tab)}
               className={`px-4 py-3 text-sm font-medium capitalize transition border-b-2 ${
                 activeTab === tab
@@ -293,10 +276,8 @@ function AdminDashboard({ onLogout }: { onLogout: () => void }) {
         </div>
       </div>
 
-      {/* Content */}
       <div className="max-w-6xl mx-auto px-6 py-8">
-
-        {/* TAB PORTFOLIO */}
+      {/* ── TAB PORTFOLIO ── */}
         {activeTab === "portfolio" && (
           <div>
             <div className="flex items-center justify-between mb-6">
@@ -304,9 +285,10 @@ function AdminDashboard({ onLogout }: { onLogout: () => void }) {
                 Portfolio
                 <span className="ml-2 text-sm font-normal text-slate-400">({portfolioItems.length} item)</span>
               </h2>
-              <button type="button"
+              <button
                 onClick={() => { resetPortfolioForm(); setShowPortfolioForm(true); }}
-                className="bg-orange-500 hover:bg-orange-600 text-white text-sm font-semibold px-4 py-2 rounded-lg transition">
+                className="bg-orange-500 hover:bg-orange-600 text-white text-sm font-semibold px-4 py-2 rounded-lg transition"
+              >
                 + Tambah Item
               </button>
             </div>
@@ -322,13 +304,15 @@ function AdminDashboard({ onLogout }: { onLogout: () => void }) {
                     <input required value={portfolioForm.title}
                       onChange={(e) => setPortfolioForm({ ...portfolioForm, title: e.target.value })}
                       placeholder="Pagar Minimalis Modern"
-                      className="w-full bg-slate-700 text-white px-3 py-2 rounded-lg text-sm outline-none focus:ring-2 focus:ring-orange-500" />
+                      className="w-full bg-slate-700 text-white px-3 py-2 rounded-lg text-sm outline-none focus:ring-2 focus:ring-orange-500"
+                    />
                   </div>
                   <div>
                     <label className="text-sm text-slate-400 mb-1 block">Kategori *</label>
                     <select required value={portfolioForm.category}
                       onChange={(e) => setPortfolioForm({ ...portfolioForm, category: e.target.value })}
-                      className="w-full bg-slate-700 text-white px-3 py-2 rounded-lg text-sm outline-none focus:ring-2 focus:ring-orange-500">
+                      className="w-full bg-slate-700 text-white px-3 py-2 rounded-lg text-sm outline-none focus:ring-2 focus:ring-orange-500"
+                    >
                       <option value="">Pilih kategori</option>
                       {CATEGORIES.map((c) => <option key={c} value={c}>{c}</option>)}
                     </select>
@@ -338,43 +322,51 @@ function AdminDashboard({ onLogout }: { onLogout: () => void }) {
                     <input required value={portfolioForm.location}
                       onChange={(e) => setPortfolioForm({ ...portfolioForm, location: e.target.value })}
                       placeholder="Karawang Barat"
-                      className="w-full bg-slate-700 text-white px-3 py-2 rounded-lg text-sm outline-none focus:ring-2 focus:ring-orange-500" />
+                      className="w-full bg-slate-700 text-white px-3 py-2 rounded-lg text-sm outline-none focus:ring-2 focus:ring-orange-500"
+                    />
                   </div>
                   <div>
                     <label className="text-sm text-slate-400 mb-1 block">URL Gambar *</label>
                     <input required value={portfolioForm.image_url}
                       onChange={(e) => setPortfolioForm({ ...portfolioForm, image_url: e.target.value })}
-                      placeholder="/assets/foto.jpg atau https://..."
-                      className="w-full bg-slate-700 text-white px-3 py-2 rounded-lg text-sm outline-none focus:ring-2 focus:ring-orange-500" />
+                      placeholder="/assets/foto-proyek.jpg atau https://..."
+                      className="w-full bg-slate-700 text-white px-3 py-2 rounded-lg text-sm outline-none focus:ring-2 focus:ring-orange-500"
+                    />
                   </div>
                   <div className="md:col-span-2">
                     <label className="text-sm text-slate-400 mb-1 block">Deskripsi</label>
                     <textarea value={portfolioForm.description}
                       onChange={(e) => setPortfolioForm({ ...portfolioForm, description: e.target.value })}
-                      placeholder="Deskripsi singkat proyek (opsional)" rows={2}
-                      className="w-full bg-slate-700 text-white px-3 py-2 rounded-lg text-sm outline-none focus:ring-2 focus:ring-orange-500 resize-none" />
+                      placeholder="Deskripsi singkat proyek (opsional)"
+                      rows={2}
+                      className="w-full bg-slate-700 text-white px-3 py-2 rounded-lg text-sm outline-none focus:ring-2 focus:ring-orange-500 resize-none"
+                    />
                   </div>
                   <div>
                     <label className="text-sm text-slate-400 mb-1 block">Urutan tampil</label>
                     <input type="number" value={portfolioForm.sort_order}
                       onChange={(e) => setPortfolioForm({ ...portfolioForm, sort_order: Number(e.target.value) })}
-                      className="w-full bg-slate-700 text-white px-3 py-2 rounded-lg text-sm outline-none focus:ring-2 focus:ring-orange-500" />
+                      className="w-full bg-slate-700 text-white px-3 py-2 rounded-lg text-sm outline-none focus:ring-2 focus:ring-orange-500"
+                    />
                   </div>
                   <div className="flex items-center gap-3 pt-4">
                     <label className="flex items-center gap-2 text-sm text-slate-300 cursor-pointer">
                       <input type="checkbox" checked={portfolioForm.is_featured === 1}
                         onChange={(e) => setPortfolioForm({ ...portfolioForm, is_featured: e.target.checked ? 1 : 0 })}
-                        className="accent-orange-500" />
+                        className="accent-orange-500"
+                      />
                       Tampilkan di halaman utama
                     </label>
                   </div>
                   <div className="md:col-span-2 flex gap-3 pt-2">
                     <button type="submit" disabled={isPortfolioPending}
-                      className="bg-orange-500 hover:bg-orange-600 disabled:opacity-50 text-white text-sm font-semibold px-5 py-2 rounded-lg transition">
+                      className="bg-orange-500 hover:bg-orange-600 disabled:opacity-50 text-white text-sm font-semibold px-5 py-2 rounded-lg transition"
+                    >
                       {isPortfolioPending ? "Menyimpan..." : editPortfolio ? "Simpan Perubahan" : "Tambah Item"}
                     </button>
                     <button type="button" onClick={resetPortfolioForm}
-                      className="bg-slate-700 hover:bg-slate-600 text-white text-sm px-5 py-2 rounded-lg transition">
+                      className="bg-slate-700 hover:bg-slate-600 text-white text-sm px-5 py-2 rounded-lg transition"
+                    >
                       Batal
                     </button>
                   </div>
@@ -404,7 +396,8 @@ function AdminDashboard({ onLogout }: { onLogout: () => void }) {
                       <tr key={item.id} className="border-b border-slate-700/50 hover:bg-slate-700/30 transition">
                         <td className="px-4 py-3">
                           <img src={item.image_url} alt={item.title}
-                            className="w-14 h-10 object-cover rounded-md bg-slate-700" />
+                            className="w-14 h-10 object-cover rounded-md bg-slate-700"
+                          />
                         </td>
                         <td className="px-4 py-3 font-medium text-white">{item.title}</td>
                         <td className="px-4 py-3">
@@ -414,31 +407,28 @@ function AdminDashboard({ onLogout }: { onLogout: () => void }) {
                         <td className="px-4 py-3">
                           {item.is_featured === 1
                             ? <span className="text-orange-400 text-xs font-medium">✓ Ya</span>
-                            : <span className="text-slate-500 text-xs">—</span>}
+                            : <span className="text-slate-500 text-xs">—</span>
+                          }
                         </td>
                         <td className="px-4 py-3">
                           <div className="flex gap-2">
-                            <button type="button" onClick={() => openEditPortfolio(item)}
-                              className="text-xs bg-slate-700 hover:bg-slate-600 text-white px-3 py-1 rounded transition">
-                              Edit
-                            </button>
+                            <button onClick={() => openEditPortfolio(item)}
+                              className="text-xs bg-slate-700 hover:bg-slate-600 text-white px-3 py-1 rounded transition"
+                            >Edit</button>
                             {deletePortfolioConfirm === item.id ? (
                               <div className="flex gap-1">
-                                <button type="button" onClick={() => deletePortfolioMutation.mutate(item.id)}
+                                <button onClick={() => deletePortfolioMutation.mutate(item.id)}
                                   disabled={deletePortfolioMutation.isPending}
-                                  className="text-xs bg-red-600 hover:bg-red-700 text-white px-3 py-1 rounded transition">
-                                  Hapus?
-                                </button>
-                                <button type="button" onClick={() => setDeletePortfolioConfirm(null)}
-                                  className="text-xs bg-slate-700 hover:bg-slate-600 text-white px-2 py-1 rounded transition">
-                                  ✕
-                                </button>
+                                  className="text-xs bg-red-600 hover:bg-red-700 text-white px-3 py-1 rounded transition"
+                                >Hapus?</button>
+                                <button onClick={() => setDeletePortfolioConfirm(null)}
+                                  className="text-xs bg-slate-700 hover:bg-slate-600 text-white px-2 py-1 rounded transition"
+                                >✕</button>
                               </div>
                             ) : (
-                              <button type="button" onClick={() => setDeletePortfolioConfirm(item.id)}
-                                className="text-xs bg-slate-700 hover:bg-red-600 text-slate-400 hover:text-white px-3 py-1 rounded transition">
-                                Hapus
-                              </button>
+                              <button onClick={() => setDeletePortfolioConfirm(item.id)}
+                                className="text-xs bg-slate-700 hover:bg-red-600 text-slate-400 hover:text-white px-3 py-1 rounded transition"
+                              >Hapus</button>
                             )}
                           </div>
                         </td>
@@ -450,8 +440,7 @@ function AdminDashboard({ onLogout }: { onLogout: () => void }) {
             )}
           </div>
         )}
-
-        {/* TAB TESTIMONI */}
+        {/* ── TAB TESTIMONI ── */}
         {activeTab === "testimoni" && (
           <div>
             <div className="flex items-center justify-between mb-6">
@@ -459,9 +448,10 @@ function AdminDashboard({ onLogout }: { onLogout: () => void }) {
                 Testimoni
                 <span className="ml-2 text-sm font-normal text-slate-400">({testimonialItems.length} item)</span>
               </h2>
-              <button type="button"
+              <button
                 onClick={() => { resetTestimonialForm(); setShowTestimonialForm(true); }}
-                className="bg-orange-500 hover:bg-orange-600 text-white text-sm font-semibold px-4 py-2 rounded-lg transition">
+                className="bg-orange-500 hover:bg-orange-600 text-white text-sm font-semibold px-4 py-2 rounded-lg transition"
+              >
                 + Tambah Testimoni
               </button>
             </div>
@@ -477,20 +467,23 @@ function AdminDashboard({ onLogout }: { onLogout: () => void }) {
                     <input required value={testimonialForm.name}
                       onChange={(e) => setTestimonialForm({ ...testimonialForm, name: e.target.value })}
                       placeholder="Pak Ahmad"
-                      className="w-full bg-slate-700 text-white px-3 py-2 rounded-lg text-sm outline-none focus:ring-2 focus:ring-orange-500" />
+                      className="w-full bg-slate-700 text-white px-3 py-2 rounded-lg text-sm outline-none focus:ring-2 focus:ring-orange-500"
+                    />
                   </div>
                   <div>
                     <label className="text-sm text-slate-400 mb-1 block">Lokasi *</label>
                     <input required value={testimonialForm.location}
                       onChange={(e) => setTestimonialForm({ ...testimonialForm, location: e.target.value })}
                       placeholder="Karawang Barat"
-                      className="w-full bg-slate-700 text-white px-3 py-2 rounded-lg text-sm outline-none focus:ring-2 focus:ring-orange-500" />
+                      className="w-full bg-slate-700 text-white px-3 py-2 rounded-lg text-sm outline-none focus:ring-2 focus:ring-orange-500"
+                    />
                   </div>
                   <div>
-                    <label className="text-sm text-slate-400 mb-1 block">Rating *</label>
+                    <label className="text-sm text-slate-400 mb-1 block">Rating (1-5) *</label>
                     <select required value={testimonialForm.rating}
                       onChange={(e) => setTestimonialForm({ ...testimonialForm, rating: Number(e.target.value) })}
-                      className="w-full bg-slate-700 text-white px-3 py-2 rounded-lg text-sm outline-none focus:ring-2 focus:ring-orange-500">
+                      className="w-full bg-slate-700 text-white px-3 py-2 rounded-lg text-sm outline-none focus:ring-2 focus:ring-orange-500"
+                    >
                       {[5, 4, 3, 2, 1].map((r) => (
                         <option key={r} value={r}>{"⭐".repeat(r)} ({r})</option>
                       ))}
@@ -501,28 +494,34 @@ function AdminDashboard({ onLogout }: { onLogout: () => void }) {
                     <input value={testimonialForm.avatar_url ?? ""}
                       onChange={(e) => setTestimonialForm({ ...testimonialForm, avatar_url: e.target.value })}
                       placeholder="https://i.ibb.co/foto.jpg"
-                      className="w-full bg-slate-700 text-white px-3 py-2 rounded-lg text-sm outline-none focus:ring-2 focus:ring-orange-500" />
+                      className="w-full bg-slate-700 text-white px-3 py-2 rounded-lg text-sm outline-none focus:ring-2 focus:ring-orange-500"
+                    />
                   </div>
                   <div className="md:col-span-2">
                     <label className="text-sm text-slate-400 mb-1 block">Teks Testimoni *</label>
                     <textarea required value={testimonialForm.text}
                       onChange={(e) => setTestimonialForm({ ...testimonialForm, text: e.target.value })}
-                      placeholder="Pengerjaan sangat rapi dan tepat waktu..." rows={3}
-                      className="w-full bg-slate-700 text-white px-3 py-2 rounded-lg text-sm outline-none focus:ring-2 focus:ring-orange-500 resize-none" />
+                      placeholder="Pengerjaan sangat rapi dan tepat waktu..."
+                      rows={3}
+                      className="w-full bg-slate-700 text-white px-3 py-2 rounded-lg text-sm outline-none focus:ring-2 focus:ring-orange-500 resize-none"
+                    />
                   </div>
                   <div>
                     <label className="text-sm text-slate-400 mb-1 block">Urutan tampil</label>
                     <input type="number" value={testimonialForm.sort_order}
                       onChange={(e) => setTestimonialForm({ ...testimonialForm, sort_order: Number(e.target.value) })}
-                      className="w-full bg-slate-700 text-white px-3 py-2 rounded-lg text-sm outline-none focus:ring-2 focus:ring-orange-500" />
+                      className="w-full bg-slate-700 text-white px-3 py-2 rounded-lg text-sm outline-none focus:ring-2 focus:ring-orange-500"
+                    />
                   </div>
                   <div className="md:col-span-2 flex gap-3 pt-2">
                     <button type="submit" disabled={isTestimonialPending}
-                      className="bg-orange-500 hover:bg-orange-600 disabled:opacity-50 text-white text-sm font-semibold px-5 py-2 rounded-lg transition">
+                      className="bg-orange-500 hover:bg-orange-600 disabled:opacity-50 text-white text-sm font-semibold px-5 py-2 rounded-lg transition"
+                    >
                       {isTestimonialPending ? "Menyimpan..." : editTestimonial ? "Simpan Perubahan" : "Tambah Testimoni"}
                     </button>
                     <button type="button" onClick={resetTestimonialForm}
-                      className="bg-slate-700 hover:bg-slate-600 text-white text-sm px-5 py-2 rounded-lg transition">
+                      className="bg-slate-700 hover:bg-slate-600 text-white text-sm px-5 py-2 rounded-lg transition"
+                    >
                       Batal
                     </button>
                   </div>
@@ -541,7 +540,8 @@ function AdminDashboard({ onLogout }: { onLogout: () => void }) {
                     <div className="flex-shrink-0">
                       {item.avatar_url ? (
                         <img src={item.avatar_url} alt={item.name}
-                          className="w-12 h-12 rounded-full object-cover bg-slate-700" />
+                          className="w-12 h-12 rounded-full object-cover bg-slate-700"
+                        />
                       ) : (
                         <div className="w-12 h-12 rounded-full bg-orange-500/20 flex items-center justify-center text-orange-400 font-bold text-lg">
                           {item.name.charAt(0)}
@@ -556,27 +556,23 @@ function AdminDashboard({ onLogout }: { onLogout: () => void }) {
                           <p className="text-yellow-400 text-xs mt-0.5">{"⭐".repeat(item.rating)}</p>
                         </div>
                         <div className="flex gap-2 flex-shrink-0">
-                          <button type="button" onClick={() => openEditTestimonial(item)}
-                            className="text-xs bg-slate-700 hover:bg-slate-600 text-white px-3 py-1 rounded transition">
-                            Edit
-                          </button>
+                          <button onClick={() => openEditTestimonial(item)}
+                            className="text-xs bg-slate-700 hover:bg-slate-600 text-white px-3 py-1 rounded transition"
+                          >Edit</button>
                           {deleteTestimonialConfirm === item.id ? (
                             <div className="flex gap-1">
-                              <button type="button" onClick={() => deleteTestimonialMutation.mutate(item.id)}
+                              <button onClick={() => deleteTestimonialMutation.mutate(item.id)}
                                 disabled={deleteTestimonialMutation.isPending}
-                                className="text-xs bg-red-600 hover:bg-red-700 text-white px-3 py-1 rounded transition">
-                                Hapus?
-                              </button>
-                              <button type="button" onClick={() => setDeleteTestimonialConfirm(null)}
-                                className="text-xs bg-slate-700 hover:bg-slate-600 text-white px-2 py-1 rounded transition">
-                                ✕
-                              </button>
+                                className="text-xs bg-red-600 hover:bg-red-700 text-white px-3 py-1 rounded transition"
+                              >Hapus?</button>
+                              <button onClick={() => setDeleteTestimonialConfirm(null)}
+                                className="text-xs bg-slate-700 hover:bg-slate-600 text-white px-2 py-1 rounded transition"
+                              >✕</button>
                             </div>
                           ) : (
-                            <button type="button" onClick={() => setDeleteTestimonialConfirm(item.id)}
-                              className="text-xs bg-slate-700 hover:bg-red-600 text-slate-400 hover:text-white px-3 py-1 rounded transition">
-                              Hapus
-                            </button>
+                            <button onClick={() => setDeleteTestimonialConfirm(item.id)}
+                              className="text-xs bg-slate-700 hover:bg-red-600 text-slate-400 hover:text-white px-3 py-1 rounded transition"
+                            >Hapus</button>
                           )}
                         </div>
                       </div>
@@ -588,8 +584,7 @@ function AdminDashboard({ onLogout }: { onLogout: () => void }) {
             )}
           </div>
         )}
-
-        {/* TAB FAQ */}
+        {/* ── TAB FAQ ── */}
         {activeTab === "faq" && (
           <div>
             <div className="flex items-center justify-between mb-6">
@@ -597,9 +592,10 @@ function AdminDashboard({ onLogout }: { onLogout: () => void }) {
                 FAQ
                 <span className="ml-2 text-sm font-normal text-slate-400">({faqItems.length} item)</span>
               </h2>
-              <button type="button"
+              <button
                 onClick={() => { resetFaqForm(); setShowFaqForm(true); }}
-                className="bg-orange-500 hover:bg-orange-600 text-white text-sm font-semibold px-4 py-2 rounded-lg transition">
+                className="bg-orange-500 hover:bg-orange-600 text-white text-sm font-semibold px-4 py-2 rounded-lg transition"
+              >
                 + Tambah FAQ
               </button>
             </div>
@@ -615,28 +611,34 @@ function AdminDashboard({ onLogout }: { onLogout: () => void }) {
                     <input required value={faqForm.question}
                       onChange={(e) => setFaqForm({ ...faqForm, question: e.target.value })}
                       placeholder="Apakah bisa survey lokasi gratis?"
-                      className="w-full bg-slate-700 text-white px-3 py-2 rounded-lg text-sm outline-none focus:ring-2 focus:ring-orange-500" />
+                      className="w-full bg-slate-700 text-white px-3 py-2 rounded-lg text-sm outline-none focus:ring-2 focus:ring-orange-500"
+                    />
                   </div>
                   <div>
                     <label className="text-sm text-slate-400 mb-1 block">Jawaban *</label>
                     <textarea required value={faqForm.answer}
                       onChange={(e) => setFaqForm({ ...faqForm, answer: e.target.value })}
-                      placeholder="Bisa. Kami melayani survey lokasi gratis..." rows={3}
-                      className="w-full bg-slate-700 text-white px-3 py-2 rounded-lg text-sm outline-none focus:ring-2 focus:ring-orange-500 resize-none" />
+                      placeholder="Bisa. Kami melayani survey lokasi gratis..."
+                      rows={3}
+                      className="w-full bg-slate-700 text-white px-3 py-2 rounded-lg text-sm outline-none focus:ring-2 focus:ring-orange-500 resize-none"
+                    />
                   </div>
                   <div className="w-48">
                     <label className="text-sm text-slate-400 mb-1 block">Urutan tampil</label>
                     <input type="number" value={faqForm.sort_order}
                       onChange={(e) => setFaqForm({ ...faqForm, sort_order: Number(e.target.value) })}
-                      className="w-full bg-slate-700 text-white px-3 py-2 rounded-lg text-sm outline-none focus:ring-2 focus:ring-orange-500" />
+                      className="w-full bg-slate-700 text-white px-3 py-2 rounded-lg text-sm outline-none focus:ring-2 focus:ring-orange-500"
+                    />
                   </div>
                   <div className="flex gap-3">
                     <button type="submit" disabled={isFaqPending}
-                      className="bg-orange-500 hover:bg-orange-600 disabled:opacity-50 text-white text-sm font-semibold px-5 py-2 rounded-lg transition">
+                      className="bg-orange-500 hover:bg-orange-600 disabled:opacity-50 text-white text-sm font-semibold px-5 py-2 rounded-lg transition"
+                    >
                       {isFaqPending ? "Menyimpan..." : editFaq ? "Simpan Perubahan" : "Tambah FAQ"}
                     </button>
                     <button type="button" onClick={resetFaqForm}
-                      className="bg-slate-700 hover:bg-slate-600 text-white text-sm px-5 py-2 rounded-lg transition">
+                      className="bg-slate-700 hover:bg-slate-600 text-white text-sm px-5 py-2 rounded-lg transition"
+                    >
                       Batal
                     </button>
                   </div>
@@ -658,27 +660,23 @@ function AdminDashboard({ onLogout }: { onLogout: () => void }) {
                         <p className="text-slate-400 text-sm leading-relaxed">{item.answer}</p>
                       </div>
                       <div className="flex gap-2 flex-shrink-0">
-                        <button type="button" onClick={() => openEditFaq(item)}
-                          className="text-xs bg-slate-700 hover:bg-slate-600 text-white px-3 py-1 rounded transition">
-                          Edit
-                        </button>
+                        <button onClick={() => openEditFaq(item)}
+                          className="text-xs bg-slate-700 hover:bg-slate-600 text-white px-3 py-1 rounded transition"
+                        >Edit</button>
                         {deleteFaqConfirm === item.id ? (
                           <div className="flex gap-1">
-                            <button type="button" onClick={() => deleteFaqMutation.mutate(item.id)}
+                            <button onClick={() => deleteFaqMutation.mutate(item.id)}
                               disabled={deleteFaqMutation.isPending}
-                              className="text-xs bg-red-600 hover:bg-red-700 text-white px-3 py-1 rounded transition">
-                              Hapus?
-                            </button>
-                            <button type="button" onClick={() => setDeleteFaqConfirm(null)}
-                              className="text-xs bg-slate-700 hover:bg-slate-600 text-white px-2 py-1 rounded transition">
-                              ✕
-                            </button>
+                              className="text-xs bg-red-600 hover:bg-red-700 text-white px-3 py-1 rounded transition"
+                            >Hapus?</button>
+                            <button onClick={() => setDeleteFaqConfirm(null)}
+                              className="text-xs bg-slate-700 hover:bg-slate-600 text-white px-2 py-1 rounded transition"
+                            >✕</button>
                           </div>
                         ) : (
-                          <button type="button" onClick={() => setDeleteFaqConfirm(item.id)}
-                            className="text-xs bg-slate-700 hover:bg-red-600 text-slate-400 hover:text-white px-3 py-1 rounded transition">
-                            Hapus
-                          </button>
+                          <button onClick={() => setDeleteFaqConfirm(item.id)}
+                            className="text-xs bg-slate-700 hover:bg-red-600 text-slate-400 hover:text-white px-3 py-1 rounded transition"
+                          >Hapus</button>
                         )}
                       </div>
                     </div>
