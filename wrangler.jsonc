@@ -4,4 +4,11 @@
   "compatibility_date": "2025-09-24",
   "compatibility_flags": ["nodejs_compat"],
   "main": "src/server.ts",
+  "d1_databases": [
+    {
+      "binding": "DB",
+      "database_name": "bara-baja-las-db",
+      "database_id": "f4d34f7b-5451-4e4e-8ece-567a4f2edfc0"
+    }
+  ]
 }

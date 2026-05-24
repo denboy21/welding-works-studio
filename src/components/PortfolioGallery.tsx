@@ -1,10 +1,57 @@
 import { useState } from "react";
 import { X } from "lucide-react";
+import { useQuery } from "@tanstack/react-query";
+import { getPortfolioItems, type PortfolioItem } from "@/lib/portfolio";
 import { PORTFOLIO } from "@/lib/data";
 
+// Konversi format DB ke format yang sama dengan data.ts
+function toGalleryItem(p: PortfolioItem) {
+  return {
+    id: p.id,
+    title: p.title,
+    category: p.category,
+    location: p.location,
+    image: p.image_url,
+  };
+}
+
+// Fallback dari data.ts (format sudah sama)
+const FALLBACK = PORTFOLIO.map((p) => ({
+  id: p.id,
+  title: p.title,
+  category: p.category,
+  location: p.location ?? "",
+  image: p.image,
+}));
+
 export function PortfolioGallery({ limit }: { limit?: number }) {
-  const items = limit ? PORTFOLIO.slice(0, limit) : PORTFOLIO;
   const [active, setActive] = useState<number | null>(null);
+
+  const { data: dbItems, isLoading, isError } = useQuery({
+    queryKey: ["portfolio-public"],
+    queryFn: () => getPortfolioItems(),
+    retry: false,
+    throwOnError: false,
+  });
+
+  const allItems = isError || !dbItems
+    ? FALLBACK
+    : dbItems.map(toGalleryItem);
+
+  const items = limit ? allItems.slice(0, limit) : allItems;
+
+  if (isLoading) {
+    return (
+      <div className="columns-1 gap-4 sm:columns-2 lg:columns-3">
+        {Array.from({ length: limit ?? 6 }).map((_, i) => (
+          <div
+            key={i}
+            className="mb-4 h-48 w-full animate-pulse rounded-xl bg-white/5"
+          />
+        ))}
+      </div>
+    );
+  }
 
   return (
     <>
@@ -45,10 +92,19 @@ export function PortfolioGallery({ limit }: { limit?: number }) {
           >
             <X className="h-5 w-5" />
           </button>
-          <figure className="max-h-[90vh] max-w-5xl" onClick={(e) => e.stopPropagation()}>
-            <img src={items[active].image} alt={items[active].title} className="max-h-[80vh] w-auto rounded-lg shadow-elegant" />
+          <figure
+            className="max-h-[90vh] max-w-5xl"
+            onClick={(e) => e.stopPropagation()}
+          >
+            <img
+              src={items[active].image}
+              alt={items[active].title}
+              className="max-h-[80vh] w-auto rounded-lg shadow-elegant"
+            />
             <figcaption className="mt-3 text-center text-sm text-muted-foreground">
-              <span className="text-primary">{items[active].category}</span> · {items[active].title}
+              <span className="text-primary">{items[active].category}</span>
+              {" · "}
+              {items[active].title}
             </figcaption>
           </figure>
         </div>

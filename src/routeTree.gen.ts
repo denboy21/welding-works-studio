@@ -18,6 +18,7 @@ import { Route as KontakRouteImport } from './routes/kontak'
 import { Route as FaqRouteImport } from './routes/faq'
 import { Route as BlogRouteImport } from './routes/blog'
 import { Route as AreaLayananRouteImport } from './routes/area-layanan'
+import { Route as AdminRouteImport } from './routes/admin'
 import { Route as IndexRouteImport } from './routes/index'
 import { Route as LayananSlugRouteImport } from './routes/layanan.$slug'
 import { Route as BlogSlugRouteImport } from './routes/blog.$slug'
@@ -67,6 +68,11 @@ const AreaLayananRoute = AreaLayananRouteImport.update({
   path: '/area-layanan',
   getParentRoute: () => rootRouteImport,
 } as any)
+const AdminRoute = AdminRouteImport.update({
+  id: '/admin',
+  path: '/admin',
+  getParentRoute: () => rootRouteImport,
+} as any)
 const IndexRoute = IndexRouteImport.update({
   id: '/',
   path: '/',
@@ -85,6 +91,7 @@ const BlogSlugRoute = BlogSlugRouteImport.update({
 
 export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
+  '/admin': typeof AdminRoute
   '/area-layanan': typeof AreaLayananRoute
   '/blog': typeof BlogRouteWithChildren
   '/faq': typeof FaqRoute
@@ -99,6 +106,7 @@ export interface FileRoutesByFullPath {
 }
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
+  '/admin': typeof AdminRoute
   '/area-layanan': typeof AreaLayananRoute
   '/blog': typeof BlogRouteWithChildren
   '/faq': typeof FaqRoute
@@ -114,6 +122,7 @@ export interface FileRoutesByTo {
 export interface FileRoutesById {
   __root__: typeof rootRouteImport
   '/': typeof IndexRoute
+  '/admin': typeof AdminRoute
   '/area-layanan': typeof AreaLayananRoute
   '/blog': typeof BlogRouteWithChildren
   '/faq': typeof FaqRoute
@@ -130,6 +139,7 @@ export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
   fullPaths:
     | '/'
+    | '/admin'
     | '/area-layanan'
     | '/blog'
     | '/faq'
@@ -144,6 +154,7 @@ export interface FileRouteTypes {
   fileRoutesByTo: FileRoutesByTo
   to:
     | '/'
+    | '/admin'
     | '/area-layanan'
     | '/blog'
     | '/faq'
@@ -158,6 +169,7 @@ export interface FileRouteTypes {
   id:
     | '__root__'
     | '/'
+    | '/admin'
     | '/area-layanan'
     | '/blog'
     | '/faq'
@@ -173,6 +185,7 @@ export interface FileRouteTypes {
 }
 export interface RootRouteChildren {
   IndexRoute: typeof IndexRoute
+  AdminRoute: typeof AdminRoute
   AreaLayananRoute: typeof AreaLayananRoute
   BlogRoute: typeof BlogRouteWithChildren
   FaqRoute: typeof FaqRoute
@@ -249,6 +262,13 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof AreaLayananRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/admin': {
+      id: '/admin'
+      path: '/admin'
+      fullPath: '/admin'
+      preLoaderRoute: typeof AdminRouteImport
+      parentRoute: typeof rootRouteImport
+    }
     '/': {
       id: '/'
       path: '/'
@@ -296,6 +316,7 @@ const LayananRouteWithChildren =
 
 const rootRouteChildren: RootRouteChildren = {
   IndexRoute: IndexRoute,
+  AdminRoute: AdminRoute,
   AreaLayananRoute: AreaLayananRoute,
   BlogRoute: BlogRouteWithChildren,
   FaqRoute: FaqRoute,
@@ -309,3 +330,13 @@ const rootRouteChildren: RootRouteChildren = {
 export const routeTree = rootRouteImport
   ._addFileChildren(rootRouteChildren)
   ._addFileTypes<FileRouteTypes>()
+
+import type { getRouter } from './router.tsx'
+import type { startInstance } from './start.ts'
+declare module '@tanstack/react-start' {
+  interface Register {
+    ssr: true
+    router: Awaited<ReturnType<typeof getRouter>>
+    config: Awaited<ReturnType<typeof startInstance.getOptions>>
+  }
+}
