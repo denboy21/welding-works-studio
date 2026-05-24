@@ -18,7 +18,6 @@ import { Route as KontakRouteImport } from './routes/kontak'
 import { Route as FaqRouteImport } from './routes/faq'
 import { Route as BlogRouteImport } from './routes/blog'
 import { Route as AreaLayananRouteImport } from './routes/area-layanan'
-import { Route as Admin_awalRouteImport } from './routes/admin_awal'
 import { Route as AdminRouteImport } from './routes/admin'
 import { Route as IndexRouteImport } from './routes/index'
 import { Route as LayananSlugRouteImport } from './routes/layanan.$slug'
@@ -69,11 +68,6 @@ const AreaLayananRoute = AreaLayananRouteImport.update({
   path: '/area-layanan',
   getParentRoute: () => rootRouteImport,
 } as any)
-const Admin_awalRoute = Admin_awalRouteImport.update({
-  id: '/admin_awal',
-  path: '/admin_awal',
-  getParentRoute: () => rootRouteImport,
-} as any)
 const AdminRoute = AdminRouteImport.update({
   id: '/admin',
   path: '/admin',
@@ -98,7 +92,6 @@ const BlogSlugRoute = BlogSlugRouteImport.update({
 export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
   '/admin': typeof AdminRoute
-  '/admin_awal': typeof Admin_awalRoute
   '/area-layanan': typeof AreaLayananRoute
   '/blog': typeof BlogRouteWithChildren
   '/faq': typeof FaqRoute
@@ -114,7 +107,6 @@ export interface FileRoutesByFullPath {
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
   '/admin': typeof AdminRoute
-  '/admin_awal': typeof Admin_awalRoute
   '/area-layanan': typeof AreaLayananRoute
   '/blog': typeof BlogRouteWithChildren
   '/faq': typeof FaqRoute
@@ -131,7 +123,6 @@ export interface FileRoutesById {
   __root__: typeof rootRouteImport
   '/': typeof IndexRoute
   '/admin': typeof AdminRoute
-  '/admin_awal': typeof Admin_awalRoute
   '/area-layanan': typeof AreaLayananRoute
   '/blog': typeof BlogRouteWithChildren
   '/faq': typeof FaqRoute
@@ -149,7 +140,6 @@ export interface FileRouteTypes {
   fullPaths:
     | '/'
     | '/admin'
-    | '/admin_awal'
     | '/area-layanan'
     | '/blog'
     | '/faq'
@@ -165,7 +155,6 @@ export interface FileRouteTypes {
   to:
     | '/'
     | '/admin'
-    | '/admin_awal'
     | '/area-layanan'
     | '/blog'
     | '/faq'
@@ -181,7 +170,6 @@ export interface FileRouteTypes {
     | '__root__'
     | '/'
     | '/admin'
-    | '/admin_awal'
     | '/area-layanan'
     | '/blog'
     | '/faq'
@@ -198,7 +186,6 @@ export interface FileRouteTypes {
 export interface RootRouteChildren {
   IndexRoute: typeof IndexRoute
   AdminRoute: typeof AdminRoute
-  Admin_awalRoute: typeof Admin_awalRoute
   AreaLayananRoute: typeof AreaLayananRoute
   BlogRoute: typeof BlogRouteWithChildren
   FaqRoute: typeof FaqRoute
@@ -275,13 +262,6 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof AreaLayananRouteImport
       parentRoute: typeof rootRouteImport
     }
-    '/admin_awal': {
-      id: '/admin_awal'
-      path: '/admin_awal'
-      fullPath: '/admin_awal'
-      preLoaderRoute: typeof Admin_awalRouteImport
-      parentRoute: typeof rootRouteImport
-    }
     '/admin': {
       id: '/admin'
       path: '/admin'
@@ -337,7 +317,6 @@ const LayananRouteWithChildren =
 const rootRouteChildren: RootRouteChildren = {
   IndexRoute: IndexRoute,
   AdminRoute: AdminRoute,
-  Admin_awalRoute: Admin_awalRoute,
   AreaLayananRoute: AreaLayananRoute,
   BlogRoute: BlogRouteWithChildren,
   FaqRoute: FaqRoute,

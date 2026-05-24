@@ -1,3 +1,4 @@
+import { verifyAdminPassword } from "@/lib/auth";
 import { createFileRoute } from "@tanstack/react-router";
 import { useQuery, useMutation, useQueryClient } from "@tanstack/react-query";
 import { useState } from "react";
@@ -58,13 +59,20 @@ function AdminPage() {
   const [authed, setAuthed] = useState(false);
   const [authError, setAuthError] = useState("");
 
-  function handleLogin() {
-    if (password === "barabajalas2024") {
+  const loginMutation = useMutation({
+    mutationFn: (pwd: string) => verifyAdminPassword({ data: { password: pwd } }),
+    onSuccess: () => {
       setAuthed(true);
       setAuthError("");
-    } else {
-      setAuthError("Password salah");
-    }
+    },
+    onError: (err: any) => {
+      setAuthError(err?.message ?? "Password salah");
+    },
+  });
+
+  function handleLogin() {
+    if (!password) return;
+    loginMutation.mutate(password);
   }
 
   if (!authed) {
@@ -87,9 +95,10 @@ function AdminPage() {
           <button
             type="button"
             onClick={handleLogin}
-            className="w-full bg-orange-500 hover:bg-orange-600 text-white font-semibold py-2 rounded-lg transition"
+            disabled={loginMutation.isPending}
+            className="w-full bg-orange-500 hover:bg-orange-600 disabled:opacity-50 text-white font-semibold py-2 rounded-lg transition"
           >
-            Masuk
+            {loginMutation.isPending ? "Memverifikasi..." : "Masuk"}
           </button>
         </div>
       </div>
