@@ -26,6 +26,228 @@ wrangler deploy               # Deploy ke Cloudflare Workers
 
 ---
 
+## 🎯 Real-World Examples from Project
+
+### Example 1: Display Services List
+```typescript
+// routes/layanan.tsx
+import { SERVICES } from '@/lib/data'
+import { ServiceCard } from '@/components/ServiceCard'
+
+function LayananPage() {
+  return (
+    <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 p-4">
+      {SERVICES.map(service => (
+        <ServiceCard key={service.slug} service={service} />
+      ))}
+    </div>
+  )
+}
+```
+
+### Example 2: Display Service Detail (Dynamic Route)
+```typescript
+// routes/layanan.$slug.tsx - Accessible at /layanan/pagar-besi, /layanan/kanopi, etc
+import { useParams } from '@tanstack/react-router'
+import { SERVICES } from '@/lib/data'
+import { Check } from 'lucide-react'
+
+function ServiceDetail() {
+  const { slug } = useParams({ from: '/layanan/$slug' })
+  const service = SERVICES.find(s => s.slug === slug)
+
+  if (!service) return <div>Layanan tidak ditemukan</div>
+
+  return (
+    <div className="space-y-6">
+      <img src={service.image} alt={service.title} className="w-full rounded-lg" />
+      <h1 className="text-4xl font-bold">{service.title}</h1>
+      <p className="text-gray-600">{service.short}</p>
+      <p>{service.description}</p>
+      <ul className="space-y-2">
+        {service.features.map(f => (
+          <li key={f} className="flex items-center gap-2">
+            <Check className="w-5 h-5 text-green-500" /> {f}
+          </li>
+        ))}
+      </ul>
+    </div>
+  )
+}
+```
+
+### Example 3: Portfolio Gallery with Filter
+```typescript
+// routes/portfolio.tsx
+import { PORTFOLIO } from '@/lib/data'
+import { useState } from 'react'
+import { cn } from '@/lib/utils'
+
+function PortfolioPage() {
+  const [filter, setFilter] = useState<string | null>(null)
+
+  const categories = ['Pagar', 'Kanopi', 'Railing', 'Balkon', 'Tralis', 'Baja Ringan', 'Pintu', 'Konstruksi']
+  
+  const filtered = filter 
+    ? PORTFOLIO.filter(p => p.category === filter)
+    : PORTFOLIO
+
+  return (
+    <div>
+      <div className="flex gap-2 mb-8 overflow-x-auto">
+        <button
+          onClick={() => setFilter(null)}
+          className={cn("px-4 py-2 rounded whitespace-nowrap", 
+            filter === null ? "bg-primary text-white" : "bg-gray-200")}
+        >
+          Semua
+        </button>
+        {categories.map(cat => (
+          <button
+            key={cat}
+            onClick={() => setFilter(filter === cat ? null : cat)}
+            className={cn(
+              "px-4 py-2 rounded whitespace-nowrap",
+              filter === cat ? "bg-primary text-white" : "bg-gray-200"
+            )}
+          >
+            {cat}
+          </button>
+        ))}
+      </div>
+
+      <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4">
+        {filtered.map(project => (
+          <div key={project.id} className="overflow-hidden rounded-lg group cursor-pointer">
+            <img 
+              src={project.image} 
+              alt={project.title} 
+              className="w-full h-full object-cover group-hover:scale-105 transition-transform"
+            />
+          </div>
+        ))}
+      </div>
+    </div>
+  )
+}
+```
+
+### Example 4: Testimonials Slider
+```typescript
+// On homepage or dedicated page
+import { TestimonialSlider } from '@/components/TestimonialSlider'
+import { TESTIMONIALS } from '@/lib/data'
+
+<section className="py-12">
+  <h2 className="text-3xl font-bold mb-8">Apa Kata Pelanggan Kami?</h2>
+  <TestimonialSlider 
+    testimonials={TESTIMONIALS}
+    autoSlide={true}
+    interval={5000}
+  />
+</section>
+```
+
+### Example 5: FAQ Accordion
+```typescript
+// routes/faq.tsx
+import { FAQAccordion } from '@/components/FAQAccordion'
+import { FAQS } from '@/lib/data'
+
+function FAQPage() {
+  return (
+    <div className="max-w-2xl mx-auto py-12">
+      <h1 className="text-4xl font-bold mb-8">Pertanyaan Umum</h1>
+      <FAQAccordion items={FAQS} />
+    </div>
+  )
+}
+```
+
+### Example 6: Contact Form with WhatsApp
+```typescript
+// routes/kontak.tsx
+import { useForm } from 'react-hook-form'
+import { zodResolver } from '@hookform/resolvers/zod'
+import { z } from 'zod'
+import { SERVICES } from '@/lib/data'
+import { SITE, waLink } from '@/lib/site'
+
+const schema = z.object({
+  name: z.string().min(1, "Nama wajib diisi"),
+  phone: z.string().min(10, "Nomor telepon tidak valid"),
+  service: z.string(),
+  message: z.string().min(10, "Pesan minimal 10 karakter"),
+})
+
+export function KontakPage() {
+  const form = useForm({ resolver: zodResolver(schema) })
+
+  const onSubmit = async (data) => {
+    // Format untuk WhatsApp
+    const text = `
+Nama: ${data.name}
+Telepon: ${data.phone}
+Layanan: ${SERVICES.find(s => s.slug === data.service)?.title}
+Pesan: ${data.message}
+    `.trim()
+
+    // Redirect ke WhatsApp dengan pre-filled message
+    window.open(waLink(text))
+  }
+
+  return (
+    <form onSubmit={form.handleSubmit(onSubmit)} className="max-w-lg mx-auto space-y-4 p-4">
+      <h1 className="text-4xl font-bold mb-6">Hubungi Kami</h1>
+      
+      <div>
+        <label className="block font-semibold mb-2">Nama</label>
+        <input 
+          {...form.register('name')} 
+          placeholder="Nama lengkap Anda"
+          className="w-full px-3 py-2 border rounded"
+        />
+      </div>
+
+      <div>
+        <label className="block font-semibold mb-2">Nomor Telepon</label>
+        <input 
+          {...form.register('phone')} 
+          placeholder="08xx xxxx xxxx"
+          className="w-full px-3 py-2 border rounded"
+        />
+      </div>
+
+      <div>
+        <label className="block font-semibold mb-2">Layanan yang Diinginkan</label>
+        <select {...form.register('service')} className="w-full px-3 py-2 border rounded">
+          <option value="">Pilih Layanan</option>
+          {SERVICES.map(s => (
+            <option key={s.slug} value={s.slug}>{s.title}</option>
+          ))}
+        </select>
+      </div>
+
+      <div>
+        <label className="block font-semibold mb-2">Pesan</label>
+        <textarea 
+          {...form.register('message')} 
+          placeholder="Jelaskan kebutuhan proyek Anda..."
+          rows={5}
+          className="w-full px-3 py-2 border rounded"
+        />
+      </div>
+
+      <button type="submit" className="w-full bg-primary text-white py-2 rounded font-semibold">
+        Kirim ke WhatsApp
+      </button>
+    </form>
+  )
+}
+```
+
+---
+
 ## 📁 Common File Patterns
 
 ### Membuat Page Baru

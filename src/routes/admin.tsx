@@ -26,6 +26,14 @@ import {
   type FaqItem,
   type FaqCreateInput,
 } from "@/lib/faqs";
+import {
+  getAllServiceDesigns,
+  createServiceDesign,
+  updateServiceDesign,
+  deleteServiceDesign,
+  type ServiceDesign,
+  type ServiceDesignCreateInput,
+} from "@/lib/service-designs";
 
 export const Route = createFileRoute("/admin")({
   component: AdminPage,
@@ -50,7 +58,27 @@ const emptyFaq: FaqCreateInput = {
   question: "", answer: "", sort_order: 0,
 };
 
-type Tab = "portfolio" | "testimoni" | "faq";
+const SERVICES_SLUGS = [
+  { slug: "pagar-besi", label: "Pagar Besi" },
+  { slug: "kanopi", label: "Kanopi" },
+  { slug: "railing-tangga", label: "Railing Tangga" },
+  { slug: "balkon", label: "Balkon" },
+  { slug: "tralis-jendela", label: "Tralis Jendela" },
+  { slug: "baja-ringan", label: "Konstruksi Baja Ringan" },
+  { slug: "las-panggilan", label: "Las Panggilan" },
+  { slug: "konstruksi-baja", label: "Konstruksi Baja" },
+  { slug: "pintu-besi", label: "Pintu Besi" },
+];
+
+const emptyDesain: ServiceDesignCreateInput = {
+  service_slug: "",
+  name: "",
+  description: "",
+  image_url: "",
+  sort_order: 0,
+};
+
+type Tab = "portfolio" | "testimoni" | "faq" | "desain";
 
 // ─── Login Page ───────────────────────────────────────────────────────────────
 
@@ -131,6 +159,18 @@ function AdminDashboard({ onLogout }: { onLogout: () => void }) {
   const [editFaq, setEditFaq] = useState<FaqItem | null>(null);
   const [faqForm, setFaqForm] = useState<FaqCreateInput>(emptyFaq);
   const [deleteFaqConfirm, setDeleteFaqConfirm] = useState<number | null>(null);
+  const { data: desainItems = [], isLoading: loadingDesain } = useQuery({
+    queryKey: ["admin-desain"],
+    queryFn: () => getAllServiceDesigns(),
+    retry: false,
+    throwOnError: false,
+  });
+
+  // Desain state
+  const [showDesainForm, setShowDesainForm] = useState(false);
+  const [editDesain, setEditDesain] = useState<ServiceDesign | null>(null);
+  const [desainForm, setDesainForm] = useState<ServiceDesignCreateInput>(emptyDesain);
+  const [deleteDesainConfirm, setDeleteDesainConfirm] = useState<number | null>(null);
 
   // Queries
   const { data: portfolioItems = [], isLoading: loadingPortfolio } = useQuery({
@@ -182,6 +222,21 @@ function AdminDashboard({ onLogout }: { onLogout: () => void }) {
   const deleteTestimonialMutation = useMutation({
     mutationFn: (id: number) => deleteTestimonial({ data: { id } }),
     onSuccess: () => { invalidateTestimonial(); setDeleteTestimonialConfirm(null); },
+  });
+
+  // Desain mutations
+  const invalidateDesain = () => queryClient.invalidateQueries({ queryKey: ["admin-desain"] });
+  const createDesainMutation = useMutation({
+    mutationFn: (data: ServiceDesignCreateInput) => createServiceDesign({ data }),
+    onSuccess: () => { invalidateDesain(); resetDesainForm(); },
+  });
+  const updateDesainMutation = useMutation({
+    mutationFn: (data: ServiceDesignCreateInput & { id: number }) => updateServiceDesign({ data }),
+    onSuccess: () => { invalidateDesain(); resetDesainForm(); },
+  });
+  const deleteDesainMutation = useMutation({
+    mutationFn: (id: number) => deleteServiceDesign({ data: { id } }),
+    onSuccess: () => { invalidateDesain(); setDeleteDesainConfirm(null); },
   });
 
   // FAQ mutations
@@ -257,6 +312,30 @@ function AdminDashboard({ onLogout }: { onLogout: () => void }) {
     else createFaqMutation.mutate(faqForm);
   }
 
+  // Helpers desain
+  function resetDesainForm() {
+    setDesainForm(emptyDesain);
+    setEditDesain(null);
+    setShowDesainForm(false);
+  }
+  function openEditDesain(item: ServiceDesign) {
+    setEditDesain(item);
+    setDesainForm({
+      service_slug: item.service_slug,
+      name: item.name,
+      description: item.description ?? "",
+      image_url: item.image_url,
+      sort_order: item.sort_order,
+    });
+    setShowDesainForm(true);
+  }
+  function handleDesainSubmit(e: React.FormEvent) {
+    e.preventDefault();
+    if (editDesain) updateDesainMutation.mutate({ ...desainForm, id: editDesain.id });
+    else createDesainMutation.mutate(desainForm);
+  }
+
+  const isDesainPending = createDesainMutation.isPending || updateDesainMutation.isPending;
   const isPortfolioPending = createPortfolioMutation.isPending || updatePortfolioMutation.isPending;
   const isTestimonialPending = createTestimonialMutation.isPending || updateTestimonialMutation.isPending;
   const isFaqPending = createFaqMutation.isPending || updateFaqMutation.isPending;
@@ -285,7 +364,7 @@ function AdminDashboard({ onLogout }: { onLogout: () => void }) {
       {/* Tabs */}
       <div className="bg-slate-800 border-b border-slate-700 px-6">
         <div className="flex gap-1">
-          {(["portfolio", "testimoni", "faq"] as Tab[]).map((tab) => (
+          {(["portfolio", "testimoni", "faq", "desain"] as Tab[]).map((tab) => (
             <button
               key={tab}
               type="button"
@@ -296,7 +375,7 @@ function AdminDashboard({ onLogout }: { onLogout: () => void }) {
                   : "border-transparent text-slate-400 hover:text-white"
               }`}
             >
-              {tab === "portfolio" ? "Portfolio" : tab === "testimoni" ? "Testimoni" : "FAQ"}
+              {tab === "portfolio" ? "Portfolio" : tab === "testimoni" ? "Testimoni" : tab === "faq" ? "FAQ" : "Desain Layanan"}
             </button>
           ))}
         </div>
@@ -698,7 +777,149 @@ function AdminDashboard({ onLogout }: { onLogout: () => void }) {
           </div>
         )}
 
+        {/* TAB DESAIN LAYANAN */}
+        {activeTab === "desain" && (
+          <div>
+            <div className="flex items-center justify-between mb-6">
+              <h2 className="text-xl font-semibold">
+                Desain Layanan
+                <span className="ml-2 text-sm font-normal text-slate-400">({desainItems.length} item)</span>
+              </h2>
+              <button type="button"
+                onClick={() => { resetDesainForm(); setShowDesainForm(true); }}
+                className="bg-orange-500 hover:bg-orange-600 text-white text-sm font-semibold px-4 py-2 rounded-lg transition">
+                + Tambah Desain
+              </button>
+            </div>
+
+            {showDesainForm && (
+              <div className="bg-slate-800 rounded-xl p-6 mb-8 border border-slate-700">
+                <h3 className="font-semibold text-white mb-4">
+                  {editDesain ? "Edit Desain" : "Tambah Desain"}
+                </h3>
+                <form onSubmit={handleDesainSubmit} className="grid grid-cols-1 md:grid-cols-2 gap-4">
+                  <div>
+                    <label className="text-sm text-slate-400 mb-1 block">Layanan *</label>
+                    <select required value={desainForm.service_slug}
+                      onChange={(e) => setDesainForm({ ...desainForm, service_slug: e.target.value })}
+                      className="w-full bg-slate-700 text-white px-3 py-2 rounded-lg text-sm outline-none focus:ring-2 focus:ring-orange-500">
+                      <option value="">Pilih layanan</option>
+                      {SERVICES_SLUGS.map((s) => (
+                        <option key={s.slug} value={s.slug}>{s.label}</option>
+                      ))}
+                    </select>
+                  </div>
+                  <div>
+                    <label className="text-sm text-slate-400 mb-1 block">Nama Desain *</label>
+                    <input required value={desainForm.name}
+                      onChange={(e) => setDesainForm({ ...desainForm, name: e.target.value })}
+                      placeholder="Pagar Minimalis Hollow 4x4"
+                      className="w-full bg-slate-700 text-white px-3 py-2 rounded-lg text-sm outline-none focus:ring-2 focus:ring-orange-500" />
+                  </div>
+                  <div className="md:col-span-2">
+                    <label className="text-sm text-slate-400 mb-1 block">URL Foto *</label>
+                    <input required value={desainForm.image_url}
+                      onChange={(e) => setDesainForm({ ...desainForm, image_url: e.target.value })}
+                      placeholder="https://i.ibb.co/xxxxx/foto.jpg"
+                      className="w-full bg-slate-700 text-white px-3 py-2 rounded-lg text-sm outline-none focus:ring-2 focus:ring-orange-500" />
+                  </div>
+                  <div className="md:col-span-2">
+                    <label className="text-sm text-slate-400 mb-1 block">Spesifikasi / Deskripsi</label>
+                    <textarea value={desainForm.description}
+                      onChange={(e) => setDesainForm({ ...desainForm, description: e.target.value })}
+                      placeholder="Besi hollow 4x4, finishing cat duco, anti karat..."
+                      rows={2}
+                      className="w-full bg-slate-700 text-white px-3 py-2 rounded-lg text-sm outline-none focus:ring-2 focus:ring-orange-500 resize-none" />
+                  </div>
+                  <div>
+                    <label className="text-sm text-slate-400 mb-1 block">Urutan tampil</label>
+                    <input type="number" value={desainForm.sort_order}
+                      onChange={(e) => setDesainForm({ ...desainForm, sort_order: Number(e.target.value) })}
+                      className="w-full bg-slate-700 text-white px-3 py-2 rounded-lg text-sm outline-none focus:ring-2 focus:ring-orange-500" />
+                  </div>
+                  <div className="md:col-span-2 flex gap-3 pt-2">
+                    <button type="submit" disabled={isDesainPending}
+                      className="bg-orange-500 hover:bg-orange-600 disabled:opacity-50 text-white text-sm font-semibold px-5 py-2 rounded-lg transition">
+                      {isDesainPending ? "Menyimpan..." : editDesain ? "Simpan Perubahan" : "Tambah Desain"}
+                    </button>
+                    <button type="button" onClick={resetDesainForm}
+                      className="bg-slate-700 hover:bg-slate-600 text-white text-sm px-5 py-2 rounded-lg transition">
+                      Batal
+                    </button>
+                  </div>
+                </form>
+              </div>
+            )}
+
+            {loadingDesain ? (
+              <div className="text-slate-400 text-center py-16">Memuat data...</div>
+            ) : desainItems.length === 0 ? (
+              <div className="text-slate-400 text-center py-16">Belum ada desain.</div>
+            ) : (
+              <div className="bg-slate-800 rounded-xl overflow-hidden border border-slate-700">
+                <table className="w-full text-sm">
+                  <thead>
+                    <tr className="border-b border-slate-700 text-slate-400 text-left">
+                      <th className="px-4 py-3 font-medium">Foto</th>
+                      <th className="px-4 py-3 font-medium">Nama Desain</th>
+                      <th className="px-4 py-3 font-medium">Layanan</th>
+                      <th className="px-4 py-3 font-medium">Deskripsi</th>
+                      <th className="px-4 py-3 font-medium">Aksi</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    {desainItems.map((item: ServiceDesign) => (
+                      <tr key={item.id} className="border-b border-slate-700/50 hover:bg-slate-700/30 transition">
+                        <td className="px-4 py-3">
+                          <img src={item.image_url} alt={item.name}
+                            className="w-14 h-10 object-cover rounded-md bg-slate-700" />
+                        </td>
+                        <td className="px-4 py-3 font-medium text-white">{item.name}</td>
+                        <td className="px-4 py-3">
+                          <span className="bg-slate-700 text-slate-300 px-2 py-0.5 rounded text-xs">
+                            {SERVICES_SLUGS.find(s => s.slug === item.service_slug)?.label ?? item.service_slug}
+                          </span>
+                        </td>
+                        <td className="px-4 py-3 text-slate-400 text-xs max-w-xs truncate">
+                          {item.description ?? "—"}
+                        </td>
+                        <td className="px-4 py-3">
+                          <div className="flex gap-2">
+                            <button type="button" onClick={() => openEditDesain(item)}
+                              className="text-xs bg-slate-700 hover:bg-slate-600 text-white px-3 py-1 rounded transition">
+                              Edit
+                            </button>
+                            {deleteDesainConfirm === item.id ? (
+                              <div className="flex gap-1">
+                                <button type="button" onClick={() => deleteDesainMutation.mutate(item.id)}
+                                  disabled={deleteDesainMutation.isPending}
+                                  className="text-xs bg-red-600 hover:bg-red-700 text-white px-3 py-1 rounded transition">
+                                  Hapus?
+                                </button>
+                                <button type="button" onClick={() => setDeleteDesainConfirm(null)}
+                                  className="text-xs bg-slate-700 hover:bg-slate-600 text-white px-2 py-1 rounded transition">
+                                  ✕
+                                </button>
+                              </div>
+                            ) : (
+                              <button type="button" onClick={() => setDeleteDesainConfirm(item.id)}
+                                className="text-xs bg-slate-700 hover:bg-red-600 text-slate-400 hover:text-white px-3 py-1 rounded transition">
+                                Hapus
+                              </button>
+                            )}
+                          </div>
+                        </td>
+                      </tr>
+                    ))}
+                  </tbody>
+                </table>
+              </div>
+            )}
+          </div>
+        )}
+
       </div>
     </div>
   );
 }
+

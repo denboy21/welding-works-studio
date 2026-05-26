@@ -1,6 +1,31 @@
 # 📚 Dokumentasi Website - Welding Works Studio
 
-Selamat datang di Welding Works Studio! Berikut adalah panduan lengkap untuk memahami dan mengembangkan website ini.
+**Bara Baja Las** — Jasa las & konstruksi besi profesional Karawang sejak 2019
+
+Selamat datang di dokumentasi lengkap Welding Works Studio! Website ini adalah showcase showcase profesional untuk bisnis jasa las dan konstruksi baja di Karawang. Berikut adalah panduan lengkap untuk memahami dan mengembangkan website ini.
+
+---
+
+## 🎯 Website at a Glance
+
+```
+What?   → Jasa las & konstruksi besi profesional (Bara Baja Las)
+Where?  → Karawang, Jawa Barat (area layanan: Karawang, Cikampek, Purwakarta, Bekasi, Subang)
+Services→ 9 kategori (Pagar, Kanopi, Railing, Balkon, Tralis, Baja Ringan, Las Panggilan, Konstruksi, Pintu)
+Contact → WhatsApp: +62 821 2517 1716
+Goal    → Generate leads, showcase portfolio, drive customer inquiries
+Tech    → React 19 + TypeScript + TanStack Router + Tailwind CSS
+Deploy  → Cloudflare Workers
+```
+
+### Key Stats
+- **9 Service Categories** - Each with dedicated detail page
+- **8+ Portfolio Projects** - With category filtering
+- **5 Customer Reviews** - Real testimonials with 5-star ratings
+- **6 FAQs** - Common questions answered
+- **Mobile-First** - Fully responsive design
+- **SEO Optimized** - Server-side rendering + dynamic sitemap
+- **WhatsApp Integrated** - Direct customer contact
 
 ---
 
@@ -68,9 +93,98 @@ Dokumentasi lengkap tentang:
 
 ---
 
-## 🎯 Untuk Developer Baru - Quick Start
+### 5. **[CONTENT_GUIDE.md](./CONTENT_GUIDE.md)** - Content management 📝
+Panduan praktis untuk update content website:
+- ✅ Menambah service baru
+- ✅ Menambah portfolio project
+- ✅ Menambah customer testimonial
+- ✅ Update FAQ
+- ✅ Update site configuration
+- ✅ Image guidelines
+- ✅ Common mistakes & troubleshooting
+- ✅ Deployment checklist
 
-### Hari Pertama (1-2 jam)
+**Waktu baca:** 10-15 menit (reference)  
+**Untuk:** Content manager, marketing, atau siapa yang perlu update content tanpa perlu tahu code
+
+---
+
+### 6. **[TECH_STACK_OVERVIEW.md](./TECH_STACK_OVERVIEW.md)** - Visual reference 🎯
+Visual diagrams & quick reference:
+- ✅ Architecture diagram
+- ✅ Technology stack visual
+- ✅ Folder structure map
+- ✅ Data flow diagrams
+- ✅ Component dependency graph
+- ✅ Development workflow
+- ✅ Learning path
+- ✅ Quick reference table
+
+**Waktu baca:** 10 menit (quick overview)  
+**Untuk:** Visual learners yang ingin melihat big picture sebelum deep dive
+
+---
+
+## 🛠️ 9 Service Categories (What This Website Sells)
+
+| Service | Slug | Target Market | Key Feature |
+|---------|------|----------------|-------------|
+| Pagar Besi | pagar-besi | Rumah, ruko, gudang | Custom desain + anti karat |
+| Kanopi | kanopi | Carport, teras, area servis | Atap polycarbonate/alderon |
+| Railing Tangga | railing-tangga | Indoor & outdoor | Besi tempa & stainless steel |
+| Balkon | balkon | Lantai 2, fasad rumah | Desain geometris modern |
+| Tralis Jendela | tralis-jendela | Keamanan jendela | Minimalis modern, anti karat |
+| Baja Ringan | baja-ringan | Rangka atap & kanopi | SNI certified, anti rayap |
+| Las Panggilan | las-panggilan | Perbaikan mendadak | 24 jam, datang ke lokasi |
+| Konstruksi Baja | konstruksi-baja | Gudang, workshop, industri | WF/H-Beam, sertifikasi welding |
+| Pintu Besi | pintu-besi | Pagar, gudang, ruko | Swing/sliding/folding gate |
+
+---
+
+## 📊 Content & Data Overview
+
+### Static Data Stored in Code (`src/lib/data.ts`)
+
+**Services:** 9 service categories with images, descriptions, features
+- Each has unique slug for URL routing
+- Contains full description, short preview, and feature list
+- Access via `/layanan` (list) or `/layanan/:slug` (detail)
+
+**Portfolio:** 8 completed projects showcase
+- With category filtering (Pagar, Kanopi, Railing, etc)
+- Images with grid layout variants
+- No database needed - hardcoded data
+- Available at `/portfolio`
+
+**Testimonials:** 5 customer reviews
+- From real customers (Pak Ahmad, Bu Ratna, Pak Joko, Bu Sinta, Pak Dedi)
+- Located in Karawang, Cikampek, Purwakarta, Bekasi
+- 5-star ratings with text reviews
+- Displayed on homepage & `/testimoni`
+
+**FAQs:** 6 common questions
+- About survey, timeline, custom design, coverage, consultation, payment
+- Available at `/faq`
+
+**Site Config:** (`src/lib/site.ts`)
+- Business info (name, phone, address)
+- Working hours & days (08:00-17:00, Senin-Sabtu)
+- Coverage areas (Karawang, Cikampek, Purwakarta, Bekasi, Subang)
+- WhatsApp link configuration
+
+### To Add New Service/Portfolio/Testimonial
+
+1. Edit `src/lib/data.ts` - add item to array
+2. Add image to `src/assets/` folder
+3. Import image at top of data.ts
+4. Restart dev server (if needed)
+5. New content auto-appears on relevant pages!
+
+No database setup needed! Everything is in code - super simple to update.
+
+---
+
+## 🎯 Untuk Developer Baru - Quick Start
 1. Baca [README.md](./README.md) - 15 menit
 2. Jalankan `npm install` & `npm run dev` - 5 menit
 3. Explore folder structure - 10 menit
@@ -82,7 +196,11 @@ Dokumentasi lengkap tentang:
 2. Refer ke [COMPONENTS.md](./COMPONENTS.md) untuk available components
 3. Check [ARCHITECTURE.md](./ARCHITECTURE.md) untuk patterns
 
----
+### Saat Perlu Update Content
+1. Refer ke [CONTENT_GUIDE.md](./CONTENT_GUIDE.md) untuk cara menambah/update
+2. Edit `src/lib/data.ts`
+3. Restart dev server
+4. Deploy
 
 ## 🏢 Tech Stack Overview
 
@@ -125,109 +243,138 @@ Configuration:
 
 ## 🚀 Common Development Tasks
 
+### Add a New Service
+```typescript
+// Step 1: Add image to src/assets/
+// (e.g., service-new-category.jpg)
+
+// Step 2: Edit src/lib/data.ts
+import newImage from "@/assets/service-new-category.jpg"
+
+export const SERVICES: Service[] = [
+  // ... existing services
+  {
+    slug: "new-category",
+    title: "New Service Name",
+    short: "Short description",
+    description: "Full description...",
+    image: newImage,
+    features: ["Feature 1", "Feature 2", "Feature 3"],
+  },
+]
+
+// Step 3: Restart dev server
+// Step 4: New service automatically appears:
+// - /layanan page (service list)
+// - /layanan/new-category (service detail page)
+// - Homepage services preview
+```
+
+### Add Portfolio Project
+```typescript
+// Edit src/lib/data.ts
+export const PORTFOLIO = [
+  // ... existing projects
+  { 
+    id: 9, 
+    image: newImage, 
+    title: "Project Name — Location", 
+    category: "Pagar",  // Must match service category
+    span: "tall"        // optional: "tall" | "wide" | ""
+  },
+]
+
+// Automatically appears on /portfolio page with filter by category
+```
+
+### Add Customer Testimonial
+```typescript
+// Edit src/lib/data.ts
+export const TESTIMONIALS = [
+  // ... existing testimonials
+  {
+    name: "Nama Customer",
+    location: "Kota",
+    rating: 5,
+    text: "Review text here...",
+  },
+]
+
+// Appears on homepage testimonial slider & /testimoni page
+```
+
+### Add FAQ
+```typescript
+// Edit src/lib/data.ts
+export const FAQS = [
+  // ... existing FAQs
+  {
+    q: "Question here?",
+    a: "Answer here...",
+  },
+]
+
+// Appears on /faq page
+```
+
 ### Create a New Page
-```bash
-# 1. Create file in src/routes/
-# 2. Export a component with file name
-# 3. Restart dev server
-# 4. Route auto-generated!
-
-# Example: src/routes/new-page.tsx
-export function NewPage() {
-  return <div>Page content</div>
-}
-
-# Now accessible at /new-page
-```
-
-**Detail:** Lihat [DEVELOPER_GUIDE.md](./DEVELOPER_GUIDE.md#membuat-page-baru)
-
----
-
-### Create a New Component
-```bash
-# 1. Create file in src/components/
-# 2. Export React component
-# 3. Import & use in pages
-
-# Example: src/components/MyComponent.tsx
-export default function MyComponent() {
-  return <div>Component content</div>
-}
-```
-
-**Detail:** Lihat [COMPONENTS.md](./COMPONENTS.md#-creating-new-components)
-
----
-
-### Add a Form
 ```typescript
-// Use React Hook Form + Zod for validation
-// Already integrated with UI components
+// Create file: src/routes/new-page.tsx
+import { createFileRoute } from '@tanstack/react-router'
+import { SiteLayout } from '@/components/SiteLayout'
 
-import { useForm } from 'react-hook-form'
-import { zodResolver } from '@hookform/resolvers/zod'
-
-// Define schema, create form, done!
-```
-
-**Detail:** Lihat [DEVELOPER_GUIDE.md - Form Examples](./DEVELOPER_GUIDE.md#-form-examples)
-
----
-
-### Fetch Data
-```typescript
-// Use React Query for data fetching & caching
-import { useQuery } from '@tanstack/react-query'
-
-const { data, isLoading, error } = useQuery({
-  queryKey: ['data'],
-  queryFn: () => fetch('/api/data').then(r => r.json()),
+export const Route = createFileRoute('/new-page')({
+  component: NewPage,
+  head: () => ({
+    meta: [
+      { title: "Page Title" },
+      { name: "description", content: "Page description" },
+    ],
+  }),
 })
+
+function NewPage() {
+  return (
+    <SiteLayout>
+      <div className="min-h-screen px-4 py-12">
+        <h1 className="text-4xl font-bold">Page Title</h1>
+        {/* Content */}
+      </div>
+    </SiteLayout>
+  )
+}
 ```
 
-**Detail:** Lihat [DEVELOPER_GUIDE.md - Data Fetching](./DEVELOPER_GUIDE.md#-data-fetching-patterns)
+Automatically accessible at `/new-page`!
 
 ---
 
-### Add Styling
-```typescript
-// Use Tailwind CSS utility classes
-<div className="flex items-center gap-4 p-4 rounded-lg bg-blue-50">
-  {/* Content */}
-</div>
-```
+## 🎨 Available Components
 
-**Detail:** Lihat [DEVELOPER_GUIDE.md - Tailwind Snippets](./DEVELOPER_GUIDE.md#-tailwind-css-snippets)
-
----
-
-## 🔍 Available Components
-
-### Custom Feature Components
-- `AnimatedCounter` - Animated number display
-- `AreaCoverageSection` - Service area showcase
-- `CTASection` - Call-to-action section
-- `FAQAccordion` - FAQ with accordion
-- `PortfolioGallery` - Project gallery
-- `ServiceCard` - Service showcase card
-- `TestimonialSlider` - Testimonial carousel
-- `SparkParticles` - Particle animation
-- `GlowButton` - Special CTA button
-- `Reveal` - Scroll reveal animation
-
-**Detail:** Lihat [COMPONENTS.md - Custom Components](./COMPONENTS.md#-custom-components-feature-components)
-
----
+### Custom Feature Components (Used on This Website)
+- `ServiceCard` - Display individual service (used on /layanan, homepage)
+- `ServiceDetail` - Full service detail (on /layanan/:slug)
+- `PortfolioGallery` - Project showcase with filter (on /portfolio)
+- `TestimonialSlider` - Auto-rotating testimonials (homepage, /testimoni)
+- `FAQAccordion` - Collapsible FAQ items (on /faq)
+- `CTASection` - Call-to-action section (multiple places)
+- `AnimatedCounter` - Animated numbers (homepage stats)
+- `AreaCoverageSection` - Service coverage map (on /area-layanan)
+- `SparkParticles` - Animated background (hero section)
+- `GlowButton` - Special glowing CTA button (hero)
+- `Reveal` - Scroll-triggered reveal animation (sections)
+- `IndustrialNavbar` - Main navigation header (all pages)
+- `SectionEyebrow` - Small intro text (section headers)
+- `Footer` - Footer component (all pages)
+- `SiteLayout` - Main layout wrapper (all pages)
+- `WhatsAppCTA` - Floating WhatsApp button (all pages)
 
 ### UI Components (30+)
-- Form components (Input, Textarea, Select, etc.)
-- Layout (Card, Tabs, Accordion, Dialog, etc.)
-- Navigation (Button, Breadcrumb, Pagination, etc.)
-- Display (Badge, Avatar, Alert, etc.)
-- Data (Table, Chart, Carousel, etc.)
-
-**Detail:** Lihat [COMPONENTS.md - UI Components](./COMPONENTS.md#-ui-components-from-radix-ui--shadcnui)
+- Form: `Input`, `Textarea`, `Select`, `Checkbox`, `Radio`, `Switch`, `Slider`, `Form`
+- Layout: `Card`, `Tabs`, `Accordion`, `Dialog`, `Drawer`, `Popover`, `Sheet`
+- Display: `Badge`, `Avatar`, `Alert`, `Progress`, `Skeleton`
+- Navigation: `Button`, `Breadcrumb`, `Pagination`, `Dropdown`, `ContextMenu`
+- Data: `Table`, `Chart` (Recharts)
 
 ---
 
@@ -384,6 +531,7 @@ const { data, isLoading, error } = useQuery({
 - [ ] Check existing components di `src/components/`
 - [ ] Try membuat page baru
 - [ ] Try membuat component baru
+- [ ] Read [CONTENT_GUIDE.md](./CONTENT_GUIDE.md) untuk update content
 - [ ] Run `npm run lint` & `npm run format`
 - [ ] Bookmark [DEVELOPER_GUIDE.md](./DEVELOPER_GUIDE.md) untuk reference
 
@@ -415,10 +563,12 @@ const { data, isLoading, error } = useQuery({
 
 ## 🚀 Ready to Start?
 
-1. **If this is your first time:** Start with [README.md](./README.md)
+1. **If this is your first time:** Start with [README.md](./README.md) or [TECH_STACK_OVERVIEW.md](./TECH_STACK_OVERVIEW.md) (visual)
 2. **If you're ready to code:** Use [DEVELOPER_GUIDE.md](./DEVELOPER_GUIDE.md)
 3. **If you need component docs:** Check [COMPONENTS.md](./COMPONENTS.md)
-4. **If you need architecture details:** Read [ARCHITECTURE.md](./ARCHITECTURE.md)
+4. **If you need to update content:** Read [CONTENT_GUIDE.md](./CONTENT_GUIDE.md)
+5. **If you want visual diagrams:** Check [TECH_STACK_OVERVIEW.md](./TECH_STACK_OVERVIEW.md)
+6. **If you need architecture details:** Read [ARCHITECTURE.md](./ARCHITECTURE.md)
 
 ---
 
@@ -426,11 +576,13 @@ const { data, isLoading, error } = useQuery({
 
 | Document | Updated | Status |
 |----------|---------|--------|
-| README.md | May 22, 2026 | ✅ Current |
-| ARCHITECTURE.md | May 22, 2026 | ✅ Current |
-| DEVELOPER_GUIDE.md | May 22, 2026 | ✅ Current |
-| COMPONENTS.md | May 22, 2026 | ✅ Current |
-| DOCUMENTATION_INDEX.md | May 22, 2026 | ✅ Current |
+| README.md | May 24, 2026 | ✅ Updated |
+| ARCHITECTURE.md | May 24, 2026 | ✅ Updated |
+| DEVELOPER_GUIDE.md | May 24, 2026 | ✅ Updated |
+| COMPONENTS.md | May 24, 2026 | ✅ Updated |
+| CONTENT_GUIDE.md | May 24, 2026 | ✅ New |
+| TECH_STACK_OVERVIEW.md | May 24, 2026 | ✅ New |
+| DOCUMENTATION_INDEX.md | May 24, 2026 | ✅ Updated |
 
 ---
 

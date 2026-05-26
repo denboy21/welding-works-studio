@@ -37,7 +37,106 @@ Dokumentasi detail untuk fullstack developers tentang arsitektur, alur data, dan
 
 ---
 
-## 📡 Data Flow Architecture
+## 🏢 Welding Works Studio Data Model
+
+### Service Categories (9 Types)
+```
+1. Pagar Besi (pagar-besi)
+   ├─ Material: anti karat, custom desain
+   ├─ Target: rumah, ruko, gudang
+   └─ Features: survey gratis, garansi
+
+2. Kanopi (kanopi)
+   ├─ Tipe: polycarbonate, alderon, spandek
+   ├─ Target: carport, teras, area servis
+   └─ Features: anti bocor, konstruksi kokoh
+
+3. Railing Tangga (railing-tangga)
+   ├─ Material: besi tempa, stainless steel
+   ├─ Target: indoor & outdoor
+   └─ Features: finishing halus, custom desain
+
+4. Balkon (balkon)
+   ├─ Desain: geometris modern, klasik
+   ├─ Target: lantai 2, fasad rumah
+   └─ Features: anti karat, tinggi standar
+
+5. Tralis Jendela (tralis-jendela)
+   ├─ Gaya: minimalis modern
+   ├─ Target: keamanan & estetika
+   └─ Features: pengaman optimal, custom ukuran
+
+6. Konstruksi Baja Ringan (baja-ringan)
+   ├─ Standard: SNI certified
+   ├─ Target: rangka atap, kanopi
+   └─ Features: anti rayap & karat, hitungan presisi
+
+7. Las Panggilan (las-panggilan)
+   ├─ Layanan: 24 jam
+   ├─ Target: perbaikan mendadak
+   └─ Features: datang ke lokasi, respon cepat
+
+8. Konstruksi Baja (konstruksi-baja)
+   ├─ Material: WF, H-Beam, IWF
+   ├─ Target: gudang, workshop, industri
+   └─ Features: struktur teknis, welding sertifikasi
+
+9. Pintu Besi (pintu-besi)
+   ├─ Tipe: swing, sliding, folding gate
+   ├─ Target: rumah, ruko, gudang
+   └─ Features: heavy-duty engsel, custom desain
+```
+
+### Data Flow for Service Pages
+
+```
+URL Request: /layanan/pagar-besi
+        │
+        ▼
+Router: routes/layanan.$slug.tsx
+        │
+        ├─ Extract slug parameter: "pagar-besi"
+        │
+        ├─ Query SERVICES data from lib/data.ts
+        │
+        ├─ Find matching service:
+        │  {
+        │    slug: "pagar-besi",
+        │    title: "Pagar Besi",
+        │    short: "Pagar minimalis, klasik, hingga custom desain.",
+        │    description: "Pembuatan pagar besi...",
+        │    image: pagar,
+        │    features: ["Material anti karat", "Desain custom", ...]
+        │  }
+        │
+        ├─ Render ServiceDetail component
+        │
+        └─ Display:
+           ├─ Hero image
+           ├─ Title & description
+           ├─ Features list
+           ├─ CTA buttons (WhatsApp, Contact form)
+           └─ Related services carousel
+```
+
+### Homepage Component Flow
+
+```
+HomePage
+├─ Hero (animated, particle background)
+├─ TrustStrip (why choose us)
+├─ ServicesSection
+│  └─ Map SERVICES → ServiceCard (9 items)
+├─ PortfolioPreview
+│  └─ Display PORTFOLIO (8 showcase items)
+├─ Advantages (6 key points with icons)
+├─ AreaCoverageSection (service areas)
+├─ Testimoni (TestimonialSlider with TESTIMONIALS)
+├─ FAQ (FAQAccordion with FAQS)
+└─ FinalCTA (contact call-to-action)
+```
+
+---
 
 ### Initial Page Load (SSR)
 ```

@@ -552,51 +552,106 @@ export function MyComponent() {
 ## 📚 Data Structure
 
 ### Services Data (`lib/data.ts`)
+
+**Available Services (9 types):**
 ```typescript
 interface Service {
-  id: string
-  name: string
-  description: string
-  image?: string
-  price?: string
-  features: string[]
+  slug: string              // URL identifier
+  title: string             // Display name
+  short: string             // Short description
+  description: string       // Full description
+  image: string             // Service image
+  features: string[]        // Key features/benefits
 }
 
-export const services: Service[] = [
-  {
-    id: 'pagar-besi',
-    name: 'Pagar Besi',
-    description: 'Pagar berkualitas tinggi...',
-    features: ['Desain modern', 'Tahan lama', '...'],
-  },
-  // ...
+// Actual services in database:
+[
+  "pagar-besi"              // Pagar Besi
+  "kanopi"                  // Kanopi
+  "railing-tangga"          // Railing Tangga
+  "balkon"                  // Balkon
+  "tralis-jendela"          // Tralis Jendela
+  "baja-ringan"             // Konstruksi Baja Ringan
+  "las-panggilan"           // Las Panggilan
+  "konstruksi-baja"         // Konstruksi Baja
+  "pintu-besi"              // Pintu Besi
 ]
 ```
 
 ### Portfolio Data
 ```typescript
-interface Project {
-  id: string
-  title: string
-  description: string
-  image: string
-  category: string
-  date: string
-  client?: string
+interface PortfolioItem {
+  id: number
+  image: string             // Project image
+  title: string             // Project name
+  category: string          // Matches service slug
+  span?: 'tall' | 'wide'    // Grid layout
 }
+
+// 8 projects dengan categories:
+[
+  "Pagar", "Kanopi", "Railing", "Balkon", 
+  "Tralis", "Baja Ringan", "Pintu", "Konstruksi"
+]
 ```
 
 ### Testimonials Data
 ```typescript
 interface Testimonial {
-  id: string
-  name: string
-  role: string
-  company?: string
-  content: string
-  image?: string
-  rating: number
+  name: string              // Customer name
+  location: string          // Customer location (Karawang, Cikampek, etc)
+  rating: number            // 1-5 stars
+  text: string              // Review text
 }
+
+// 5 real testimonials from actual customers
+```
+
+### FAQs Data
+```typescript
+interface FAQ {
+  q: string                 // Question
+  a: string                 // Answer
+}
+
+// 6 common questions:
+[
+  "Apakah bisa survey lokasi gratis?",
+  "Berapa lama pengerjaan proyek?",
+  "Apakah bisa custom desain?",
+  "Apakah melayani luar kota Karawang?",
+  "Apakah konsultasi gratis?",
+  "Bagaimana sistem pembayaran?"
+]
+```
+
+### Site Configuration (`lib/site.ts`)
+```typescript
+export const SITE = {
+  name: "Bara Baja Las",
+  description: "Jasa las profesional Karawang...",
+  phone: "+6282125171716",
+  location: "Kp. Kadongdong, Desa Bengle, Karawang",
+  workingHours: { open: "08:00", close: "17:00" },
+  workingDays: ["Senin", "Selasa", ... "Sabtu"],
+  coverage: ["Karawang", "Cikampek", "Purwakarta", "Bekasi", "Subang"],
+}
+```
+
+### Usage Example
+```typescript
+// In routes or components:
+import { SERVICES, PORTFOLIO, TESTIMONIALS, FAQS } from '@/lib/data'
+
+// Display services list
+<div className="grid grid-cols-1 md:grid-cols-3 gap-4">
+  {SERVICES.map(service => (
+    <ServiceCard key={service.slug} service={service} />
+  ))}
+</div>
+
+// Access specific service detail
+const service = SERVICES.find(s => s.slug === 'pagar-besi')
 ```
 
 ---

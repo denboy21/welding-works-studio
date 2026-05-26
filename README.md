@@ -1,15 +1,40 @@
 # Welding Works Studio - Bara Baja Las
 
-Website profesional untuk layanan jasa las dan konstruksi baja di Karawang, Jawa Barat, Indonesia.
+Website showcase profesional untuk layanan jasa las dan konstruksi baja berkualitas tinggi di Karawang, Jawa Barat, Indonesia.
 
 ---
 
 ## 📋 Ringkasan Proyek
 
 **Nama Bisnis:** Bara Baja Las  
-**Lokasi:** Karawang, Jawa Barat  
-**Layanan:** Jasa las profesional, pagar besi, kanopi, railing, tralis, balkon, pintu besi, konstruksi baja, welding custom  
-**Website Type:** Full-stack web application dengan SSR (Server-Side Rendering)
+**Lokasi:** Kp. Kadongdong, Desa Bengle, Karawang, Jawa Barat  
+**Tahun Berdiri:** 2019  
+**Kontak:** +62 821 2517 1716 (WhatsApp)  
+**Area Layanan:** Karawang, Cikampek, Purwakarta, Bekasi, Subang
+
+### 🛠️ Layanan Utama (9 Service Categories)
+1. **Pagar Besi** - Minimalis, klasik, custom desain dengan material anti karat
+2. **Kanopi** - Rangka baja dengan atap polycarbonate/alderon/spandek
+3. **Railing Tangga** - Besi tempa hingga stainless steel premium
+4. **Balkon** - Railing estetik dengan desain geometris modern
+5. **Tralis Jendela** - Pengaman modern tanpa kesan penjara
+6. **Konstruksi Baja Ringan** - Rangka atap & kanopi SNI-certified
+7. **Las Panggilan** - Layanan 24 jam untuk perbaikan mendadak
+8. **Konstruksi Baja** - Struktur WF/H-Beam untuk gudang & industri
+9. **Pintu Besi** - Swing, sliding, folding gate dengan engsel heavy-duty
+
+**Website Type:** Full-stack interactive web application dengan SSR (Server-Side Rendering)
+
+### 📊 Fitur Website
+- ✅ 9 halaman layanan detail (dynamic routes)
+- ✅ Portfolio gallery dengan 8+ project showcase
+- ✅ Testimonial dari pelanggan real (5 bintang)
+- ✅ FAQ section dengan 6 pertanyaan umum
+- ✅ Area coverage map & informasi
+- ✅ Form kontak & WhatsApp integration
+- ✅ Animated counters & scroll reveals
+- ✅ Mobile-responsive design
+- ✅ SEO optimized dengan schema.org markup
 
 ---
 
@@ -202,25 +227,59 @@ npm run format
 - Route tree auto-generated dari struktur file di `/src/routes/`
 - React Query untuk data fetching dan caching
 
-### Routing
-- **File-based routing** - File di `src/routes/` otomatis menjadi route
-- `[.]` dalam filename menunjukkan file extension (misal `sitemap[.]xml.ts`)
-- `$slug` menunjukkan dynamic segment
+### Routing (File-Based, Auto-Generated)
+```
+/ → Homepage (hero + services preview + portfolio + testimonial)
+/tentang → About page (company story & values)
+/layanan → Services list (9 categories)
+/layanan/:slug → Service detail (pagar-besi, kanopi, railing-tangga, etc)
+/portfolio → Full portfolio gallery
+/area-layanan → Coverage area information
+/testimoni → Customer testimonials & reviews
+/faq → FAQ accordion
+/kontak → Contact form + WhatsApp CTA
+/blog → Blog articles list
+/blog/:slug → Blog article detail
+/sitemap.xml → Dynamic SEO sitemap
+```
+
+**Routing Features:**
+- File-based routing (auto-generated dari folder structure)
+- `$slug` untuk dynamic routes (misal `layanan.$slug.tsx` → `/layanan/:slug`)
+- `[.]` untuk file extensions (misal `sitemap[.]xml.ts` → `/sitemap.xml`)
 - Type-safe routing dengan TanStack Router
+- Scroll restoration on navigation
 
 ### Component Architecture
 ```
 SiteLayout (Main wrapper)
-├── IndustrialNavbar (Header)
-├── [Page Components]
-│   ├── Hero/Section
-│   ├── ServiceCard
-│   ├── PortfolioGallery
-│   ├── TestimonialSlider
-│   ├── FAQAccordion
-│   └── CTASection
+├── IndustrialNavbar (Header + mobile menu)
+│   └── Navigation links + WhatsApp CTA button
+├── Hero Section
+│   ├── SparkParticles (background animation)
+│   ├── Animated text reveal
+│   └── GlowButton (CTA)
+├── Services Preview (Grid of ServiceCard)
+│   └── 9 layanan dengan hover effects
+├── PortfolioGallery
+│   └── 8+ project showcase dengan category filter
+├── AnimatedCounter
+│   └── Statistics (years, projects, customers)
+├── TestimonialSlider
+│   ├── Auto-rotating slides
+│   └── 5-star ratings dari customers
+├── FAQAccordion
+│   └── 6 pertanyaan umum + answers
+├── CTASection
+│   └── Final call-to-action untuk contact
+├── AreaCoverageSection
+│   └── Service coverage map
 ├── Footer
-└── WhatsAppCTA (Floating CTA)
+│   ├── Navigation links
+│   ├── Contact info
+│   └── Social links
+└── WhatsAppCTA (Floating)
+    └── Fixed position messaging button
 ```
 
 ### Styling Strategy
@@ -233,35 +292,31 @@ SiteLayout (Main wrapper)
 
 ## 🔑 Key Features
 
-### ✅ SEO Optimized
-- Server-Side Rendering (SSR)
-- Dynamic sitemap generation
-- Structured data (Schema.org LocalBusiness JSON-LD)
-- Meta tags management
-- Social media OG tags
+### ✅ Business Features
+- **9 Service Categories** - Pagar, Kanopi, Railing, Balkon, Tralis, Baja Ringan, Las Panggilan, Konstruksi, Pintu
+- **Portfolio Gallery** - 8+ completed projects dengan category filter
+- **Customer Testimonials** - 5-star reviews dari pelanggan real
+- **FAQ Section** - Jawaban lengkap pertanyaan umum customers
+- **Service Coverage Area** - Informasi area layanan (Karawang, Cikampek, Purwakarta, Bekasi, Subang)
+- **Contact Integration** - WhatsApp + Contact form untuk inquiry
+- **Promotional Stats** - Animated counters (years, projects, customers)
 
-### ✅ Performance
-- Code splitting otomatis
-- Image optimization ready
-- Lazy loading components
-- React Query caching
+### ✅ Technical Features (SEO & Performance)
+- **Server-Side Rendering (SSR)** - Fast initial load + better SEO
+- **Dynamic Sitemap** - Auto-generated `/sitemap.xml` untuk Google
+- **Structured Data** - Schema.org LocalBusiness JSON-LD
+- **Meta Tags Management** - OG tags, canonical URLs
+- **Code Splitting** - Automatic per-route
+- **Image Optimization** - Lazy loading built-in
+- **React Query Caching** - Smart data fetching & caching
 
-### ✅ Accessibility
-- Radix UI untuk semantik HTML
-- ARIA attributes
-- Keyboard navigation support
-- Contrast-aware colors
-
-### ✅ Mobile Responsive
-- Mobile detection hook (`use-mobile`)
-- Responsive components
-- Touch-friendly UI
-
-### ✅ Animations
-- Framer Motion untuk smooth transitions
-- Particle effects (`SparkParticles`)
-- Reveal animations
-- Scroll-based animations ready
+### ✅ UX Features
+- **Mobile Responsive** - Desktop, tablet, mobile optimized
+- **Smooth Animations** - Reveal on scroll, transitions, hover effects
+- **Particle Background** - Animated background particles on hero
+- **Dark Mode Ready** - CSS variables untuk theming
+- **Accessibility** - Radix UI semantic, keyboard navigation
+- **Fast Interactions** - Form validation, smooth navigation
 
 ---
 
