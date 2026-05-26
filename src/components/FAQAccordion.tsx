@@ -24,9 +24,8 @@ export function FAQAccordion() {
     throwOnError: false,
   });
 
-  const items: FaqItem[] = (!dbItems || dbItems.length === 0)
-    ? FALLBACK
-    : dbItems.filter((f) => f.is_active === 1);
+  const items: FaqItem[] =
+    !dbItems || dbItems.length === 0 ? FALLBACK : dbItems.filter((f) => f.is_active === 1);
 
   return (
     <div className="divide-y divide-white/10 rounded-2xl border border-white/10 bg-[color:var(--surface)]">

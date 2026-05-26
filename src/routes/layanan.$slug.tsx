@@ -64,7 +64,7 @@ export const Route = createFileRoute("/layanan/$slug")({
 
 function DesignCard({ design, serviceName }: { design: ServiceDesign; serviceName: string }) {
   const waMessage = waLink(
-    `Halo ${SITE.name}, saya tertarik dengan desain *${design.name}* untuk layanan ${serviceName}. Boleh info lebih lanjut?`
+    `Halo ${SITE.name}, saya tertarik dengan desain *${design.name}* untuk layanan ${serviceName}. Boleh info lebih lanjut?`,
   );
 
   return (
@@ -78,16 +78,13 @@ function DesignCard({ design, serviceName }: { design: ServiceDesign; serviceNam
         />
       </div>
       <div className="p-5">
-        <h3 className="font-display text-base font-semibold text-foreground">
-          {design.name}
-        </h3>
+        <h3 className="font-display text-base font-semibold text-foreground">{design.name}</h3>
         {design.description && (
-          <p className="mt-2 text-sm leading-relaxed text-muted-foreground">
-            {design.description}
-          </p>
+          <p className="mt-2 text-sm leading-relaxed text-muted-foreground">{design.description}</p>
         )}
-        
-          <a href={waMessage}
+
+        <a
+          href={waMessage}
           target="_blank"
           rel="noopener noreferrer"
           className="mt-4 flex w-full items-center justify-center gap-2 rounded-xl bg-[#25D366] px-4 py-2.5 text-sm font-semibold text-white transition-opacity hover:opacity-90"
@@ -104,12 +101,12 @@ function Page() {
   const { service } = Route.useLoaderData();
   const { slug } = Route.useParams();
 
-const { data: designs = [], isLoading } = useQuery({
-  queryKey: ["service-designs", slug],
-  queryFn: () => getServiceDesigns({ data: { slug } }),
-  retry: false,
-  throwOnError: false,
-});
+  const { data: designs = [], isLoading } = useQuery({
+    queryKey: ["service-designs", slug],
+    queryFn: () => getServiceDesigns({ data: { slug } }),
+    retry: false,
+    throwOnError: false,
+  });
 
   return (
     <SiteLayout>
@@ -133,8 +130,7 @@ const { data: designs = [], isLoading } = useQuery({
           <div>
             <SectionEyebrow>Layanan</SectionEyebrow>
             <h1 className="font-display text-4xl font-extrabold leading-tight sm:text-5xl">
-              {service.title}{" "}
-              <span className="text-gradient-industrial">Karawang</span>
+              {service.title} <span className="text-gradient-industrial">Karawang</span>
             </h1>
             <p className="mt-5 text-base leading-relaxed text-muted-foreground">
               {service.description}
@@ -153,7 +149,7 @@ const { data: designs = [], isLoading } = useQuery({
               <GlowButton
                 as="a"
                 href={waLink(
-                  `Halo ${SITE.name}, saya tertarik dengan layanan ${service.title}. Mohon info lebih lanjut.`
+                  `Halo ${SITE.name}, saya tertarik dengan layanan ${service.title}. Mohon info lebih lanjut.`,
                 )}
                 target="_blank"
                 rel="noopener noreferrer"
@@ -178,20 +174,13 @@ const { data: designs = [], isLoading } = useQuery({
             {isLoading ? (
               <div className="mt-8 grid gap-5 sm:grid-cols-2 lg:grid-cols-3">
                 {Array.from({ length: 3 }).map((_, i) => (
-                  <div
-                    key={i}
-                    className="h-72 animate-pulse rounded-2xl bg-white/5"
-                  />
+                  <div key={i} className="h-72 animate-pulse rounded-2xl bg-white/5" />
                 ))}
               </div>
             ) : (
               <div className="mt-8 grid gap-5 sm:grid-cols-2 lg:grid-cols-3">
                 {designs.map((design) => (
-                  <DesignCard
-                    key={design.id}
-                    design={design}
-                    serviceName={service.title}
-                  />
+                  <DesignCard key={design.id} design={design} serviceName={service.title} />
                 ))}
               </div>
             )}
@@ -210,7 +199,7 @@ const { data: designs = [], isLoading } = useQuery({
           </div>
           <a
             href={waLink(
-              `Halo ${SITE.name}, saya ingin konsultasi desain custom untuk layanan ${service.title}.`
+              `Halo ${SITE.name}, saya ingin konsultasi desain custom untuk layanan ${service.title}.`,
             )}
             target="_blank"
             rel="noopener noreferrer"

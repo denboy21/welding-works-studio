@@ -97,19 +97,54 @@ export const SERVICES: Service[] = [
     description:
       "Pintu besi swing, sliding, hingga folding gate. Cocok untuk rumah, ruko, dan gudang dengan engsel berkualitas tahan beban berat.",
     image: pintu,
-    features: ["Swing / sliding / folding", "Engsel heavy duty", "Custom desain", "Pengerjaan presisi"],
+    features: [
+      "Swing / sliding / folding",
+      "Engsel heavy duty",
+      "Custom desain",
+      "Pengerjaan presisi",
+    ],
   },
 ];
 
 export const PORTFOLIO = [
-  { id: 1, image: pagar, title: "Pagar Minimalis — Karawang Barat", category: "Pagar", span: "tall" },
+  {
+    id: 1,
+    image: pagar,
+    title: "Pagar Minimalis — Karawang Barat",
+    category: "Pagar",
+    span: "tall",
+  },
   { id: 2, image: kanopi, title: "Kanopi Carport — Cikampek", category: "Kanopi", span: "wide" },
-  { id: 3, image: railing, title: "Railing Tangga Stainless — Purwakarta", category: "Railing", span: "" },
+  {
+    id: 3,
+    image: railing,
+    title: "Railing Tangga Stainless — Purwakarta",
+    category: "Railing",
+    span: "",
+  },
   { id: 4, image: balkon, title: "Railing Balkon — Karawang Timur", category: "Balkon", span: "" },
-  { id: 5, image: tralis, title: "Tralis Jendela Minimalis — Bekasi", category: "Tralis", span: "tall" },
-  { id: 6, image: bajaRingan, title: "Rangka Baja Ringan Workshop — Karawang", category: "Baja Ringan", span: "wide" },
+  {
+    id: 5,
+    image: tralis,
+    title: "Tralis Jendela Minimalis — Bekasi",
+    category: "Tralis",
+    span: "tall",
+  },
+  {
+    id: 6,
+    image: bajaRingan,
+    title: "Rangka Baja Ringan Workshop — Karawang",
+    category: "Baja Ringan",
+    span: "wide",
+  },
   { id: 7, image: pintu, title: "Pintu Pagar Custom — Cikampek", category: "Pintu", span: "" },
-  { id: 8, image: konstruksi, title: "Konstruksi Gudang — Karawang", category: "Konstruksi", span: "" },
+  {
+    id: 8,
+    image: konstruksi,
+    title: "Konstruksi Gudang — Karawang",
+    category: "Konstruksi",
+    span: "",
+  },
 ] as const;
 
 export const TESTIMONIALS = [
@@ -173,47 +208,76 @@ export const FAQS = [
 ];
 
 export const ADVANTAGES = [
-  { title: "Pengerjaan Rapi", desc: "Finishing halus, las bersih, sambungan presisi.", icon: "Sparkles" },
-  { title: "Material Berkualitas", desc: "Besi SNI, anti karat, sesuai spesifikasi proyek.", icon: "ShieldCheck" },
-  { title: "Survey Lokasi Gratis", desc: "Tim datang langsung untuk ukur dan konsultasi.", icon: "MapPin" },
-  { title: "Harga Transparan", desc: "RAB jelas, tidak ada biaya tersembunyi.", icon: "ReceiptText" },
-  { title: "Tukang Berpengalaman", desc: "Tim welder bersertifikat dengan jam terbang tinggi.", icon: "HardHat" },
-  { title: "Konsultasi Gratis", desc: "Diskusi desain dan material tanpa biaya.", icon: "MessageCircle" },
+  {
+    title: "Pengerjaan Rapi",
+    desc: "Finishing halus, las bersih, sambungan presisi.",
+    icon: "Sparkles",
+  },
+  {
+    title: "Material Berkualitas",
+    desc: "Besi SNI, anti karat, sesuai spesifikasi proyek.",
+    icon: "ShieldCheck",
+  },
+  {
+    title: "Survey Lokasi Gratis",
+    desc: "Tim datang langsung untuk ukur dan konsultasi.",
+    icon: "MapPin",
+  },
+  {
+    title: "Harga Transparan",
+    desc: "RAB jelas, tidak ada biaya tersembunyi.",
+    icon: "ReceiptText",
+  },
+  {
+    title: "Tukang Berpengalaman",
+    desc: "Tim welder bersertifikat dengan jam terbang tinggi.",
+    icon: "HardHat",
+  },
+  {
+    title: "Konsultasi Gratis",
+    desc: "Diskusi desain dan material tanpa biaya.",
+    icon: "MessageCircle",
+  },
 ];
 
 export const BLOG_POSTS = [
   {
     slug: "tips-memilih-pagar-besi",
     title: "Tips Memilih Pagar Besi untuk Rumah Modern",
-    excerpt: "Panduan lengkap memilih material, desain, dan finishing pagar besi yang awet untuk iklim Karawang.",
+    excerpt:
+      "Panduan lengkap memilih material, desain, dan finishing pagar besi yang awet untuk iklim Karawang.",
     date: "2025-04-12",
     readMin: 5,
   },
   {
     slug: "model-kanopi-modern-2025",
     title: "10 Model Kanopi Modern 2025 yang Sedang Tren",
-    excerpt: "Inspirasi desain kanopi minimalis hingga industrial untuk rumah dan ruko di Karawang & sekitarnya.",
+    excerpt:
+      "Inspirasi desain kanopi minimalis hingga industrial untuk rumah dan ruko di Karawang & sekitarnya.",
     date: "2025-04-02",
     readMin: 6,
   },
   {
     slug: "cara-merawat-railing-tangga",
     title: "Cara Merawat Railing Tangga Besi & Stainless",
-    excerpt: "Tips perawatan rutin agar railing tetap mengkilap dan bebas karat selama bertahun-tahun.",
+    excerpt:
+      "Tips perawatan rutin agar railing tetap mengkilap dan bebas karat selama bertahun-tahun.",
     date: "2025-03-20",
     readMin: 4,
   },
   {
     slug: "harga-jasa-las-karawang",
     title: "Harga Jasa Las Karawang 2025: Rincian & Estimasi",
-    excerpt: "Rincian estimasi biaya jasa las pagar, kanopi, railing, dan konstruksi area Karawang.",
+    excerpt:
+      "Rincian estimasi biaya jasa las pagar, kanopi, railing, dan konstruksi area Karawang.",
     date: "2025-03-08",
     readMin: 7,
   },
   {
     slug: "inspirasi-pagar-minimalis",
     title: "Inspirasi Pagar Minimalis untuk Rumah Tropis",
-    excerpt: "Kumpulan desain pagar minimalis yang cocok dengan arsitektur tropis modern Indonesia.",
+    excerpt:
+      "Kumpulan desain pagar minimalis yang cocok dengan arsitektur tropis modern Indonesia.",
     date: "2025-02-22",
     readMin: 5,
   },

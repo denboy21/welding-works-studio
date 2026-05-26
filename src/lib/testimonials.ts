@@ -40,7 +40,7 @@ export const createTestimonial = createServerFn({ method: "POST" }).handler(
     await db
       .prepare(
         `INSERT INTO testimonials (name, location, rating, text, avatar_url, is_active, sort_order)
-         VALUES (?, ?, ?, ?, ?, ?, ?)`
+         VALUES (?, ?, ?, ?, ?, ?, ?)`,
       )
       .bind(
         data.name,
@@ -49,11 +49,11 @@ export const createTestimonial = createServerFn({ method: "POST" }).handler(
         data.text,
         data.avatar_url ?? null,
         data.is_active ?? 1,
-        data.sort_order ?? 0
+        data.sort_order ?? 0,
       )
       .run();
     return { success: true };
-  }
+  },
 );
 
 export const updateTestimonial = createServerFn({ method: "POST" }).handler(
@@ -69,7 +69,7 @@ export const updateTestimonial = createServerFn({ method: "POST" }).handler(
       .bind(...values, id)
       .run();
     return { success: true };
-  }
+  },
 );
 
 export const deleteTestimonial = createServerFn({ method: "POST" }).handler(
@@ -78,5 +78,5 @@ export const deleteTestimonial = createServerFn({ method: "POST" }).handler(
     const db = (env as any).DB as D1Database;
     await db.prepare("DELETE FROM testimonials WHERE id = ?").bind(data.id).run();
     return { success: true };
-  }
+  },
 );

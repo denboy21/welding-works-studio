@@ -8,7 +8,8 @@ import { GlowButton } from "@/components/GlowButton";
 import { SITE, waLink } from "@/lib/site";
 
 const TITLE = "Kontak | Bara Baja Las Karawang";
-const DESC = "Hubungi Bara Baja Las Karawang via WhatsApp, telepon, atau kunjungi workshop kami untuk konsultasi gratis jasa las dan konstruksi.";
+const DESC =
+  "Hubungi Bara Baja Las Karawang via WhatsApp, telepon, atau kunjungi workshop kami untuk konsultasi gratis jasa las dan konstruksi.";
 
 export const Route = createFileRoute("/kontak")({
   head: () => ({
@@ -42,14 +43,20 @@ function Page() {
             Konsultasi <span className="text-gradient-industrial">gratis</span>, respon cepat
           </h1>
           <p className="mt-4 max-w-2xl text-base text-muted-foreground">
-            Cara tercepat menghubungi kami adalah via WhatsApp. Atau isi form di bawah, kami arahkan langsung ke chat.
+            Cara tercepat menghubungi kami adalah via WhatsApp. Atau isi form di bawah, kami arahkan
+            langsung ke chat.
           </p>
         </Reveal>
 
         <div className="mt-12 grid gap-8 lg:grid-cols-5">
           <div className="space-y-4 lg:col-span-2">
             {[
-              { Icon: Phone, label: "WhatsApp & Telepon", value: SITE.phone, href: waLink("Halo, saya ingin konsultasi.") },
+              {
+                Icon: Phone,
+                label: "WhatsApp & Telepon",
+                value: SITE.phone,
+                href: waLink("Halo, saya ingin konsultasi."),
+              },
               { Icon: MapPin, label: "Workshop", value: SITE.address, href: SITE.mapsUrl },
               { Icon: Clock, label: "Jam Operasional", value: SITE.hours },
               { Icon: Mail, label: "Email", value: SITE.email, href: `mailto:${SITE.email}` },
@@ -72,17 +79,40 @@ function Page() {
             ))}
           </div>
 
-          <form onSubmit={submit} className="rounded-2xl border border-white/10 bg-[color:var(--surface)] p-6 sm:p-8 lg:col-span-3">
+          <form
+            onSubmit={submit}
+            className="rounded-2xl border border-white/10 bg-[color:var(--surface)] p-6 sm:p-8 lg:col-span-3"
+          >
             <h2 className="font-display text-xl font-bold">Kirim Pesan</h2>
-            <p className="mt-1 text-sm text-muted-foreground">Form akan diarahkan ke WhatsApp kami.</p>
+            <p className="mt-1 text-sm text-muted-foreground">
+              Form akan diarahkan ke WhatsApp kami.
+            </p>
             <div className="mt-5 grid gap-4 sm:grid-cols-2">
-              <Field label="Nama" value={form.nama} onChange={(v) => setForm({ ...form, nama: v })} required />
-              <Field label="No. WhatsApp" value={form.wa} onChange={(v) => setForm({ ...form, wa: v })} required type="tel" />
+              <Field
+                label="Nama"
+                value={form.nama}
+                onChange={(v) => setForm({ ...form, nama: v })}
+                required
+              />
+              <Field
+                label="No. WhatsApp"
+                value={form.wa}
+                onChange={(v) => setForm({ ...form, wa: v })}
+                required
+                type="tel"
+              />
               <div className="sm:col-span-2">
-                <Field label="Layanan yang dibutuhkan" value={form.layanan} onChange={(v) => setForm({ ...form, layanan: v })} placeholder="Pagar, kanopi, railing, dll." />
+                <Field
+                  label="Layanan yang dibutuhkan"
+                  value={form.layanan}
+                  onChange={(v) => setForm({ ...form, layanan: v })}
+                  placeholder="Pagar, kanopi, railing, dll."
+                />
               </div>
               <div className="sm:col-span-2">
-                <label className="mb-1.5 block text-xs font-mono-caps text-muted-foreground">Pesan</label>
+                <label className="mb-1.5 block text-xs font-mono-caps text-muted-foreground">
+                  Pesan
+                </label>
                 <textarea
                   value={form.pesan}
                   onChange={(e) => setForm({ ...form, pesan: e.target.value })}
@@ -113,13 +143,26 @@ function Page() {
 }
 
 function Field({
-  label, value, onChange, required, type = "text", placeholder,
+  label,
+  value,
+  onChange,
+  required,
+  type = "text",
+  placeholder,
 }: {
-  label: string; value: string; onChange: (v: string) => void; required?: boolean; type?: string; placeholder?: string;
+  label: string;
+  value: string;
+  onChange: (v: string) => void;
+  required?: boolean;
+  type?: string;
+  placeholder?: string;
 }) {
   return (
     <div>
-      <label className="mb-1.5 block text-xs font-mono-caps text-muted-foreground">{label}{required && " *"}</label>
+      <label className="mb-1.5 block text-xs font-mono-caps text-muted-foreground">
+        {label}
+        {required && " *"}
+      </label>
       <input
         type={type}
         value={value}

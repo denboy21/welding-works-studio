@@ -22,8 +22,7 @@ const variants: Record<Variant, string> = {
     "bg-gradient-industrial text-primary-foreground hover:shadow-glow hover:scale-[1.02] active:scale-[0.98]",
   outline:
     "border border-white/15 text-foreground bg-white/5 hover:bg-white/10 hover:border-primary/60 backdrop-blur",
-  ghost:
-    "text-foreground/80 hover:text-foreground hover:bg-white/5",
+  ghost: "text-foreground/80 hover:text-foreground hover:bg-white/5",
 };
 
 const sizes: Record<Size, string> = {
@@ -33,7 +32,17 @@ const sizes: Record<Size, string> = {
 };
 
 export const GlowButton = forwardRef<HTMLButtonElement, Props>(function GlowButton(
-  { variant = "primary", size = "md", className, as = "button", href, target, rel, children, ...rest },
+  {
+    variant = "primary",
+    size = "md",
+    className,
+    as = "button",
+    href,
+    target,
+    rel,
+    children,
+    ...rest
+  },
   ref,
 ) {
   const cls = cn(base, variants[variant], sizes[size], className);

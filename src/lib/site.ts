@@ -9,8 +9,7 @@ export const SITE = {
   address: "Kp. Kadongdong, Desa Bengle, Karawang, Jawa Barat",
   hours: "Senin – Sabtu, 08.00 – 17.00 WIB",
   mapsUrl: "https://maps.app.goo.gl/X38xLYV96M7VYD487",
-  mapsEmbed:
-    "https://www.google.com/maps?q=Kp.+Kadongdong+Desa+Bengle+Karawang&output=embed",
+  mapsEmbed: "https://www.google.com/maps?q=Kp.+Kadongdong+Desa+Bengle+Karawang&output=embed",
   areas: ["Karawang", "Cikampek", "Purwakarta", "Bekasi", "Subang"],
   social: {
     instagram: "https://instagram.com",

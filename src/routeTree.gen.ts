@@ -20,6 +20,7 @@ import { Route as BlogRouteImport } from './routes/blog'
 import { Route as AreaLayananRouteImport } from './routes/area-layanan'
 import { Route as AdminRouteImport } from './routes/admin'
 import { Route as IndexRouteImport } from './routes/index'
+import { Route as LayananIndexRouteImport } from './routes/layanan.index'
 import { Route as LayananSlugRouteImport } from './routes/layanan.$slug'
 import { Route as BlogSlugRouteImport } from './routes/blog.$slug'
 
@@ -78,6 +79,11 @@ const IndexRoute = IndexRouteImport.update({
   path: '/',
   getParentRoute: () => rootRouteImport,
 } as any)
+const LayananIndexRoute = LayananIndexRouteImport.update({
+  id: '/',
+  path: '/',
+  getParentRoute: () => LayananRoute,
+} as any)
 const LayananSlugRoute = LayananSlugRouteImport.update({
   id: '/$slug',
   path: '/$slug',
@@ -103,6 +109,7 @@ export interface FileRoutesByFullPath {
   '/testimoni': typeof TestimoniRoute
   '/blog/$slug': typeof BlogSlugRoute
   '/layanan/$slug': typeof LayananSlugRoute
+  '/layanan/': typeof LayananIndexRoute
 }
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
@@ -111,13 +118,13 @@ export interface FileRoutesByTo {
   '/blog': typeof BlogRouteWithChildren
   '/faq': typeof FaqRoute
   '/kontak': typeof KontakRoute
-  '/layanan': typeof LayananRouteWithChildren
   '/portfolio': typeof PortfolioRoute
   '/sitemap.xml': typeof SitemapDotxmlRoute
   '/tentang': typeof TentangRoute
   '/testimoni': typeof TestimoniRoute
   '/blog/$slug': typeof BlogSlugRoute
   '/layanan/$slug': typeof LayananSlugRoute
+  '/layanan': typeof LayananIndexRoute
 }
 export interface FileRoutesById {
   __root__: typeof rootRouteImport
@@ -134,6 +141,7 @@ export interface FileRoutesById {
   '/testimoni': typeof TestimoniRoute
   '/blog/$slug': typeof BlogSlugRoute
   '/layanan/$slug': typeof LayananSlugRoute
+  '/layanan/': typeof LayananIndexRoute
 }
 export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
@@ -151,6 +159,7 @@ export interface FileRouteTypes {
     | '/testimoni'
     | '/blog/$slug'
     | '/layanan/$slug'
+    | '/layanan/'
   fileRoutesByTo: FileRoutesByTo
   to:
     | '/'
@@ -159,13 +168,13 @@ export interface FileRouteTypes {
     | '/blog'
     | '/faq'
     | '/kontak'
-    | '/layanan'
     | '/portfolio'
     | '/sitemap.xml'
     | '/tentang'
     | '/testimoni'
     | '/blog/$slug'
     | '/layanan/$slug'
+    | '/layanan'
   id:
     | '__root__'
     | '/'
@@ -181,6 +190,7 @@ export interface FileRouteTypes {
     | '/testimoni'
     | '/blog/$slug'
     | '/layanan/$slug'
+    | '/layanan/'
   fileRoutesById: FileRoutesById
 }
 export interface RootRouteChildren {
@@ -276,6 +286,13 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof IndexRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/layanan/': {
+      id: '/layanan/'
+      path: '/'
+      fullPath: '/layanan/'
+      preLoaderRoute: typeof LayananIndexRouteImport
+      parentRoute: typeof LayananRoute
+    }
     '/layanan/$slug': {
       id: '/layanan/$slug'
       path: '/$slug'
@@ -305,10 +322,12 @@ const BlogRouteWithChildren = BlogRoute._addFileChildren(BlogRouteChildren)
 
 interface LayananRouteChildren {
   LayananSlugRoute: typeof LayananSlugRoute
+  LayananIndexRoute: typeof LayananIndexRoute
 }
 
 const LayananRouteChildren: LayananRouteChildren = {
   LayananSlugRoute: LayananSlugRoute,
+  LayananIndexRoute: LayananIndexRoute,
 }
 
 const LayananRouteWithChildren =

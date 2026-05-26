@@ -1,6 +1,14 @@
 import { useEffect, useRef, useState } from "react";
 
-export function AnimatedCounter({ to, suffix = "", duration = 1600 }: { to: number; suffix?: string; duration?: number }) {
+export function AnimatedCounter({
+  to,
+  suffix = "",
+  duration = 1600,
+}: {
+  to: number;
+  suffix?: string;
+  duration?: number;
+}) {
   const [val, setVal] = useState(0);
   const ref = useRef<HTMLSpanElement | null>(null);
   const started = useRef(false);
@@ -29,7 +37,10 @@ export function AnimatedCounter({ to, suffix = "", duration = 1600 }: { to: numb
     return () => io.disconnect();
   }, [to, duration]);
   return (
-    <span ref={ref} className="font-display text-4xl font-extrabold text-gradient-industrial sm:text-5xl">
+    <span
+      ref={ref}
+      className="font-display text-4xl font-extrabold text-gradient-industrial sm:text-5xl"
+    >
       {val}
       {suffix}
     </span>

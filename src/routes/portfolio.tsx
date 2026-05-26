@@ -6,7 +6,8 @@ import { PortfolioGallery } from "@/components/PortfolioGallery";
 import { CTASection } from "@/components/CTASection";
 
 const TITLE = "Portfolio Proyek Las & Konstruksi | Bara Baja Las";
-const DESC = "Galeri hasil pengerjaan jasa las Karawang: pagar, kanopi, railing, balkon, konstruksi besi, dan banyak proyek nyata.";
+const DESC =
+  "Galeri hasil pengerjaan jasa las Karawang: pagar, kanopi, railing, balkon, konstruksi besi, dan banyak proyek nyata.";
 
 export const Route = createFileRoute("/portfolio")({
   head: () => ({
@@ -32,7 +33,8 @@ function Page() {
             Hasil pengerjaan <span className="text-gradient-industrial">nyata</span> tim kami
           </h1>
           <p className="mt-4 max-w-2xl text-base text-muted-foreground">
-            Setiap proyek di galeri ini dikerjakan langsung oleh tim Bara Baja Las dengan standar finishing rapi dan struktur kuat.
+            Setiap proyek di galeri ini dikerjakan langsung oleh tim Bara Baja Las dengan standar
+            finishing rapi dan struktur kuat.
           </p>
         </Reveal>
         <div className="mt-12">

@@ -7,7 +7,8 @@ import { CTASection } from "@/components/CTASection";
 import { TESTIMONIALS } from "@/lib/data";
 
 const TITLE = "Testimoni Pelanggan | Bara Baja Las Karawang";
-const DESC = "Review jujur pelanggan jasa las Karawang Bara Baja Las dari proyek pagar, kanopi, railing, dan konstruksi.";
+const DESC =
+  "Review jujur pelanggan jasa las Karawang Bara Baja Las dari proyek pagar, kanopi, railing, dan konstruksi.";
 
 export const Route = createFileRoute("/testimoni")({
   head: () => ({
@@ -45,7 +46,11 @@ function Page() {
                 <p className="mt-4 text-sm leading-relaxed text-foreground/85">“{t.text}”</p>
                 <div className="mt-5 flex items-center gap-3 border-t border-white/10 pt-4">
                   <div className="flex h-10 w-10 items-center justify-center rounded-full bg-gradient-industrial font-display text-sm font-bold text-primary-foreground">
-                    {t.name.split(" ").map((s) => s[0]).join("").slice(0, 2)}
+                    {t.name
+                      .split(" ")
+                      .map((s) => s[0])
+                      .join("")
+                      .slice(0, 2)}
                   </div>
                   <div>
                     <p className="font-display text-sm font-semibold">{t.name}</p>

@@ -28,25 +28,23 @@ export const getServiceDesigns = createServerFn({ method: "GET" }).handler(
     if (!db) throw new Error("D1 DB binding tidak ditemukan");
     const result = await db
       .prepare(
-        "SELECT * FROM service_designs WHERE service_slug = ? AND is_active = 1 ORDER BY sort_order ASC"
+        "SELECT * FROM service_designs WHERE service_slug = ? AND is_active = 1 ORDER BY sort_order ASC",
       )
       .bind(data.slug)
       .all<ServiceDesign>();
     return result.results;
-  }
+  },
 );
 
-export const getAllServiceDesigns = createServerFn({ method: "GET" }).handler(
-  async () => {
-    const { env } = await import("cloudflare:workers");
-    const db = (env as any).DB as D1Database;
-    if (!db) throw new Error("D1 DB binding tidak ditemukan");
-    const result = await db
-      .prepare("SELECT * FROM service_designs ORDER BY service_slug ASC, sort_order ASC")
-      .all<ServiceDesign>();
-    return result.results;
-  }
-);
+export const getAllServiceDesigns = createServerFn({ method: "GET" }).handler(async () => {
+  const { env } = await import("cloudflare:workers");
+  const db = (env as any).DB as D1Database;
+  if (!db) throw new Error("D1 DB binding tidak ditemukan");
+  const result = await db
+    .prepare("SELECT * FROM service_designs ORDER BY service_slug ASC, sort_order ASC")
+    .all<ServiceDesign>();
+  return result.results;
+});
 
 export const createServiceDesign = createServerFn({ method: "POST" }).handler(
   async ({ data }: { data: ServiceDesignCreateInput }) => {
@@ -55,7 +53,7 @@ export const createServiceDesign = createServerFn({ method: "POST" }).handler(
     await db
       .prepare(
         `INSERT INTO service_designs (service_slug, name, description, image_url, sort_order, is_active)
-         VALUES (?, ?, ?, ?, ?, ?)`
+         VALUES (?, ?, ?, ?, ?, ?)`,
       )
       .bind(
         data.service_slug,
@@ -63,11 +61,11 @@ export const createServiceDesign = createServerFn({ method: "POST" }).handler(
         data.description ?? null,
         data.image_url,
         data.sort_order ?? 0,
-        data.is_active ?? 1
+        data.is_active ?? 1,
       )
       .run();
     return { success: true };
-  }
+  },
 );
 
 export const updateServiceDesign = createServerFn({ method: "POST" }).handler(
@@ -79,23 +77,18 @@ export const updateServiceDesign = createServerFn({ method: "POST" }).handler(
     const setClause = entries.map(([key]) => `${key} = ?`).join(", ");
     const values = entries.map(([, v]) => v);
     await db
-      .prepare(
-        `UPDATE service_designs SET ${setClause}, updated_at = datetime('now') WHERE id = ?`
-      )
+      .prepare(`UPDATE service_designs SET ${setClause}, updated_at = datetime('now') WHERE id = ?`)
       .bind(...values, id)
       .run();
     return { success: true };
-  }
+  },
 );
 
 export const deleteServiceDesign = createServerFn({ method: "POST" }).handler(
   async ({ data }: { data: { id: number } }) => {
     const { env } = await import("cloudflare:workers");
     const db = (env as any).DB as D1Database;
-    await db
-      .prepare("DELETE FROM service_designs WHERE id = ?")
-      .bind(data.id)
-      .run();
+    await db.prepare("DELETE FROM service_designs WHERE id = ?").bind(data.id).run();
     return { success: true };
-  }
+  },
 );

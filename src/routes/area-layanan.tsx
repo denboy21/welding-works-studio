@@ -7,7 +7,8 @@ import { CTASection } from "@/components/CTASection";
 import { SITE } from "@/lib/site";
 
 const TITLE = "Area Layanan Jasa Las | Bara Baja Las Karawang";
-const DESC = "Bara Baja Las melayani jasa las Karawang, Cikampek, Purwakarta, Bekasi, dan Subang. Survey lokasi gratis untuk semua area.";
+const DESC =
+  "Bara Baja Las melayani jasa las Karawang, Cikampek, Purwakarta, Bekasi, dan Subang. Survey lokasi gratis untuk semua area.";
 
 export const Route = createFileRoute("/area-layanan")({
   head: () => ({
@@ -38,7 +39,10 @@ function Page() {
         </div>
         <div className="mt-20 grid gap-4 sm:grid-cols-2 lg:grid-cols-5">
           {SITE.areas.map((a) => (
-            <div key={a} className="rounded-2xl border border-white/10 bg-[color:var(--surface)] p-5 text-center">
+            <div
+              key={a}
+              className="rounded-2xl border border-white/10 bg-[color:var(--surface)] p-5 text-center"
+            >
               <p className="font-display text-xl font-bold">{a}</p>
               <p className="mt-1 text-xs text-muted-foreground">Survey gratis & garansi</p>
             </div>

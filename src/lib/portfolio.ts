@@ -24,17 +24,15 @@ export interface PortfolioCreateInput {
 }
 
 // GET ALL
-export const getPortfolioItems = createServerFn({ method: "GET" }).handler(
-  async () => {
-    const { env } = await import("cloudflare:workers");
-    const db = (env as any).DB as D1Database;
-    if (!db) throw new Error("D1 DB binding tidak ditemukan");
-    const result = await db
-      .prepare("SELECT * FROM portfolio ORDER BY sort_order ASC, created_at DESC")
-      .all<PortfolioItem>();
-    return result.results;
-  }
-);
+export const getPortfolioItems = createServerFn({ method: "GET" }).handler(async () => {
+  const { env } = await import("cloudflare:workers");
+  const db = (env as any).DB as D1Database;
+  if (!db) throw new Error("D1 DB binding tidak ditemukan");
+  const result = await db
+    .prepare("SELECT * FROM portfolio ORDER BY sort_order ASC, created_at DESC")
+    .all<PortfolioItem>();
+  return result.results;
+});
 
 export const createPortfolioItem = createServerFn({ method: "POST" }).handler(
   async ({ data }: { data: PortfolioCreateInput }) => {
@@ -44,7 +42,7 @@ export const createPortfolioItem = createServerFn({ method: "POST" }).handler(
     const result = await db
       .prepare(
         `INSERT INTO portfolio (title, category, location, description, image_url, is_featured, sort_order)
-         VALUES (?, ?, ?, ?, ?, ?, ?)`
+         VALUES (?, ?, ?, ?, ?, ?, ?)`,
       )
       .bind(
         data.title,
@@ -53,11 +51,11 @@ export const createPortfolioItem = createServerFn({ method: "POST" }).handler(
         data.description ?? null,
         data.image_url,
         data.is_featured ?? 0,
-        data.sort_order ?? 0
+        data.sort_order ?? 0,
       )
       .run();
     return { success: true, id: result.meta.last_row_id };
-  }
+  },
 );
 
 export const updatePortfolioItem = createServerFn({ method: "POST" }).handler(
@@ -75,7 +73,7 @@ export const updatePortfolioItem = createServerFn({ method: "POST" }).handler(
       .bind(...values, id)
       .run();
     return { success: true };
-  }
+  },
 );
 
 export const deletePortfolioItem = createServerFn({ method: "POST" }).handler(
@@ -85,5 +83,5 @@ export const deletePortfolioItem = createServerFn({ method: "POST" }).handler(
     if (!db) throw new Error("D1 DB binding tidak ditemukan");
     await db.prepare("DELETE FROM portfolio WHERE id = ?").bind(data.id).run();
     return { success: true };
-  }
+  },
 );

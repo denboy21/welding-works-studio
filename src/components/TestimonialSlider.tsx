@@ -23,15 +23,19 @@ export function TestimonialSlider() {
     throwOnError: false,
   });
 
-  const items: TestimonialItem[] = (!dbItems || dbItems.length === 0)
-    ? FALLBACK as unknown as TestimonialItem[]
-    : dbItems.filter((t) => t.is_active === 1);
+  const items: TestimonialItem[] =
+    !dbItems || dbItems.length === 0
+      ? (FALLBACK as unknown as TestimonialItem[])
+      : dbItems.filter((t) => t.is_active === 1);
 
   if (isLoading) {
     return (
       <div className="flex gap-5 overflow-hidden">
         {Array.from({ length: 3 }).map((_, i) => (
-          <div key={i} className="min-w-0 flex-[0_0_92%] h-48 animate-pulse rounded-2xl bg-white/5 sm:flex-[0_0_60%] lg:flex-[0_0_calc(33.333%-14px)]" />
+          <div
+            key={i}
+            className="min-w-0 flex-[0_0_92%] h-48 animate-pulse rounded-2xl bg-white/5 sm:flex-[0_0_60%] lg:flex-[0_0_calc(33.333%-14px)]"
+          />
         ))}
       </div>
     );
@@ -61,7 +65,11 @@ export function TestimonialSlider() {
                   />
                 ) : (
                   <div className="flex h-10 w-10 items-center justify-center rounded-full bg-gradient-industrial font-display text-sm font-bold text-primary-foreground">
-                    {t.name.split(" ").map((s) => s[0]).join("").slice(0, 2)}
+                    {t.name
+                      .split(" ")
+                      .map((s) => s[0])
+                      .join("")
+                      .slice(0, 2)}
                   </div>
                 )}
                 <div>

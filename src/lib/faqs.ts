@@ -21,9 +21,7 @@ export const getFaqs = createServerFn({ method: "GET" }).handler(async () => {
   const { env } = await import("cloudflare:workers");
   const db = (env as any).DB as D1Database;
   if (!db) throw new Error("D1 DB binding tidak ditemukan");
-  const result = await db
-    .prepare("SELECT * FROM faqs ORDER BY sort_order ASC")
-    .all<FaqItem>();
+  const result = await db.prepare("SELECT * FROM faqs ORDER BY sort_order ASC").all<FaqItem>();
   return result.results;
 });
 
@@ -34,12 +32,12 @@ export const createFaq = createServerFn({ method: "POST" }).handler(
     await db
       .prepare(
         `INSERT INTO faqs (question, answer, sort_order, is_active)
-         VALUES (?, ?, ?, ?)`
+         VALUES (?, ?, ?, ?)`,
       )
       .bind(data.question, data.answer, data.sort_order ?? 0, data.is_active ?? 1)
       .run();
     return { success: true };
-  }
+  },
 );
 
 export const updateFaq = createServerFn({ method: "POST" }).handler(
@@ -55,7 +53,7 @@ export const updateFaq = createServerFn({ method: "POST" }).handler(
       .bind(...values, id)
       .run();
     return { success: true };
-  }
+  },
 );
 
 export const deleteFaq = createServerFn({ method: "POST" }).handler(
@@ -64,5 +62,5 @@ export const deleteFaq = createServerFn({ method: "POST" }).handler(
     const db = (env as any).DB as D1Database;
     await db.prepare("DELETE FROM faqs WHERE id = ?").bind(data.id).run();
     return { success: true };
-  }
+  },
 );

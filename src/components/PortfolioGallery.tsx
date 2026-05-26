@@ -27,16 +27,18 @@ const FALLBACK = PORTFOLIO.map((p) => ({
 export function PortfolioGallery({ limit }: { limit?: number }) {
   const [active, setActive] = useState<number | null>(null);
 
-  const { data: dbItems, isLoading, isError } = useQuery({
+  const {
+    data: dbItems,
+    isLoading,
+    isError,
+  } = useQuery({
     queryKey: ["portfolio-public"],
     queryFn: () => getPortfolioItems(),
     retry: false,
     throwOnError: false,
   });
 
-  const allItems = isError || !dbItems
-    ? FALLBACK
-    : dbItems.map(toGalleryItem);
+  const allItems = isError || !dbItems ? FALLBACK : dbItems.map(toGalleryItem);
 
   const items = limit ? allItems.slice(0, limit) : allItems;
 
@@ -44,10 +46,7 @@ export function PortfolioGallery({ limit }: { limit?: number }) {
     return (
       <div className="columns-1 gap-4 sm:columns-2 lg:columns-3">
         {Array.from({ length: limit ?? 6 }).map((_, i) => (
-          <div
-            key={i}
-            className="mb-4 h-48 w-full animate-pulse rounded-xl bg-white/5"
-          />
+          <div key={i} className="mb-4 h-48 w-full animate-pulse rounded-xl bg-white/5" />
         ))}
       </div>
     );
@@ -71,7 +70,9 @@ export function PortfolioGallery({ limit }: { limit?: number }) {
               />
               <div className="absolute inset-x-0 bottom-0 flex flex-col gap-1 bg-gradient-to-t from-black/85 to-transparent p-4 text-left">
                 <span className="font-mono-caps text-[10px] text-primary">{p.category}</span>
-                <span className="font-display text-sm font-semibold text-foreground">{p.title}</span>
+                <span className="font-display text-sm font-semibold text-foreground">
+                  {p.title}
+                </span>
               </div>
             </div>
           </button>
@@ -92,10 +93,7 @@ export function PortfolioGallery({ limit }: { limit?: number }) {
           >
             <X className="h-5 w-5" />
           </button>
-          <figure
-            className="max-h-[90vh] max-w-5xl"
-            onClick={(e) => e.stopPropagation()}
-          >
+          <figure className="max-h-[90vh] max-w-5xl" onClick={(e) => e.stopPropagation()}>
             <img
               src={items[active].image}
               alt={items[active].title}

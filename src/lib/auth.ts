@@ -14,5 +14,5 @@ export const verifyAdminPassword = createServerFn({ method: "POST" }).handler(
     }
 
     return { success: true };
-  }
+  },
 );

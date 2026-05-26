@@ -125,9 +125,7 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
         href: "https://fonts.googleapis.com/css2?family=Poppins:wght@500;600;700;800&family=Inter:wght@400;500;600&family=Montserrat:wght@600;700&display=swap",
       },
     ],
-    scripts: [
-      { type: "application/ld+json", children: LOCAL_BUSINESS_JSONLD },
-    ],
+    scripts: [{ type: "application/ld+json", children: LOCAL_BUSINESS_JSONLD }],
   }),
   shellComponent: RootShell,
   component: RootComponent,

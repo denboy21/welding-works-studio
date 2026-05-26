@@ -1,4 +1,4 @@
-import { createFileRoute, Outlet } from "@tanstack/react-router";
+import { createFileRoute } from "@tanstack/react-router";
 import { SiteLayout } from "@/components/SiteLayout";
 import { SectionEyebrow } from "@/components/SectionEyebrow";
 import { Reveal } from "@/components/Reveal";
@@ -10,7 +10,7 @@ const TITLE = "Layanan Jasa Las & Konstruksi | Bara Baja Las Karawang";
 const DESC =
   "Daftar lengkap layanan jasa las Karawang: pagar besi, kanopi, railing, balkon, tralis, baja ringan, pintu besi, las panggilan, konstruksi baja.";
 
-export const Route = createFileRoute("/layanan")({
+export const Route = createFileRoute("/layanan/")({
   head: () => ({
     meta: [
       { title: TITLE },
@@ -21,14 +21,10 @@ export const Route = createFileRoute("/layanan")({
     ],
     links: [{ rel: "canonical", href: "/layanan" }],
   }),
-  component: LayoutComponent,
+  component: Page,
 });
 
-function LayoutComponent() {
-  return <Outlet />;
-}
-
-export function Page() {
+function Page() {
   return (
     <SiteLayout>
       <section className="mx-auto max-w-7xl px-4 py-16 sm:px-6 sm:py-24 lg:px-8">
