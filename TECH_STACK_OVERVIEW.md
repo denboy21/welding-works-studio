@@ -46,6 +46,7 @@ Quick visual reference untuk memahami teknologi dan struktur website secara kese
 ## 📦 Technology Stack
 
 ### Frontend Layer
+
 ```
 ┌─────────────────────────────────┐
 │       PRESENTATION               │
@@ -77,6 +78,7 @@ Quick visual reference untuk memahami teknologi dan struktur website secara kese
 ```
 
 ### Backend Layer
+
 ```
 ┌─────────────────────────────────┐
 │   SERVER-SIDE RENDERING         │
@@ -97,6 +99,7 @@ Quick visual reference untuk memahami teknologi dan struktur website secara kese
 ```
 
 ### Development Tools
+
 ```
 ┌─────────────────────────────────┐
 │    BUILD & DEV TOOLING          │
@@ -291,6 +294,7 @@ User can click CTA → WhatsApp pre-filled message ✅
 ## 🎯 Key Patterns
 
 ### Page Creation Pattern
+
 ```
 src/routes/new-page.tsx
     │
@@ -307,6 +311,7 @@ Page accessible at /new-page ✅
 ```
 
 ### Component Pattern
+
 ```
 src/components/MyComponent.tsx
     │
@@ -323,6 +328,7 @@ Reusable across website ✅
 ```
 
 ### Data Pattern
+
 ```
 src/lib/data.ts
     │
@@ -433,6 +439,7 @@ SiteLayout (wrapper for all pages)
 ## 🔗 Integration Points
 
 ### Static Data
+
 ```
 src/lib/data.ts → SERVICES, PORTFOLIO, TESTIMONIALS, FAQS
         │
@@ -443,6 +450,7 @@ src/lib/data.ts → SERVICES, PORTFOLIO, TESTIMONIALS, FAQS
 ```
 
 ### Configuration
+
 ```
 src/lib/site.ts → SITE, waLink()
         │
@@ -453,6 +461,7 @@ src/lib/site.ts → SITE, waLink()
 ```
 
 ### Assets (Images)
+
 ```
 src/assets/ → All service/portfolio images
         │
@@ -512,6 +521,7 @@ src/assets/ → All service/portfolio images
 ## 🎓 Learning Path
 
 ### Level 1: Understand (Week 1)
+
 ```
 1. Read README.md
 2. Explore folder structure
@@ -521,6 +531,7 @@ src/assets/ → All service/portfolio images
 ```
 
 ### Level 2: Modify (Week 2)
+
 ```
 1. Update content in data.ts
 2. Add new portfolio item
@@ -530,6 +541,7 @@ src/assets/ → All service/portfolio images
 ```
 
 ### Level 3: Create (Week 3+)
+
 ```
 1. Create new page
 2. Create new component
@@ -542,19 +554,18 @@ src/assets/ → All service/portfolio images
 
 ## 📞 Quick Reference
 
-| What? | Where? | How? |
-|-------|--------|------|
-| **Add Service** | `src/lib/data.ts` | Export SERVICES array |
-| **Add Portfolio** | `src/lib/data.ts` | Export PORTFOLIO array |
-| **Add Page** | `src/routes/` | Create new .tsx file |
-| **Add Component** | `src/components/` | Create new .tsx file |
-| **Edit Styling** | Component + Tailwind | Use className prop |
-| **Add Image** | `src/assets/` | Import in data.ts |
-| **Change Config** | `src/lib/site.ts` | Edit SITE object |
-| **Add Form** | Route or component | Use React Hook Form |
+| What?             | Where?               | How?                   |
+| ----------------- | -------------------- | ---------------------- |
+| **Add Service**   | `src/lib/data.ts`    | Export SERVICES array  |
+| **Add Portfolio** | `src/lib/data.ts`    | Export PORTFOLIO array |
+| **Add Page**      | `src/routes/`        | Create new .tsx file   |
+| **Add Component** | `src/components/`    | Create new .tsx file   |
+| **Edit Styling**  | Component + Tailwind | Use className prop     |
+| **Add Image**     | `src/assets/`        | Import in data.ts      |
+| **Change Config** | `src/lib/site.ts`    | Edit SITE object       |
+| **Add Form**      | Route or component   | Use React Hook Form    |
 
 ---
 
 **Last Updated:** May 24, 2026  
 **Version:** 1.0.0
-

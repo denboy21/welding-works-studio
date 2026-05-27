@@ -19,6 +19,7 @@ Deploy  → Cloudflare Workers
 ```
 
 ### Key Stats
+
 - **9 Service Categories** - Each with dedicated detail page
 - **8+ Portfolio Projects** - With category filtering
 - **5 Customer Reviews** - Real testimonials with 5-star ratings
@@ -32,7 +33,9 @@ Deploy  → Cloudflare Workers
 ## 📖 Daftar Dokumentasi
 
 ### 1. **[README.md](./README.md)** - Start here! 🚀
+
 Ringkasan lengkap tentang:
+
 - ✅ Stack teknologi yang digunakan
 - ✅ Struktur folder project
 - ✅ Cara setup & development
@@ -45,7 +48,9 @@ Ringkasan lengkap tentang:
 ---
 
 ### 2. **[ARCHITECTURE.md](./ARCHITECTURE.md)** - Deep technical dive 🏗️
+
 Penjelasan detail tentang:
+
 - ✅ Arsitektur sistem (diagram)
 - ✅ Data flow & request cycle
 - ✅ Type safety & TypeScript patterns
@@ -61,7 +66,9 @@ Penjelasan detail tentang:
 ---
 
 ### 3. **[DEVELOPER_GUIDE.md](./DEVELOPER_GUIDE.md)** - Daily reference ⚡
+
 Panduan praktis dengan:
+
 - ✅ Quick start commands
 - ✅ Common file patterns & snippets
 - ✅ Tailwind CSS utilities cheat sheet
@@ -79,7 +86,9 @@ Panduan praktis dengan:
 ---
 
 ### 4. **[COMPONENTS.md](./COMPONENTS.md)** - Component reference 🎨
+
 Dokumentasi lengkap tentang:
+
 - ✅ Custom components yang tersedia
 - ✅ UI components library (Radix UI)
 - ✅ Hooks yang custom
@@ -94,7 +103,9 @@ Dokumentasi lengkap tentang:
 ---
 
 ### 5. **[CONTENT_GUIDE.md](./CONTENT_GUIDE.md)** - Content management 📝
+
 Panduan praktis untuk update content website:
+
 - ✅ Menambah service baru
 - ✅ Menambah portfolio project
 - ✅ Menambah customer testimonial
@@ -110,7 +121,9 @@ Panduan praktis untuk update content website:
 ---
 
 ### 6. **[TECH_STACK_OVERVIEW.md](./TECH_STACK_OVERVIEW.md)** - Visual reference 🎯
+
 Visual diagrams & quick reference:
+
 - ✅ Architecture diagram
 - ✅ Technology stack visual
 - ✅ Folder structure map
@@ -127,17 +140,17 @@ Visual diagrams & quick reference:
 
 ## 🛠️ 9 Service Categories (What This Website Sells)
 
-| Service | Slug | Target Market | Key Feature |
-|---------|------|----------------|-------------|
-| Pagar Besi | pagar-besi | Rumah, ruko, gudang | Custom desain + anti karat |
-| Kanopi | kanopi | Carport, teras, area servis | Atap polycarbonate/alderon |
-| Railing Tangga | railing-tangga | Indoor & outdoor | Besi tempa & stainless steel |
-| Balkon | balkon | Lantai 2, fasad rumah | Desain geometris modern |
-| Tralis Jendela | tralis-jendela | Keamanan jendela | Minimalis modern, anti karat |
-| Baja Ringan | baja-ringan | Rangka atap & kanopi | SNI certified, anti rayap |
-| Las Panggilan | las-panggilan | Perbaikan mendadak | 24 jam, datang ke lokasi |
-| Konstruksi Baja | konstruksi-baja | Gudang, workshop, industri | WF/H-Beam, sertifikasi welding |
-| Pintu Besi | pintu-besi | Pagar, gudang, ruko | Swing/sliding/folding gate |
+| Service         | Slug            | Target Market               | Key Feature                    |
+| --------------- | --------------- | --------------------------- | ------------------------------ |
+| Pagar Besi      | pagar-besi      | Rumah, ruko, gudang         | Custom desain + anti karat     |
+| Kanopi          | kanopi          | Carport, teras, area servis | Atap polycarbonate/alderon     |
+| Railing Tangga  | railing-tangga  | Indoor & outdoor            | Besi tempa & stainless steel   |
+| Balkon          | balkon          | Lantai 2, fasad rumah       | Desain geometris modern        |
+| Tralis Jendela  | tralis-jendela  | Keamanan jendela            | Minimalis modern, anti karat   |
+| Baja Ringan     | baja-ringan     | Rangka atap & kanopi        | SNI certified, anti rayap      |
+| Las Panggilan   | las-panggilan   | Perbaikan mendadak          | 24 jam, datang ke lokasi       |
+| Konstruksi Baja | konstruksi-baja | Gudang, workshop, industri  | WF/H-Beam, sertifikasi welding |
+| Pintu Besi      | pintu-besi      | Pagar, gudang, ruko         | Swing/sliding/folding gate     |
 
 ---
 
@@ -146,27 +159,32 @@ Visual diagrams & quick reference:
 ### Static Data Stored in Code (`src/lib/data.ts`)
 
 **Services:** 9 service categories with images, descriptions, features
+
 - Each has unique slug for URL routing
 - Contains full description, short preview, and feature list
 - Access via `/layanan` (list) or `/layanan/:slug` (detail)
 
 **Portfolio:** 8 completed projects showcase
+
 - With category filtering (Pagar, Kanopi, Railing, etc)
 - Images with grid layout variants
 - No database needed - hardcoded data
 - Available at `/portfolio`
 
 **Testimonials:** 5 customer reviews
+
 - From real customers (Pak Ahmad, Bu Ratna, Pak Joko, Bu Sinta, Pak Dedi)
 - Located in Karawang, Cikampek, Purwakarta, Bekasi
 - 5-star ratings with text reviews
 - Displayed on homepage & `/testimoni`
 
 **FAQs:** 6 common questions
+
 - About survey, timeline, custom design, coverage, consultation, payment
 - Available at `/faq`
 
 **Site Config:** (`src/lib/site.ts`)
+
 - Business info (name, phone, address)
 - Working hours & days (08:00-17:00, Senin-Sabtu)
 - Coverage areas (Karawang, Cikampek, Purwakarta, Bekasi, Subang)
@@ -185,6 +203,7 @@ No database setup needed! Everything is in code - super simple to update.
 ---
 
 ## 🎯 Untuk Developer Baru - Quick Start
+
 1. Baca [README.md](./README.md) - 15 menit
 2. Jalankan `npm install` & `npm run dev` - 5 menit
 3. Explore folder structure - 10 menit
@@ -192,11 +211,13 @@ No database setup needed! Everything is in code - super simple to update.
 5. Explore existing components - 20 menit
 
 ### Saat Mulai Coding
+
 1. Refer ke [DEVELOPER_GUIDE.md](./DEVELOPER_GUIDE.md) untuk snippets
 2. Refer ke [COMPONENTS.md](./COMPONENTS.md) untuk available components
 3. Check [ARCHITECTURE.md](./ARCHITECTURE.md) untuk patterns
 
 ### Saat Perlu Update Content
+
 1. Refer ke [CONTENT_GUIDE.md](./CONTENT_GUIDE.md) untuk cara menambah/update
 2. Edit `src/lib/data.ts`
 3. Restart dev server
@@ -244,12 +265,13 @@ Configuration:
 ## 🚀 Common Development Tasks
 
 ### Add a New Service
+
 ```typescript
 // Step 1: Add image to src/assets/
 // (e.g., service-new-category.jpg)
 
 // Step 2: Edit src/lib/data.ts
-import newImage from "@/assets/service-new-category.jpg"
+import newImage from "@/assets/service-new-category.jpg";
 
 export const SERVICES: Service[] = [
   // ... existing services
@@ -261,7 +283,7 @@ export const SERVICES: Service[] = [
     image: newImage,
     features: ["Feature 1", "Feature 2", "Feature 3"],
   },
-]
+];
 
 // Step 3: Restart dev server
 // Step 4: New service automatically appears:
@@ -271,23 +293,25 @@ export const SERVICES: Service[] = [
 ```
 
 ### Add Portfolio Project
+
 ```typescript
 // Edit src/lib/data.ts
 export const PORTFOLIO = [
   // ... existing projects
-  { 
-    id: 9, 
-    image: newImage, 
-    title: "Project Name — Location", 
-    category: "Pagar",  // Must match service category
-    span: "tall"        // optional: "tall" | "wide" | ""
+  {
+    id: 9,
+    image: newImage,
+    title: "Project Name — Location",
+    category: "Pagar", // Must match service category
+    span: "tall", // optional: "tall" | "wide" | ""
   },
-]
+];
 
 // Automatically appears on /portfolio page with filter by category
 ```
 
 ### Add Customer Testimonial
+
 ```typescript
 // Edit src/lib/data.ts
 export const TESTIMONIALS = [
@@ -298,12 +322,13 @@ export const TESTIMONIALS = [
     rating: 5,
     text: "Review text here...",
   },
-]
+];
 
 // Appears on homepage testimonial slider & /testimoni page
 ```
 
 ### Add FAQ
+
 ```typescript
 // Edit src/lib/data.ts
 export const FAQS = [
@@ -312,12 +337,13 @@ export const FAQS = [
     q: "Question here?",
     a: "Answer here...",
   },
-]
+];
 
 // Appears on /faq page
 ```
 
 ### Create a New Page
+
 ```typescript
 // Create file: src/routes/new-page.tsx
 import { createFileRoute } from '@tanstack/react-router'
@@ -352,6 +378,7 @@ Automatically accessible at `/new-page`!
 ## 🎨 Available Components
 
 ### Custom Feature Components (Used on This Website)
+
 - `ServiceCard` - Display individual service (used on /layanan, homepage)
 - `ServiceDetail` - Full service detail (on /layanan/:slug)
 - `PortfolioGallery` - Project showcase with filter (on /portfolio)
@@ -370,6 +397,7 @@ Automatically accessible at `/new-page`!
 - `WhatsAppCTA` - Floating WhatsApp button (all pages)
 
 ### UI Components (30+)
+
 - Form: `Input`, `Textarea`, `Select`, `Checkbox`, `Radio`, `Switch`, `Slider`, `Form`
 - Layout: `Card`, `Tabs`, `Accordion`, `Dialog`, `Drawer`, `Popover`, `Sheet`
 - Display: `Badge`, `Avatar`, `Alert`, `Progress`, `Skeleton`
@@ -381,22 +409,26 @@ Automatically accessible at `/new-page`!
 ## 📊 Architecture Highlights
 
 ### Server-Side Rendering (SSR)
+
 - Fast initial page load
 - Better SEO
 - Automatic hydration
 
 ### Type Safety
+
 - Full TypeScript support
 - Type-safe routing
 - Type-safe data fetching
 
 ### Performance
+
 - Code splitting per route
 - Lazy loading support
 - React Query caching
 - Optimized builds
 
 ### Accessibility
+
 - Radix UI primitives (ARIA built-in)
 - Keyboard navigation
 - Semantic HTML
@@ -405,16 +437,16 @@ Automatically accessible at `/new-page`!
 
 ## 🔐 Important Files
 
-| File | Purpose |
-|------|---------|
-| `src/router.tsx` | Router setup dengan React Query |
-| `src/routes/__root.tsx` | Root layout, metadata, SEO |
-| `src/server.ts` | Server entry point untuk SSR |
-| `src/lib/data.ts` | Static content (services, portfolio, etc) |
-| `vite.config.ts` | Build configuration |
-| `tsconfig.json` | TypeScript configuration |
-| `package.json` | Dependencies & scripts |
-| `wrangler.jsonc` | Cloudflare Workers config |
+| File                    | Purpose                                   |
+| ----------------------- | ----------------------------------------- |
+| `src/router.tsx`        | Router setup dengan React Query           |
+| `src/routes/__root.tsx` | Root layout, metadata, SEO                |
+| `src/server.ts`         | Server entry point untuk SSR              |
+| `src/lib/data.ts`       | Static content (services, portfolio, etc) |
+| `vite.config.ts`        | Build configuration                       |
+| `tsconfig.json`         | TypeScript configuration                  |
+| `package.json`          | Dependencies & scripts                    |
+| `wrangler.jsonc`        | Cloudflare Workers config                 |
 
 ---
 
@@ -540,12 +572,14 @@ Automatically accessible at `/new-page`!
 ## 🎓 Learning Path
 
 ### Beginner (First Day)
+
 1. Read: [README.md](./README.md)
 2. Do: Setup & run dev server
 3. Do: Explore folder structure
 4. Read: [ARCHITECTURE.md](./ARCHITECTURE.md) sections 1-3
 
 ### Intermediate (First Week)
+
 1. Create: 2-3 new pages
 2. Create: 2-3 new components
 3. Add: Forms & validation
@@ -553,6 +587,7 @@ Automatically accessible at `/new-page`!
 5. Understand: React Query patterns
 
 ### Advanced (Ongoing)
+
 1. Optimize: Performance
 2. Add: Advanced features
 3. Handle: Complex state
@@ -574,14 +609,14 @@ Automatically accessible at `/new-page`!
 
 ## 📝 Document Versions
 
-| Document | Updated | Status |
-|----------|---------|--------|
-| README.md | May 24, 2026 | ✅ Updated |
-| ARCHITECTURE.md | May 24, 2026 | ✅ Updated |
-| DEVELOPER_GUIDE.md | May 24, 2026 | ✅ Updated |
-| COMPONENTS.md | May 24, 2026 | ✅ Updated |
-| CONTENT_GUIDE.md | May 24, 2026 | ✅ New |
-| TECH_STACK_OVERVIEW.md | May 24, 2026 | ✅ New |
+| Document               | Updated      | Status     |
+| ---------------------- | ------------ | ---------- |
+| README.md              | May 24, 2026 | ✅ Updated |
+| ARCHITECTURE.md        | May 24, 2026 | ✅ Updated |
+| DEVELOPER_GUIDE.md     | May 24, 2026 | ✅ Updated |
+| COMPONENTS.md          | May 24, 2026 | ✅ Updated |
+| CONTENT_GUIDE.md       | May 24, 2026 | ✅ New     |
+| TECH_STACK_OVERVIEW.md | May 24, 2026 | ✅ New     |
 | DOCUMENTATION_INDEX.md | May 24, 2026 | ✅ Updated |
 
 ---
@@ -595,10 +630,10 @@ Automatically accessible at `/new-page`!
 ## Questions or Issues?
 
 Jika ada yang kurang jelas:
+
 1. Cek dokumentasi yang relevan
 2. Search di GitHub issues (jika ada)
 3. Hubungi team lead / project owner
 4. Refer ke external documentation links
 
 Happy Coding! 🎉
-

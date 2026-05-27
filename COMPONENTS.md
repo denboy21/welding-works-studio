@@ -7,25 +7,29 @@ Dokumentasi lengkap tentang komponen-komponen yang sudah ada dan cara menggunaka
 ## 📦 Custom Components (Feature Components)
 
 ### AnimatedCounter.tsx
+
 **Purpose:** Menampilkan angka dengan animasi counter yang smooth
 
 **Props:**
+
 ```typescript
 interface AnimatedCounterProps {
-  end: number          // Angka target
-  duration?: number    // Durasi animasi (ms)
-  prefix?: string      // Prefix (e.g., "$", "+")
-  suffix?: string      // Suffix (e.g., "%", "K")
-  format?: (n: number) => string  // Custom format function
+  end: number; // Angka target
+  duration?: number; // Durasi animasi (ms)
+  prefix?: string; // Prefix (e.g., "$", "+")
+  suffix?: string; // Suffix (e.g., "%", "K")
+  format?: (n: number) => string; // Custom format function
 }
 ```
 
 **Usage:**
+
 ```typescript
 <AnimatedCounter end={500} suffix="+" duration={2000} />
 ```
 
 **Use Case:**
+
 - Statistik perusahaan
 - Customer count
 - Project completed
@@ -34,18 +38,21 @@ interface AnimatedCounterProps {
 ---
 
 ### AreaCoverageSection.tsx
+
 **Purpose:** Section untuk menampilkan area coverage/jangkauan layanan
 
 **Props:**
+
 ```typescript
 interface AreaCoverageSectionProps {
-  areas: string[]      // Array area yang dicakup
-  title?: string
-  description?: string
+  areas: string[]; // Array area yang dicakup
+  title?: string;
+  description?: string;
 }
 ```
 
 **Usage:**
+
 ```typescript
 <AreaCoverageSection
   areas={["Karawang", "Cikampek", "Purwakarta", "Bekasi"]}
@@ -54,6 +61,7 @@ interface AreaCoverageSectionProps {
 ```
 
 **Features:**
+
 - Display area list dengan styling menarik
 - Responsive grid
 - Optional map integration point
@@ -61,20 +69,23 @@ interface AreaCoverageSectionProps {
 ---
 
 ### CTASection.tsx
+
 **Purpose:** Call-to-Action section untuk mendorong user action
 
 **Props:**
+
 ```typescript
 interface CTASectionProps {
-  title: string        // Main heading
-  description: string  // Description text
-  buttonText: string   // Button label
-  buttonHref: string   // Link destination
-  image?: string       // Optional background image
+  title: string; // Main heading
+  description: string; // Description text
+  buttonText: string; // Button label
+  buttonHref: string; // Link destination
+  image?: string; // Optional background image
 }
 ```
 
 **Usage:**
+
 ```typescript
 <CTASection
   title="Siap untuk project Anda?"
@@ -85,6 +96,7 @@ interface CTASectionProps {
 ```
 
 **Features:**
+
 - Eye-catching design
 - Responsive layout
 - Animation on scroll
@@ -92,22 +104,25 @@ interface CTASectionProps {
 ---
 
 ### FAQAccordion.tsx
+
 **Purpose:** FAQ section dengan accordion component
 
 **Props:**
+
 ```typescript
 interface FAQItem {
-  question: string
-  answer: string
+  question: string;
+  answer: string;
 }
 
 interface FAQAccordionProps {
-  items: FAQItem[]      // FAQ items
-  title?: string
+  items: FAQItem[]; // FAQ items
+  title?: string;
 }
 ```
 
 **Usage:**
+
 ```typescript
 <FAQAccordion
   items={[
@@ -119,6 +134,7 @@ interface FAQAccordionProps {
 ```
 
 **Features:**
+
 - Accordion UI
 - Smooth expand/collapse
 - SEO-friendly markup
@@ -126,16 +142,19 @@ interface FAQAccordionProps {
 ---
 
 ### Footer.tsx
+
 **Purpose:** Footer komponen untuk semua halaman
 
 **Props:** Biasanya tidak menerima props (content dari constant)
 
 **Usage:**
+
 ```typescript
 <Footer />
 ```
 
 **Features:**
+
 - Navigation links
 - Contact info
 - Social media links
@@ -145,20 +164,23 @@ interface FAQAccordionProps {
 ---
 
 ### GlowButton.tsx
+
 **Purpose:** Button khusus dengan glow effect yang eye-catching
 
 **Props:**
+
 ```typescript
 interface GlowButtonProps {
-  children: React.ReactNode
-  onClick?: () => void
-  className?: string
-  variant?: 'primary' | 'secondary'
-  size?: 'sm' | 'md' | 'lg'
+  children: React.ReactNode;
+  onClick?: () => void;
+  className?: string;
+  variant?: "primary" | "secondary";
+  size?: "sm" | "md" | "lg";
 }
 ```
 
 **Usage:**
+
 ```typescript
 <GlowButton onClick={() => console.log('Clicked!')}>
   Click Me
@@ -166,6 +188,7 @@ interface GlowButtonProps {
 ```
 
 **Features:**
+
 - Glow animation
 - Hover effects
 - Multiple variants
@@ -174,16 +197,19 @@ interface GlowButtonProps {
 ---
 
 ### IndustrialNavbar.tsx
+
 **Purpose:** Header/Navigation bar utama untuk website
 
 **Props:** Biasanya tidak menerima props (responsive auto-adjust)
 
 **Usage:**
+
 ```typescript
 <IndustrialNavbar />
 ```
 
 **Features:**
+
 - Responsive mobile menu
 - Active link highlighting
 - Sticky on scroll (optional)
@@ -194,27 +220,30 @@ interface GlowButtonProps {
 ---
 
 ### PortfolioGallery.tsx
+
 **Purpose:** Gallery showcase untuk portfolio/proyek yang selesai
 
 **Props:**
+
 ```typescript
 interface Project {
-  id: string
-  title: string
-  image: string
-  category: string
-  description?: string
+  id: string;
+  title: string;
+  image: string;
+  category: string;
+  description?: string;
 }
 
 interface PortfolioGalleryProps {
-  projects: Project[]
-  title?: string
-  showCategories?: boolean
-  columns?: 2 | 3 | 4
+  projects: Project[];
+  title?: string;
+  showCategories?: boolean;
+  columns?: 2 | 3 | 4;
 }
 ```
 
 **Usage:**
+
 ```typescript
 <PortfolioGallery
   projects={portfolioData}
@@ -224,6 +253,7 @@ interface PortfolioGalleryProps {
 ```
 
 **Features:**
+
 - Image gallery grid
 - Category filter
 - Lightbox/modal view
@@ -233,18 +263,21 @@ interface PortfolioGalleryProps {
 ---
 
 ### Reveal.tsx
+
 **Purpose:** Animation component untuk reveal text/elements on scroll
 
 **Props:**
+
 ```typescript
 interface RevealProps {
-  children: React.ReactNode
-  delay?: number       // Delay animasi (ms)
-  direction?: 'up' | 'down' | 'left' | 'right'
+  children: React.ReactNode;
+  delay?: number; // Delay animasi (ms)
+  direction?: "up" | "down" | "left" | "right";
 }
 ```
 
 **Usage:**
+
 ```typescript
 <Reveal delay={100} direction="up">
   <h2>This text reveals on scroll</h2>
@@ -252,6 +285,7 @@ interface RevealProps {
 ```
 
 **Features:**
+
 - Scroll-triggered animation
 - Customizable direction
 - Staggered animation support
@@ -260,23 +294,27 @@ interface RevealProps {
 ---
 
 ### SectionEyebrow.tsx
+
 **Purpose:** Small text element sebelum heading (marketing-style)
 
 **Props:**
+
 ```typescript
 interface SectionEyebrowProps {
-  text: string         // Eyebrow text
-  className?: string
+  text: string; // Eyebrow text
+  className?: string;
 }
 ```
 
 **Usage:**
+
 ```typescript
 <SectionEyebrow text="OUR SERVICES" />
 <h2 className="text-4xl font-bold">Layanan Kami</h2>
 ```
 
 **Features:**
+
 - Styled small text
 - Typography consistency
 - Color accent
@@ -284,21 +322,24 @@ interface SectionEyebrowProps {
 ---
 
 ### ServiceCard.tsx
+
 **Purpose:** Card component untuk menampilkan individual service
 
 **Props:**
+
 ```typescript
 interface ServiceCardProps {
-  title: string        // Service name
-  description: string  // Service description
-  icon?: React.ReactNode  // Icon
-  image?: string       // Background image
-  price?: string       // Optional price
-  onLearnMore?: () => void
+  title: string; // Service name
+  description: string; // Service description
+  icon?: React.ReactNode; // Icon
+  image?: string; // Background image
+  price?: string; // Optional price
+  onLearnMore?: () => void;
 }
 ```
 
 **Usage:**
+
 ```typescript
 <ServiceCard
   title="Pagar Besi"
@@ -308,6 +349,7 @@ interface ServiceCardProps {
 ```
 
 **Features:**
+
 - Icon/image support
 - Hover animation
 - Responsive layout
@@ -316,18 +358,21 @@ interface ServiceCardProps {
 ---
 
 ### SiteLayout.tsx
+
 **Purpose:** Main layout wrapper untuk entire website
 
 **Props:**
+
 ```typescript
 interface SiteLayoutProps {
-  children: React.ReactNode
-  showFooter?: boolean   // Default: true
-  showNavbar?: boolean   // Default: true
+  children: React.ReactNode;
+  showFooter?: boolean; // Default: true
+  showNavbar?: boolean; // Default: true
 }
 ```
 
 **Usage:**
+
 ```typescript
 <SiteLayout>
   {/* Page content */}
@@ -335,6 +380,7 @@ interface SiteLayoutProps {
 ```
 
 **Features:**
+
 - Navbar & Footer management
 - Main container styling
 - Consistent spacing
@@ -343,19 +389,22 @@ interface SiteLayoutProps {
 ---
 
 ### SparkParticles.tsx
+
 **Purpose:** Particle effect background animation
 
 **Props:**
+
 ```typescript
 interface SparkParticlesProps {
-  count?: number       // Number of particles (default: 50)
-  speed?: number       // Animation speed (default: 0.5)
-  opacity?: number     // Particle opacity (default: 0.5)
-  className?: string
+  count?: number; // Number of particles (default: 50)
+  speed?: number; // Animation speed (default: 0.5)
+  opacity?: number; // Particle opacity (default: 0.5)
+  className?: string;
 }
 ```
 
 **Usage:**
+
 ```typescript
 <div className="relative">
   <SparkParticles count={100} speed={0.3} />
@@ -366,6 +415,7 @@ interface SparkParticlesProps {
 ```
 
 **Features:**
+
 - Animated particle background
 - Fully customizable
 - Performance optimized
@@ -374,26 +424,29 @@ interface SparkParticlesProps {
 ---
 
 ### TestimonialSlider.tsx
+
 **Purpose:** Carousel/slider untuk testimonial dari customers
 
 **Props:**
+
 ```typescript
 interface Testimonial {
-  name: string
-  role: string
-  content: string
-  image?: string
-  rating?: number      // 1-5 stars
+  name: string;
+  role: string;
+  content: string;
+  image?: string;
+  rating?: number; // 1-5 stars
 }
 
 interface TestimonialSliderProps {
-  testimonials: Testimonial[]
-  autoSlide?: boolean  // Default: true
-  interval?: number    // Slide interval (ms)
+  testimonials: Testimonial[];
+  autoSlide?: boolean; // Default: true
+  interval?: number; // Slide interval (ms)
 }
 ```
 
 **Usage:**
+
 ```typescript
 <TestimonialSlider
   testimonials={testimonialsData}
@@ -403,6 +456,7 @@ interface TestimonialSliderProps {
 ```
 
 **Features:**
+
 - Auto-rotating slides
 - Navigation controls
 - Star rating display
@@ -412,18 +466,21 @@ interface TestimonialSliderProps {
 ---
 
 ### WhatsAppCTA.tsx
+
 **Purpose:** Floating WhatsApp button untuk customer contact
 
 **Props:**
+
 ```typescript
 interface WhatsAppCTAProps {
-  phoneNumber?: string // Default dari SITE_CONFIG
-  message?: string     // Custom greeting message
-  position?: 'bottom-right' | 'bottom-left'  // Default: bottom-right
+  phoneNumber?: string; // Default dari SITE_CONFIG
+  message?: string; // Custom greeting message
+  position?: "bottom-right" | "bottom-left"; // Default: bottom-right
 }
 ```
 
 **Usage:**
+
 ```typescript
 <WhatsAppCTA
   phoneNumber="+6282125171716"
@@ -432,6 +489,7 @@ interface WhatsAppCTAProps {
 ```
 
 **Features:**
+
 - Fixed floating button
 - Pre-filled message
 - Click to open WhatsApp
@@ -445,6 +503,7 @@ interface WhatsAppCTAProps {
 Semua UI components ada di `src/components/ui/`. Berikut dokumentasi ringkas:
 
 ### Form Components
+
 - **Input** - Text input field
 - **Textarea** - Multi-line text area
 - **Select** - Dropdown select
@@ -455,6 +514,7 @@ Semua UI components ada di `src/components/ui/`. Berikut dokumentasi ringkas:
 - **Form** - Form wrapper dengan validation
 
 **Usage:**
+
 ```typescript
 import { Input } from '@/components/ui/input'
 import { Button } from '@/components/ui/button'
@@ -476,6 +536,7 @@ import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from '@
 ```
 
 ### Layout Components
+
 - **Card** - Container dengan border & shadow
 - **Tabs** - Tab navigation
 - **Accordion** - Collapsible sections
@@ -488,6 +549,7 @@ import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from '@
 - **Tooltip** - Tooltip on hover
 
 **Usage:**
+
 ```typescript
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card'
 import { Tabs, TabsContent, TabsList, TabsTrigger } from '@/components/ui/tabs'
@@ -508,6 +570,7 @@ import { Tabs, TabsContent, TabsList, TabsTrigger } from '@/components/ui/tabs'
 ```
 
 ### Display Components
+
 - **Badge** - Label/tag component
 - **Avatar** - User avatar
 - **Alert** - Alert message
@@ -516,6 +579,7 @@ import { Tabs, TabsContent, TabsList, TabsTrigger } from '@/components/ui/tabs'
 - **Skeleton** - Loading skeleton
 
 ### Navigation Components
+
 - **Button** - Primary button
 - **Navigation Menu** - Top navigation
 - **Breadcrumb** - Breadcrumb navigation
@@ -525,6 +589,7 @@ import { Tabs, TabsContent, TabsList, TabsTrigger } from '@/components/ui/tabs'
 - **Context Menu** - Right-click context menu
 
 ### Data Components
+
 - **Table** - Data table
 - **Chart** - Chart visualization (Recharts integrated)
 - **Scroll Area** - Scrollable area
@@ -535,6 +600,7 @@ import { Tabs, TabsContent, TabsList, TabsTrigger } from '@/components/ui/tabs'
 ## 🔌 Hooks
 
 ### `use-mobile` Hook
+
 Detects apakah device adalah mobile
 
 ```typescript
@@ -554,6 +620,7 @@ export function MyComponent() {
 ### Services Data (`lib/data.ts`)
 
 **Available Services (9 types):**
+
 ```typescript
 interface Service {
   slug: string              // URL identifier
@@ -579,39 +646,39 @@ interface Service {
 ```
 
 ### Portfolio Data
+
 ```typescript
 interface PortfolioItem {
-  id: number
-  image: string             // Project image
-  title: string             // Project name
-  category: string          // Matches service slug
-  span?: 'tall' | 'wide'    // Grid layout
+  id: number;
+  image: string; // Project image
+  title: string; // Project name
+  category: string; // Matches service slug
+  span?: "tall" | "wide"; // Grid layout
 }
 
 // 8 projects dengan categories:
-[
-  "Pagar", "Kanopi", "Railing", "Balkon", 
-  "Tralis", "Baja Ringan", "Pintu", "Konstruksi"
-]
+["Pagar", "Kanopi", "Railing", "Balkon", "Tralis", "Baja Ringan", "Pintu", "Konstruksi"];
 ```
 
 ### Testimonials Data
+
 ```typescript
 interface Testimonial {
-  name: string              // Customer name
-  location: string          // Customer location (Karawang, Cikampek, etc)
-  rating: number            // 1-5 stars
-  text: string              // Review text
+  name: string; // Customer name
+  location: string; // Customer location (Karawang, Cikampek, etc)
+  rating: number; // 1-5 stars
+  text: string; // Review text
 }
 
 // 5 real testimonials from actual customers
 ```
 
 ### FAQs Data
+
 ```typescript
 interface FAQ {
-  q: string                 // Question
-  a: string                 // Answer
+  q: string; // Question
+  a: string; // Answer
 }
 
 // 6 common questions:
@@ -621,11 +688,12 @@ interface FAQ {
   "Apakah bisa custom desain?",
   "Apakah melayani luar kota Karawang?",
   "Apakah konsultasi gratis?",
-  "Bagaimana sistem pembayaran?"
-]
+  "Bagaimana sistem pembayaran?",
+];
 ```
 
 ### Site Configuration (`lib/site.ts`)
+
 ```typescript
 export const SITE = {
   name: "Bara Baja Las",
@@ -633,12 +701,13 @@ export const SITE = {
   phone: "+6282125171716",
   location: "Kp. Kadongdong, Desa Bengle, Karawang",
   workingHours: { open: "08:00", close: "17:00" },
-  workingDays: ["Senin", "Selasa", ... "Sabtu"],
+  workingDays: ["Senin", "Selasa", ..."Sabtu"],
   coverage: ["Karawang", "Cikampek", "Purwakarta", "Bekasi", "Subang"],
-}
+};
 ```
 
 ### Usage Example
+
 ```typescript
 // In routes or components:
 import { SERVICES, PORTFOLIO, TESTIMONIALS, FAQS } from '@/lib/data'
@@ -659,6 +728,7 @@ const service = SERVICES.find(s => s.slug === 'pagar-besi')
 ## 🎯 Component Usage Patterns
 
 ### Pattern 1: List Component
+
 ```typescript
 import ServiceCard from '@/components/ServiceCard'
 
@@ -678,6 +748,7 @@ export function ServicesList() {
 ```
 
 ### Pattern 2: Section with Title
+
 ```typescript
 export function MySection() {
   return (
@@ -691,6 +762,7 @@ export function MySection() {
 ```
 
 ### Pattern 3: With Loading State
+
 ```typescript
 export function DataDisplay() {
   const { data, isLoading, error } = useQuery(...)
@@ -703,6 +775,7 @@ export function DataDisplay() {
 ```
 
 ### Pattern 4: Form Integration
+
 ```typescript
 export function ContactPage() {
   const form = useForm({ resolver: zodResolver(schema) })
@@ -726,6 +799,7 @@ export function ContactPage() {
 ## 🚀 Component Best Practices
 
 ### 1. Use TypeScript Interfaces
+
 ```typescript
 interface Props {
   title: string
@@ -739,6 +813,7 @@ const MyComponent: React.FC<Props> = ({ title, onClick, children }) => {
 ```
 
 ### 2. Memoize When Needed
+
 ```typescript
 import { memo } from 'react'
 
@@ -748,6 +823,7 @@ const ServiceCard = memo(function ServiceCard({ service }) {
 ```
 
 ### 3. Handle Loading States
+
 ```typescript
 if (isLoading) return <Skeleton />
 if (error) return <ErrorComponent error={error} />
@@ -757,6 +833,7 @@ return <Content data={data} />
 ```
 
 ### 4. Use Conditional Classes
+
 ```typescript
 import { cn } from '@/lib/utils'
 
@@ -770,6 +847,7 @@ import { cn } from '@/lib/utils'
 ```
 
 ### 5. Extract to Separate Component if Complex
+
 ```typescript
 // Instead of 500+ line component, break into:
 // - ListComponent
@@ -821,6 +899,7 @@ UI Components (Atomic)
 ## 🔄 Component Communication
 
 ### Props Drilling
+
 ```typescript
 // Parent passes props to child
 <Parent>
@@ -829,6 +908,7 @@ UI Components (Atomic)
 ```
 
 ### Context API (if needed in future)
+
 ```typescript
 const ThemeContext = React.createContext()
 
@@ -841,10 +921,11 @@ const theme = useContext(ThemeContext)
 ```
 
 ### Route Context
+
 ```typescript
 // Via TanStack Router context
-const router = useRouter()
-const { queryClient } = router.getRouteContext()
+const router = useRouter();
+const { queryClient } = router.getRouteContext();
 ```
 
 ---
@@ -852,6 +933,7 @@ const { queryClient } = router.getRouteContext()
 ## ✨ Creating New Components
 
 ### Template
+
 ```typescript
 // src/components/MyNewComponent.tsx
 import { FC } from 'react'
@@ -882,6 +964,7 @@ export default MyNewComponent
 ```
 
 ### Export & Use
+
 ```typescript
 // Import in route
 import MyNewComponent from '@/components/MyNewComponent'
@@ -898,4 +981,3 @@ import MyNewComponent from '@/components/MyNewComponent'
 
 **Last Updated:** May 22, 2026  
 **Version:** 1.0.0
-

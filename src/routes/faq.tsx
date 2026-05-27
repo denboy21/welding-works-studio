@@ -7,7 +7,8 @@ import { CTASection } from "@/components/CTASection";
 import { FAQS } from "@/lib/data";
 
 const TITLE = "FAQ Jasa Las | Bara Baja Las Karawang";
-const DESC = "Pertanyaan umum tentang jasa las Karawang: survey, harga, garansi, custom desain, dan area layanan.";
+const DESC =
+  "Pertanyaan umum tentang jasa las Karawang: survey, harga, garansi, custom desain, dan area layanan.";
 
 export const Route = createFileRoute("/faq")({
   head: () => ({

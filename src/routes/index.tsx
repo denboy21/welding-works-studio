@@ -50,7 +50,12 @@ export const Route = createFileRoute("/")({
 });
 
 const ADV_ICONS = {
-  Sparkles, ShieldCheck, MapPin, ReceiptText, HardHat, MessageCircle: MC2,
+  Sparkles,
+  ShieldCheck,
+  MapPin,
+  ReceiptText,
+  HardHat,
+  MessageCircle: MC2,
 } as const;
 
 function HomePage() {
@@ -126,7 +131,13 @@ function Hero() {
           animate={{ opacity: 1, y: 0 }}
           transition={{ delay: 0.8, duration: 0.6 }}
         >
-          <GlowButton as="a" href={waLink(`Halo ${SITE.name}, saya ingin konsultasi gratis.`)} target="_blank" rel="noopener noreferrer" size="lg">
+          <GlowButton
+            as="a"
+            href={waLink(`Halo ${SITE.name}, saya ingin konsultasi gratis.`)}
+            target="_blank"
+            rel="noopener noreferrer"
+            size="lg"
+          >
             <MessageCircle className="h-5 w-5" /> Chat WhatsApp
           </GlowButton>
           <GlowButton as="a" href={`tel:${SITE.whatsappRaw}`} variant="outline" size="lg">
@@ -180,10 +191,12 @@ function ServicesSection() {
       <Reveal>
         <SectionEyebrow>Layanan Kami</SectionEyebrow>
         <h2 className="max-w-3xl font-display text-3xl font-extrabold leading-tight sm:text-4xl md:text-5xl">
-          Solusi <span className="text-gradient-industrial">las & konstruksi besi</span> untuk rumah hingga proyek
+          Solusi <span className="text-gradient-industrial">las & konstruksi besi</span> untuk rumah
+          hingga proyek
         </h2>
         <p className="mt-4 max-w-2xl text-base text-muted-foreground">
-          Dari pagar minimalis sampai konstruksi gudang — semua dikerjakan tim welder berpengalaman dengan material berkualitas.
+          Dari pagar minimalis sampai konstruksi gudang — semua dikerjakan tim welder berpengalaman
+          dengan material berkualitas.
         </p>
       </Reveal>
       <div className="mt-12 grid gap-5 sm:grid-cols-2 lg:grid-cols-3">

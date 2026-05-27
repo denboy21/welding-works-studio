@@ -29,6 +29,7 @@ wrangler deploy               # Deploy ke Cloudflare Workers
 ## 🎯 Real-World Examples from Project
 
 ### Example 1: Display Services List
+
 ```typescript
 // routes/layanan.tsx
 import { SERVICES } from '@/lib/data'
@@ -46,6 +47,7 @@ function LayananPage() {
 ```
 
 ### Example 2: Display Service Detail (Dynamic Route)
+
 ```typescript
 // routes/layanan.$slug.tsx - Accessible at /layanan/pagar-besi, /layanan/kanopi, etc
 import { useParams } from '@tanstack/react-router'
@@ -77,6 +79,7 @@ function ServiceDetail() {
 ```
 
 ### Example 3: Portfolio Gallery with Filter
+
 ```typescript
 // routes/portfolio.tsx
 import { PORTFOLIO } from '@/lib/data'
@@ -87,8 +90,8 @@ function PortfolioPage() {
   const [filter, setFilter] = useState<string | null>(null)
 
   const categories = ['Pagar', 'Kanopi', 'Railing', 'Balkon', 'Tralis', 'Baja Ringan', 'Pintu', 'Konstruksi']
-  
-  const filtered = filter 
+
+  const filtered = filter
     ? PORTFOLIO.filter(p => p.category === filter)
     : PORTFOLIO
 
@@ -97,7 +100,7 @@ function PortfolioPage() {
       <div className="flex gap-2 mb-8 overflow-x-auto">
         <button
           onClick={() => setFilter(null)}
-          className={cn("px-4 py-2 rounded whitespace-nowrap", 
+          className={cn("px-4 py-2 rounded whitespace-nowrap",
             filter === null ? "bg-primary text-white" : "bg-gray-200")}
         >
           Semua
@@ -119,9 +122,9 @@ function PortfolioPage() {
       <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4">
         {filtered.map(project => (
           <div key={project.id} className="overflow-hidden rounded-lg group cursor-pointer">
-            <img 
-              src={project.image} 
-              alt={project.title} 
+            <img
+              src={project.image}
+              alt={project.title}
               className="w-full h-full object-cover group-hover:scale-105 transition-transform"
             />
           </div>
@@ -133,6 +136,7 @@ function PortfolioPage() {
 ```
 
 ### Example 4: Testimonials Slider
+
 ```typescript
 // On homepage or dedicated page
 import { TestimonialSlider } from '@/components/TestimonialSlider'
@@ -140,7 +144,7 @@ import { TESTIMONIALS } from '@/lib/data'
 
 <section className="py-12">
   <h2 className="text-3xl font-bold mb-8">Apa Kata Pelanggan Kami?</h2>
-  <TestimonialSlider 
+  <TestimonialSlider
     testimonials={TESTIMONIALS}
     autoSlide={true}
     interval={5000}
@@ -149,6 +153,7 @@ import { TESTIMONIALS } from '@/lib/data'
 ```
 
 ### Example 5: FAQ Accordion
+
 ```typescript
 // routes/faq.tsx
 import { FAQAccordion } from '@/components/FAQAccordion'
@@ -165,6 +170,7 @@ function FAQPage() {
 ```
 
 ### Example 6: Contact Form with WhatsApp
+
 ```typescript
 // routes/kontak.tsx
 import { useForm } from 'react-hook-form'
@@ -199,11 +205,11 @@ Pesan: ${data.message}
   return (
     <form onSubmit={form.handleSubmit(onSubmit)} className="max-w-lg mx-auto space-y-4 p-4">
       <h1 className="text-4xl font-bold mb-6">Hubungi Kami</h1>
-      
+
       <div>
         <label className="block font-semibold mb-2">Nama</label>
-        <input 
-          {...form.register('name')} 
+        <input
+          {...form.register('name')}
           placeholder="Nama lengkap Anda"
           className="w-full px-3 py-2 border rounded"
         />
@@ -211,8 +217,8 @@ Pesan: ${data.message}
 
       <div>
         <label className="block font-semibold mb-2">Nomor Telepon</label>
-        <input 
-          {...form.register('phone')} 
+        <input
+          {...form.register('phone')}
           placeholder="08xx xxxx xxxx"
           className="w-full px-3 py-2 border rounded"
         />
@@ -230,8 +236,8 @@ Pesan: ${data.message}
 
       <div>
         <label className="block font-semibold mb-2">Pesan</label>
-        <textarea 
-          {...form.register('message')} 
+        <textarea
+          {...form.register('message')}
           placeholder="Jelaskan kebutuhan proyek Anda..."
           rows={5}
           className="w-full px-3 py-2 border rounded"
@@ -253,6 +259,7 @@ Pesan: ${data.message}
 ### Membuat Page Baru
 
 **Step 1:** Buat file route
+
 ```typescript
 // src/routes/halaman-baru.tsx
 import { createFileRoute } from '@tanstack/react-router'
@@ -272,6 +279,7 @@ function HalamaBaru() {
 ```
 
 **Step 2:** Link di navbar/menu
+
 ```typescript
 // Tambah di navigation atau link components
 <Link to="/halaman-baru">Halaman Baru</Link>
@@ -312,6 +320,7 @@ export default MyCard
 ## 🎨 Tailwind CSS Snippets
 
 ### Responsive Grid
+
 ```typescript
 <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
   {/* items */}
@@ -319,6 +328,7 @@ export default MyCard
 ```
 
 ### Flexbox Container
+
 ```typescript
 <div className="flex flex-col md:flex-row items-center justify-between gap-4">
   {/* items */}
@@ -326,6 +336,7 @@ export default MyCard
 ```
 
 ### Card Layout
+
 ```typescript
 <div className="bg-white rounded-lg shadow-md p-6">
   <h2 className="text-2xl font-bold mb-4">Title</h2>
@@ -334,6 +345,7 @@ export default MyCard
 ```
 
 ### Button Variants
+
 ```typescript
 // Primary
 <Button>Click me</Button>
@@ -358,67 +370,70 @@ export default MyCard
 ```
 
 ### Spacing Utilities
+
 ```typescript
 // Margin
-className="m-4"      // margin: 1rem
-className="mx-4"     // margin-left & right
-className="my-4"     // margin-top & bottom
+className = "m-4"; // margin: 1rem
+className = "mx-4"; // margin-left & right
+className = "my-4"; // margin-top & bottom
 
 // Padding
-className="p-4"      // padding: 1rem
-className="px-4"     // padding-left & right
-className="py-4"     // padding-top & bottom
+className = "p-4"; // padding: 1rem
+className = "px-4"; // padding-left & right
+className = "py-4"; // padding-top & bottom
 
 // Gap
-className="gap-4"    // gap between flex/grid items
+className = "gap-4"; // gap between flex/grid items
 ```
 
 ### Text Utilities
+
 ```typescript
 // Size
-className="text-sm"      // 14px
-className="text-base"    // 16px
-className="text-lg"      // 18px
-className="text-xl"      // 20px
-className="text-2xl"     // 24px
-className="text-4xl"     // 36px
+className = "text-sm"; // 14px
+className = "text-base"; // 16px
+className = "text-lg"; // 18px
+className = "text-xl"; // 20px
+className = "text-2xl"; // 24px
+className = "text-4xl"; // 36px
 
 // Weight
-className="font-normal"  // 400
-className="font-semibold" // 600
-className="font-bold"    // 700
+className = "font-normal"; // 400
+className = "font-semibold"; // 600
+className = "font-bold"; // 700
 
 // Color
-className="text-white"       // foreground
-className="text-gray-600"    // muted text
-className="text-red-500"     // error
-className="text-green-500"   // success
+className = "text-white"; // foreground
+className = "text-gray-600"; // muted text
+className = "text-red-500"; // error
+className = "text-green-500"; // success
 
 // Alignment
-className="text-center"
-className="text-right"
-className="text-left"
+className = "text-center";
+className = "text-right";
+className = "text-left";
 ```
 
 ### Color System
+
 ```typescript
 // Primary colors
-className="bg-primary"           // Primary color
-className="text-primary"         // Primary text
+className = "bg-primary"; // Primary color
+className = "text-primary"; // Primary text
 
 // Secondary
-className="bg-secondary"
-className="text-secondary"
+className = "bg-secondary";
+className = "text-secondary";
 
 // Utility
-className="bg-background"        // Page background
-className="text-foreground"      // Default text
-className="bg-muted"             // Muted background
-className="text-muted-foreground" // Muted text
+className = "bg-background"; // Page background
+className = "text-foreground"; // Default text
+className = "bg-muted"; // Muted background
+className = "text-muted-foreground"; // Muted text
 
 // States
-className="bg-destructive"       // Error/danger
-className="text-success"         // Success
+className = "bg-destructive"; // Error/danger
+className = "text-success"; // Success
 ```
 
 ---
@@ -426,6 +441,7 @@ className="text-success"         // Success
 ## 📝 Form Examples
 
 ### Simple Form
+
 ```typescript
 import { useForm } from 'react-hook-form'
 import { zodResolver } from '@hookform/resolvers/zod'
@@ -478,6 +494,7 @@ export function LoginForm() {
 ```
 
 ### Form with UI Components
+
 ```typescript
 import { useForm } from 'react-hook-form'
 import { zodResolver } from '@hookform/resolvers/zod'
@@ -563,6 +580,7 @@ export function ContactForm() {
 ## 🔄 Data Fetching Patterns
 
 ### Using useQuery
+
 ```typescript
 import { useQuery } from '@tanstack/react-query'
 
@@ -590,6 +608,7 @@ export function ServicesList() {
 ```
 
 ### Route Loader Pattern
+
 ```typescript
 // routes/layanan.$slug.tsx
 export const Route = createFileRoute('/layanan/$slug')({
@@ -609,15 +628,16 @@ function ServiceDetail() {
 ```
 
 ### Fetch with Error Handling
+
 ```typescript
 async function fetchData() {
   try {
-    const response = await fetch('/api/data')
-    if (!response.ok) throw new Error(`HTTP error! status: ${response.status}`)
-    return await response.json()
+    const response = await fetch("/api/data");
+    if (!response.ok) throw new Error(`HTTP error! status: ${response.status}`);
+    return await response.json();
   } catch (error) {
-    console.error('Fetch error:', error)
-    throw error
+    console.error("Fetch error:", error);
+    throw error;
   }
 }
 ```
@@ -627,6 +647,7 @@ async function fetchData() {
 ## 🎨 Animation Examples
 
 ### Fade In on Mount
+
 ```typescript
 import { motion } from 'framer-motion'
 
@@ -640,6 +661,7 @@ import { motion } from 'framer-motion'
 ```
 
 ### Slide and Fade
+
 ```typescript
 <motion.div
   initial={{ opacity: 0, y: 20 }}
@@ -651,6 +673,7 @@ import { motion } from 'framer-motion'
 ```
 
 ### Hover Animation
+
 ```typescript
 <motion.button
   whileHover={{ scale: 1.05 }}
@@ -661,6 +684,7 @@ import { motion } from 'framer-motion'
 ```
 
 ### Scroll-triggered Animation
+
 ```typescript
 import { useScroll, useTransform } from 'framer-motion'
 import { useRef } from 'react'
@@ -686,6 +710,7 @@ export function ScrollAnimation() {
 ## 🔗 Routing Examples
 
 ### Link Navigation
+
 ```typescript
 import { Link } from '@tanstack/react-router'
 
@@ -696,19 +721,21 @@ import { Link } from '@tanstack/react-router'
 ```
 
 ### Programmatic Navigation
-```typescript
-import { useNavigate } from '@tanstack/react-router'
 
-const navigate = useNavigate()
+```typescript
+import { useNavigate } from "@tanstack/react-router";
+
+const navigate = useNavigate();
 
 // After form submission
-navigate({ to: '/success' })
+navigate({ to: "/success" });
 
 // With params
-navigate({ to: '/layanan/$slug', params: { slug: 'welding' } })
+navigate({ to: "/layanan/$slug", params: { slug: "welding" } });
 ```
 
 ### Access Route Params
+
 ```typescript
 import { useParams } from '@tanstack/react-router'
 
@@ -719,6 +746,7 @@ export function ServiceDetail() {
 ```
 
 ### Access Search Params
+
 ```typescript
 import { useSearch } from '@tanstack/react-router'
 
@@ -733,6 +761,7 @@ export function FilteredList() {
 ## 🏛️ UI Components Quick Examples
 
 ### Card
+
 ```typescript
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card'
 
@@ -748,6 +777,7 @@ import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/com
 ```
 
 ### Dialog
+
 ```typescript
 import { Dialog, DialogContent, DialogDescription, DialogHeader, DialogTitle } from '@/components/ui/dialog'
 
@@ -763,6 +793,7 @@ import { Dialog, DialogContent, DialogDescription, DialogHeader, DialogTitle } f
 ```
 
 ### Accordion
+
 ```typescript
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from '@/components/ui/accordion'
 
@@ -779,6 +810,7 @@ import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from '@/
 ```
 
 ### Tabs
+
 ```typescript
 import { Tabs, TabsContent, TabsList, TabsTrigger } from '@/components/ui/tabs'
 
@@ -793,6 +825,7 @@ import { Tabs, TabsContent, TabsList, TabsTrigger } from '@/components/ui/tabs'
 ```
 
 ### Badge
+
 ```typescript
 import { Badge } from '@/components/ui/badge'
 
@@ -807,12 +840,14 @@ import { Badge } from '@/components/ui/badge'
 ## 🔌 Conditional Rendering
 
 ### Inline Conditional
+
 ```typescript
 {isActive && <div>Active</div>}
 {isLoading ? <Skeleton /> : <Content />}
 ```
 
 ### Switch Statement
+
 ```typescript
 const getContent = () => {
   switch (status) {
@@ -831,6 +866,7 @@ return <div>{getContent()}</div>
 ```
 
 ### Ternary with Multiple Conditions
+
 ```typescript
 {isLoading && !error ? (
   <Skeleton />
@@ -846,6 +882,7 @@ return <div>{getContent()}</div>
 ## 📊 Common Patterns
 
 ### Loading Skeleton
+
 ```typescript
 import { Skeleton } from '@/components/ui/skeleton'
 
@@ -856,6 +893,7 @@ import { Skeleton } from '@/components/ui/skeleton'
 ```
 
 ### Empty State
+
 ```typescript
 function EmptyState() {
   return (
@@ -868,6 +906,7 @@ function EmptyState() {
 ```
 
 ### Error State
+
 ```typescript
 function ErrorState({ error, onRetry }) {
   return (
@@ -888,10 +927,10 @@ function ErrorState({ error, onRetry }) {
 
 ```typescript
 // Instead of:
-import { Button } from '../../../components/ui/button'
+import { Button } from "../../../components/ui/button";
 
 // Use:
-import { Button } from '@/components/ui/button'
+import { Button } from "@/components/ui/button";
 
 // @ adalah alias untuk src/
 // @/ maps to src/
@@ -902,22 +941,25 @@ import { Button } from '@/components/ui/button'
 ## 🔍 Debugging Tips
 
 ### Console Logging
+
 ```typescript
-console.log('Value:', value)           // Basic log
-console.table(array)                   // Table format
-console.time('timer')                  // Start timer
-console.timeEnd('timer')               // End timer
-console.group('Group Name')            // Group logs
-console.error('Error message')         // Error log
+console.log("Value:", value); // Basic log
+console.table(array); // Table format
+console.time("timer"); // Start timer
+console.timeEnd("timer"); // End timer
+console.group("Group Name"); // Group logs
+console.error("Error message"); // Error log
 ```
 
 ### React DevTools
+
 - Install React DevTools extension
 - Check component hierarchy
 - View props and state
 - Profile performance
 
 ### React Query DevTools
+
 ```typescript
 // Already included in project
 // Access at http://localhost:5173/__TanStackRouterDevtools
@@ -928,12 +970,14 @@ console.error('Error message')         // Error log
 ## 🚨 Common Errors & Solutions
 
 ### "Cannot find module '@/...'"
+
 ```typescript
 // Check tsconfig.json paths configuration
 // Should have: "@/*": ["./src/*"]
 ```
 
 ### Build fails with "Routes not found"
+
 ```bash
 # Make sure route file exists in src/routes/
 # Route tree auto-generates on dev server start
@@ -941,6 +985,7 @@ npm run dev
 ```
 
 ### Form validation not working
+
 ```typescript
 // Check:
 // 1. Zod schema defined correctly
@@ -949,6 +994,7 @@ npm run dev
 ```
 
 ### Styles not applying
+
 ```typescript
 // Check:
 // 1. Tailwind CSS is compiled (npm run dev running)
@@ -987,4 +1033,3 @@ npm run dev
 
 **Last Updated:** May 22, 2026  
 **Version:** 1.0.0
-

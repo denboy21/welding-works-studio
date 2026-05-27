@@ -1,4 +1,3 @@
-
 # Website Bara Baja Las — Jasa Las & Konstruksi Karawang
 
 Brand: **Bara Baja Las**
@@ -29,6 +28,7 @@ File route di `src/routes/` (flat dot-naming, mis. `layanan.$slug.tsx`).
 ## 2. Design System (Tailwind v4 tokens di `src/styles.css`)
 
 Tokens (oklch equivalents dari palet user):
+
 - `--background` #0F172A, `--surface` #111827, `--surface-2` #1E293B
 - `--foreground` #F8FAFC, `--muted-foreground` #E5E7EB
 - `--primary` #F97316 (welding orange), `--primary-glow` #FACC15 (spark)
@@ -40,6 +40,7 @@ Tokens (oklch equivalents dari palet user):
 - Radius: `--radius` .75rem
 
 Tipografi (Google Fonts via `<link>` di root):
+
 - Display: **Poppins** 600/700/800 (headline)
 - Body: **Inter** 400/500
 - Accent industrial caps: **Montserrat** 700 (eyebrows, counters)
@@ -127,6 +128,7 @@ Dark mode adalah default; tidak ada toggle (industrial premium).
 ## 10. Aset Placeholder
 
 Generate via `imagegen` (model `fast`, simpan di `src/assets/`):
+
 - `hero-welder.jpg` 1920×1080 — welder dengan percikan api, mood gelap sinematik
 - 9 thumbnail layanan 800×600
 - 8 foto portfolio (pagar, kanopi, railing, balkon, tralis, pintu, baja ringan, gudang)

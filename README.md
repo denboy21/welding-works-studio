@@ -13,6 +13,7 @@ Website showcase profesional untuk layanan jasa las dan konstruksi baja berkuali
 **Area Layanan:** Karawang, Cikampek, Purwakarta, Bekasi, Subang
 
 ### 🛠️ Layanan Utama (9 Service Categories)
+
 1. **Pagar Besi** - Minimalis, klasik, custom desain dengan material anti karat
 2. **Kanopi** - Rangka baja dengan atap polycarbonate/alderon/spandek
 3. **Railing Tangga** - Besi tempa hingga stainless steel premium
@@ -26,6 +27,7 @@ Website showcase profesional untuk layanan jasa las dan konstruksi baja berkuali
 **Website Type:** Full-stack interactive web application dengan SSR (Server-Side Rendering)
 
 ### 📊 Fitur Website
+
 - ✅ 9 halaman layanan detail (dynamic routes)
 - ✅ Portfolio gallery dengan 8+ project showcase
 - ✅ Testimonial dari pelanggan real (5 bintang)
@@ -41,6 +43,7 @@ Website showcase profesional untuk layanan jasa las dan konstruksi baja berkuali
 ## 🏗️ Stack Teknologi
 
 ### Frontend
+
 - **React 19.2** - UI library modern dengan features terbaru
 - **TypeScript 5.8** - Type-safe development
 - **TanStack Router 1.168** - File-based routing dengan type-safety
@@ -48,22 +51,26 @@ Website showcase profesional untuk layanan jasa las dan konstruksi baja berkuali
 - **Radix UI** - Headless component library untuk aksesibilitas
 
 ### Framework & Tools
+
 - **TanStack Start 1.167** - Full-stack React framework untuk SSR
 - **Vite 7.3** - Modern build tool yang super cepat
 - **@tanstack/react-query 5.83** - Data fetching & state management
 
 ### Styling & Components
+
 - **Tailwind CSS with Vite** - Optimized styling
 - **shadcn/ui compatible** - Pre-built accessible components
 - **Framer Motion 12.39** - Animation library yang powerful
 - **Lucide React 0.575** - Icon library yang comprehensive
 
 ### Form & Validation
+
 - **React Hook Form 7.71** - Performant form state management
 - **Zod 3.24** - TypeScript-first schema validation
 - **@hookform/resolvers 5.2** - Integration hooks
 
 ### UI Components Tersedia
+
 - Accordion, Alert Dialog, Avatar, Badge, Breadcrumb
 - Button, Card, Carousel, Chart, Checkbox, Collapsible
 - Command, Context Menu, Dialog, Drawer, Dropdown
@@ -75,11 +82,13 @@ Website showcase profesional untuk layanan jasa las dan konstruksi baja berkuali
 - Tooltip, dan lebih banyak...
 
 ### Deployment & Server
+
 - **Cloudflare Workers** - Edge computing platform
 - **Wrangler** - CLI untuk Cloudflare Workers
 - **Node.js Compatibility** - Full Node.js API support
 
 ### Development Tools
+
 - **ESLint 9.32** - Linting & code quality
 - **Prettier 3.7** - Code formatter
 - **TypeScript ESLint** - TypeScript linting
@@ -173,10 +182,12 @@ welding-works-studio-main/
 ## 🚀 Cara Setup & Development
 
 ### Prerequisites
+
 - Node.js 18+ atau Bun
 - npm atau Bun package manager
 
 ### Installation
+
 ```bash
 # Clone repository (jika belum)
 git clone <repo-url>
@@ -189,6 +200,7 @@ bun install
 ```
 
 ### Development Server
+
 ```bash
 npm run dev
 # atau
@@ -198,6 +210,7 @@ bun dev
 ```
 
 ### Build untuk Production
+
 ```bash
 npm run build
 # atau
@@ -205,11 +218,13 @@ bun build
 ```
 
 ### Preview Build
+
 ```bash
 npm run preview
 ```
 
 ### Linting & Formatting
+
 ```bash
 # Check linting issues
 npm run lint
@@ -223,11 +238,13 @@ npm run format
 ## 📊 Arsitektur Aplikasi
 
 ### Client-Side Rendering + Server-Side Rendering (SSR)
+
 - **TanStack Start** menangani SSR untuk performa & SEO yang lebih baik
 - Route tree auto-generated dari struktur file di `/src/routes/`
 - React Query untuk data fetching dan caching
 
 ### Routing (File-Based, Auto-Generated)
+
 ```
 / → Homepage (hero + services preview + portfolio + testimonial)
 /tentang → About page (company story & values)
@@ -244,6 +261,7 @@ npm run format
 ```
 
 **Routing Features:**
+
 - File-based routing (auto-generated dari folder structure)
 - `$slug` untuk dynamic routes (misal `layanan.$slug.tsx` → `/layanan/:slug`)
 - `[.]` untuk file extensions (misal `sitemap[.]xml.ts` → `/sitemap.xml`)
@@ -251,6 +269,7 @@ npm run format
 - Scroll restoration on navigation
 
 ### Component Architecture
+
 ```
 SiteLayout (Main wrapper)
 ├── IndustrialNavbar (Header + mobile menu)
@@ -283,6 +302,7 @@ SiteLayout (Main wrapper)
 ```
 
 ### Styling Strategy
+
 - **Tailwind CSS** - Utility classes untuk rapid development
 - **CSS Variables** - Customizable via `styles.css`
 - **Responsive Design** - Mobile-first approach
@@ -293,6 +313,7 @@ SiteLayout (Main wrapper)
 ## 🔑 Key Features
 
 ### ✅ Business Features
+
 - **9 Service Categories** - Pagar, Kanopi, Railing, Balkon, Tralis, Baja Ringan, Las Panggilan, Konstruksi, Pintu
 - **Portfolio Gallery** - 8+ completed projects dengan category filter
 - **Customer Testimonials** - 5-star reviews dari pelanggan real
@@ -302,6 +323,7 @@ SiteLayout (Main wrapper)
 - **Promotional Stats** - Animated counters (years, projects, customers)
 
 ### ✅ Technical Features (SEO & Performance)
+
 - **Server-Side Rendering (SSR)** - Fast initial load + better SEO
 - **Dynamic Sitemap** - Auto-generated `/sitemap.xml` untuk Google
 - **Structured Data** - Schema.org LocalBusiness JSON-LD
@@ -311,6 +333,7 @@ SiteLayout (Main wrapper)
 - **React Query Caching** - Smart data fetching & caching
 
 ### ✅ UX Features
+
 - **Mobile Responsive** - Desktop, tablet, mobile optimized
 - **Smooth Animations** - Reveal on scroll, transitions, hover effects
 - **Particle Background** - Animated background particles on hero
@@ -323,12 +346,14 @@ SiteLayout (Main wrapper)
 ## 📝 Konvensi & Best Practices
 
 ### File Naming
+
 - **Components**: PascalCase (misal `ServiceCard.tsx`)
 - **Routes**: kebab-case (misal `area-layanan.tsx`)
 - **Utilities**: camelCase (misal `error-capture.ts`)
 - **Constants**: UPPER_SNAKE_CASE
 
 ### Component Structure
+
 ```typescript
 // Imports
 import { FC } from 'react';
@@ -349,6 +374,7 @@ export default MyComponent;
 ```
 
 ### Styling Approach
+
 ```typescript
 // Gunakan cn() untuk conditional classes
 import { cn } from '@/lib/utils';
@@ -360,6 +386,7 @@ import { cn } from '@/lib/utils';
 ```
 
 ### Data Structure
+
 - Static data disimpan di `src/lib/data.ts`
 - Type definitions untuk consistency
 - Easy to update tanpa edit multiple files
@@ -369,6 +396,7 @@ import { cn } from '@/lib/utils';
 ## 🔧 Development Workflow
 
 ### 1. Membuat Halaman Baru
+
 ```bash
 # Buat file di src/routes/
 # Misal: src/routes/halaman-baru.tsx
@@ -379,6 +407,7 @@ export default function HalamaBaru() {
 ```
 
 ### 2. Membuat Komponen
+
 ```bash
 # Buat file di src/components/
 # Misal: src/components/MyComponent.tsx
@@ -397,6 +426,7 @@ export default MyComponent;
 ```
 
 ### 3. Styling
+
 ```typescript
 // Gunakan Tailwind classes
 <div className="flex items-center justify-between p-4 rounded-lg bg-slate-100">
@@ -405,6 +435,7 @@ export default MyComponent;
 ```
 
 ### 4. Form Handling
+
 ```typescript
 import { useForm } from 'react-hook-form';
 import { zodResolver } from '@hookform/resolvers/zod';
@@ -432,6 +463,7 @@ export default function ContactForm() {
 ## 📚 Useful Resources
 
 ### Documentation
+
 - [TanStack Router](https://tanstack.com/router/latest)
 - [TanStack React Query](https://tanstack.com/query/latest)
 - [Tailwind CSS](https://tailwindcss.com)
@@ -443,6 +475,7 @@ export default function ContactForm() {
 - [Cloudflare Workers](https://workers.cloudflare.com)
 
 ### VS Code Extensions Recommended
+
 - **ES7+ React/Redux/React-Native snippets** - dsznajder.es7-react-js-snippets
 - **Tailwind CSS IntelliSense** - bradlc.vscode-tailwindcss
 - **TypeScript Vue Plugin** - Vue.volar
@@ -454,6 +487,7 @@ export default function ContactForm() {
 ## 🌐 Deployment
 
 ### Deploy ke Cloudflare Workers
+
 ```bash
 # Build terlebih dahulu
 npm run build
@@ -463,7 +497,9 @@ wrangler deploy
 ```
 
 ### Konfigurasi Environment
+
 Edit `wrangler.jsonc` untuk setup environment:
+
 ```json
 {
   "name": "welding-works-studio",
@@ -478,6 +514,7 @@ Edit `wrangler.jsonc` untuk setup environment:
 ## 🐛 Troubleshooting
 
 ### Port sudah digunakan
+
 ```bash
 # Kill process di port 5173
 # Windows:
@@ -489,6 +526,7 @@ lsof -ti:5173 | xargs kill -9
 ```
 
 ### Build error
+
 ```bash
 # Clear cache dan rebuild
 rm -rf node_modules
@@ -497,6 +535,7 @@ npm run build
 ```
 
 ### Route tidak ditemukan
+
 - Pastikan file route ada di `src/routes/`
 - Jalankan dev server, route tree auto-generate
 - Jangan edit `routeTree.gen.ts` secara manual
@@ -506,6 +545,7 @@ npm run build
 ## 📞 Contact & Support
 
 **Bara Baja Las**
+
 - 📞 +62 821 2517 1716 (WhatsApp)
 - 📍 Kp. Kadongdong, Desa Bengle, Karawang, Jawa Barat
 - 🕐 Jam Operasional: 08:00 - 17:00 (Senin-Sabtu)
@@ -521,4 +561,3 @@ Private Project - Semua rights reserved untuk Bara Baja Las
 **Last Updated:** May 22, 2026  
 **Version:** 1.0.0  
 **Status:** Active Development ✅
-

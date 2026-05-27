@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
 import { Link } from "@tanstack/react-router";
-import { Menu, X, Flame, MessageCircle } from "lucide-react";
+import { Menu, X, MessageCircle } from "lucide-react";
 import { SITE, waLink } from "@/lib/site";
 import { GlowButton } from "@/components/GlowButton";
 import { cn } from "@/lib/utils";
@@ -35,9 +35,7 @@ export function IndustrialNavbar() {
     >
       <div className="mx-auto flex h-16 max-w-7xl items-center justify-between px-4 sm:px-6 lg:px-8">
         <Link to="/" className="flex items-center gap-2.5" onClick={() => setOpen(false)}>
-          <span className="relative flex h-9 w-9 items-center justify-center rounded-md bg-gradient-industrial shadow-glow">
-            <Flame className="h-5 w-5 text-primary-foreground" strokeWidth={2.4} />
-          </span>
+          <img src="/logo.png" alt="Bara Baja Las" className="h-9 w-auto" />
           <span className="font-display text-lg font-extrabold leading-none">
             Bara Baja <span className="text-gradient-industrial">Las</span>
           </span>

@@ -5,7 +5,7 @@ export function getDB(env: Record<string, unknown>): D1Database {
   const db = env["DB"] as D1Database | undefined;
   if (!db) {
     throw new Error(
-      "D1 DB binding tidak ditemukan. Pastikan wrangler.jsonc sudah ada d1_databases binding = 'DB'."
+      "D1 DB binding tidak ditemukan. Pastikan wrangler.jsonc sudah ada d1_databases binding = 'DB'.",
     );
   }
   return db;

@@ -16,17 +16,25 @@ const SITE_DESC =
 const LOCAL_BUSINESS_JSONLD = JSON.stringify({
   "@context": "https://schema.org",
   "@type": "LocalBusiness",
-  "@id": "#bara-baja-las",
+  "@id": "https://barabajalas.id/#bara-baja-las",
   name: "Bara Baja Las",
-  image: "",
+  url: "https://barabajalas.id",
+  image: "https://barabajalas.id/logo.png",
   description: SITE_DESC,
   telephone: "+6282125171716",
+  email: "halo@barabajalas.id",
   address: {
     "@type": "PostalAddress",
     streetAddress: "Kp. Kadongdong, Desa Bengle",
     addressLocality: "Karawang",
     addressRegion: "Jawa Barat",
+    postalCode: "41371",
     addressCountry: "ID",
+  },
+  geo: {
+    "@type": "GeoCoordinates",
+    latitude: -6.3219,
+    longitude: 107.3062,
   },
   areaServed: ["Karawang", "Cikampek", "Purwakarta", "Bekasi", "Subang"],
   openingHoursSpecification: [
@@ -37,8 +45,14 @@ const LOCAL_BUSINESS_JSONLD = JSON.stringify({
       closes: "17:00",
     },
   ],
-  sameAs: ["https://wa.me/6282125171716"],
+  sameAs: [
+    "https://wa.me/6282125171716",
+    "https://instagram.com/barabajalas",
+    "https://facebook.com/barabajalas",
+  ],
   priceRange: "$$",
+  currenciesAccepted: "IDR",
+  paymentAccepted: "Cash, Transfer Bank",
 });
 
 function NotFoundComponent() {

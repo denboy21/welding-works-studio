@@ -8,10 +8,10 @@
     {
       "binding": "DB",
       "database_name": "bara-baja-las-db",
-      "database_id": "f4d34f7b-5451-4e4e-8ece-567a4f2edfc0"
-    }
+      "database_id": "f4d34f7b-5451-4e4e-8ece-567a4f2edfc0",
+    },
   ],
   "vars": {
-    "ADMIN_PASSWORD": "barabajalas2024"
-  }
+    "ADMIN_PASSWORD": "barabajalas2024",
+  },
 }

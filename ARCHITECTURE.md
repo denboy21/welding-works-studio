@@ -40,6 +40,7 @@ Dokumentasi detail untuk fullstack developers tentang arsitektur, alur data, dan
 ## 🏢 Welding Works Studio Data Model
 
 ### Service Categories (9 Types)
+
 ```
 1. Pagar Besi (pagar-besi)
    ├─ Material: anti karat, custom desain
@@ -139,6 +140,7 @@ HomePage
 ---
 
 ### Initial Page Load (SSR)
+
 ```
 1. User Request Browser
                  │
@@ -159,6 +161,7 @@ HomePage
 ```
 
 ### Data Fetching (Client-Side)
+
 ```
 Component renders
         │
@@ -185,6 +188,7 @@ React Query checks cache
 ### `/src/routes/` - Page Routes
 
 **Routing Convention:**
+
 ```
 routes/
 ├── __root.tsx          # Root layout, wrappers
@@ -201,22 +205,25 @@ Static Extensions: [.]xml menjadi .xml
 ```
 
 **Root Layout (`__root.tsx`):**
+
 ```typescript
 export const RootRoute = createRootRouteWithContext()({
   component: RootComponent,
   // Global layout, metadata, providers
   // Rendered untuk setiap halaman
-})
+});
 ```
 
 ### `/src/components/` - Reusable Components
 
 **UI Components (`/ui/`)** - Headless primitives dari Radix UI:
+
 - Tidak punya styling default (hanya struktur & accessibility)
 - Dikombinasikan dengan Tailwind CSS classes
 - Sangat fleksibel dan composable
 
 **Feature Components** - Custom komponen spesifik untuk website:
+
 ```
 AnimatedCounter.tsx    → Number counter dengan animasi
 AreaCoverageSection.tsx → Section display area coverage
@@ -264,6 +271,7 @@ export function useMobile() {
 ## 🔄 Request/Response Cycle
 
 ### Route Handler Flow
+
 ```typescript
 // routes/layanan.$slug.tsx
 import { createFileRoute } from '@tanstack/react-router'
@@ -273,13 +281,13 @@ export const Route = createFileRoute('/layanan/$slug')({
   loader: async ({ params }) => {
     return await fetchService(params.slug)
   },
-  
+
   // 2. Component - render dengan data
   component: ServiceDetailPage,
-  
+
   // 3. Error boundary
   errorComponent: ErrorComponent,
-  
+
   // 4. Not found
   notFoundComponent: NotFoundComponent,
 })
@@ -292,6 +300,7 @@ function ServiceDetailPage() {
 ```
 
 ### Query Pattern (Data Fetching)
+
 ```typescript
 import { useQuery } from '@tanstack/react-query'
 
@@ -302,10 +311,10 @@ function MyComponent() {
     queryFn: () => fetchService(id),
     staleTime: 5 * 60 * 1000, // Cache 5 menit
   })
-  
+
   if (isLoading) return <Skeleton />
   if (error) return <ErrorBoundary />
-  
+
   return <div>{data.name}</div>
 }
 ```
@@ -315,6 +324,7 @@ function MyComponent() {
 ## 🎨 Styling Architecture
 
 ### Tailwind CSS Structure
+
 ```
 Global Styles
 ├── styles.css (Tailwind directives)
@@ -331,6 +341,7 @@ Global Styles
 ```
 
 ### Component Styling Example
+
 ```typescript
 import { cn } from "@/lib/utils"
 import { Button } from "@/components/ui/button"
@@ -348,6 +359,7 @@ export function ServiceCard({ isActive }) {
 ```
 
 ### Responsive Design Pattern
+
 ```typescript
 // Tailwind responsive prefixes
 <div className="
@@ -365,48 +377,46 @@ export function ServiceCard({ isActive }) {
 ## 🔐 Type Safety
 
 ### TypeScript Configuration
+
 ```json
 {
   "compilerOptions": {
     "target": "ES2022",
     "jsx": "react-jsx",
-    "strict": true,           // Enable all strict checks
+    "strict": true, // Enable all strict checks
     "noUnusedLocals": false,
     "paths": {
-      "@/*": ["./src/*"]      // @ alias untuk imports
+      "@/*": ["./src/*"] // @ alias untuk imports
     }
   }
 }
 ```
 
 ### Type Patterns
+
 ```typescript
 // Interface untuk component props
 interface ServiceCardProps {
-  title: string
-  description?: string
-  isActive: boolean
+  title: string;
+  description?: string;
+  isActive: boolean;
 }
 
-const ServiceCard: React.FC<ServiceCardProps> = ({
-  title,
-  description,
-  isActive,
-}) => {
+const ServiceCard: React.FC<ServiceCardProps> = ({ title, description, isActive }) => {
   // ...
-}
+};
 
 // Type-safe route params
 type ServiceParams = {
-  slug: string
-}
+  slug: string;
+};
 
 // Type-safe query keys
 const queryKeys = {
-  all: ['services'],
-  lists: () => [...queryKeys.all, 'list'],
-  detail: (slug: string) => [...queryKeys.all, 'detail', slug],
-}
+  all: ["services"],
+  lists: () => [...queryKeys.all, "list"],
+  detail: (slug: string) => [...queryKeys.all, "detail", slug],
+};
 ```
 
 ---
@@ -414,27 +424,30 @@ const queryKeys = {
 ## 📊 State Management Strategy
 
 ### React Query (Server State)
+
 ```typescript
 // Setup di router.tsx
-const queryClient = new QueryClient()
+const queryClient = new QueryClient();
 
 // Usage di components
 const { data, isLoading, error } = useQuery({
-  queryKey: ['services'],
+  queryKey: ["services"],
   queryFn: async () => {
-    const res = await fetch('/api/services')
-    return res.json()
+    const res = await fetch("/api/services");
+    return res.json();
   },
-})
+});
 ```
 
 ### React State (Local UI State)
+
 ```typescript
 const [isOpen, setIsOpen] = useState(false)
 const [formData, setFormData] = useState({ ... })
 ```
 
 ### Form State (React Hook Form)
+
 ```typescript
 const form = useForm({
   resolver: zodResolver(contactSchema),
@@ -457,11 +470,13 @@ return (
 ## 🚀 Performance Optimizations
 
 ### 1. Code Splitting
+
 - TanStack Router otomatis split routes
 - Setiap route adalah separate chunk
 - Load hanya ketika dibutuhkan
 
 ### 2. Lazy Loading
+
 ```typescript
 import { lazy, Suspense } from 'react'
 
@@ -477,6 +492,7 @@ export function Page() {
 ```
 
 ### 3. React Query Caching
+
 ```typescript
 // Automatic cache management
 // Stale while revalidate pattern
@@ -484,6 +500,7 @@ export function Page() {
 ```
 
 ### 4. Image Optimization Ready
+
 ```typescript
 // Use native <img> dengan srcset, atau:
 <picture>
@@ -493,6 +510,7 @@ export function Page() {
 ```
 
 ### 5. Memoization
+
 ```typescript
 import { memo, useMemo, useCallback } from 'react'
 
@@ -505,12 +523,12 @@ const MemoizedList = ({ services }) => {
     () => services.sort((a, b) => a.name.localeCompare(b.name)),
     [services]
   )
-  
+
   const handleClick = useCallback(
     (id) => console.log(id),
     []
   )
-  
+
   return <div onClick={handleClick}>{/* ... */}</div>
 }
 ```
@@ -520,24 +538,26 @@ const MemoizedList = ({ services }) => {
 ## 🔌 Integration Points
 
 ### Server-Side Data Loading
+
 ```typescript
 // routes/layanan.$slug.tsx
-export const Route = createFileRoute('/layanan/$slug')({
+export const Route = createFileRoute("/layanan/$slug")({
   loader: async ({ params, context }) => {
     // Server runs this before component render
     // Can access database, external APIs, etc.
-    
+
     const data = await context.queryClient.fetchQuery({
-      queryKey: ['service', params.slug],
+      queryKey: ["service", params.slug],
       queryFn: () => fetchServiceFromDB(params.slug),
-    })
-    
-    return data
+    });
+
+    return data;
   },
-})
+});
 ```
 
 ### API Endpoints (if needed)
+
 ```typescript
 // Could add API routes in src/routes/api/ if needed
 // Currently using server.ts for SSR
@@ -548,22 +568,23 @@ export const Route = createFileRoute('/layanan/$slug')({
 ```
 
 ### Form Submission Example
+
 ```typescript
 const handleSubmit = async (data) => {
   try {
-    const response = await fetch('/api/contact', {
-      method: 'POST',
+    const response = await fetch("/api/contact", {
+      method: "POST",
       body: JSON.stringify(data),
-    })
-    
-    if (!response.ok) throw new Error('Failed')
-    
-    const result = await response.json()
+    });
+
+    if (!response.ok) throw new Error("Failed");
+
+    const result = await response.json();
     // Handle success
   } catch (error) {
     // Handle error
   }
-}
+};
 ```
 
 ---
@@ -571,6 +592,7 @@ const handleSubmit = async (data) => {
 ## 🧪 Component Development Pattern
 
 ### Creating a New Component
+
 ```typescript
 // /src/components/NewFeature.tsx
 import { FC, useState } from 'react'
@@ -621,6 +643,7 @@ export default NewFeature
 ```
 
 ### Adding to Route
+
 ```typescript
 // /src/routes/mypage.tsx
 import { createFileRoute } from '@tanstack/react-router'
@@ -648,20 +671,22 @@ function MyPage() {
 ## 📝 Form Handling Deep Dive
 
 ### Zod Schema Definition
+
 ```typescript
-import { z } from 'zod'
+import { z } from "zod";
 
 export const contactSchema = z.object({
   name: z.string().min(1, "Name required"),
   email: z.string().email("Valid email required"),
   phone: z.string().min(10, "Valid phone required"),
   message: z.string().min(10, "Message min 10 chars"),
-})
+});
 
-export type ContactFormData = z.infer<typeof contactSchema>
+export type ContactFormData = z.infer<typeof contactSchema>;
 ```
 
 ### Form Component
+
 ```typescript
 import { useForm } from 'react-hook-form'
 import { zodResolver } from '@hookform/resolvers/zod'
@@ -703,9 +728,9 @@ export function ContactForm() {
           </span>
         )}
       </div>
-      
+
       {/* More fields... */}
-      
+
       <button type="submit" disabled={form.formState.isSubmitting}>
         Submit
       </button>
@@ -719,6 +744,7 @@ export function ContactForm() {
 ## 🐛 Error Handling
 
 ### Global Error Boundaries
+
 ```typescript
 // __root.tsx
 import { ErrorComponent, RootErrorRoute } from '@tanstack/react-router'
@@ -734,6 +760,7 @@ const RootErrorRoute: RootErrorRoute = ({ error }) => {
 ```
 
 ### Route-Level Error Handling
+
 ```typescript
 export const Route = createFileRoute('/page')({
   component: PageComponent,
@@ -747,19 +774,20 @@ export const Route = createFileRoute('/page')({
 ```
 
 ### Error Capture Utility
+
 ```typescript
 // lib/error-capture.ts
 export function captureError(error: Error) {
-  console.error(error)
+  console.error(error);
   // Could send to error tracking service
   // e.g., Sentry, LogRocket
 }
 
 // Usage
 try {
-  await fetchData()
+  await fetchData();
 } catch (error) {
-  captureError(error as Error)
+  captureError(error as Error);
 }
 ```
 
@@ -767,28 +795,30 @@ try {
 
 ## 🔍 SEO Implementation
 
-### Meta Tags (in __root.tsx)
+### Meta Tags (in \_\_root.tsx)
+
 ```typescript
 export const Route = createRootRouteWithContext()({
   head: () => ({
     meta: [
       {
-        charSet: 'utf-8',
+        charSet: "utf-8",
       },
       {
-        name: 'description',
-        content: 'Website description',
+        name: "description",
+        content: "Website description",
       },
       {
-        name: 'viewport',
-        content: 'width=device-width, initial-scale=1',
+        name: "viewport",
+        content: "width=device-width, initial-scale=1",
       },
     ],
   }),
-})
+});
 ```
 
 ### Structured Data (Schema.org)
+
 ```typescript
 // LocalBusiness schema in __root.tsx
 const LOCAL_BUSINESS_JSONLD = JSON.stringify({
@@ -801,16 +831,17 @@ const LOCAL_BUSINESS_JSONLD = JSON.stringify({
 ```
 
 ### Dynamic Sitemap
+
 ```typescript
 // routes/sitemap[.]xml.ts
 export async function GET() {
   const pages = [
-    { url: '/', priority: 1.0 },
-    { url: '/layanan', priority: 0.8 },
-    { url: '/portfolio', priority: 0.8 },
-  ]
-  
-  return generateSitemap(pages)
+    { url: "/", priority: 1.0 },
+    { url: "/layanan", priority: 0.8 },
+    { url: "/portfolio", priority: 0.8 },
+  ];
+
+  return generateSitemap(pages);
 }
 ```
 
@@ -834,24 +865,28 @@ export async function GET() {
 ## 🔗 Architecture Decision Records
 
 ### Why TanStack Start?
+
 - Full-stack React framework dengan SSR built-in
 - Type-safe routing
 - Server functions support
 - Excellent performance
 
 ### Why React Query?
+
 - Automatic caching & synchronization
 - Reduced boilerplate
 - Built-in devtools
 - Stale-while-revalidate pattern
 
 ### Why Tailwind CSS?
+
 - Rapid development
 - Consistent design system
 - Small bundle size
 - Great DX with VS Code
 
 ### Why Radix UI?
+
 - Headless (no styling conflicts)
 - Accessibility built-in (ARIA)
 - Composable primitives
@@ -871,4 +906,3 @@ export async function GET() {
 
 **Last Updated:** May 22, 2026  
 **Version:** 1.0.0
-

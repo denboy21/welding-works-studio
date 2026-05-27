@@ -1,9 +1,8 @@
 import { createFileRoute } from "@tanstack/react-router";
 import type {} from "@tanstack/react-start";
-import { SERVICES, BLOG_POSTS } from "@/lib/data";
+import { SITE } from "@/lib/site";
 
-// TODO: replace with your project URL once a custom domain is set.
-const BASE_URL = "";
+const BASE_URL = SITE.url;
 
 export const Route = createFileRoute("/sitemap.xml")({
   server: {

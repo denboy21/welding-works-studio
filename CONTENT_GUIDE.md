@@ -15,11 +15,13 @@ Tidak perlu database! Semua data hardcoded dalam JavaScript, sehingga update san
 ## 📌 File Lokasi
 
 **Main content file:**
+
 ```
 src/lib/data.ts
 ```
 
 **Images folder:**
+
 ```
 src/assets/
 ```
@@ -29,6 +31,7 @@ src/assets/
 ## ➕ Menambah Service Baru
 
 ### Step 1: Siapkan Image
+
 - Ukuran: 800x600px minimum (landscape)
 - Format: JPG atau PNG
 - Letakkan di `src/assets/`
@@ -43,29 +46,26 @@ import newService from "@/assets/service-nama-layanan.jpg";
 
 export const SERVICES: Service[] = [
   // ... existing services ...
-  
+
   {
-    slug: "nama-slug",              // PENTING: gunakan kebab-case
+    slug: "nama-slug", // PENTING: gunakan kebab-case
     title: "Nama Layanan",
     short: "Deskripsi pendek (satu baris)",
     description: "Deskripsi panjang yang detail...",
     image: newService,
-    features: [
-      "Fitur 1",
-      "Fitur 2", 
-      "Fitur 3",
-      "Fitur 4"
-    ],
+    features: ["Fitur 1", "Fitur 2", "Fitur 3", "Fitur 4"],
   },
 ];
 ```
 
 ### Step 3: Restart Server
+
 ```bash
 npm run dev
 ```
 
 ### Result
+
 - Service akan muncul di `/layanan` (list)
 - Service detail page otomatis di `/layanan/nama-slug`
 - Service preview di homepage
@@ -76,6 +76,7 @@ npm run dev
 ## 🖼️ Menambah Portfolio Project
 
 ### Step 1: Siapkan Image
+
 - Ukuran: 400x400px minimum (atau sesuai dengan desain)
 - Format: JPG atau PNG
 - Letakkan di `src/assets/`
@@ -87,23 +88,25 @@ Cari bagian PORTFOLIO:
 ```typescript
 export const PORTFOLIO = [
   // ... existing projects ...
-  
-  { 
-    id: 9,                                    // Nomor urut (incremental)
-    image: portfolioImage,                    // Import image di atas
-    title: "Nama Proyek — Lokasi",           // Format: "Nama — Lokasi"
-    category: "Pagar",                        // Harus match service title
-    span: "tall"                              // optional: "tall" | "wide" | ""
+
+  {
+    id: 9, // Nomor urut (incremental)
+    image: portfolioImage, // Import image di atas
+    title: "Nama Proyek — Lokasi", // Format: "Nama — Lokasi"
+    category: "Pagar", // Harus match service title
+    span: "tall", // optional: "tall" | "wide" | ""
   },
 ] as const;
 ```
 
 ### Category Options
+
 ```
 "Pagar" | "Kanopi" | "Railing" | "Balkon" | "Tralis" | "Baja Ringan" | "Pintu" | "Konstruksi"
 ```
 
 ### Span Options
+
 ```
 "tall"  → Mengambil 2 baris
 "wide"  → Mengambil 2 kolom
@@ -111,6 +114,7 @@ export const PORTFOLIO = [
 ```
 
 ### Result
+
 - Project muncul di `/portfolio`
 - Bisa di-filter berdasarkan category
 - Grid layout otomatis sesuai span setting
@@ -126,17 +130,18 @@ Cari bagian TESTIMONIALS:
 ```typescript
 export const TESTIMONIALS = [
   // ... existing testimonials ...
-  
+
   {
-    name: "Nama Customer",           // Nama customer
-    location: "Karawang",            // Lokasi customer
-    rating: 5,                       // 1-5 bintang
+    name: "Nama Customer", // Nama customer
+    location: "Karawang", // Lokasi customer
+    rating: 5, // 1-5 bintang
     text: "Testimonial text di sini. Cerita tentang project dan hasil kerja...",
   },
 ] as const;
 ```
 
 ### Result
+
 - Testimonial muncul di homepage (slider otomatis)
 - Testimonial muncul di `/testimoni`
 - Star rating otomatis ditampilkan
@@ -152,7 +157,7 @@ Cari bagian FAQS:
 ```typescript
 export const FAQS = [
   // ... existing FAQs ...
-  
+
   {
     q: "Pertanyaan di sini?",
     a: "Jawaban lengkap untuk pertanyaan tersebut...",
@@ -161,6 +166,7 @@ export const FAQS = [
 ```
 
 ### Result
+
 - FAQ otomatis muncul di `/faq`
 - Accordion expand/collapse functionality
 - Mobile-responsive
@@ -178,24 +184,20 @@ export const SITE = {
   name: "Bara Baja Las",
   description: "...",
   phone: "+6282125171716",
-  email: "email@example.com",  // optional
+  email: "email@example.com", // optional
   location: "Kp. Kadongdong, Desa Bengle, Karawang, Jawa Barat",
-  
+
   workingHours: {
     open: "08:00",
     close: "17:00",
   },
-  
-  workingDays: [
-    "Senin", "Selasa", "Rabu", "Kamis", "Jumat", "Sabtu"
-  ],
-  
-  coverage: [
-    "Karawang", "Cikampek", "Purwakarta", "Bekasi", "Subang"
-  ],
+
+  workingDays: ["Senin", "Selasa", "Rabu", "Kamis", "Jumat", "Sabtu"],
+
+  coverage: ["Karawang", "Cikampek", "Purwakarta", "Bekasi", "Subang"],
 };
 
-export const waLink = (message: string) => 
+export const waLink = (message: string) =>
   `https://wa.me/6282125171716?text=${encodeURIComponent(message)}`;
 ```
 
@@ -235,16 +237,18 @@ wrangler deploy
 ## ❌ Common Mistakes
 
 ### Mistake 1: Salah format slug
+
 ```javascript
 // ❌ WRONG
-slug: "Pagar Besi"          // space & capital
-slug: "pagarBesi"           // camelCase
+slug: "Pagar Besi"; // space & capital
+slug: "pagarBesi"; // camelCase
 
 // ✅ CORRECT
-slug: "pagar-besi"          // kebab-case
+slug: "pagar-besi"; // kebab-case
 ```
 
 ### Mistake 2: Lupa import image
+
 ```javascript
 // ❌ WRONG
 {
@@ -262,6 +266,7 @@ import pagarImage from "@/assets/service-pagar.jpg"
 ```
 
 ### Mistake 3: Category tidak cocok
+
 ```javascript
 // ❌ WRONG
 // Service title: "Pagar Besi"
@@ -273,6 +278,7 @@ import pagarImage from "@/assets/service-pagar.jpg"
 ```
 
 ### Mistake 4: Lupa restart dev server
+
 ```bash
 # Setelah edit src/lib/data.ts:
 # ❌ Just refresh browser - tidak akan berubah
@@ -285,6 +291,7 @@ npm run dev
 ## 🎨 Image Guidelines
 
 ### Service Images
+
 - **Size:** 800x600px minimum
 - **Format:** JPG or PNG
 - **Quality:** High quality, well-lit
@@ -292,6 +299,7 @@ npm run dev
 - **Aspect ratio:** 4:3
 
 ### Portfolio Images
+
 - **Size:** 400x400px or larger
 - **Format:** JPG or PNG
 - **Quality:** Professional quality
@@ -299,6 +307,7 @@ npm run dev
 - **Aspect ratio:** 1:1 (square) recommended
 
 ### Optimization
+
 ```bash
 # Use online tools atau:
 # - TinyPNG (compress)
@@ -311,6 +320,7 @@ npm run dev
 ## 📊 Data Structure Quick Reference
 
 ### Service Structure
+
 ```typescript
 {
   slug: string              // URL identifier (kebab-case)
@@ -323,6 +333,7 @@ npm run dev
 ```
 
 ### Portfolio Structure
+
 ```typescript
 {
   id: number                // Sequential number
@@ -334,20 +345,22 @@ npm run dev
 ```
 
 ### Testimonial Structure
+
 ```typescript
 {
-  name: string              // Customer name
-  location: string          // City/area
-  rating: number            // 1-5
-  text: string              // Review text
+  name: string; // Customer name
+  location: string; // City/area
+  rating: number; // 1-5
+  text: string; // Review text
 }
 ```
 
 ### FAQ Structure
+
 ```typescript
 {
-  q: string                 // Question
-  a: string                 // Answer
+  q: string; // Question
+  a: string; // Answer
 }
 ```
 
@@ -385,4 +398,3 @@ npm run dev
 
 **Last Updated:** May 24, 2026  
 **Version:** 1.0.0
-
